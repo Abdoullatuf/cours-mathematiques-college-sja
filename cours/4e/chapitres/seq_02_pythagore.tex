@@ -43,7 +43,7 @@ Les deux côtés qui forment l'angle droit.
 
 \subsection{Énoncé du théorème}
 
-\begin{proprietebox}[Théorème de Pythagore]
+\begin{theoremebox}[Théorème de Pythagore]
 Dans un triangle rectangle, le carré de la longueur de l'hypoténuse est égal à la somme des carrés des longueurs des deux autres côtés.
 
 \textbf{Formulation mathématique :}\\
@@ -73,9 +73,9 @@ Si $ABC$ est un triangle rectangle en $A$, alors : $BC^2 = AB^2 + AC^2$
 		\node[above right] at (1.5,1) {$a$ (hypoténuse)};
 	\end{tikzpicture}
 \end{center}
-\end{proprietebox}
+\end{theoremebox}
 
-\subsection{Démonstration par la méthode des aires}
+\subsection{Démonstration du théorème de Pythagore par la méthode des aires}
 Considérons un carré de côté $(a + b)$ contenant quatre triangles rectangles identiques de côtés $a$, $b$ et d'hypoténuse $c$.
 
 \begin{figure}[h]
@@ -100,13 +100,16 @@ Considérons un carré de côté $(a + b)$ contenant quatre triangles rectangles
 \textbf{Configuration 2 :} Aire 2 = $(a+b)^2 = 4 \times \frac{ab}{2} + a^2 + b^2 = 2ab + a^2 + b^2$
 
 Comme l'aire est la même dans les deux configurations (Aire 1 = Aire 2) :
-\[2ab + c^2 = 2ab + a^2 + b^2 \Leftrightarrow c^2 = a^2 + b^2\]
-
+$$2ab + c^2 = 2ab + a^2 + b^2 \Leftrightarrow c^2 = a^2 + b^2$$ \\
 Ce qui démontre le théorème de Pythagore.
 
 \section{Applications du théorème de Pythagore}
 
 \subsection{Calculer la longueur de l'hypoténuse}
+
+\begin{remarkbox}[Important]
+$7^2 = 7 \times 7 = 49$. À ne pas confondre avec $7 \times 2 = 7 + 7 = 14$
+\end{remarkbox}
 
 \begin{methodebox}[Calculer la longueur de l'hypoténuse]
 Pour calculer la longueur de l'hypoténuse d'un triangle rectangle :
@@ -119,17 +122,65 @@ Pour calculer la longueur de l'hypoténuse d'un triangle rectangle :
 \end{methodebox}
 
 \begin{examplebox}
-Un triangle $ABC$ est rectangle en $A$. $AB = 6$ cm et $AC = 8$ cm.\\
-Calculer $BC$.
+On étudie le triangle RAK rectangle en K tel que KR = 4,95 cm et KA= 6,6 cm. Calculons la mesure du côté [AR].
 
-\textbf{Solution :}
-\begin{itemize}
-    \item Le triangle est rectangle en $A$, donc $BC$ est l'hypoténuse
-    \item D'après le théorème de Pythagore : $BC^2 = AB^2 + AC^2$
-    \item $BC^2 = 6^2 + 8^2 = 36 + 64 = 100$
-    \item $BC = \sqrt{100} = 10$ cm
-\end{itemize}
+\noindent
+\begin{minipage}[c]{0.60\textwidth}
+Dans le triangle $RAK$ rectangle en $K$, d'après le théorème de Pythagore on a :
+\begin{align*}
+.........  &= .......... + .........\\
+.........  &= .......... + ......... \\
+.........  &= .......... + ......... \\
+AR^2 &= ...........
+\end{align*}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.35\textwidth}
+	\centering
+	\includegraphics[width=\textwidth]{../../assets/images/4e/seq_02_pythagore/triangle_RKA_rectangle_en_K}
+\end{minipage}
+
+\vspace{1em}
+
+\begin{minipage}[t]{\textwidth}
+\textbf{Comment trouver $AR$ ?}
+
+On ne connaît pas immédiatement un nombre dont le carré vaut exactement 68,0625.
+
+Notons $x$ ce nombre. Comme $8^2 = 64 < 68,0625 < 81 = 9^2$, on en déduit que $8 < x < 9$.
+
+En utilisant la calculatrice, on trouve que $8,2^2 = 67,24 < 68,0625 < 68,89 = 8,3^2$ et donc que $8,2 < x < 8,3$.
+
+On constate alors que $8,25^2 = 68,0625$.
+
+Finalement $AR = 8,25$ cm.
+\end{minipage}
 \end{examplebox}
+
+\begin{proprietebox}[La racine carrée]
+Pour tout nombre positif $a$, il existe un unique nombre \textbf{positif} dont le carré vaut exactement le nombre $a$.
+
+Ce nombre s'appelle la \textbf{racine carrée} de $a$ et se note $\sqrt{a}$.
+
+Par définition : $(\sqrt{a})^2 = \sqrt{a} \times \sqrt{a} = a$
+\end{proprietebox}
+
+\begin{examplebox}[Carrés parfaits]
+\textbf{Quelques carrés parfaits à connaître :}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$a$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+\hline
+$a^2$ & ..... & ..... & ..... & ..... & ..... & ..... & ..... & ..... & ..... & ..... & ..... & ..... & ..... \\
+\hline
+\end{tabular}
+\end{center}
+
+Donc $\sqrt{0} = \trous{1.5cm}$ ; $\sqrt{1} = \trous{1.5cm}$ ; $\sqrt{9} = \trous{1.5cm}$ ; $\sqrt{16} = \trous{1.5cm}$ ; $\sqrt{25} = \trous{1.5cm}$ ; $\sqrt{36} = \trous{1.5cm}$ ; $\sqrt{49} = \trous{1.5cm}$ ; $\sqrt{64} = \trous{1.5cm}$ ;\\ $\sqrt{81} = \trous{1.5cm}$ ; $\sqrt{100} = \trous{1.5cm}$ ; $\sqrt{121} = \trous{1.5cm}$ ; $\sqrt{144} = \trous{1.5cm}$
+\end{examplebox}
+
 
 \subsection{Calculer la longueur d'un côté de l'angle droit}
 
@@ -149,12 +200,12 @@ Calculer $DF$.
 
 \textbf{Solution :}
 \begin{itemize}
-    \item Le triangle est rectangle en $D$, donc $EF$ est l'hypoténuse
-    \item D'après le théorème de Pythagore : $EF^2 = DE^2 + DF^2$
-    \item $13^2 = 5^2 + DF^2$
-    \item $169 = 25 + DF^2$
-    \item $DF^2 = 169 - 25 = 144$
-    \item $DF = \sqrt{144} = 12$ cm
+    \item Le triangle est rectangle en $D$, donc \trous{1.5cm} est l'hypoténuse.
+    \item D'après le théorème de Pythagore : ....... = ........ + .......
+    \item ....... = ........ + .......
+    \item ....... = ........ + .......
+    \item ....... = ........ + .......
+    \item DF = ........... = ..........cm
 \end{itemize}
 \end{examplebox}
 
@@ -162,15 +213,16 @@ Calculer $DF$.
 
 \subsection{Énoncé de la réciproque}
 
-\begin{proprietebox}{Réciproque du théorème de Pythagore}
+\begin{theoremebox}[Réciproque du théorème de Pythagore]
 Si, dans un triangle, le carré de la longueur du plus grand côté est égal à la somme des carrés des longueurs des deux autres côtés, alors ce triangle est rectangle.
-\end{proprietebox}
+\end{theoremebox}
+
+\subsection{Démonstration de la réciproque}
+C’est une conséquence de la logique des propositions. Prenons un exemple simple :\\
+\textbf{Propriété :} Si nous sommes le 25 décembre alors je ne vais pas à l’école. La propriété contra-posée est : Si je vais à l'école alors nous ne sommes pas le 25 décembre. On comprend que quand une propriété est vraie alors la propriété contra-posée est également vraie. Dans le cas du théorème de Pythagore, si l’égalité de Pythagore n’est pas vérifiée alors le triangle n’est pas rectangle car s’il était rectangle l’égalité serait vérifiée! \qquad \textit{CQFD}
 
 \subsection{Utilisation de la réciproque}
-
-\textbf{Objectif :} Déterminer si un triangle est rectangle en connaissant les longueurs de ses trois côtés.
-
-\begin{methodebox}{Démontrer qu'un triangle est rectangle}
+\begin{methodebox}[Démontrer qu'un triangle est rectangle]
 Pour démontrer qu'un triangle est rectangle :
 \begin{enumerate}
     \item Identifier le plus grand côté du triangle
@@ -213,7 +265,8 @@ Un triangle a pour côtés 7 cm, 8 cm et 10 cm. Est-il rectangle ?
 
 \subsection{Problèmes de la vie courante}
 
-\begin{exercisebox}{1 - L'échelle}
+\begin{exercisebox}
+\textbf{Exercice 1: L'échelle}
 Une échelle de 4 m est appuyée contre un mur. Son pied est à 1,5 m du mur. À quelle hauteur le sommet de l'échelle touche-t-il le mur ?
 
 \textbf{Solution :}
@@ -228,17 +281,17 @@ $h^2 + 1,5^2 = 4^2$\\
 $h^2 + 2,25 = 16$\\
 $h^2 = 13,75$\\
 $h = \sqrt{13,75} \approx 3,7$ m
-\end{exercisebox}
+\\
 
-\begin{exercisebox}{2 - Vérification d'équerrage}
+\textbf{Exercice 2: Vérification d'équerrage}
 Un maçon vérifie qu'un angle est droit en mesurant les côtés d'un triangle formé par deux murs et une diagonale. Il mesure : 3 m, 4 m et 5 m. L'angle est-il droit ?
 
 \textbf{Solution :}
 \begin{itemize}
-    \item Plus grand côté : 5 m
-    \item $5^2 = 25$
-    \item $3^2 + 4^2 = 9 + 16 = 25$
-    \item Égalité vérifiée $\Rightarrow$ l'angle est droit
+	\item Plus grand côté : 5 m
+	\item $5^2 = 25$
+	\item $3^2 + 4^2 = 9 + 16 = 25$
+	\item Égalité vérifiée $\Rightarrow$ l'angle est droit
 \end{itemize}
 \end{exercisebox}
 
@@ -256,77 +309,39 @@ Un maçon vérifie qu'un angle est droit en mesurant les côtés d'un triangle f
 \textbf{Calcul exact :} $\sqrt{50} = \sqrt{25 \times 2} = 5\sqrt{2}$ cm\\
 \textbf{Valeur approchée :} $\sqrt{50} \approx 7,07$ cm (arrondi au centième)
 
-\section{Théorème de Pythagore dans l'espace}
 
-\subsection{Distance dans un pavé droit}
 
-\textbf{Problème :} Calculer la longueur de la diagonale d'un pavé droit.
-
-Pour un pavé droit de dimensions $a$, $b$ et $c$, la diagonale $d$ vérifie :
-\[d^2 = a^2 + b^2 + c^2\]
-
-\begin{examplebox}
-Pavé droit de dimensions 6 cm × 8 cm × 5 cm\\
-$d^2 = 6^2 + 8^2 + 5^2 = 36 + 64 + 25 = 125$\\
-$d = \sqrt{125} = 5\sqrt{5} \approx 11,18$ cm
-\end{examplebox}
-
-\section{Compétences travaillées et automatismes}
-
-\subsection{Compétences du socle commun}
-
-\begin{itemize}
-    \item \textbf{Chercher :} Identifier un triangle rectangle, choisir la bonne méthode
-    \item \textbf{Modéliser :} Traduire un problème concret en calcul mathématique
-    \item \textbf{Représenter :} Faire un schéma, coder une figure
-    \item \textbf{Raisonner :} Justifier qu'un triangle est ou n'est pas rectangle
-    \item \textbf{Calculer :} Effectuer des calculs avec des radicaux
-    \item \textbf{Communiquer :} Rédiger une solution complète
-\end{itemize}
-
-\subsection{Automatismes à acquérir}
-
-\begin{itemize}
-    \item Reconnaître un triangle rectangle
-    \item Identifier l'hypoténuse
-    \item Appliquer le théorème direct ou sa réciproque
-    \item Utiliser la calculatrice pour les racines carrées
-    \item Connaître les "triplets pythagoriciens" usuels : (3;4;5), (5;12;13), (8;15;17)
-\end{itemize}
-
-\section{Exercices d'entraînement}
+\section{Exercices d'application}
 
 \subsection{Exercices de base}
 
 \begin{exercisebox}
-Calculs directs :
+\textbf{Exercice 1:} Calculs directs :
 \begin{enumerate}[label=\alph*)]
     \item Triangle rectangle : côtés 3 cm et 4 cm. Calculer l'hypoténuse.
     \item Triangle rectangle : hypoténuse 10 cm, un côté 6 cm. Calculer l'autre côté.
 \end{enumerate}
-\end{exercisebox}
 
-\begin{exercisebox}[4]
+\textbf{Exercice 2:}
 Réciproque : Les triangles suivants sont-ils rectangles ?
 \begin{enumerate}[label=\alph*)]
-    \item Côtés : 7 cm, 24 cm, 25 cm
-    \item Côtés : 6 cm, 7 cm, 8 cm
+	\item Côtés : 7 cm, 24 cm, 25 cm
+	\item Côtés : 6 cm, 7 cm, 8 cm
 \end{enumerate}
 \end{exercisebox}
 
 \subsection{Exercices d'approfondissement}
 
-\begin{exercisebox}[5]
+\begin{exercisebox}
+\textbf{Exercice 3:}
 \textbf{Problème du terrain}\\
 Un terrain rectangulaire mesure 40 m sur 30 m. Calculer la longueur de sa diagonale.
-\end{exercisebox}
 
-\begin{exercisebox}[6]
+\textbf{Exercice 4:}
 \textbf{Navigation}\\
 Un bateau part d'un port et navigue 12 km vers l'est puis 5 km vers le nord. À quelle distance se trouve-t-il du port ?
-\end{exercisebox}
 
-\begin{exercisebox}[7]
+\textbf{Exercice 5:}
 \textbf{Architecture}\\
 Pour vérifier qu'un mur est perpendiculaire au sol, un architecte place un point A sur le mur à 3 m du sol, un point B au pied du mur, et un point C sur le sol à 4 m de B. Si AC = 5 m, le mur est-il perpendiculaire au sol ?
 \end{exercisebox}
@@ -335,7 +350,7 @@ Pour vérifier qu'un mur est perpendiculaire au sol, un architecte place un poin
 
 \subsection{Utilisation d'un logiciel de géométrie dynamique}
 
-\textbf{Objectif :} Vérifier le théorème de Pythagore avec GeoGebra ou similaire
+\textbf{Objectif :} Vérifier le théorème de Pythagore avec GeoGebra
 
 \textbf{Consignes :}
 \begin{enumerate}
@@ -346,70 +361,70 @@ Pour vérifier qu'un mur est perpendiculaire au sol, un architecte place un poin
     \item Conjecture sur la relation entre ces aires
 \end{enumerate}
 
-\section{Liens avec d'autres notions mathématiques}
-
-\subsection{Distance entre deux points dans un repère}
-
-Le théorème de Pythagore permet de calculer la distance entre deux points dans un repère orthonormé.
-
-Si $A(x_A, y_A)$ et $B(x_B, y_B)$ sont deux points dans un repère orthonormé, alors la distance $AB$ est donnée par :
-\[AB = \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}\]
-
-\begin{examplebox}
-Calculons la distance entre les points $A(2, 3)$ et $B(6, 7)$ dans un repère orthonormé.
-
-En appliquant le théorème de Pythagore :
-\[AB^2 = (6-2)^2 + (7-3)^2 = 4^2 + 4^2 = 16 + 16 = 32\]
-\[AB = \sqrt{32} = \sqrt{16 \times 2} = 4\sqrt{2}\]
-
-La distance entre $A$ et $B$ est $4\sqrt{2}$ unités.
-\end{examplebox}
-
-\subsection{Équations et théorème de Pythagore}
-
-Le théorème de Pythagore conduit souvent à des équations qu'il faut résoudre pour trouver des longueurs.
-
-\begin{examplebox}
-Dans un triangle rectangle $ABC$ rectangle en $A$, on sait que $AB = x$ cm, $AC = (x+3)$ cm et $BC = 17$ cm. Déterminons la valeur de $x$.
-
-D'après le théorème de Pythagore :
-\[BC^2 = AB^2 + AC^2\]
-\[17^2 = x^2 + (x+3)^2\]
-\[289 = x^2 + x^2 + 6x + 9\]
-\[289 = 2x^2 + 6x + 9\]
-\[2x^2 + 6x - 280 = 0\]
-\[x^2 + 3x - 140 = 0\]
-
-En factorisant : $(x - 10)(x + 14) = 0$
-
-Les solutions sont $x = 10$ et $x = -14$.
-
-Comme une longueur ne peut pas être négative, nous avons $x = 10$ cm.
-
-Donc $AB = 10$ cm et $AC = 13$ cm.
-\end{examplebox}
-
-\section{Pour aller plus loin}
-
-\subsection{Histoire des mathématiques}
-\begin{itemize}
-    \item Les tablettes babyloniennes (Plimpton 322)
-    \item La démonstration par le président Garfield
-    \item Les différentes démonstrations du théorème (plus de 300 connues)
-\end{itemize}
-
-\subsection{Généralisation}
-\begin{itemize}
-    \item Théorème de Pythagore généralisé (loi des cosinus)
-    \item Théorème de Pythagore dans l'espace à n dimensions
-\end{itemize}
-
-\subsection{Applications modernes}
-\begin{itemize}
-    \item GPS et géolocalisation
-    \item Graphisme 3D et jeux vidéo
-    \item Architecture et ingénierie
-\end{itemize}
+%\section{Liens avec d'autres notions mathématiques}
+%
+%\subsection{Distance entre deux points dans un repère}
+%
+%Le théorème de Pythagore permet de calculer la distance entre deux points dans un repère orthonormé.
+%
+%Si $A(x_A, y_A)$ et $B(x_B, y_B)$ sont deux points dans un repère orthonormé, alors la distance $AB$ est donnée par :
+%\[AB = \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}\]
+%
+%\begin{examplebox}
+%Calculons la distance entre les points $A(2, 3)$ et $B(6, 7)$ dans un repère orthonormé.
+%
+%En appliquant le théorème de Pythagore :
+%\[AB^2 = (6-2)^2 + (7-3)^2 = 4^2 + 4^2 = 16 + 16 = 32\]
+%\[AB = \sqrt{32} = \sqrt{16 \times 2} = 4\sqrt{2}\]
+%
+%La distance entre $A$ et $B$ est $4\sqrt{2}$ unités.
+%\end{examplebox}
+%
+%\subsection{Équations et théorème de Pythagore}
+%
+%Le théorème de Pythagore conduit souvent à des équations qu'il faut résoudre pour trouver des longueurs.
+%
+%\begin{examplebox}
+%Dans un triangle rectangle $ABC$ rectangle en $A$, on sait que $AB = x$ cm, $AC = (x+3)$ cm et $BC = 17$ cm. Déterminons la valeur de $x$.
+%
+%D'après le théorème de Pythagore :
+%\[BC^2 = AB^2 + AC^2\]
+%\[17^2 = x^2 + (x+3)^2\]
+%\[289 = x^2 + x^2 + 6x + 9\]
+%\[289 = 2x^2 + 6x + 9\]
+%\[2x^2 + 6x - 280 = 0\]
+%\[x^2 + 3x - 140 = 0\]
+%
+%En factorisant : $(x - 10)(x + 14) = 0$
+%
+%Les solutions sont $x = 10$ et $x = -14$.
+%
+%Comme une longueur ne peut pas être négative, nous avons $x = 10$ cm.
+%
+%Donc $AB = 10$ cm et $AC = 13$ cm.
+%\end{examplebox}
+%
+%\section{Pour aller plus loin}
+%
+%\subsection{Histoire des mathématiques}
+%\begin{itemize}
+%    \item Les tablettes babyloniennes (Plimpton 322)
+%    \item La démonstration par le président Garfield
+%    \item Les différentes démonstrations du théorème (plus de 300 connues)
+%\end{itemize}
+%
+%\subsection{Généralisation}
+%\begin{itemize}
+%    \item Théorème de Pythagore généralisé (loi des cosinus)
+%    \item Théorème de Pythagore dans l'espace à n dimensions
+%\end{itemize}
+%
+%\subsection{Applications modernes}
+%\begin{itemize}
+%    \item GPS et géolocalisation
+%    \item Graphisme 3D et jeux vidéo
+%    \item Architecture et ingénierie
+%\end{itemize}
 
 \section{Synthèse du chapitre}
 

@@ -78,12 +78,13 @@
     before upper={\incdefinition}
 }
 
-\newtcolorbox{examplebox}{
+\newtcolorbox{examplebox}[1][]{
     colback=green!5!white,
     colframe=green!60!black,
-    title={\textbf{Exemple}},
+    title={\textbf{Exemple \thechapter.\number\numexpr\theexemple+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
     fonttitle=\bfseries,
-    coltitle=black
+    coltitle=black,
+    before upper={\incexemple}
 }
 
 \newtcolorbox{exercisebox}{
@@ -109,6 +110,15 @@
     fonttitle=\bfseries,
     coltitle=black,
     before upper={\incpropriete}
+}
+
+\newtcolorbox{theoremebox}[1][]{
+    colback=red!5!white,
+    colframe=red!70!black,
+    title={\textbf{Théorème \thechapter.\number\numexpr\thetheoreme+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
+    fonttitle=\bfseries,
+    coltitle=black,
+    before upper={\inctheoreme}
 }
 
 \newtcolorbox{activitybox}{
@@ -137,8 +147,8 @@
 }
 
 \newtcolorbox{methodebox}[1][]{
-    colback=purple!5!white,
-    colframe=purple!70!black,
+    colback=purple!10!white,
+    colframe=purple!50!black,
     title={\textbf{Méthode \thechapter.\number\numexpr\themethode+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
     fonttitle=\bfseries,
     coltitle=black,
@@ -150,6 +160,8 @@
 \newcounter{propriete}
 \newcounter{methode}
 \newcounter{remarque}
+\newcounter{exemple}
+\newcounter{theoreme}
 
 % Réinitialisation des compteurs au début de chaque chapitre
 \makeatletter
@@ -157,6 +169,8 @@
 \@addtoreset{propriete}{chapter}
 \@addtoreset{methode}{chapter}
 \@addtoreset{remarque}{chapter}
+\@addtoreset{exemple}{chapter}
+\@addtoreset{theoreme}{chapter}
 \makeatother
 
 % Commandes pour incrémenter automatiquement les compteurs
@@ -164,6 +178,8 @@
 \newcommand{\incpropriete}{\stepcounter{propriete}}
 \newcommand{\incmethode}{\stepcounter{methode}}
 \newcommand{\incremarque}{\stepcounter{remarque}}
+\newcommand{\incexemple}{\stepcounter{exemple}}
+\newcommand{\inctheoreme}{\stepcounter{theoreme}}
 
 % Commande personnalisée pour les trous
 \newcommand{\trous}[1]{\makebox[#1]{\rule{0pt}{1.2ex}\dotfill}}
