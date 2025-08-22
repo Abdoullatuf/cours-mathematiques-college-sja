@@ -27,81 +27,80 @@ Ce théorème établit une relation fondamentale entre les côtés d'un triangle
 
 \section{Définitions et vocabulaire}
 
-\begin{definition}{Triangle rectangle}
+\begin{definitionbox}[Triangle rectangle]
 Triangle ayant un angle droit (90°).
-\end{definition}
+\end{definitionbox}
 
-\begin{definition}{Hypoténuse}
+\begin{definitionbox}[Hypoténuse]
 Côté opposé à l'angle droit dans un triangle rectangle. C'est le plus long côté du triangle.
-\end{definition}
+\end{definitionbox}
 
-\begin{definition}{Côtés de l'angle droit}
+\begin{definitionbox}{Côtés de l'angle droit}
 Les deux côtés qui forment l'angle droit.
-\end{definition}
+\end{definitionbox}
 
 \section{Le théorème de Pythagore}
 
 \subsection{Énoncé du théorème}
 
-\begin{propriete}{Théorème de Pythagore}
+\begin{proprietebox}[Théorème de Pythagore]
 Dans un triangle rectangle, le carré de la longueur de l'hypoténuse est égal à la somme des carrés des longueurs des deux autres côtés.
-\end{propriete}
 
 \textbf{Formulation mathématique :}\\
 Si $ABC$ est un triangle rectangle en $A$, alors : $BC^2 = AB^2 + AC^2$
 
 \begin{center}
-\begin{tikzpicture}[scale=1.2]
-    % Triangle rectangle
-    \coordinate (A) at (0,0);
-    \coordinate (B) at (3,0);
-    \coordinate (C) at (0,2);
-    
-    % Tracé du triangle
-    \draw[thick] (A) -- (B) -- (C) -- cycle;
-    
-    % Angle droit
-    \draw (0.3,0) -- (0.3,0.3) -- (0,0.3);
-    
-    % Étiquettes
-    \node[below left] at (A) {$A$};
-    \node[below right] at (B) {$B$};
-    \node[above left] at (C) {$C$};
-    
-    % Côtés
-    \node[below] at (1.5,0) {$c$};
-    \node[left] at (0,1) {$b$};
-    \node[above right] at (1.5,1) {$a$ (hypoténuse)};
-\end{tikzpicture}
+	\begin{tikzpicture}[scale=1.2]
+		% Triangle rectangle
+		\coordinate (A) at (0,0);
+		\coordinate (B) at (3,0);
+		\coordinate (C) at (0,2);
+		
+		% Tracé du triangle
+		\draw[thick] (A) -- (B) -- (C) -- cycle;
+		
+		% Angle droit
+		\draw (0.3,0) -- (0.3,0.3) -- (0,0.3);
+		
+		% Étiquettes
+		\node[below left] at (A) {$A$};
+		\node[below right] at (B) {$B$};
+		\node[above left] at (C) {$C$};
+		
+		% Côtés
+		\node[below] at (1.5,0) {$c$};
+		\node[left] at (0,1) {$b$};
+		\node[above right] at (1.5,1) {$a$ (hypoténuse)};
+	\end{tikzpicture}
 \end{center}
+\end{proprietebox}
 
 \subsection{Démonstration par la méthode des aires}
-
 Considérons un carré de côté $(a + b)$ contenant quatre triangles rectangles identiques de côtés $a$, $b$ et d'hypoténuse $c$.
 
-\begin{figure}[H]
+\begin{figure}[h]
 \centering
 \begin{minipage}{0.45\textwidth}
     \centering
-    \includegraphics[width=0.8\textwidth]{chapitres/figures/chapitre_02_pythagore/fig_demo_pythagore_config_1.png}
+    \includegraphics[width=0.8\textwidth]{../../assets/images/4e/seq_02_pythagore/fig_demo_pythagore_config_1}
     \caption{Configuration 1}
     \label{fig:config1}
 \end{minipage}
 \hfill
 \begin{minipage}{0.45\textwidth}
     \centering
-    \includegraphics[width=0.8\textwidth]{chapitres/figures/chapitre_02_pythagore/fig_demo_pythagore_config_2.png}
+    \includegraphics[width=0.8\textwidth]{../../assets/images/4e/seq_02_pythagore/fig_demo_pythagore_config_2.png}
     \caption{Configuration 2}
     \label{fig:config2}
 \end{minipage}
 \end{figure}
 
-\textbf{Configuration 1 :} Aires = $(a+b)^2 = 4 \times \frac{ab}{2} + c^2 = 2ab + c^2$
+\textbf{Configuration 1 :} Aire 1 = $(a+b)^2 = 4 \times \frac{ab}{2} + c^2 = 2ab + c^2$
 
-\textbf{Configuration 2 :} Aires = $(a+b)^2 = 4 \times \frac{ab}{2} + a^2 + b^2 = 2ab + a^2 + b^2$
+\textbf{Configuration 2 :} Aire 2 = $(a+b)^2 = 4 \times \frac{ab}{2} + a^2 + b^2 = 2ab + a^2 + b^2$
 
-Comme l'aire est la même dans les deux configurations :
-\[c^2 = a^2 + b^2\]
+Comme l'aire est la même dans les deux configurations (Aire 1 = Aire 2) :
+\[2ab + c^2 = 2ab + a^2 + b^2 \Leftrightarrow c^2 = a^2 + b^2\]
 
 Ce qui démontre le théorème de Pythagore.
 
@@ -109,7 +108,7 @@ Ce qui démontre le théorème de Pythagore.
 
 \subsection{Calculer la longueur de l'hypoténuse}
 
-\begin{methode}{Calculer la longueur de l'hypoténuse}
+\begin{methodebox}[Calculer la longueur de l'hypoténuse]
 Pour calculer la longueur de l'hypoténuse d'un triangle rectangle :
 \begin{enumerate}
     \item Identifier le triangle rectangle et ses côtés
@@ -117,9 +116,9 @@ Pour calculer la longueur de l'hypoténuse d'un triangle rectangle :
     \item Appliquer la formule : hypoténuse$^2$ = côté$_1^2$ + côté$_2^2$
     \item Calculer la racine carrée du résultat
 \end{enumerate}
-\end{methode}
+\end{methodebox}
 
-\begin{exemple}
+\begin{examplebox}
 Un triangle $ABC$ est rectangle en $A$. $AB = 6$ cm et $AC = 8$ cm.\\
 Calculer $BC$.
 
@@ -130,11 +129,11 @@ Calculer $BC$.
     \item $BC^2 = 6^2 + 8^2 = 36 + 64 = 100$
     \item $BC = \sqrt{100} = 10$ cm
 \end{itemize}
-\end{exemple}
+\end{examplebox}
 
 \subsection{Calculer la longueur d'un côté de l'angle droit}
 
-\begin{methode}{Calculer la longueur d'un côté de l'angle droit}
+\begin{methodebox}[Calculer la longueur d'un côté de l'angle droit]
 Pour calculer la longueur d'un côté de l'angle droit :
 \begin{enumerate}
     \item Identifier la longueur de l'hypoténuse et celle de l'autre côté de l'angle droit
@@ -142,9 +141,9 @@ Pour calculer la longueur d'un côté de l'angle droit :
     \item Isoler le côté inconnu : côté$^2$ = hypoténuse$^2$ - autre côté$^2$
     \item Calculer la racine carrée du résultat
 \end{enumerate}
-\end{methode}
+\end{methodebox}
 
-\begin{exemple}
+\begin{examplebox}
 Un triangle $DEF$ est rectangle en $D$. $DE = 5$ cm et $EF = 13$ cm.\\
 Calculer $DF$.
 
@@ -157,21 +156,21 @@ Calculer $DF$.
     \item $DF^2 = 169 - 25 = 144$
     \item $DF = \sqrt{144} = 12$ cm
 \end{itemize}
-\end{exemple}
+\end{examplebox}
 
 \section{La réciproque du théorème de Pythagore}
 
 \subsection{Énoncé de la réciproque}
 
-\begin{propriete}{Réciproque du théorème de Pythagore}
+\begin{proprietebox}{Réciproque du théorème de Pythagore}
 Si, dans un triangle, le carré de la longueur du plus grand côté est égal à la somme des carrés des longueurs des deux autres côtés, alors ce triangle est rectangle.
-\end{propriete}
+\end{proprietebox}
 
 \subsection{Utilisation de la réciproque}
 
 \textbf{Objectif :} Déterminer si un triangle est rectangle en connaissant les longueurs de ses trois côtés.
 
-\begin{methode}{Démontrer qu'un triangle est rectangle}
+\begin{methodebox}{Démontrer qu'un triangle est rectangle}
 Pour démontrer qu'un triangle est rectangle :
 \begin{enumerate}
     \item Identifier le plus grand côté du triangle
@@ -183,9 +182,9 @@ Pour démontrer qu'un triangle est rectangle :
         \item Si inégalité : le triangle n'est pas rectangle
     \end{itemize}
 \end{enumerate}
-\end{methode}
+\end{methodebox}
 
-\begin{exemple}
+\begin{examplebox}
 Un triangle a pour côtés 9 cm, 12 cm et 15 cm. Est-il rectangle ?
 
 \textbf{Solution :}
@@ -196,9 +195,9 @@ Un triangle a pour côtés 9 cm, 12 cm et 15 cm. Est-il rectangle ?
     \item Puisque $15^2 = 9^2 + 12^2$, le triangle est rectangle
     \item L'angle droit est opposé au côté de 15 cm
 \end{itemize}
-\end{exemple}
+\end{examplebox}
 
-\begin{exemple}
+\begin{examplebox}
 Un triangle a pour côtés 7 cm, 8 cm et 10 cm. Est-il rectangle ?
 
 \textbf{Solution :}
@@ -208,13 +207,13 @@ Un triangle a pour côtés 7 cm, 8 cm et 10 cm. Est-il rectangle ?
     \item $7^2 + 8^2 = 49 + 64 = 113$
     \item Puisque $100 \neq 113$, le triangle n'est pas rectangle
 \end{itemize}
-\end{exemple}
+\end{examplebox}
 
 \section{Applications et résolution de problèmes}
 
 \subsection{Problèmes de la vie courante}
 
-\begin{exercice}{1 - L'échelle}
+\begin{exercisebox}{1 - L'échelle}
 Une échelle de 4 m est appuyée contre un mur. Son pied est à 1,5 m du mur. À quelle hauteur le sommet de l'échelle touche-t-il le mur ?
 
 \textbf{Solution :}
@@ -229,9 +228,9 @@ $h^2 + 1,5^2 = 4^2$\\
 $h^2 + 2,25 = 16$\\
 $h^2 = 13,75$\\
 $h = \sqrt{13,75} \approx 3,7$ m
-\end{exercice}
+\end{exercisebox}
 
-\begin{exercice}{2 - Vérification d'équerrage}
+\begin{exercisebox}{2 - Vérification d'équerrage}
 Un maçon vérifie qu'un angle est droit en mesurant les côtés d'un triangle formé par deux murs et une diagonale. Il mesure : 3 m, 4 m et 5 m. L'angle est-il droit ?
 
 \textbf{Solution :}
@@ -241,7 +240,7 @@ Un maçon vérifie qu'un angle est droit en mesurant les côtés d'un triangle f
     \item $3^2 + 4^2 = 9 + 16 = 25$
     \item Égalité vérifiée $\Rightarrow$ l'angle est droit
 \end{itemize}
-\end{exercice}
+\end{exercisebox}
 
 \subsection{Utilisation de la calculatrice}
 
@@ -266,11 +265,11 @@ Un maçon vérifie qu'un angle est droit en mesurant les côtés d'un triangle f
 Pour un pavé droit de dimensions $a$, $b$ et $c$, la diagonale $d$ vérifie :
 \[d^2 = a^2 + b^2 + c^2\]
 
-\begin{exemple}
+\begin{examplebox}
 Pavé droit de dimensions 6 cm × 8 cm × 5 cm\\
 $d^2 = 6^2 + 8^2 + 5^2 = 36 + 64 + 25 = 125$\\
 $d = \sqrt{125} = 5\sqrt{5} \approx 11,18$ cm
-\end{exemple}
+\end{examplebox}
 
 \section{Compétences travaillées et automatismes}
 
@@ -299,40 +298,40 @@ $d = \sqrt{125} = 5\sqrt{5} \approx 11,18$ cm
 
 \subsection{Exercices de base}
 
-\begin{exercice}{3}
+\begin{exercisebox}
 Calculs directs :
 \begin{enumerate}[label=\alph*)]
     \item Triangle rectangle : côtés 3 cm et 4 cm. Calculer l'hypoténuse.
     \item Triangle rectangle : hypoténuse 10 cm, un côté 6 cm. Calculer l'autre côté.
 \end{enumerate}
-\end{exercice}
+\end{exercisebox}
 
-\begin{exercice}{4}
+\begin{exercisebox}[4]
 Réciproque : Les triangles suivants sont-ils rectangles ?
 \begin{enumerate}[label=\alph*)]
     \item Côtés : 7 cm, 24 cm, 25 cm
     \item Côtés : 6 cm, 7 cm, 8 cm
 \end{enumerate}
-\end{exercice}
+\end{exercisebox}
 
 \subsection{Exercices d'approfondissement}
 
-\begin{exercice}{5}
+\begin{exercisebox}[5]
 \textbf{Problème du terrain}\\
 Un terrain rectangulaire mesure 40 m sur 30 m. Calculer la longueur de sa diagonale.
-\end{exercice}
+\end{exercisebox}
 
-\begin{exercice}{6}
+\begin{exercisebox}[6]
 \textbf{Navigation}\\
 Un bateau part d'un port et navigue 12 km vers l'est puis 5 km vers le nord. À quelle distance se trouve-t-il du port ?
-\end{exercice}
+\end{exercisebox}
 
-\begin{exercice}{7}
+\begin{exercisebox}[7]
 \textbf{Architecture}\\
 Pour vérifier qu'un mur est perpendiculaire au sol, un architecte place un point A sur le mur à 3 m du sol, un point B au pied du mur, et un point C sur le sol à 4 m de B. Si AC = 5 m, le mur est-il perpendiculaire au sol ?
-\end{exercice}
+\end{exercisebox}
 
-\section{Activité avec les TICE}
+\section{Activité TICE}
 
 \subsection{Utilisation d'un logiciel de géométrie dynamique}
 
@@ -356,7 +355,7 @@ Le théorème de Pythagore permet de calculer la distance entre deux points dans
 Si $A(x_A, y_A)$ et $B(x_B, y_B)$ sont deux points dans un repère orthonormé, alors la distance $AB$ est donnée par :
 \[AB = \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}\]
 
-\begin{exemple}
+\begin{examplebox}
 Calculons la distance entre les points $A(2, 3)$ et $B(6, 7)$ dans un repère orthonormé.
 
 En appliquant le théorème de Pythagore :
@@ -364,13 +363,13 @@ En appliquant le théorème de Pythagore :
 \[AB = \sqrt{32} = \sqrt{16 \times 2} = 4\sqrt{2}\]
 
 La distance entre $A$ et $B$ est $4\sqrt{2}$ unités.
-\end{exemple}
+\end{examplebox}
 
 \subsection{Équations et théorème de Pythagore}
 
 Le théorème de Pythagore conduit souvent à des équations qu'il faut résoudre pour trouver des longueurs.
 
-\begin{exemple}
+\begin{examplebox}
 Dans un triangle rectangle $ABC$ rectangle en $A$, on sait que $AB = x$ cm, $AC = (x+3)$ cm et $BC = 17$ cm. Déterminons la valeur de $x$.
 
 D'après le théorème de Pythagore :
@@ -388,7 +387,7 @@ Les solutions sont $x = 10$ et $x = -14$.
 Comme une longueur ne peut pas être négative, nous avons $x = 10$ cm.
 
 Donc $AB = 10$ cm et $AC = 13$ cm.
-\end{exemple}
+\end{examplebox}
 
 \section{Pour aller plus loin}
 

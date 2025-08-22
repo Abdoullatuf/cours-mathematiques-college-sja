@@ -37,19 +37,46 @@ Annee_scolaire_2025-2026/
 ## 🎯 Fonctionnalités
 
 ### Environnements personnalisés
-- `definitionbox` : Définitions (orange)
+- `definitionbox[spécification]` : Définitions (orange) - Numérotation automatique
 - `examplebox` : Exemples (vert)
 - `exercisebox` : Exercices (violet)
 - `objectifsbox` : Objectifs (teal)
-- `proprietebox` : Propriétés (rouge)
+- `proprietebox[spécification]` : Propriétés (rouge) - Numérotation automatique
 - `activitybox` : Activités (bleu)
-- `remarkbox` : Remarques (jaune)
+- `remarkbox[spécification]` : Remarques (jaune) - Numérotation automatique
 - `quizbox` : Quiz (cyan)
-- `methodebox` : Méthodes (pourpre)
+- `methodebox[spécification]` : Méthodes (pourpre) - Numérotation automatique
 
 ### Commandes personnalisées
 - `\trous[largeur]` : Crée des pointillés pour les exercices
 - `\setseqtitle{titre}` : Définit le titre de la séquence
+
+### Utilisation des environnements avec numérotation
+
+Les environnements `definitionbox`, `proprietebox`, `remarkbox` et `methodebox` supportent maintenant :
+
+1. **Numérotation automatique par chapitre** : Chaque environnement est numéroté sous la forme "X.Y" où X est le numéro du chapitre et Y le numéro dans ce chapitre
+2. **Spécification optionnelle** : Vous pouvez préciser ce qui est défini/propriété/remarque/méthode
+3. **Réinitialisation automatique** : Les compteurs se réinitialisent automatiquement à chaque nouveau chapitre
+
+**Exemples d'utilisation :**
+
+```latex
+% Avec spécification
+\begin{definitionbox}{Nombres relatifs}
+Un nombre relatif est un nombre qui peut être positif, négatif ou nul.
+\end{definitionbox}
+
+% Sans spécification
+\begin{definitionbox}
+Une définition sans spécification.
+\end{definitionbox}
+
+% Résultat : "Définition 1.1 : Nombres relatifs" ou "Définition 1.2"
+% Dans le chapitre 2 : "Définition 2.1 : Nouvelle définition"
+
+**Note :** La numérotation commence à 1 (et non à 0) pour chaque type d'environnement dans chaque chapitre. La spécification optionnelle apparaît correctement dans le titre de la boîte.
+```
 
 ## 🛠️ Compilation
 

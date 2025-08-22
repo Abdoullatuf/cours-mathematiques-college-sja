@@ -69,12 +69,13 @@
 
 
 % Définition des environnements personnalisés
-\newtcolorbox{definitionbox}{
+\newtcolorbox{definitionbox}[1][]{
     colback=orange!5!white,
     colframe=orange!70!black,
-    title={\textbf{Définition}},
+    title={\textbf{Définition \thechapter.\number\numexpr\thedefinition+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
     fonttitle=\bfseries,
-    coltitle=black
+    coltitle=black,
+    before upper={\incdefinition}
 }
 
 \newtcolorbox{examplebox}{
@@ -101,12 +102,13 @@
     coltitle=black
 }
 
-\newtcolorbox{proprietebox}{
+\newtcolorbox{proprietebox}[1][]{
     colback=red!5!white,
     colframe=red!70!black,
-    title={\textbf{Propriété}},
+    title={\textbf{Propriété \thechapter.\number\numexpr\thepropriete+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
     fonttitle=\bfseries,
-    coltitle=black
+    coltitle=black,
+    before upper={\incpropriete}
 }
 
 \newtcolorbox{activitybox}{
@@ -117,12 +119,13 @@
     coltitle=black
 }
 
-\newtcolorbox{remarkbox}{
+\newtcolorbox{remarkbox}[1][]{
     colback=yellow!5!white,
     colframe=yellow!70!black,
-    title={\textbf{Remarque}},
+    title={\textbf{Remarque \thechapter.\number\numexpr\theremarque+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
     fonttitle=\bfseries,
-    coltitle=black
+    coltitle=black,
+    before upper={\incremarque}
 }
 
 \newtcolorbox{quizbox}{
@@ -133,13 +136,34 @@
     coltitle=black
 }
 
-\newtcolorbox{methodebox}{
+\newtcolorbox{methodebox}[1][]{
     colback=purple!5!white,
     colframe=purple!70!black,
-    title={\textbf{Méthode}},
+    title={\textbf{Méthode \thechapter.\number\numexpr\themethode+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
     fonttitle=\bfseries,
-    coltitle=black
+    coltitle=black,
+    before upper={\incmethode}
 }
+
+% Compteurs pour les environnements (par chapitre)
+\newcounter{definition}
+\newcounter{propriete}
+\newcounter{methode}
+\newcounter{remarque}
+
+% Réinitialisation des compteurs au début de chaque chapitre
+\makeatletter
+\@addtoreset{definition}{chapter}
+\@addtoreset{propriete}{chapter}
+\@addtoreset{methode}{chapter}
+\@addtoreset{remarque}{chapter}
+\makeatother
+
+% Commandes pour incrémenter automatiquement les compteurs
+\newcommand{\incdefinition}{\stepcounter{definition}}
+\newcommand{\incpropriete}{\stepcounter{propriete}}
+\newcommand{\incmethode}{\stepcounter{methode}}
+\newcommand{\incremarque}{\stepcounter{remarque}}
 
 % Commande personnalisée pour les trous
 \newcommand{\trous}[1]{\makebox[#1]{\rule{0pt}{1.2ex}\dotfill}}
