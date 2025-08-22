@@ -1,0 +1,178 @@
+% Cours de mathématiques pour la classe de 6e – année scolaire 2025‑2026
+% Fichier principal - Structure modulaire basée sur le template 4e
+
+\documentclass[12pt,a4paper]{book}
+% ================================
+% PACKAGES ET CONFIGURATIONS
+% ================================
+% Encodage et langue
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+% Mise en page
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{tocloft}
+% Mathématiques
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{mathtools}
+\usepackage{xfrac}
+% Figures et couleurs
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{float}
+% Tableaux et listes
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{enumitem}
+% Boîtes et encadrés
+\usepackage{tcolorbox}
+\usepackage{mdframed}
+% ================================
+% DÉFINITION DES COULEURS
+% ================================
+\definecolor{bleuprincippal}{RGB}{41, 128, 185}
+\definecolor{vertaccent}{RGB}{39, 174, 96}
+\definecolor{rougeaccent}{RGB}{231, 76, 60}
+\definecolor{grisfonce}{RGB}{52, 73, 94}
+\definecolor{grisclair}{RGB}{236, 240, 241}
+
+% ================================
+% CONFIGURATION DES TITRES
+% ================================
+% Style des chapitres
+%\titleformat{\chapter}[display]
+%{\normalfont\huge\bfseries\color{bleuprincippal}}
+%{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+
+% Style des chapitres (maintenant "Séquences")
+\renewcommand{\chaptername}{Séquence}
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries\color{bleuprincippal}}
+{\colorbox{bleuprincippal}{\textcolor{white}{\huge Séquence \thechapter}}}
+{20pt}{\Huge\color{bleuprincippal}}
+
+
+
+
+% Style des sections
+\titleformat{\section}
+{\normalfont\Large\bfseries\color{bleuprincippal}}
+{\thesection}{1em}{}
+% Style des subsections
+\titleformat{\subsection}
+{\normalfont\large\bfseries\color{grisfonce}}
+{\thesubsection}{1em}{}
+% ================================
+% CONFIGURATION DES EN‑TÊTES
+% ================================
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\textcolor{bleuprincippal}{\leftmark}}
+\fancyhead[RO]{\textcolor{bleuprincippal}{\rightmark}}
+\fancyfoot[C]{\textcolor{grisfonce}{\thepage}}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{bleuprincippal}\leaders\hrule height \headrulewidth\hfill}}
+% ================================
+% BOÎTES PERSONNALISÉES
+% ================================
+% Définition
+\newtcolorbox{definition}[1]{
+	colback=bleuprincippal!10,
+	colframe=bleuprincippal,
+	fonttitle=\bfseries,
+	title=Définition : #1,
+	sharp corners,
+	boxrule=1pt
+}
+% Propriété
+\newtcolorbox{propriete}[1]{
+	colback=vertaccent!10,
+	colframe=vertaccent,
+	fonttitle=\bfseries,
+	title=Propriété : #1,
+	sharp corners,
+	boxrule=1pt
+}
+% Méthode
+\newtcolorbox{methode}[1]{
+	colback=rougeaccent!10,
+	colframe=rougeaccent,
+	fonttitle=\bfseries,
+	title=Méthode : #1,
+	sharp corners,
+	boxrule=1pt
+}
+% Exemple
+\newtcolorbox{exemple}{
+	colback=grisclair,
+	colframe=grisfonce,
+	fonttitle=\bfseries,
+	title=Exemple,
+	sharp corners,
+	boxrule=1pt
+}
+% Exercice
+\newtcolorbox{exercice}[1]{
+	colback=white,
+	colframe=grisfonce,
+	fonttitle=\bfseries,
+	title=Exercice #1,
+	sharp corners,
+	boxrule=1pt
+}
+% ================================
+% INFORMATIONS DU DOCUMENT
+% ================================
+\title{
+	\vspace{-2cm}
+	\begin{tikzpicture}[remember picture, overlay]
+		\fill[bleuprincippal] (current page.north west) rectangle ([yshift=-3cm]current page.north east);
+	\end{tikzpicture}
+	\vspace{1cm}
+	{\Huge\color{white}\textbf{MATHÉMATIQUES}}\\[0.5cm]
+	{\Large\color{white}Classe de 6\textsuperscript{e}}\\[0.3cm]
+	{\large\color{white}Programme 2025-2026}
+}
+\author{
+	\textcolor{grisfonce}{\Large M. Abdoullatuf}\\
+	\textcolor{grisfonce}{Collège Sainte Jeanne d'Arc}
+}
+\date{
+	\textcolor{grisfonce}{Année scolaire 2025-2026}
+}
+% ================================
+% DÉBUT DU DOCUMENT
+% ================================
+\begin{document}
+	% Page de titre
+	\maketitle
+	\thispagestyle{empty}
+	% Table des matières
+	\tableofcontents
+	\newpage
+	
+	% ================================
+	% INCLUSION DES CHAPITRES
+	% ================================
+	
+	% PARTIE I : NOMBRES ET CALCULS
+	\part{Nombres et Calculs}
+	\input{chapitres/chapitre_01_nombres_entiers}
+	
+	% PARTIE II : GÉOMÉTRIE
+	\part{Géométrie}
+	% \input{chapitres/chapitre_02_points_droites_segments}
+	
+	% PARTIE III : GRANDEURS ET MESURES
+	\part{Grandeurs et Mesures}
+	% \input{chapitres/chapitre_03_fractions_decimaux}
+	
+	% PARTIE IV : ORGANISATION ET GESTION DE DONNÉES
+	\part{Organisation et Gestion de Données}
+	% \input{chapitres/chapitre_04_proportionnalite}
+	
+\end{document}

@@ -1,0 +1,192 @@
+% Séquence 1 : Les nombres entiers
+\setseqtitle{Les nombres entiers}
+\chapter{Les nombres entiers}
+
+\chapterobjectives{
+  \begin{itemize}
+    \item Comprendre la valeur des chiffres selon leur position.
+    \item Décomposer un nombre en base 10.
+    \item Écrire des nombres en toutes lettres.
+    \item Utiliser une demi-droite graduée pour représenter des nombres.
+    \item Comparer des nombres entiers.
+  \end{itemize}
+}
+
+\section{Rang des chiffres}
+
+\begin{definitionbox}
+  \textbf{Chiffres et valeur}
+  \begin{itemize}[label = \textbullet]
+    \item Les chiffres 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 permettent d'écrire tous les nombres.
+    \item La valeur d'un chiffre dépend de sa position dans le nombre.
+  \end{itemize}
+\end{definitionbox}
+
+\marginnote{\small Conseil : Pense à vérifier la position de chaque chiffre !}[1cm]
+
+\begin{center}
+  \newcolumntype{C}{>{\centering\arraybackslash}p{1.2cm}}
+  \begin{tabular}{|C|C|C|C|C|C|C|C|C|C|C|C|}
+    \hline
+    \multicolumn{3}{|c|}{\textbf{Classe des milliards}} & 
+    \multicolumn{3}{|c|}{\textbf{Classe des millions}} & 
+    \multicolumn{3}{|c|}{\textbf{Classe des milliers}} & 
+    \multicolumn{3}{|c|}{\textbf{Classe des unités}} \\
+    \hline
+    \textbf{c} & \textbf{d} & \textbf{u} & 
+    \textbf{c} & \textbf{d} & \textbf{u} & 
+    \textbf{c} & \textbf{d} & \textbf{u} & 
+    \textbf{c} & \textbf{d} & \textbf{u} \\
+    \hline
+    & & & & & & & & & & & \\
+    \hline
+  \end{tabular}
+\end{center}
+
+\textbf{Remarque :} Les nombres s'écrivent avec un espace entre les classes. Par exemple, 25204879603 s'écrit : \trous{2.5cm}.
+
+\begin{jeubox}
+  \textbf{Jeu : Complète le tableau de numération} \\
+  Place les chiffres du nombre 45 678 912 dans le tableau ci-dessus.
+\end{jeubox}
+
+\section{Décomposition décimale}
+
+\begin{examplebox}
+  Pour le nombre 3 584 : \\
+  3 584 = (3 $\times$ 1000) + (5 $\times$ 100) + (8 $\times$ 10) + (4 $\times$ 1)
+\end{examplebox}
+
+\marginnote{\small Astuce : Écris d'abord les milliers, puis les centaines, etc.}[0.5cm]
+
+\textbf{Attention !} Dans 3 584, le chiffre des centaines est 5, mais le nombre de centaines est 35 (il y a 35 centaines dans 3 584). \\
+Explication : 3 584 = 3 $\times$ 1000 + 5 $\times$ 100 = 30 centaines + 5 centaines = 35 centaines.
+
+\section{Écriture en toutes lettres}
+
+\begin{examplebox}
+  \begin{itemize}[label = \textbullet]
+    \item 1823 : Mille-huit-cent-vingt-trois
+    \item 2087 : Deux-mille-quatre-vingt-sept
+    \item 600 : Six-cents
+    \item 680 : Six-cent-quatre-vingts
+  \end{itemize}
+\end{examplebox}
+
+\begin{proprietebox}
+  \begin{itemize}
+    \item \textbf{Mille} est invariable ; \textbf{million} et \textbf{milliard} prennent un \textbf{s} au pluriel.
+    \item \textbf{Cent} et \textbf{vingt} prennent un \textbf{s} uniquement à la fin du nombre.
+    \item \textbf{Vingt} prend un \textbf{s} pour les nombres se terminant par 80.
+    \item Les tirets sont utilisés entre chaque mot d'un nombre composé.
+    \item Exemples : 300 : trois-cents \quad 420 : quatre-cent-vingt \quad 79 : soixante-dix-neuf \quad 1031 : mille-trente-et-un
+  \end{itemize}
+\end{proprietebox}
+
+\section{Demi-droite graduée}
+
+\begin{definitionbox}
+  \textbf{Demi-droite graduée} \\
+  Une demi-droite graduée est une demi-droite avec :
+  \begin{itemize}[label = \textbullet]
+    \item Une \textbf{origine} (point de départ).
+    \item Un \textbf{sens} (indiqué par une flèche).
+    \item Une \textbf{unité de longueur} reportée régulièrement.
+  \end{itemize}
+\end{definitionbox}
+
+\begin{center}
+  \begin{tikzpicture}[scale=1]
+    \draw[thick, -Stealth] (0,0) -- (12,0);
+    \foreach \x in {0,1,...,11} {
+      \draw (\x,-0.15) -- (\x,0.15);
+      \node[below, font=\small] at (\x,-0.3) {\x};
+    }
+    \node[circle, fill=black, inner sep=2pt, label=above:$A$] at (3.5,0) {};
+    \node[circle, fill=black, inner sep=2pt, label=above:$B$] at (7.2,0) {};
+  \end{tikzpicture}
+\end{center}
+
+\marginnote{\small Conseil : Vérifie l’unité avant de placer un point !}[0.5cm]
+
+\textbf{Exemple :} Sur cette demi-droite, l'abscisse de $A$ est 3,5 et celle de $B$ est 7,2.
+
+\section{Comparaison de nombres entiers}
+
+\begin{definitionbox}
+  \textbf{Comparaison de nombres entiers} \\
+  Pour comparer deux nombres entiers :
+  \begin{itemize}
+    \item Les placer sur une demi-droite graduée.
+    \item Comparer le nombre de chiffres.
+    \item Comparer les chiffres de gauche à droite.
+  \end{itemize}
+\end{definitionbox}
+
+\begin{examplebox}
+  Comparons 2 847 et 2 853 :
+  \begin{itemize}
+    \item Les deux nombres ont 4 chiffres.
+    \item Milliers : 2 = 2.
+    \item Centaines : 8 = 8.
+    \item Dizaines : 4 < 5.
+    \item Donc 2 847 < 2 853.
+  \end{itemize}
+\end{examplebox}
+
+\chaptersummary{
+  \begin{itemize}
+    \item Les chiffres ont une valeur selon leur position (unités, dizaines, centaines, etc.).
+    \item La décomposition décimale exprime un nombre comme une somme de puissances de 10.
+    \item Les nombres en lettres suivent des règles précises pour \textbf{mille}, \textbf{cent}, et \textbf{vingt}.
+    \item Une demi-droite graduée aide à visualiser les nombres.
+    \item La comparaison des nombres peut se faire par position ou chiffres.
+  \end{itemize}
+}
+
+\section{Exercices d'application}
+
+\begin{exercisebox}
+  \textbf{Exercice 1 :} Écris en toutes lettres les nombres suivants :
+  \begin{enumerate}
+    \item 1 234
+    \item 5 678
+    \item 12 345
+    \item 100 000
+  \end{enumerate}
+\end{exercisebox}
+
+\begin{exercisebox}
+  \textbf{Exercice 2 :} Place les points $A$, $B$, $C$ et $D$ d'abscisses respectives 2, 7, 4 et 9 sur une demi-droite graduée.
+\end{exercisebox}
+
+\begin{exercisebox}
+  \textbf{Exercice 3 :} Compare les nombres suivants en utilisant les symboles <, > ou = :
+  \begin{enumerate}
+    \item 1 234 \trous{1cm} 1 243
+    \item 5 678 \trous{1cm} 5 678
+    \item 12 345 \trous{1cm} 12 354
+  \end{enumerate}
+\end{exercisebox}
+
+\begin{jeubox}
+  \textbf{Jeu : Chasse aux nombres} \\
+  Trouve un nombre entier qui satisfait les conditions suivantes :
+  \begin{itemize}
+    \item Il a 4 chiffres.
+    \item Le chiffre des centaines est 7.
+    \item Il est plus grand que 5 000 mais plus petit que 6 000.
+  \end{itemize}
+  Écris ce nombre en chiffres et en lettres.
+\end{jeubox}
+
+\section{Évaluation rapide (5 à 10 min)}
+
+\begin{exercisebox}
+  \textbf{Mini-quiz :}
+  \begin{enumerate}
+    \item Écris en toutes lettres : 8 765
+    \item Quel est le chiffre des centaines dans 12 345 ?
+    \item Place le point $E$ d'abscisse 6 sur une demi-droite graduée
+  \end{enumerate}
+\end{exercisebox}

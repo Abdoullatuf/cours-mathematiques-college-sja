@@ -1,0 +1,178 @@
+% ================================
+% PRÉAMBULE COMMUN — Mathématiques (6e, 5e, 4e)
+% ================================
+
+% Encodage et langue
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+% Typographie moderne
+\usepackage{newtxtext,newtxmath}
+
+% Configuration des pages
+\usepackage{geometry}
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+% Amélioration du rendu
+\usepackage{microtype}
+
+% Personnalisation des titres
+\usepackage{titlesec}
+\titleformat{\chapter}[hang]{\huge\bfseries}{\thechapter.}{0.6em}{}
+\titleformat{\section}[hang]{\Large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}[hang]{\large\bfseries}{\thesubsection}{0.6em}{}
+
+% Ajustement de l'espacement des titres
+\titlespacing{\chapter}{0pt}{-10pt}{20pt}
+\titlespacing{\section}{0pt}{12pt}{8pt}
+\titlespacing{\subsection}{0pt}{4pt}{2pt}
+
+% En-têtes et pieds de page
+\usepackage{fancyhdr}
+
+% Packages mathématiques
+\usepackage{amsmath, mathtools}
+\usepackage{siunitx}
+
+% Graphiques
+\usepackage{tikz}
+\usetikzlibrary{angles, quotes, calc, arrows.meta, shapes.geometric}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% Liens hypertexte
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!60!black,
+    urlcolor=blue!60!black,
+    citecolor=blue!60!black
+}
+
+% Boîtes colorées avec tcolorbox
+\usepackage[most]{tcolorbox}
+
+% Configuration globale des boîtes
+\tcbset{
+    rounded corners,
+    boxsep=2ex,
+    top=1.5ex,
+    bottom=1.5ex,
+    left=2.5ex,
+    right=7ex,
+    before skip=0pt,
+    after skip=1.5ex,
+    width=\textwidth,
+    boxrule=1pt
+}
+
+
+
+% Définition des environnements personnalisés
+\newtcolorbox{definitionbox}{
+    colback=orange!5!white,
+    colframe=orange!70!black,
+    title={\textbf{Définition}},
+    fonttitle=\bfseries,
+    coltitle=black
+}
+
+\newtcolorbox{examplebox}{
+    colback=green!5!white,
+    colframe=green!60!black,
+    title={\textbf{Exemple}},
+    fonttitle=\bfseries,
+    coltitle=black
+}
+
+\newtcolorbox{exercisebox}{
+    colback=purple!5!white,
+    colframe=purple!70!black,
+    title={\textbf{Exercices}},
+    fonttitle=\bfseries,
+    coltitle=black
+}
+
+\newtcolorbox{objectifsbox}{
+    colback=teal!5!white,
+    colframe=teal!70!black,
+    title={\textbf{Objectifs}},
+    fonttitle=\bfseries,
+    coltitle=black
+}
+
+\newtcolorbox{proprietebox}{
+    colback=red!5!white,
+    colframe=red!70!black,
+    title={\textbf{Propriété}},
+    fonttitle=\bfseries,
+    coltitle=black
+}
+
+\newtcolorbox{activitybox}{
+    colback=blue!5!white,
+    colframe=blue!70!black,
+    title={\textbf{Activité}},
+    fonttitle=\bfseries,
+    coltitle=black
+}
+
+\newtcolorbox{remarkbox}{
+    colback=yellow!5!white,
+    colframe=yellow!70!black,
+    title={\textbf{Remarque}},
+    fonttitle=\bfseries,
+    coltitle=black
+}
+
+\newtcolorbox{quizbox}{
+    colback=cyan!5!white,
+    colframe=cyan!70!black,
+    title={\textbf{Quiz}},
+    fonttitle=\bfseries,
+    coltitle=black
+}
+
+\newtcolorbox{methodebox}{
+    colback=purple!5!white,
+    colframe=purple!70!black,
+    title={\textbf{Méthode}},
+    fonttitle=\bfseries,
+    coltitle=black
+}
+
+% Commande personnalisée pour les trous
+\newcommand{\trous}[1]{\makebox[#1]{\rule{0pt}{1.2ex}\dotfill}}
+
+% Variable pour stocker le titre de la séquence
+\newcommand{\seqtitle}{}
+\newcommand{\setseqtitle}[1]{\renewcommand{\seqtitle}{#1}}
+
+% Mise en page de l'en-tête et du pied
+\pagestyle{fancy}
+\setlength{\headheight}{16pt} % FIX: évite le warning fancyhdr
+\fancyhf{}
+\lhead{Mathématiques \niveau{} -- 2025--2026}
+\rhead{Seq.~\thechapter~--~\seqtitle}
+\cfoot{\thepage}
+
+% Listes compactes
+\usepackage{enumitem}
+\setlist[itemize]{left=1.2em}
+\setlist[enumerate]{left=1.5em}
+
+% Configuration des labels personnalisés pour enumitem
+\SetEnumitemKey{a}{label=\alph*)}
+\SetEnumitemKey{1}{label=\arabic*)}
+
+% Définition des styles de listes personnalisés
+\newlist{exerciselist}{enumerate}{1}
+\setlist[exerciselist]{label=\alph*)}
+
+\newlist{quizlist}{enumerate}{1}
+\setlist[quizlist]{label=\arabic*)}
+
+% Packages pour tableaux et présentations
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{booktabs}

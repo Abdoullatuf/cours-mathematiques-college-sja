@@ -1,0 +1,49 @@
+% Chapitre 19 : Programmation
+\chapter{Programmation}
+
+\section{Variables et calculs}
+\begin{definition}{Variable en programmation}
+Une variable en programmation est un nom qui désigne une valeur stockée en mémoire.
+\end{definition}
+
+\begin{exemple}
+En Python :
+\begin{verbatim}
+x = 5
+y = x + 3
+print(y)  # Affiche 8
+\end{verbatim}
+\end{exemple}
+
+\section{Construction de figures géométriques}
+\begin{methode}{Programmer une figure}
+\begin{enumerate}
+    \item Définir les coordonnées des points
+    \item Tracer les segments ou courbes
+    \item Ajouter les étiquettes
+\end{enumerate}
+\end{methode}
+
+\begin{exemple}
+Programme pour tracer un carré :
+\begin{verbatim}
+import turtle
+for i in range(4):
+    turtle.forward(100)
+    turtle.right(90)
+\end{verbatim}
+\end{exemple}
+
+\section{Structures de contrôle}
+\begin{definition}{Structure conditionnelle}
+Permet d'exécuter du code selon qu'une condition est vraie ou fausse.
+\end{definition}
+
+\begin{exemple}
+\begin{verbatim}
+if x > 0:
+    print("Positif")
+else:
+    print("Négatif ou nul")
+\end{verbatim}
+\end{exemple} 

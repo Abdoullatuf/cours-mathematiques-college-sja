@@ -1,0 +1,190 @@
+% ================================
+% PRÉAMBULE — Mathématiques 6e (Amélioré)
+% ================================
+
+% Setting up the document encoding and language
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+% Defining custom colors for consistency
+\definecolor{DefColor}{RGB}{200,220,255} % Soft blue for definitions
+\definecolor{ExColor}{RGB}{200,240,200} % Soft green for examples
+\definecolor{ExoColor}{RGB}{230,200,230} % Soft purple for exercises
+\definecolor{ObjColor}{RGB}{200,240,220} % Soft teal for objectives
+\definecolor{PropColor}{RGB}{240,200,200} % Soft red for properties
+\definecolor{SumColor}{RGB}{255,245,200} % Soft yellow for summaries
+\definecolor{GameColor}{RGB}{255,230,200} % Soft orange for games
+
+% Choosing a modern, clean font
+\usepackage{newtxtext,newtxmath} % Modern typography for text and math
+
+% Setting up page geometry for balanced margins
+\usepackage{geometry}
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm, headheight=16pt, marginparwidth=2cm}
+
+% Adding margin notes for tips and reminders
+\usepackage{marginnote}
+
+% Improving text rendering
+\usepackage{microtype}
+
+% Customizing section and chapter titles
+\usepackage[explicit]{titlesec}
+\titleformat{\chapter}[display]
+  {\Huge\bfseries\filcenter}{Chapitre \thechapter : #1}{1ex}{\Huge}
+\titleformat{\section}[hang]{\Large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}[hang]{\large\bfseries}{\thesubsection}{0.6em}{}
+
+% Adding headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\nouppercase{\leftmark}}
+\rhead{Seq.~\thechapter~--~\seqtitle}
+\cfoot{\thepage}
+
+% Math and symbol packages for robust formulas
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{siunitx} % For units and number formatting
+
+% Graphics and diagrams
+\usepackage{tikz}
+\usetikzlibrary{angles, quotes, calc, arrows.meta, shapes.geometric}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% Hyperlinks for navigation
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!60!black,
+  urlcolor=blue!60!black,
+  citecolor=blue!60!black
+}
+
+% Colored boxes for definitions, examples, exercises, etc.
+\usepackage[most]{tcolorbox}
+\tcbset{
+  enhanced,
+  rounded corners,
+  boxsep=1.5ex,
+  top=2ex,
+  bottom=2ex,
+  left=2ex,
+  right=2ex,
+  before skip=1.5ex,
+  after skip=2.5ex,
+  width=\textwidth,
+  boxrule=0.5pt,
+  colbacktitle=white,
+  fonttitle=\bfseries,
+  coltitle=black,
+  drop shadow={black!30, opacity=0.3}
+}
+
+\newtcolorbox{definitionbox}{
+  colback=DefColor,
+  colframe=blue!70!black,
+  title={\textbf{Définition}},
+  coltitle=black
+}
+\newtcolorbox{examplebox}{
+  colback=ExColor,
+  colframe=green!60!black,
+  title={\textbf{Exemple}},
+  coltitle=black
+}
+\newtcolorbox{exercisebox}{
+  colback=ExoColor,
+  colframe=purple!70!black,
+  title={\textbf{Exercice}},
+  coltitle=black
+}
+\newtcolorbox{objectifsbox}{
+  colback=ObjColor,
+  colframe=teal!70!black,
+  title={\textbf{Objectifs}},
+  coltitle=black
+}
+\newtcolorbox{proprietebox}{
+  colback=PropColor,
+  colframe=red!70!black,
+  title={\textbf{Propriété}},
+  coltitle=black
+}
+\newtcolorbox{summarybox}{
+  colback=SumColor,
+  colframe=yellow!70!black,
+  title={\textbf{Récapitulatif}},
+  coltitle=black
+}
+\newtcolorbox{jeubox}{
+  colback=GameColor,
+  colframe=orange!70!black,
+  title={\textbf{Jeu mathématique}},
+  coltitle=black,
+  fonttitle=\bfseries\itshape
+}
+
+% Custom command for fill-in-the-blank
+\newcommand{\trous}[1]{\dotfill\hspace{#1}\dotfill}
+
+% Command to store sequence title
+\newcommand{\seqtitle}{}
+\newcommand{\setseqtitle}[1]{\renewcommand{\seqtitle}{#1}}
+
+% Compact lists for exercises
+\usepackage{enumitem}
+\setlist[itemize]{left=1.2em}
+\setlist[enumerate]{left=1.5em}
+
+% Operations layout
+\makeatletter
+% Fixed width for digits
+\newcommand{\digit}[1]{\makebox[1.5ex][c]{#1}}
+
+% Generic operation environment
+\newenvironment{operation}[1][5]{%
+  \arraycolsep=0.2em
+  \renewcommand{\arraystretch}{1.2}%
+  \begin{array}{*{#1}{c}}}{\end{array}}
+
+% Addition with blank result
+\newcommand{\addition}[2]{%
+  \begin{operation}[10]
+    & #1 \\
+    + & #2 \\
+    \hline
+    & \multicolumn{10}{c}{\trous{2cm}} \\
+  \end{operation}
+}
+
+% Subtraction with blank result
+\newcommand{\soustraction}[2]{%
+  \begin{operation}[10]
+    & #1 \\
+    - & #2 \\
+    \hline
+    & \multicolumn{10}{c}{\trous{2cm}} \\
+  \end{operation}
+}
+\makeatother
+
+% Custom command for chapter objectives
+\newcommand{\chapterobjectives}[1]{%
+  \begin{objectifsbox}
+    \textbf{Objectifs du chapitre :} \\[0.5ex]
+    #1
+  \end{objectifsbox}
+}
+
+% Custom command for chapter summary
+\newcommand{\chaptersummary}[1]{%
+  \section*{Récapitulatif}
+  \begin{summarybox}
+    #1
+  \end{summarybox}
+}
+
+% Font configuration (loaded last to avoid conflicts)
+\usepackage{newtxtext,newtxmath}

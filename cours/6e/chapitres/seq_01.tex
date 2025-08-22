@@ -1,0 +1,165 @@
+% Séquence 1 : Les nombres entiers
+\setseqtitle{Les nombres entiers}
+\chapter{Les nombres entiers}
+
+\section{Rang des chiffres}
+
+\begin{definitionbox}
+	\textbf{Chiffres et valeur}
+	\begin{itemize}[label = \textbullet]
+		\item 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 sont les dix \textbf{chiffres} qui permettent d'écrire tous les nombres.
+		\item Chaque chiffre a une \textbf{valeur} en fonction de sa position dans le nombre.
+	\end{itemize}
+\end{definitionbox}
+
+On peut utiliser un tableau de numération pour visualiser le rang d'un chiffre.
+
+\begin{center}
+	\newcolumntype{C}{>{\centering\arraybackslash}p{0.8cm}}
+	\begin{tabular}{|C|C|C|C|C|C|C|C|C|C|C|C|}
+		\hline
+		\multicolumn{3}{|c|}{\textbf{Milliards}} & 
+		\multicolumn{3}{|c|}{\textbf{Millions}} & 
+		\multicolumn{3}{|c|}{\textbf{Milliers}} & 
+		\multicolumn{3}{|c|}{\textbf{Unités}} \\
+		\hline
+		\textbf{c} & \textbf{d} & \textbf{u} & 
+		\textbf{c} & \textbf{d} & \textbf{u} & 
+		\textbf{c} & \textbf{d} & \textbf{u} & 
+		\textbf{c} & \textbf{d} & \textbf{u} \\
+		\hline
+		& & & & & & & & & & & \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\textbf{Remarque :} Lorsqu'on écrit un nombre en chiffres, il faut laisser un espace entre les classes. Par exemple le nombre suivant 25204879603 s'écrit: \trous{2.5cm}.
+
+\section{Décomposition décimale}
+
+On peut donner la décomposition décimale de 3 584 :
+
+\begin{examplebox}
+	3 584 = (\trous{1cm} $\times$ \trous{2cm}) + (\trous{1cm} $\times$ \trous{1.5cm}) + (\trous{0.5cm} $\times$ \trous{1cm}) + \trous{0.5cm} $\times$ \trous{0.5cm}
+\end{examplebox}
+
+
+
+\textbf{Attention !} Pour le nombre 3 584, le \textbf{chiffre} des centaines est \trous{2cm} mais le \textbf{nombre} de centaines est \trous{3cm} (il y a \trous{2cm} centaines dans le nombre 3584).
+
+En effet :
+\trous{14cm}
+
+\trous{15.5cm}
+
+
+\begin{examplebox}
+Dans le nombre 25 803,\\ 
+
+le chiffre des dizaines est \trous{1.5cm}; le nombre de dizaines est \trous{2.5cm}\\
+
+le chiffre des centaines est \trous{1.5cm} ; le nombre de centaines est \trous{2.5cm}
+\end{examplebox}
+
+\section{Écriture en toutes lettres}
+
+\begin{examplebox}
+	\begin{itemize}[label = \textbullet]
+		\item 1823 : Mille-huit-cent-vingt-trois (pas de << s >> à << cent >>, ni à << vingt >> car ils sont suivis d'autres chiffres !)
+		\item 2087 : Deux-mille-quatre-vingt-sept (le mot << mille >> est invariable, et toujours pas de << s >> à << vingt >>...)
+		\item 600 : Six-cents (ici on met bien un << s >> car il n'y a plus rien derrière !)
+		\item 680 : Six-cent-quatre-vingts (pas de << s >> à << cent >>, mais un << s >> obligatoire à << vingt >> car le nombre se termine par 80).
+	\end{itemize}
+\end{examplebox}
+
+Voici les règles correspondantes à ces exemples :
+
+\begin{itemize}
+	\item Le mot << mille >> est invariable ; les mots << million >> et << milliard >>, cependant, s'accordent et prennent donc un << \textbf{s} >> au pluriel.
+	\item Les mots << cent >> et << vingt >> prennent un << \textbf{s} >> au pluriel uniquement lorsqu'ils sont à la fin du nombre.
+	\item \textbf{Exemples :} 300 : \trous{5cm} \qquad 420 : \trous{5cm}
+	\item Le mot << vingt >> ne s'utilise au pluriel (avec un << s >>) que si un nombre se finit par 80 (quatre-vingts).
+	\item Les tirets sont mis entre chaque mot d'un nombre qui se présente sous forme composée. Avec des nombres entiers, il y aura donc des tirets partout !
+	\item \textbf{Exemples :} \\
+	79 : \trous{6cm} \\
+	1031 : \trous{6cm}
+\end{itemize}
+
+\section{Demi-droite graduée}
+
+\begin{definitionbox}
+	\textbf{Demi-droite graduée}
+	
+	On appelle \textbf{demi-droite graduée} une demi-droite sur laquelle on fixe :
+	\begin{itemize}[label = \textbullet]
+		\item Un point appelé \textbf{origine de la demi-droite}
+		\item \textbf{Un sens} représenté par une flèche
+		\item \textbf{Une unité de longueur} que l'on reporte régulièrement à partir de l'origine.
+	\end{itemize}
+\end{definitionbox}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\linewidth]{../../assets/images/6e/seq_01/demi-droite-graduee.png}
+	\caption{Demi-droite graduée}
+	\label{fig:demi-droite-graduee}
+\end{figure}
+
+\begin{proprietebox}
+	Sur une demi-droite graduée,
+	\begin{itemize}[label = \textbullet]
+	 \item Chaque point est repéré par \trous{3cm} appelé \trous{3cm} de ce point.
+	 \item A chaque nombre correspond \trous{3cm} unique.
+	\end{itemize}
+\end{proprietebox}
+
+\begin{examplebox}
+	% Schéma de droite graduée avec TikZ
+	\begin{center}
+		\begin{tikzpicture}[scale=0.8]
+			% Droite graduée
+			\draw[thick, ->] (0,0) -- (12,0);
+			
+			% Graduations
+			\foreach \x in {0,1,...,11} {
+				\draw (\x,-0.1) -- (\x,0.1);
+				\node[below] at (\x,-0.3) {\x};
+			}
+			
+			% Point A
+			\node[circle,fill=black,inner sep=2pt] at (3.5,0) {};
+			\node[above] at (3.5,0.2) {$A$};
+			
+			% Point B
+			\node[circle,fill=black,inner sep=2pt] at (7,0) {};
+			\node[above] at (7.2,0.2) {$B$};
+		\end{tikzpicture}
+	\end{center}
+	
+	Sur cette demi-droite graduée, le point $A$ a pour abscisse \trous{1.5cm} et le point $B$ a pour abscisse \trous{1.5cm}.	
+\end{examplebox}
+
+
+\begin{center}
+	\includegraphics[width=1\linewidth]{../../assets/images/6e/seq_01/attention-demi-dte-graduee}
+\end{center}
+
+
+\section{Exercices d'application}
+
+\begin{exercisebox}
+\textbf{Exercice 1 :} Écris en toutes lettres les nombres suivants :
+\begin{enumerate}
+	\item 1 234
+	\item 5 678
+	\item 12 345
+	\item 100 000
+\end{enumerate}
+
+\textbf{Exercice 2 :} Place les points $A$, $B$, $C$ et $D$ d'abscisses respectives 2, 7, 4 et 9 sur une demi-droite graduée.
+
+
+\end{exercisebox}
+
+
+

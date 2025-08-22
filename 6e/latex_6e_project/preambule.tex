@@ -1,0 +1,138 @@
+% ================================
+% PRÉAMBULE — Mathématiques 6e
+% ================================
+%\usepackage[utf8]{inputenc} % <- si vous compilez avec XeLaTeX/LuaLaTeX, commentez cette ligne
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{top=2.5cm,bottom=2.5cm,left=2.3cm,right=2.3cm}
+\usepackage{microtype}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{angles,quotes,calc,arrows.meta,shapes.geometric}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue!50!black,
+	urlcolor=blue!50!black,
+	citecolor=blue!50!black
+}
+
+% Environnements jolis pour Définition / Exemple / Exercice
+\usepackage[most]{tcolorbox}
+\tcbset{
+    rounded corners,
+    boxsep=2ex,
+    top=1.5ex,
+    bottom=1.5ex,
+    left=2.5ex,
+    right=7ex,
+    before skip=1ex,
+    after skip=2ex,
+    width=\textwidth,
+    boxrule=1pt
+}
+\newtcolorbox{definitionbox}{
+    colback=orange!5!white,
+    colframe=orange!70!black,
+    title={\textbf{Définition}},
+    fonttitle=\bfseries,
+    coltitle=black
+}
+\newtcolorbox{examplebox}{
+    colback=green!5!white,
+    colframe=green!60!black,
+    title={\textbf{Exemple}},
+    fonttitle=\bfseries,
+    coltitle=black
+}
+\newtcolorbox{exercisebox}{
+    colback=purple!5!white,
+    colframe=purple!70!black,
+    title={\textbf{Exercice}},
+    fonttitle=\bfseries,
+    coltitle=black
+}
+\newtcolorbox{objectifsbox}{
+    colback=teal!5!white,
+    colframe=teal!70!black,
+    title={\textbf{Objectifs}},
+    fonttitle=\bfseries,
+    coltitle=black
+}
+\newtcolorbox{proprietebox}{
+    colback=red!5!white,
+    colframe=red!70!black,
+    title={\textbf{Propriété}},
+    fonttitle=\bfseries,
+    coltitle=black
+}
+
+% Commande personnalisée pour les trous
+\newcommand{\trous}[1]{\dotfill\hspace{#1}\dotfill}
+
+% Variable pour stocker le titre de la séquence
+\newcommand{\seqtitle}{}
+\newcommand{\setseqtitle}[1]{\renewcommand{\seqtitle}{#1}}
+
+% Mise en page de l'en-tête et du pied
+\pagestyle{fancy}
+\setlength{\headheight}{16pt} % FIX: évite le warning fancyhdr
+\fancyhf{}
+\lhead{Mathématiques 6\textsuperscript{e} -- 2025--2026}
+\rhead{Seq.~\thechapter~--~\seqtitle}
+\cfoot{\thepage}
+
+% Titres moins encombrants
+\titleformat{\chapter}[hang]{\huge\bfseries}{\thechapter.}{0.6em}{}
+\titleformat{\section}[hang]{\Large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}[hang]{\large\bfseries}{\thesubsection}{0.6em}{}
+
+% Listes compactes
+\setlist[itemize]{left=1.2em}
+\setlist[enumerate]{left=1.5em}
+
+% ================================
+% Commandes pour opérations posées
+% ================================
+\makeatletter
+
+% largeur fixe pour les chiffres
+\newcommand{\digit}[1]{\makebox[1.5ex][c]{#1}}
+
+% Environnement générique pour opérations posées
+\newenvironment{operation}[1][5]{%
+	\arraycolsep=0.2em
+	\renewcommand{\arraystretch}{1.2}%
+	\begin{array}{*{#1}{c}}}{\end{array}}
+
+% Addition posée (résultat vide avec \trous)
+\newcommand{\addition}[2]{%
+	\begin{operation}[10]
+		& #1 \\
+		+  & #2 \\
+		\hline
+		& \multicolumn{10}{c}{\trous{2cm}} \\
+	\end{operation}
+}
+
+% Soustraction posée (résultat vide avec \trous)
+\newcommand{\soustraction}[2]{%
+	\begin{operation}[10]
+		& #1 \\
+		-  & #2 \\
+		\hline
+		& \multicolumn{10}{c}{\trous{2cm}} \\
+	\end{operation}
+}
+
+\makeatother
