@@ -40,6 +40,9 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 
+% Icônes modernes
+\usepackage{fontawesome5}        % Pour les icônes (Font Awesome 5)
+
 % Liens hypertexte
 \usepackage{hyperref}
 \hypersetup{
@@ -51,6 +54,17 @@
 
 % Boîtes colorées avec tcolorbox
 \usepackage[most]{tcolorbox}
+
+% Palette de couleurs HTML (plus précise et harmonieuse)
+\definecolor{mainOrange}{HTML}{F57C00} % Définition
+\definecolor{mainGreen}{HTML}{009688}  % Exemple, Démo
+\definecolor{mainPurple}{HTML}{8E44AD} % Exercice
+\definecolor{mainTeal}{HTML}{00796B}   % Objectifs
+\definecolor{mainRed}{HTML}{D32F2F}    % Propriété, Théorème
+\definecolor{mainBlue}{HTML}{0077B6}   % Activité
+\definecolor{mainYellow}{HTML}{FFA000} % Remarque
+\definecolor{mainCyan}{HTML}{00ACC1}   % Quiz
+\definecolor{mainGray}{HTML}{546E7A}   % Méthode
 
 % Configuration globale des boîtes
 \tcbset{
@@ -66,101 +80,84 @@
     boxrule=1pt
 }
 
+% Style commun optimisé pour toutes les boîtes
+\tcbset{
+    commonstyle/.style={
+        boxrule=1pt,
+        rounded corners,
+        boxsep=2ex, top=1.5ex, bottom=1.5ex, left=2.5ex, right=7ex,
+        before skip=0pt, after skip=1.5ex,
+        width=\textwidth,
+        fonttitle=\bfseries,
+        coltitle=white,
+        colbacktitle=#1,
+        colframe=#1!75!black,
+        colback=#1!5!white,
+    }
+}
+
 
 
 % Définition des environnements personnalisés
 \newtcolorbox{definitionbox}[1][]{
-    colback=orange!5!white,
-    colframe=orange!70!black,
-    title={\textbf{Définition \thechapter.\number\numexpr\thedefinition+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
-    fonttitle=\bfseries,
-    coltitle=white,
+    commonstyle=mainOrange,
+    title={\textbf{Définition \faHighlighter \ \thechapter.\number\numexpr\thedefinition+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
     before upper={\incdefinition}
 }
 
 \newtcolorbox{examplebox}[1][]{
-    colback=green!5!white,
-    colframe=green!60!black,
-    title={\textbf{Exemple \thechapter.\number\numexpr\theexemple+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
-    fonttitle=\bfseries,
-    coltitle=white,
+    commonstyle=mainGreen,
+    title={\textbf{Exemple \faLightbulb \ \thechapter.\number\numexpr\theexemple+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
     before upper={\incexemple}
 }
 
 \newtcolorbox{exercisebox}{
-    colback=purple!5!white,
-    colframe=purple!70!black,
-    title={\textbf{Exercices}},
-    fonttitle=\bfseries,
-    coltitle=white
+    commonstyle=mainPurple,
+    title={\textbf{Exercices \faPenFancy}}
 }
 
 \newtcolorbox{objectifsbox}{
-    colback=teal!5!white,
-    colframe=teal!70!black,
-    title={\textbf{Objectifs}},
-    fonttitle=\bfseries,
-    coltitle=white
+    commonstyle=mainTeal,
+    title={\textbf{Objectifs \faBullseye}}
 }
 
 \newtcolorbox{proprietebox}[1][]{
-    colback=red!10!white,
-    colframe=red!60!black,
-    title={\textbf{Propriété \thechapter.\number\numexpr\thepropriete+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
-    fonttitle=\bfseries,
-    coltitle=white,
+    commonstyle=mainRed,
+    title={\textbf{Propriété \faStar \ \thechapter.\number\numexpr\thepropriete+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
     before upper={\incpropriete}
 }
 
 \newtcolorbox{theoremebox}[1][]{
-    colback=red!10!white,
-    colframe=red!60!black,
-    title={\textbf{Théorème \thechapter.\number\numexpr\thetheoreme+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
-    fonttitle=\bfseries,
-    coltitle=white,
+    commonstyle=mainRed,
+    title={\textbf{Théorème \faCrown \ \thechapter.\number\numexpr\thetheoreme+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
     before upper={\inctheoreme}
 }
 
 \newtcolorbox{activitybox}{
-    colback=blue!5!white,
-    colframe=blue!70!black,
-    title={\textbf{Activité}},
-    fonttitle=\bfseries,
-    coltitle=white
+    commonstyle=mainBlue,
+    title={\textbf{Activité \faHandsHelping}}
 }
 
 \newtcolorbox{remarkbox}[1][]{
-    colback=yellow!5!white,
-    colframe=yellow!70!black,
-    title={\textbf{Remarque \thechapter.\number\numexpr\theremarque+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
-    fonttitle=\bfseries,
-    coltitle=white,
+    commonstyle=mainYellow,
+    title={\textbf{Remarque \faExclamationTriangle \ \thechapter.\number\numexpr\theremarque+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
     before upper={\incremarque}
 }
 
 \newtcolorbox{quizbox}{
-    colback=cyan!5!white,
-    colframe=cyan!70!black,
-    title={\textbf{Quiz}},
-    fonttitle=\bfseries,
-    coltitle=white
+    commonstyle=mainCyan,
+    title={\textbf{Quiz \faQuestionCircle}}
 }
 
 \newtcolorbox{methodebox}[1][]{
-    colback=gray!8!white,
-    colframe=gray!25!black,
-    title={\textbf{Méthode \thechapter.\number\numexpr\themethode+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
-    fonttitle=\bfseries,
-    coltitle=white,
+    commonstyle=mainGray,
+    title={\textbf{Méthode \faRoute \ \thechapter.\number\numexpr\themethode+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
     before upper={\incmethode}
 }
 
 \newtcolorbox{demobox}[1][]{
-    colback=green!8!white,
-    colframe=green!25!black,
-    title={\textbf{Démonstration \thechapter.\number\numexpr\thedemo+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
-    fonttitle=\bfseries,
-    coltitle=white,
+    commonstyle=mainGreen,
+    title={\textbf{Démonstration \faCalculator \ \thechapter.\number\numexpr\thedemo+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
     before upper={\incdemo}
 }
 
@@ -228,3 +225,6 @@
 \usepackage{longtable}
 \usepackage{array}
 \usepackage{booktabs}
+
+% Logique conditionnelle pour les titres optionnels
+\usepackage{ifthen}
