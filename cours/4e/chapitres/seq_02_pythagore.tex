@@ -19,7 +19,7 @@ Ce théorème établit une relation fondamentale entre les côtés d'un triangle
 \begin{enumerate}
     \item Construire plusieurs triangles rectangles sur papier quadrillé
     \item Construire un carré sur chacun des trois côtés
-    \item Compter le nombre de carreaux de chaque carré
+    \item Compter le nombre de carreaux (ou calculer l'aire) de chaque carré
     \item Chercher une relation entre ces trois nombres
 \end{enumerate}
 
@@ -27,17 +27,13 @@ Ce théorème établit une relation fondamentale entre les côtés d'un triangle
 
 \section{Définitions et vocabulaire}
 
-\begin{definitionbox}[Triangle rectangle]
-Triangle ayant un angle droit (90°).
+\begin{definitionbox}[Vocabulaire du triangle rectangle]
+Un triangle ayant un angle droit est un triangle rectangle. Les deux côtés perpendiculaires d’un triangle rectangle sont les \textbf{côtés de l’angle droit}. Le côté restant est l’\textbf{hypoténuse} du triangle rectangle. C’est le \textbf{côté opposé} à l’angle droit.
 \end{definitionbox}
 
-\begin{definitionbox}[Hypoténuse]
-Côté opposé à l'angle droit dans un triangle rectangle. C'est le plus long côté du triangle.
-\end{definitionbox}
-
-\begin{definitionbox}{Côtés de l'angle droit}
-Les deux côtés qui forment l'angle droit.
-\end{definitionbox}
+\begin{proprietebox}[Hypoténuse]
+	Si un triangle est rectangle alors son plus grand côté est l’hypoténuse. \qquad (Admise)
+\end{proprietebox}
 
 \section{Le théorème de Pythagore}
 
@@ -47,7 +43,7 @@ Les deux côtés qui forment l'angle droit.
 Dans un triangle rectangle, le carré de la longueur de l'hypoténuse est égal à la somme des carrés des longueurs des deux autres côtés.
 
 \textbf{Formulation mathématique :}\\
-Si $ABC$ est un triangle rectangle en $A$, alors : $BC^2 = AB^2 + AC^2$
+Si $ABC$ est un triangle rectangle en $A$, alors : $BC^2 = AB^2 + AC^2$ (\textbf{Égalité de Pythagore})
 
 \begin{center}
 	\begin{tikzpicture}[scale=1.2]
@@ -108,18 +104,18 @@ Ce qui démontre le théorème de Pythagore.
 \subsection{Calculer la longueur de l'hypoténuse}
 
 \begin{remarkbox}[Important]
-$7^2 = 7 \times 7 = 49$. À ne pas confondre avec $7 \times 2 = 7 + 7 = 14$
+$a^2 = a\times a$. À ne pas confondre avec $a \times 2 = a + a = 2a$
 \end{remarkbox}
 
-\begin{methodebox}[Calculer la longueur de l'hypoténuse]
-Pour calculer la longueur de l'hypoténuse d'un triangle rectangle :
-\begin{enumerate}
-    \item Identifier le triangle rectangle et ses côtés
-    \item Repérer l'hypoténuse (côté opposé à l'angle droit)
-    \item Appliquer la formule : hypoténuse$^2$ = côté$_1^2$ + côté$_2^2$
-    \item Calculer la racine carrée du résultat
-\end{enumerate}
-\end{methodebox}
+%\begin{methodebox}[Calculer la longueur de l'hypoténuse]
+%Pour calculer la longueur de l'hypoténuse d'un triangle rectangle :
+%\begin{enumerate}
+%    \item Identifier le triangle rectangle et ses côtés
+%    \item Repérer l'hypoténuse (côté opposé à l'angle droit)
+%    \item Appliquer la formule : hypoténuse$^2$ = côté$_1^2$ + côté$_2^2$
+%    \item Calculer la racine carrée du résultat
+%\end{enumerate}
+%\end{methodebox}
 
 \begin{examplebox}
 On étudie le triangle RAK rectangle en K tel que KR = 4,95 cm et KA= 6,6 cm. Calculons la mesure du côté [AR].
@@ -183,7 +179,6 @@ Donc $\sqrt{0} = \trous{1.5cm}$ ; $\sqrt{1} = \trous{1.5cm}$ ; $\sqrt{9} = \trou
 
 
 \subsection{Calculer la longueur d'un côté de l'angle droit}
-
 \begin{methodebox}[Calculer la longueur d'un côté de l'angle droit]
 Pour calculer la longueur d'un côté de l'angle droit :
 \begin{enumerate}
@@ -212,14 +207,19 @@ Calculer $DF$.
 \section{La réciproque du théorème de Pythagore}
 
 \subsection{Énoncé de la réciproque}
+\begin{theoremebox}[Contra-posée du théorème de Pythagore]
+	\textbf{Si} dans un triangle l’égalité de Pythagore n’est pas vérifiée \textbf{alors} ce triangle n’est pas rectangle. \qquad (\textit{Admise})
+\end{theoremebox}
+\begin{demobox}[Contra-posée du théorème de Pythagore]
+C’est une conséquence de la logique des propositions.\\
+Prenons un exemple simple :\\
 
+\textbf{Propriété :} Si nous sommes le 25 décembre alors je ne vais pas à l’école. La propriété contra-posée est : Si je vais à l'école alors nous ne sommes pas le 25 décembre. On comprend que quand une propriété est vraie alors la propriété contra-posée est également vraie. Dans le cas du théorème de Pythagore, si l’égalité de Pythagore n’est pas vérifiée alors le triangle n’est pas rectangle car s’il était rectangle l’égalité serait vérifiée!
+\end{demobox}
 \begin{theoremebox}[Réciproque du théorème de Pythagore]
 Si, dans un triangle, le carré de la longueur du plus grand côté est égal à la somme des carrés des longueurs des deux autres côtés, alors ce triangle est rectangle.
 \end{theoremebox}
 
-\subsection{Démonstration de la réciproque}
-C’est une conséquence de la logique des propositions. Prenons un exemple simple :\\
-\textbf{Propriété :} Si nous sommes le 25 décembre alors je ne vais pas à l’école. La propriété contra-posée est : Si je vais à l'école alors nous ne sommes pas le 25 décembre. On comprend que quand une propriété est vraie alors la propriété contra-posée est également vraie. Dans le cas du théorème de Pythagore, si l’égalité de Pythagore n’est pas vérifiée alors le triangle n’est pas rectangle car s’il était rectangle l’égalité serait vérifiée! \qquad \textit{CQFD}
 
 \subsection{Utilisation de la réciproque}
 \begin{methodebox}[Démontrer qu'un triangle est rectangle]
@@ -242,9 +242,9 @@ Un triangle a pour côtés 9 cm, 12 cm et 15 cm. Est-il rectangle ?
 \textbf{Solution :}
 \begin{itemize}
     \item Le plus grand côté mesure 15 cm
-    \item $15^2 = 225$
-    \item $9^2 + 12^2 = 81 + 144 = 225$
-    \item Puisque $15^2 = 9^2 + 12^2$, le triangle est rectangle
+    \item $15^2 = ........$
+    \item $9^2 + 12^2 = ........ + ......... = .........$
+    \item Puisque .......... = ......... + .........., le triangle est rectangle
     \item L'angle droit est opposé au côté de 15 cm
 \end{itemize}
 \end{examplebox}
@@ -255,9 +255,9 @@ Un triangle a pour côtés 7 cm, 8 cm et 10 cm. Est-il rectangle ?
 \textbf{Solution :}
 \begin{itemize}
     \item Le plus grand côté mesure 10 cm
-    \item $10^2 = 100$
-    \item $7^2 + 8^2 = 49 + 64 = 113$
-    \item Puisque $100 \neq 113$, le triangle n'est pas rectangle
+    \item $10^2 = .........$
+    \item $7^2 + 8^2 = .......... + ......... = ..........$
+    \item Puisque ........... $\neq$ ..........., le triangle .......................................
 \end{itemize}
 \end{examplebox}
 
@@ -266,10 +266,12 @@ Un triangle a pour côtés 7 cm, 8 cm et 10 cm. Est-il rectangle ?
 \subsection{Problèmes de la vie courante}
 
 \begin{exercisebox}
-\textbf{Exercice 1: L'échelle}
+\textbf{Exercice 1: L'échelle}\\
+
 Une échelle de 4 m est appuyée contre un mur. Son pied est à 1,5 m du mur. À quelle hauteur le sommet de l'échelle touche-t-il le mur ?
 
 \textbf{Solution :}
+
 \begin{itemize}
     \item Triangle rectangle : mur, sol, échelle
     \item Hypoténuse : échelle = 4 m
@@ -283,7 +285,8 @@ $h^2 = 13,75$\\
 $h = \sqrt{13,75} \approx 3,7$ m
 \\
 
-\textbf{Exercice 2: Vérification d'équerrage}
+\textbf{Exercice 2: Vérification d'équerrage}\\
+
 Un maçon vérifie qu'un angle est droit en mesurant les côtés d'un triangle formé par deux murs et une diagonale. Il mesure : 3 m, 4 m et 5 m. L'angle est-il droit ?
 
 \textbf{Solution :}

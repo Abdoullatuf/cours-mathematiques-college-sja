@@ -74,7 +74,7 @@
     colframe=orange!70!black,
     title={\textbf{Définition \thechapter.\number\numexpr\thedefinition+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
     fonttitle=\bfseries,
-    coltitle=black,
+    coltitle=white,
     before upper={\incdefinition}
 }
 
@@ -83,7 +83,7 @@
     colframe=green!60!black,
     title={\textbf{Exemple \thechapter.\number\numexpr\theexemple+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
     fonttitle=\bfseries,
-    coltitle=black,
+    coltitle=white,
     before upper={\incexemple}
 }
 
@@ -92,7 +92,7 @@
     colframe=purple!70!black,
     title={\textbf{Exercices}},
     fonttitle=\bfseries,
-    coltitle=black
+    coltitle=white
 }
 
 \newtcolorbox{objectifsbox}{
@@ -100,24 +100,24 @@
     colframe=teal!70!black,
     title={\textbf{Objectifs}},
     fonttitle=\bfseries,
-    coltitle=black
+    coltitle=white
 }
 
 \newtcolorbox{proprietebox}[1][]{
-    colback=red!5!white,
-    colframe=red!70!black,
+    colback=red!10!white,
+    colframe=red!60!black,
     title={\textbf{Propriété \thechapter.\number\numexpr\thepropriete+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
     fonttitle=\bfseries,
-    coltitle=black,
+    coltitle=white,
     before upper={\incpropriete}
 }
 
 \newtcolorbox{theoremebox}[1][]{
-    colback=red!5!white,
-    colframe=red!70!black,
+    colback=red!10!white,
+    colframe=red!60!black,
     title={\textbf{Théorème \thechapter.\number\numexpr\thetheoreme+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
     fonttitle=\bfseries,
-    coltitle=black,
+    coltitle=white,
     before upper={\inctheoreme}
 }
 
@@ -126,7 +126,7 @@
     colframe=blue!70!black,
     title={\textbf{Activité}},
     fonttitle=\bfseries,
-    coltitle=black
+    coltitle=white
 }
 
 \newtcolorbox{remarkbox}[1][]{
@@ -134,7 +134,7 @@
     colframe=yellow!70!black,
     title={\textbf{Remarque \thechapter.\number\numexpr\theremarque+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
     fonttitle=\bfseries,
-    coltitle=black,
+    coltitle=white,
     before upper={\incremarque}
 }
 
@@ -143,16 +143,25 @@
     colframe=cyan!70!black,
     title={\textbf{Quiz}},
     fonttitle=\bfseries,
-    coltitle=black
+    coltitle=white
 }
 
 \newtcolorbox{methodebox}[1][]{
-    colback=purple!10!white,
-    colframe=purple!50!black,
+    colback=gray!8!white,
+    colframe=gray!25!black,
     title={\textbf{Méthode \thechapter.\number\numexpr\themethode+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
     fonttitle=\bfseries,
-    coltitle=black,
+    coltitle=white,
     before upper={\incmethode}
+}
+
+\newtcolorbox{demobox}[1][]{
+    colback=green!8!white,
+    colframe=green!25!black,
+    title={\textbf{Démonstration \thechapter.\number\numexpr\thedemo+1\relax}\ifthenelse{\equal{#1}{}}{}{ : #1}},
+    fonttitle=\bfseries,
+    coltitle=white,
+    before upper={\incdemo}
 }
 
 % Compteurs pour les environnements (par chapitre)
@@ -162,6 +171,7 @@
 \newcounter{remarque}
 \newcounter{exemple}
 \newcounter{theoreme}
+\newcounter{demo}
 
 % Réinitialisation des compteurs au début de chaque chapitre
 \makeatletter
@@ -171,6 +181,7 @@
 \@addtoreset{remarque}{chapter}
 \@addtoreset{exemple}{chapter}
 \@addtoreset{theoreme}{chapter}
+\@addtoreset{demo}{chapter}
 \makeatother
 
 % Commandes pour incrémenter automatiquement les compteurs
@@ -180,6 +191,7 @@
 \newcommand{\incremarque}{\stepcounter{remarque}}
 \newcommand{\incexemple}{\stepcounter{exemple}}
 \newcommand{\inctheoreme}{\stepcounter{theoreme}}
+\newcommand{\incdemo}{\stepcounter{demo}}
 
 % Commande personnalisée pour les trous
 \newcommand{\trous}[1]{\makebox[#1]{\rule{0pt}{1.2ex}\dotfill}}
