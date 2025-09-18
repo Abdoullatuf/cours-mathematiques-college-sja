@@ -1,0 +1,22 @@
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{article}
+
+% Definit le chemin vers les ressources LaTeX du projet
+\makeatletter
+\def\input@path{{../../../tex/}}
+\makeatother
+
+\usepackage[corrige]{college-eval} % active le mode corrige
+
+\examsetup{6e}{Mathématiques}{Nombres Entiers}{1}{50 minutes}{Calculatrice interdite}
+
+\begin{document}
+	\CorrigeWatermark     % filigrane "CORRIGÉ"
+	\ExamBanner
+	\StudentInfoBox
+	
+	% === Contenu du contrôle ===
+	\input{controle_01_nombres_entiers_body.tex}
+	
+\end{document}
+

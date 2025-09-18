@@ -1,0 +1,158 @@
+% tex/college-eval.sty
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{college-eval}[2025/09/17 v1.0 College evaluations kit]
+
+% -------- Options ----------
+\newif\ifcorrige \corrigefalse
+\DeclareOption{corrige}{\corrigetrue}
+\ProcessOptions\relax
+
+% -------- Packages de base (Lua/XeLaTeX) ----------
+\RequirePackage{fontspec}
+\RequirePackage[french]{babel}
+\RequirePackage[final]{microtype}
+\RequirePackage{siunitx}
+\sisetup{locale=FR, group-minimum-digits=4}
+
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{geometry}
+\geometry{top=1.5cm,bottom=2cm,left=1.8cm,right=1.8cm}
+\RequirePackage{fancyhdr}
+\setlength{\headheight}{15pt}
+\RequirePackage{enumitem}
+\RequirePackage{multicol}
+\RequirePackage{tikz}
+\RequirePackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+\RequirePackage{array}
+\RequirePackage{fontawesome5}
+\RequirePackage{tabularx}
+\RequirePackage[normalem]{ulem}
+\RequirePackage[most]{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+% -------- Couleurs ----------
+\definecolor{primary}{RGB}{41,128,185}
+\definecolor{secondary}{RGB}{52,73,94}
+\definecolor{accent}{RGB}{46,204,113}
+\definecolor{warning}{RGB}{231,76,60}
+\definecolor{light}{RGB}{236,240,241}
+\definecolor{bglight}{RGB}{247,249,250}
+
+% -------- Toggle corrigé ----------
+\DeclareRobustCommand{\rep}[1]{%
+	\ifcorrige \begingroup\color{warning}\ifmmode #1\else \textbf{#1}\fi\endgroup \fi}
+\newcommand{\onlycorrige}[1]{\ifcorrige #1\fi}
+
+% -------- Ligne pointillée pour les réponses en mode corrigé ----------
+\newcommand{\replig}[1]{%
+	\ifcorrige%
+		\begingroup\color{warning}\uuline{\textbf{#1}}\endgroup%
+	\fi%
+}
+
+% -------- En-tête / pied ----------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[C]{\color{secondary}\thepage}
+
+% -------- Métadonnées de l'épreuve ----------
+\def\ExamLevel{6e}
+\def\ExamSubject{Mathématiques}
+\def\ExamTitle{Titre}
+\def\ExamNumber{1}
+\def\ExamDuration{50 minutes}
+\def\ExamCalc{Calculatrice interdite}
+
+\newcommand{\examsetup}[6]{%
+	\def\ExamLevel{#1}%
+	\def\ExamSubject{#2}%
+	\def\ExamTitle{#3}%
+	\def\ExamNumber{#4}%
+	\def\ExamDuration{#5}%
+	\def\ExamCalc{#6}%
+	\fancyhead[L]{\color{secondary}\textbf{\ExamLevel}\,|\,\ExamSubject}%
+	\fancyhead[R]{\color{secondary}\textbf{\ifcorrige Corrigé — \ExamTitle\else \ExamTitle\fi}}%
+}
+
+% -------- Bandeau haut ----------
+\newcommand{\ExamBanner}{%
+	\begin{tikzpicture}[remember picture,overlay]
+		\fill[primary] (current page.north west) rectangle ([yshift=-3.5cm]current page.north east);
+		\node[anchor=north west,text=white,font=\Huge\bfseries]
+		at ([xshift=2cm,yshift=-1cm]current page.north west)
+		{\ifcorrige Corrigé — Contrôle n° \ExamNumber \else Contrôle n° \ExamNumber\fi};
+		\node[anchor=north west,text=white,font=\Large]
+		at ([xshift=2cm,yshift=-2cm]current page.north west) {\ExamTitle};
+		\node[anchor=north east,text=white,font=\large]
+		at ([xshift=-2cm,yshift=-1.5cm]current page.north east) {\faIcon{clock} \ExamDuration};
+		\node[anchor=north east,text=white,font=\large]
+		at ([xshift=-2cm,yshift=-2.3cm]current page.north east) {\faIcon{calculator} \ExamCalc};
+	\end{tikzpicture}
+	\vspace*{1.5cm}
+}
+
+% -------- Filigrane corrigé ----------
+\newcommand{\CorrigeWatermark}{%
+	\onlycorrige{%
+		\begin{tikzpicture}[remember picture,overlay]
+			\node[rotate=30,scale=8,text=secondary!12] at (current page.center) {CORRIGÉ};
+\end{tikzpicture}}}
+
+% -------- Boîtes ----------
+\newtcolorbox{exercisebox}[2][]{
+	colback=white,colframe=primary,
+	fonttitle=\bfseries\large,
+	title={#2},
+	arc=2mm,boxrule=1.5pt,
+	left=15pt,right=15pt,top=12pt,bottom=12pt,
+	boxsep=0pt,breakable,enhanced,
+	width=\linewidth,
+	grow to left by=3mm,
+	grow to right by=3mm,
+	#1
+}
+\newtcolorbox{consignebox}{
+	colback=light!30,colframe=secondary,
+	arc=3mm,boxrule=0pt,leftrule=4pt,
+	left=15pt,right=15pt,top=12pt,bottom=12pt,
+	enhanced,width=\linewidth,
+	grow to left by=3mm,
+	grow to right by=3mm
+}
+
+% -------- Macros utiles ----------
+\newcommand{\points}[1]{\hfill \colorbox{primary}{\color{white}\textbf{\,#1 pts\,}}}
+\newcommand{\badge}[2]{\tikz[baseline=(char.base)]{\node[shape=rectangle,draw,thick,rounded corners=2mm,inner sep=2pt,fill=#1,text=white,font=\footnotesize\bfseries] (char) {#2};}}
+\newcommand{\dotline}[1]{\makebox[#1][s]{\dotfill}}
+\newcolumntype{L}[1]{>{\hsize=#1\hsize\arraybackslash}X}
+\newcommand{\zonereponse}[1]{\ifcorrige\vspace{0.2cm}\else\par\noindent\colorbox{light}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\vspace{#1}}}\par\fi}
+\newcommand{\zonereponseLignes}[2][0.9cm]{\ifcorrige\vspace{0.2cm}\else\par\noindent\colorbox{light}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\setlength{\parskip}{#1}\foreach \i in {1,...,#2}{\noindent\dotfill\par}}}\par\fi}
+
+% -------- Cartouche élève (Nom/Prénom colonne gauche, Classe/Date colonne droite) ----------
+\newcommand{\StudentInfoBox}{%
+	\begin{tcolorbox}[colback=bglight,colframe=secondary,arc=3mm,boxrule=1pt,
+		left=15pt,right=15pt,top=10pt,bottom=10pt,enhanced,width=\linewidth,
+		grow to left by=3mm, grow to right by=3mm]
+		\noindent
+		\begin{minipage}{0.78\linewidth}
+			\setlength{\tabcolsep}{4pt}
+			% La largeur relative des colonnes texte : L{2.4} (gauche) vs L{0.7} (droite)
+			\begin{tabularx}{\linewidth}{@{} l L{1.5} l L{0.2} @{}}
+				\faIcon{user}\ \textbf{NOM :} & \dotfill &
+				\textbf{Classe :} & \dotfill \\
+				[0.35cm]
+				\textbf{Prénom :} & \dotfill &
+				\faIcon{calendar}\ \textbf{Date :} & \dotfill \\
+			\end{tabularx}
+		\end{minipage}\hfill
+		\begin{minipage}{0.20\linewidth}
+			\raggedleft
+			\fcolorbox{secondary}{white}{\textbf{NOTE : }\makebox[1cm]{\rule{0pt}{1.1em}}\textbf{ / 20}}
+		\end{minipage}
+	\end{tcolorbox}
+}
