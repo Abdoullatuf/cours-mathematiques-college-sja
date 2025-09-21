@@ -1,0 +1,317 @@
+%========================================
+% Chapitre - Symétrie centrale (5e)
+%========================================
+\chapter{Symétrie centrale — rappel de la symétrie axiale (5\ieme)}
+\label{chap:symetrie_centrale}
+
+%----------------------------------------
+% Résumé de la séquence
+%----------------------------------------
+\begin{tcolorbox}[title=\large Résumé de la séquence]
+	\textbf{Thème :} Transformations du plan — Symétrie centrale (rappel symétrie axiale).\\
+	\textbf{Objectifs d’apprentissage (observables)} :
+	\begin{itemize}
+		\item Reconnaître et définir la \textbf{symétrie centrale} de centre $O$.
+		\item Construire l’image d’un point, segment, figure par symétrie centrale \textbf{à l’équerre et à la règle}, puis au \textbf{compas}.
+		\item Utiliser les \textbf{propriétés} : droites parallèles conservées, angles conservés, segments de même longueur; milieu; translation équivalente.
+		\item Passer d’un \textbf{repérage} (papier pointé ou quadrillé) à une construction instrumentée.
+		\item Résoudre un \textbf{problème contextualisé} mobilisant la symétrie centrale.
+	\end{itemize}
+	\textbf{Prérequis :} Vocabulaire de base (segment, milieu, parallèle, perpendiculaire), \textbf{rappel symétrie axiale} (axe, points symétriques, médiatrice).\\
+	\textbf{Compétences du cycle~4 :} Chercher; Modéliser; Représenter; Raisonner; Calculer; Communiquer.\\
+	\textbf{Domaines du programme :} \emph{Espace \& géométrie} (principal) ; liens avec \emph{Grandeurs \& mesures} (longueurs, échelles), \emph{Nombres \& calculs} (coordonnées sur quadrillage simple), \emph{Organisation \& gestion de données} (lecture de plan/schéma). \emph{Algorithmique (option)} : description d’algorithmes de construction.\\
+	\textbf{Effectif/Profil :} 32 élèves, hétérogènes. \textbf{Durée totale :} 4~séances de 55~min.\\
+	\textbf{Matériel :} Cahier, feuille blanche, équerre, règle, compas, crayons de couleur, \textit{Surface Go} (GeoGebra / PDF annotable).
+\end{tcolorbox}
+
+%----------------------------------------
+% Plan de la séquence (4 x 55 min)
+%----------------------------------------
+\section*{Organisation des séances}
+\begin{enumerate}
+	\item \textbf{Séance 1 (55')} : Découverte \& rappel symétrie axiale; définition symétrie centrale; premières constructions sur quadrillage.
+	\item \textbf{Séance 2 (55')} : Constructions instrumentées (règle, équerre, compas); propriétés; entraînement \textit{Basique/Standard/Avancé}.
+	\item \textbf{Séance 3 (55')} : Problème contextualisé; mini-projets (affiche/plan); \textbf{évaluation formative flash}.
+	\item \textbf{Séance 4 (55')} : \textbf{Évaluation sommative} (barème critérié) + correction.
+\end{enumerate}
+
+%----------------------------------------
+% Leçon — Trace écrite (élève)
+%----------------------------------------
+\section{Leçon (Trace écrite)}
+\subsection*{Rappel — Symétrie axiale}
+Deux points $A$ et $A'$ sont \textbf{symétriques} par rapport à une \textbf{droite} $(d)$ si $(d)$ est la \textbf{médiatrice} de $[AA']$ (elle passe par le milieu de $[AA']$ et est perpendiculaire à $[AA']$). L’\textbf{axe} est conservé, angles et longueurs sont conservés, l’orientation \emph{n’est pas} conservée.
+
+\subsection*{Définition — Symétrie centrale}
+Soit $O$ un point du plan. L’image d’un point $A$ par la \textbf{symétrie de centre $O$} est le point $A'$ tel que $O$ est le \textbf{milieu} du segment $[AA']$. On note $s_O(A)=A'$.
+
+\subsection*{Propriétés essentielles}
+\begin{itemize}
+	\item La symétrie de centre $O$ \textbf{conserve} les longueurs, les angles, l’alignement et le parallélisme.
+	\item $[AA']$ est une droite \textbf{passant par $O$} et $OA=OA'$.
+	\item L’image d’un segment est un segment de même longueur; l’image d’un cercle est un cercle de même rayon; l’image d’une droite est une \textbf{droite parallèle}.
+	\item \textbf{Composition} : deux symétries axiales d’axes parallèles équivalent à une \textbf{translation}; deux symétries axiales d’axes sécants équivalent à une \textbf{rotation}. La symétrie centrale est équivalente à une \textbf{translation de vecteur $\overrightarrow{AA'}=2\overrightarrow{OA}$}.
+\end{itemize}
+
+\subsection*{Méthode — Construire $A'$ image de $A$ par $s_O$}
+\begin{enumerate}
+	\item Tracer la \textbf{droite} $(AO)$.
+	\item Reporter la distance $OA$ de l’autre côté de $O$ : placer $A'$ sur $(AO)$ tel que $OA'=OA$.
+	\item Vérifier : $O$ est milieu de $[AA']$ (\textbf{symétrie centrale}).
+\end{enumerate}
+\textit{Variante compas :} Avec le compas, tracer les arcs de centre $O$ et de rayon $OA$ pour obtenir $A'$.
+
+\subsection*{Exemples corrigés}
+\begin{examplebox}
+	\textbf{Exemple 1.} Construire l’image $A'$, $B'$, $C'$ d’un triangle $ABC$ par $s_O$.\\
+	\textbf{Solution (résumé).} Pour chaque sommet, tracer $(AO)$, placer $A'$ tel que $OA'=OA$ (idem pour $B',C'$), relier $A'B'C'$.
+\end{examplebox}
+
+\begin{examplebox}
+	\textbf{Exemple 2 (coordonnées sur quadrillage).} Sur un repère quadrillé, $O(0,0)$, $A(2,{-}1)$. Alors $A'(-2,1)$ car $\overrightarrow{OA'}=-\overrightarrow{OA}$.
+\end{examplebox}
+
+\subsection*{Erreurs fréquentes \& remédiations}
+\begin{itemize}
+	\item Confondre \textbf{axe} et \textbf{centre} de symétrie $\Rightarrow$ afficher un \textbf{mémo visuel} en tête de page.
+	\item Ne pas aligner $A$, $O$, $A'$ $\Rightarrow$ imposer le tracé de $(AO)$ \textbf{avant} de placer $A'$.
+	\item Reporter une ``longueur à l’œil'' $\Rightarrow$ exiger l’usage du \textbf{compas} pour $OA=OA'$.
+\end{itemize}
+
+%----------------------------------------
+% Séance 1 — déroulé minute par minute
+%----------------------------------------
+\section*{Séance 1 (55') — Découverte}
+\begin{tcolorbox}[title=Plan minute par minute]
+	\begin{tabular}{p{2.5cm} p{12.5cm}}
+		0'–5' & \textbf{Accroche (diapo)} : objets du quotidien avec symétrie (logo SNCF, lettres Z, N). Consigne orale claire.\\
+		5'–15' & \textbf{Rappel symétrie axiale} (\textit{flash}) : Q/R, mini schéma au tableau. \\
+		15'–30' & \textbf{Découverte} : manipulation sur quadrillage (fiche élève S1-A) — chercher le point $A'$ pour divers $A$ et centres $O$; mise en commun partielle. \\
+		30'–40' & \textbf{Institutionnalisation} : définition, propriétés clés; \textbf{trace écrite guidée}. \\
+		40'–50' & \textbf{Entraînement Basique} : images de points/segments (fiche S1-B). \\
+		50'–55' & \textbf{Trace écrite finale \& devoir} : finir S1-B ex. 4–6. 
+	\end{tabular}
+\end{tcolorbox}
+
+\paragraph{Gestion de classe \& consignes précises :}
+Travail en binômes hétérogènes, matériel sorti, code couleur: centre $O$ en rouge, images en vert. \textbf{Surface Go} : annotation PDF \textit{S1-A/S1-B}. 
+
+%----------------------------------------
+% Séance 2 — constructions instrumentées & niveaux
+%----------------------------------------
+\section*{Séance 2 (55') — Constructions instrumentées}
+\begin{tcolorbox}[title=Plan minute par minute]
+	\begin{tabular}{p{2.5cm} p{12.5cm}}
+		0'–8' & \textbf{Rappel méthode} $A \mapsto A'$ avec règle/compas (modèle au tableau). \\
+		8'–30' & \textbf{Ateliers} : (1) Points isolés; (2) Segments/figures; (3) Coordonnées sur quadrillage. \\
+		30'–48' & \textbf{Entraînement gradué} (fiche S2-Ex) : \textbf{Basique/Standard/Avancé}. \\
+		48'–55' & \textbf{Mise en commun} rapide + consignation des \textbf{propriétés}. 
+	\end{tabular}
+\end{tcolorbox}
+
+%----------------------------------------
+% Séance 3 — Problème & éval formative
+%----------------------------------------
+\section*{Séance 3 (55') — Problème contextualisé \& flash}
+\begin{tcolorbox}[title=Plan minute par minute]
+	\begin{tabular}{p{2.5cm} p{12.5cm}}
+		0'–5'  & Lancement du \textbf{problème} (S3-Pb). \\
+		5'–30' & Recherche par groupes (affiches A3 ou Surface Go). \\
+		30'–40'& Mise en commun et \textbf{validation} (arguments + schéma propre). \\
+		40'–50'& \textbf{Évaluation formative flash} (S3-Flash, 8 items). \\
+		50'–55'& Correction \& devoir (1 exercice d’application). 
+	\end{tabular}
+\end{tcolorbox}
+
+%----------------------------------------
+% Séance 4 — Évaluation sommative
+%----------------------------------------
+\section*{Séance 4 (55') — Évaluation sommative}
+Distribution du sujet (S4-Eval), consignes lues, 45' de travail + 10' début de correction collective.
+
+%==================================================
+% Activités & Fiches à imprimer (élève / corrigé)
+%==================================================
+\newpage
+\section*{Fiches élèves (prêtes à imprimer)}
+
+%--- S1-A : Découverte quadrillage (élève) ---
+\subsection*{S1-A — Découverte sur quadrillage (Élève)}
+\begin{exercice}
+	Sur le quadrillage fourni, $O$ est le centre de symétrie. Pour chaque point $A$, construire son image $A'$ par $s_O$.\\
+	\textbf{Consigne :} tracer la droite $(AO)$ puis placer $A'$ tel que $OA'=OA$. Colorier $A'$ en vert.
+\end{exercice}
+
+%--- S1-B : Entraînement basique (élève) ---
+\subsection*{S1-B — Entraînement basique (Élève)}
+\begin{exercice}
+	1) $O$ est le centre. Construire l'image des points $A$, $B$, $C$. \\
+	2) Construire l'image du segment $[AB]$. \\
+	3) Sur quadrillage : $O(0,0)$, $A(3,-2)$. Donner les \textbf{coordonnées} de $A'$ : \trous{2cm}. \\
+	4) Vrai/Faux : ``La symétrie centrale conserve les longueurs'' \trous{1.2cm}.
+\end{exercice}
+
+%--- S2-Ex : Entraînement gradué (élève) ---
+\subsection*{S2-Ex — Exercices gradués (Élève)}
+\paragraph{Niveau Basique}
+\begin{exercice}
+	A) Construire $A'$ pour cinq points donnés et un centre $O$.\\
+	B) Donner les coordonnées de $M'(x',y')$ si $M(2,{-}5)$ et $O(0,0)$ : \trous{2cm}.
+\end{exercice}
+
+\paragraph{Niveau Standard}
+\begin{exercice}
+	C) Construire l’image d’un triangle $ABC$ par $s_O$ (instruments exigés).\\
+	D) Sur un plan à l’échelle 1:100, l’image d’un banc par $s_O$ est à 4\,cm de $O$. Quelle est la distance réelle $OB$ ? \trous{2cm} \textit{m}.
+\end{exercice}
+
+\paragraph{Niveau Avancé}
+\begin{exercice}
+	E) Justifier que l’image d’un parallélogramme par $s_O$ est un \textbf{parallélogramme} isométrique.\\
+	F) On considère $O(1,2)$ et $A(4,{-}1)$. Donner $A'$ puis démontrer que $\overrightarrow{OA'}=-\overrightarrow{OA}$.
+\end{exercice}
+
+%--- S3-Pb : Problème contextualisé (élève) ---
+\subsection*{S3-Pb — Problème contextualisé (Élève)}
+\begin{exercice}
+	\textbf{Parc urbain.} Un plan simplifié représente un parc avec une \textbf{placette} en $O$. Par symétrie centrale de centre $O$, on souhaite positionner une \textbf{aire de jeux} $J'$ image de $J$, et une \textbf{fontaine} $F'$ image de $F$. \\
+	1) Placer $J'$ et $F'$ précisément (instruments). \\
+	2) Expliquer pourquoi les \textbf{allées rectilignes} restent parallèles après la transformation. \\
+	3) Sur quadrillage, $O(0,0)$, $J(2,3)$, $F(-1,4)$. Indiquer les coordonnées de $J'$ et $F'$. \\
+	4) Vérifier numériquement que $OJ=OJ'$ et $OF=OF'$ (unités de carreaux).
+\end{exercice}
+
+%--- S3-Flash : Évaluation formative (élève) ---
+\subsection*{S3-Flash — Évaluation formative (Élève)}
+\begin{exercice}
+	\begin{enumerate}
+		\item Définir en une phrase la symétrie centrale : \trous{5cm}.
+		\item $O$ centre; placer l’image de $A$ (schéma fourni).
+		\item V/F : L’alignement est conservé : \trous{1.2cm}.
+		\item Compléter : $OA = \trous{1.4cm}$ et $OA'=\trous{1.4cm}$.
+		\item Sur repère, $O(0,0)$, $P( {-}4,1 )$. $P'=$ \trous{3cm}.
+		\item L’image d’une droite est une droite \trous{3cm}.
+		\item Citer un outil indispensable pour garantir $OA=OA'$ : \trous{3cm}.
+		\item Justifier en une ligne que $O$ est milieu de $[AA']$.
+	\end{enumerate}
+\end{exercice}
+
+%--- S4-Eval : Évaluation sommative (élève) ---
+\newpage
+\section*{S4-Eval — Évaluation sommative (Élève)}
+\textbf{Durée :} 45 minutes — \textbf{Matériel :} règle, équerre, compas.
+\begin{exercice}[points 2]
+	(Connaissances) Cocher V/F et justifier brièvement une affirmation:\\
+	1) La symétrie centrale conserve les longueurs. \quad \textbf{V} \quad \textit{ou} \quad F\\
+	2) $O$ est le \textbf{milieu} de $[AA']$. \quad V \quad \textit{ou} \quad \textbf{F}\\
+	3) L’image d’une droite est une droite perpendiculaire. \quad V \quad \textit{ou} \quad \textbf{F}
+\end{exercice}
+
+\begin{exercice}[points 4]
+	(Construction) Avec $O$ donné, construire l’image d’un triangle $ABC$ par $s_O$ avec les instruments ; hachurer la figure image.
+\end{exercice}
+
+\begin{exercice}[points 3]
+	(Coordonnées) Dans un repère, $O(0,0)$, $M(3,{-}2)$, $N({-}5,1)$. Donner $M'$ et $N'$.
+\end{exercice}
+
+\begin{exercice}[points 5]
+	(Problème) Un logo est composé d’un losange $ABCD$ et de son image $A'B'C'D'$ par $s_O$.\\
+	1) Expliquer pourquoi $AB \parallel A'B'$ et $BC \parallel B'C'$. \\
+	2) Justifier que $ABCD$ et $A'B'C'D'$ sont \textbf{isométriques}. \\
+	3) Si $AB=4,5$\,cm, donner $A'B'$ (unité).
+\end{exercice}
+
+\begin{exercice}[points 6]
+	(Démonstration courte) Soit $E$ un point et $E'$ son image par $s_O$. Prouver que $O$ est le milieu de $[EE']$ en utilisant un \textbf{raisonnement par définition} et la conservation des longueurs.
+\end{exercice}
+
+%----------------------------------------
+% Corrigés (enseignant) — réponses concises
+%----------------------------------------
+\newpage
+\section*{Corrigés — Synthèse}
+\paragraph{S1-B}
+3) $A'( {-}3,2)$ ; 4) \textbf{Vrai}. \\
+\paragraph{S2-Ex}
+B) $M'({-}2,5)$ ; D) Échelle 1:100 $\Rightarrow$ 4\,cm $\mapsto$ 4\,m (\textbf{unités} correctement converties). \\
+E) Une symétrie centrale conserve parallélisme et longueurs $\Rightarrow$ l’image d’un parallélogramme est un parallélogramme isométrique. \\
+F) $O(1,2)$, $A(4,{-}1)$, alors $A'({-}2,5)$. Vecteurs opposés : $\overrightarrow{OA'}=(-3,3)=-\overrightarrow{OA}$. \\
+\paragraph{S3-Pb}
+$J'(-2,{-}3)$, $F'(1,{-}4)$; parallélisme conservé; $OJ=OJ'$, $OF=OF'$ (mesures identiques en carreaux). \\
+\paragraph{S3-Flash}
+1) ``$A'$ tel que $O$ milieu de $[AA']$'' ; 3) \textbf{Vrai}; 4) $OA=OA'$ ; 5) $P' (4,{-}1)$ ; 6) droite \textbf{parallèle}; 7) \textbf{compas}. \\
+\paragraph{S4-Eval (barème ci-dessous)}
+Ex.~1 : (1)V; (2)V; (3)F (c’est parallèle). \\
+Ex.~3 : $M'({-}3,2)$, $N'(5,{-}1)$. \\
+Ex.~4 : Longueurs et parallélisme conservés; $A'B'=AB=4{,}5$\,cm. \\
+Ex.~5 : Définition de $s_O$ : $O$ milieu de $[EE']$ car $OE=OE'$ et $E,O,E'$ alignés.
+
+%----------------------------------------
+% Barème critérié — niveaux de maîtrise
+%----------------------------------------
+\section*{Barème \& Niveaux de maîtrise}
+\begin{center}
+	\begin{tabular}{|p{7cm}|c|c|c|c|}
+		\hline
+		\textbf{Critères} & \textbf{Niv. 1} & \textbf{Niv. 2} & \textbf{Niv. 3} & \textbf{Niv. 4} \\
+		\hline
+		Définir/Reconnaître $s_O$ & 0 & 0,5 & 1 & 1 \\
+		\hline
+		Constructions instrumentées (soin, exactitude) & 0–1 & 1,5 & 2,5 & 3 \\
+		\hline
+		Coordonnées (repère) & 0 & 0,5 & 1,5 & 2 \\
+		\hline
+		Propriétés (parallélisme, longueurs) & 0–0,5 & 1 & 1,5 & 2 \\
+		\hline
+		Raisonnement/Justification & 0–0,5 & 1 & 1,5 & 2 \\
+		\hline
+		Communication (figures lisibles) & 0 & 0,5 & 1 & 1 \\
+		\hline
+		\textbf{Total} & \multicolumn{4}{c|}{\textbf{/20}} \\
+		\hline
+	\end{tabular}
+\end{center}
+\textit{Maîtrise :} N1 Insuffisant, N2 Fragile, N3 Satisfaisant, N4 Très bon.
+
+%----------------------------------------
+% Différenciation & aménagements
+%----------------------------------------
+\section*{Différenciation \& Aménagements}
+\textbf{DYS :} Police aérée (≥ 12 pt), interligne 1,5; pictogrammes (centre, image); consignes en \textbf{étapes numérotées}; modèles de tracé (gabarits) ; surlignage des mots-clés.\\
+\textbf{EANA :} Lexique visuel (\emph{centre}, \emph{image}, \emph{milieu}); exemples illustrés; binôme tuteur; consignes bilingues simples si possible.\\
+\textbf{Élèves rapides :} Défis : composition de transformations; recherche d’un centre de symétrie d’une figure complexe; script GeoGebra.\\
+\textbf{Remédiation ciblée :} Fiche ``méthode $A\mapsto A'$'' + exercice \textbf{Basique} supplémentaire; vérification instrument par instrument.
+
+%----------------------------------------
+% Algorithmique (option)
+%----------------------------------------
+\section*{Annexe — Algorithme de construction ($O$, $A$ $\rightarrow$ $A'$)}
+\begin{verbatim}
+	Entrée : points O, A
+	1. Tracer la droite (AO).
+	2. Mesurer OA (compas).
+	3. Reporter OA de l'autre côté de O sur (AO).
+	Sortie : A' tel que O est milieu de [AA'].
+\end{verbatim}
+
+%----------------------------------------
+% Devoir maison (optionnel)
+%----------------------------------------
+\newpage
+\section*{DM (option) — Symétrie centrale}
+\begin{exercice}
+	1) Construire l’image d’un pentagone par $s_O$ (donné).\\
+	2) Sur repère, $O(0,0)$ : donner l’image des points $R( {-}1,4)$, $S(3,3)$, $T(0, {-}5)$.\\
+	3) Démontrer en quelques lignes que l’image d’un rectangle est un rectangle isométrique.
+\end{exercice}
+\textbf{Corrigé (enseignant)} : $R'(1,{-}4)$, $S'({-}3,{-}3)$, $T'(0,5)$ ; propriétés de conservation $\Rightarrow$ rectangle $\cong$.
+
+%----------------------------------------
+% Références au programme (Cycle 4 - 5e)
+%----------------------------------------
+\section*{Références programme (Cycle 4)}
+\textbf{Espace \& géométrie :} Transformations du plan : symétrie axiale et \textbf{centrale}; propriétés d’alignement, parallélisme, conservation des longueurs/angles.\\
+\textbf{Compétences} : Chercher; Modéliser; Représenter; Raisonner; Calculer; Communiquer.\\
+\textbf{Liens} : Grandeurs \& mesures (longueurs, échelles), Nombres \& calculs (coordonnées), OGD (lecture de plan).
+%========== Fin du chapitre ==========

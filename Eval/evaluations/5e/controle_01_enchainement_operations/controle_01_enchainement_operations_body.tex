@@ -1,0 +1,129 @@
+
+% Barème et compétences
+\begin{center}
+	\badge{primary}{Ex.1: 4pts} \quad
+	\badge{primary}{Ex.2: 6pts} \quad
+	\badge{primary}{Ex.3: 6pts} \quad
+	\badge{primary}{Ex.4: 4pts}
+\end{center}
+
+\vspace{0.3cm}
+
+% Consignes
+\begin{consignebox}
+	\faIcon{info-circle} \textbf{CONSIGNES IMPORTANTES}
+	\begin{itemize}[leftmargin=*,noitemsep,topsep=5pt]
+		\item[\faIcon{check}] Rédigez clairement et justifiez tous vos calculs.
+		\item[\faIcon{check}] Respectez les priorités opératoires.
+		\item[\faIcon{check}] Les exercices peuvent être traités dans n\'importe quel ordre.
+		\item[\faIcon{times}] Calculatrice non autorisée.
+	\end{itemize}
+\end{consignebox}
+
+\vspace{0.5cm}
+
+%Exercice 1
+\begin{exercisebox}{\faIcon{edit} Exercice 1 : Calculs de base \points{4}}
+	\textbf{Calculer les expressions suivantes en détaillant les étapes si nécessaire :}
+	\begin{multicols}{2}
+		\begin{enumerate}[label=\textcolor{primary}{\textbf{\alph*)}},leftmargin=*]
+            \item $7 + 3 \times 5 = $ \ans{22} \points{1}
+			\vspace{0.8cm}
+			
+            \item $25 - 10 + 4 = $ \ans{19} \points{1}
+			\vspace{0.8cm}
+			
+            \item $42 \div 7 + 8 = $ \ans{14} \points{1}
+			\vspace{0.8cm}
+			
+            \item $3 \times 8 - 10 \div 2 = $ \ans{19} \points{1}
+		\end{enumerate}
+	\end{multicols}
+\end{exercisebox}
+
+%Exercice2
+\begin{exercisebox}{\faIcon{layer-group} Exercice 2 : Priorités opératoires \points{6}}
+	\textbf{Calculer en détaillant toutes les étapes :}
+	\begin{enumerate}[label=\textcolor{primary}{\textbf{\alph*)}},leftmargin=*]
+    \item $A = 28 - (12 + 5)$ \points{1.5}
+    \anslines[0.35cm]{3}{\begin{align*}
+      A &= 28 - (12 + 5) \\
+        &= 28 - 17 \\
+        &= \rep{11}
+    \end{align*}}
+		
+    \item $B = 5 \times (14 - 6) + 2$ \points{1.5}
+    \anslines[0.35cm]{4}{\begin{align*}
+      B &= 5 \times (14 - 6) + 2 \\
+        &= 5 \times 8 + 2 \\
+        &= 40 + 2 \\
+        &= \rep{42}
+    \end{align*}}
+		
+    \item $C = (23,75 - 14,5) + 7,25$ \points{1.5}
+    \anslines[0.35cm]{3}{\begin{align*}
+      C &= (23,75 - 14,5) + 7,25 \\
+        &= 9,25 + 7,25 \\
+        &= \rep{16,5}
+    \end{align*}}
+		
+    \item $D = 30 - (10 - (1,5 + 7,4))$ \points{1.5}
+    \anslines[0.35cm]{4}{\begin{align*}
+      D &= 30 - (10 - (1,5 + 7,4)) \\
+        &= 30 - (10 - 8,9) \\
+        &= 30 - 1,1 \\
+        &= \rep{28,9}
+    \end{align*}}
+	\end{enumerate}
+\end{exercisebox}
+
+%\newpage
+
+\begin{exercisebox}{\faIcon{lightbulb} Exercice 3 : Résolution de problèmes \points{6}}
+	\begin{enumerate}[leftmargin=*]
+		\item \textbf{Problème 1 (3 pts) :}
+    Cendra achète un BD à 10,40 € et un livre sur les motos qui coûte 17,60 €. Elle paie avec un billet de 50 €. \textbf{Écrire l\'expression} qui donne la monnaie rendue et \textbf{calculer} le montant.
+    \anslines[0.35cm]{5}{\begin{align*}
+      \text{Monnaie} &= 50 - (10{,}40 + 17{,}60)\\
+                      &= 50 - 28{,}00\\
+                      &= \rep{22{,}00}\,\text{€}
+    \end{align*}}
+		
+		\item \textbf{Problème 2 (3 pts) :}
+    Avec 1,6 L de parfum, on remplit 32 flacons identiques. \textbf{Quelle est la contenance, en L, d'un flacon ?}
+    \anslines[0.40cm]{5}{\begin{align*}
+      \text{Contenance} &= \dfrac{1{,}6}{32}\,\text{L}\\
+                         &= 0{,}05\,\text{L}\\
+                         &= \rep{5}\,\text{cL}
+    \end{align*}} 
+	\end{enumerate}
+\end{exercisebox}
+
+%Exercice 4
+\begin{exercisebox}{\faIcon{pencil-alt} Exercice 4 : Expressions et vocabulaire \points{4}}
+	\begin{enumerate}[label=\textcolor{primary}{\textbf{\alph*)}},leftmargin=*]
+        \item \textbf{Écrire l\'expression} correspondant à : \textit{\"La somme du produit de 4 par 5 et de 12\".} \points{2}
+        \anslines[0.35cm]{4}{$\rep{4 \times 5 + 12}$}
+		
+        \item \textbf{Traduire par une phrase} le calcul suivant : $(15 - 9) \times 2$. \points{2}
+        \anslines[0.35cm]{4}{\rep{\text{Le double de la différence entre 15 et 9.}}}
+	\end{enumerate}
+\end{exercisebox}
+
+% Pied de page avec évaluation
+\vspace{0.2cm}
+\begin{center}
+	\begin{tikzpicture}
+		\node[draw=secondary,rounded corners=3mm,inner sep=8pt,fill=light!30] {
+			\begin{tabular}{lccccc}
+				\textbf{Auto-évaluation :} & 
+				\faIcon{frown} Difficile & 
+				\faIcon{meh} Moyen & 
+				\faIcon{smile} Facile & 
+				\phantom{xx} & 
+				\textbf{Temps utilisé :} \underline{\phantom{xxxxx}} min
+			\end{tabular}
+		};
+	\end{tikzpicture}
+\end{center}
+

@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Mathématiques - Réunion Parents-Professeurs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .presentation-container {
+            width: 100%;
+            max-width: 1100px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .progress-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #4CAF50, #2196F3);
+            transition: width 0.3s ease;
+            z-index: 10;
+        }
+        
+        .slide {
+            display: none;
+            padding: 50px;
+            min-height: 600px;
+            animation: fadeIn 0.5s;
+        }
+        
+        .slide.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h1 {
+            color: #1e3c72;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #2196F3;
+        }
+        
+        h2 {
+            color: #2a5298;
+            font-size: 1.8em;
+            margin: 30px 0 20px;
+        }
+        
+        h3 {
+            color: #1e3c72;
+            font-size: 1.4em;
+            margin: 20px 0 15px;
+            padding: 10px;
+            background: #e3f2fd;
+            border-radius: 5px;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        li {
+            margin: 12px 0;
+            padding: 12px 15px;
+            background: #f5f5f5;
+            border-left: 4px solid #2196F3;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        li:hover {
+            transform: translateX(5px);
+            background: #e3f2fd;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-top: 3px solid #2196F3;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .card h4 {
+            color: #1e3c72;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .highlight {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #ff9800;
+        }
+        
+        .warning {
+            background: #ffebee;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #f44336;
+        }
+        
+        .success {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #4CAF50;
+        }
+        
+        .tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .tool-badge {
+            background: #2196F3;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+        }
+        
+        .tool-badge:hover {
+            transform: scale(1.1);
+            background: #1976D2;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: #f5f5f5;
+            border-top: 2px solid #e0e0e0;
+        }
+        
+        button {
+            padding: 12px 30px;
+            background: #2196F3;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            background: #1976D2;
+            transform: translateY(-2px);
+        }
+        
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .slide-counter {
+            font-weight: 600;
+            color: #1e3c72;
+        }
+        
+        .emoji {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <div class="progress-bar" id="progressBar"></div>
+        
+        <!-- Slide 1: Accueil -->
+        <div class="slide active">
+            <h1>Les Mathématiques au Collège</h1>
+            <div class="center" style="margin: 50px 0;">
+                <p style="font-size: 2em;">🔢</p>
+                <h2 style="color: #1e3c72;">Faisons des mathématiques une aventure !</h2>
+                <p style="font-size: 1.3em; color: #666; margin: 30px 0;">Réunion Parents-Professeurs</p>
+                <p style="font-size: 1.2em; color: #2a5298;">Année 2025-2026</p>
+            </div>
+            
+            <div class="highlight">
+                <p class="center"><strong>Ma mission :</strong> Accompagner chaque élève vers la réussite en mathématiques, en développant confiance, méthode et plaisir d'apprendre.</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: Ma vision -->
+        <div class="slide">
+            <h1>Ma Vision des Mathématiques</h1>
+            
+            <div class="grid">
+                <div class="card">
+                    <h4>🎯 Objectif Principal</h4>
+                    <p>Démystifier les mathématiques et montrer qu'elles sont accessibles à tous avec la bonne approche</p>
+                </div>
+                
+                <div class="card">
+                    <h4>💪 Ma Conviction</h4>
+                    <p>L'erreur est un outil d'apprentissage. La persévérance et la confiance sont les clés du succès</p>
+                </div>
+                
+                <div class="card">
+                    <h4>🌟 Mon Approche</h4>
+                    <p>Bienveillance, différenciation et valorisation des progrès de chaque élève</p>
+                </div>
+                
+                <div class="card">
+                    <h4>🚀 Mon Ambition</h4>
+                    <p>Préparer les élèves non seulement au Brevet mais aussi aux défis futurs</p>
+                </div>
+            </div>
+            
+            <div class="success">
+                <p><strong>Principe fondamental :</strong> Chaque élève peut réussir en mathématiques. Mon rôle est de trouver la méthode qui lui correspond.</p>
+            </div>
+        </div>
+
+        <!-- Slide 3: Méthode pédagogique -->
+        <div class="slide">
+            <h1>Ma Méthode Pédagogique</h1>
+            
+            <h2>📚 Structure du Cours</h2>
+            
+            <ul>
+                <li><strong>Cahier Transmaths :</strong> Support principal contenant cours, exercices et méthodes</li>
+                <li><strong>Leçons interactives :</strong> Co-construction avec les élèves pour maintenir l'attention</li>
+                <li><strong>Exercices progressifs :</strong> Du plus simple au plus complexe, adaptés à chaque niveau</li>
+                <li><strong>Rituels de début de cours :</strong> Calcul mental et révisions pour ancrer les acquis</li>
+            </ul>
+            
+            <h3>Organisation d'une séance type</h3>
+            <div class="highlight center">
+                <p><strong>5 min</strong> Rituel → <strong>15 min</strong> Correction → <strong>20 min</strong> Nouvelle notion → <strong>15 min</strong> Exercices</p>
+            </div>
+            
+            <div class="success">
+                <p><strong>Cours disponibles en ligne :</strong> Après chaque séance, le cours complet est accessible sur École Directe pour permettre les révisions et rattraper en cas d'absence.</p>
+            </div>
+        </div>
+
+        <!-- Slide 4: Outils numériques -->
+        <div class="slide">
+            <h1>Les Outils Numériques</h1>
+            
+            <h2>💻 Pour S'entraîner et Explorer</h2>
+            
+            <div class="tools">
+                <span class="tool-badge">📊 Quizinière</span>
+                <span class="tool-badge">🔧 Capytale</span>
+                <span class="tool-badge">📐 GeoGebra</span>
+                <span class="tool-badge">🐱 Scratch</span>
+                <span class="tool-badge">📈 Tableur Excel</span>
+                <span class="tool-badge">❓ QCM École Directe</span>
+            </div>
+            
+            <div class="grid">
+                <div class="card">
+                    <h4>Exercices Interactifs</h4>
+                    <p><strong>Quizinière & QCM :</strong> Entraînement personnalisé avec correction automatique</p>
+                </div>
+                
+                <div class="card">
+                    <h4>Géométrie Dynamique</h4>
+                    <p><strong>GeoGebra :</strong> Visualisation et manipulation des figures géométriques</p>
+                </div>
+                
+                <div class="card">
+                    <h4>Programmation</h4>
+                    <p><strong>Scratch & Capytale :</strong> Initiation ludique à l'algorithmique</p>
+                </div>
+                
+                <div class="card">
+                    <h4>Analyse de Données</h4>
+                    <p><strong>Tableur :</strong> Traitement de données et graphiques</p>
+                </div>
+            </div>
+            
+            <div class="warning">
+                <p><strong>Important :</strong> Ces outils sont complémentaires au travail papier-crayon qui reste fondamental.</p>
+            </div>
+        </div>
+
+        <!-- Slide 5: Programme et compétences -->
+        <div class="slide">
+            <h1>Programme et Compétences</h1>
+            
+            <h2>📖 Les Grands Domaines</h2>
+            
+            <div class="grid">
+                <div class="card">
+                    <h4>🔢 Nombres et Calculs</h4>
+                    <p>Fractions, décimaux, proportionnalité, pourcentages</p>
+                </div>
+                
+                <div class="card">
+                    <h4>📐 Géométrie</h4>
+                    <p>Constructions, propriétés des figures, transformations</p>
+                </div>
+                
+                <div class="card">
+                    <h4>📊 Gestion de Données</h4>
+                    <p>Statistiques, graphiques, probabilités (cycle 4)</p>
+                </div>
+                
+                <div class="card">
+                    <h4>🤖 Algorithmique</h4>
+                    <p>Programmation, logique, résolution de problèmes</p>
+                </div>
+            </div>
+            
+            <h3>Les 6 Compétences Travaillées</h3>
+            <ul>
+                <li><strong>Chercher :</strong> Expérimenter, émettre des hypothèses</li>
+                <li><strong>Modéliser :</strong> Traduire en langage mathématique</li>
+                <li><strong>Représenter :</strong> Choisir et utiliser différentes représentations</li>
+                <li><strong>Raisonner :</strong> Démontrer, justifier</li>
+                <li><strong>Calculer :</strong> Effectuer des calculs exacts ou approchés</li>
+                <li><strong>Communiquer :</strong> Expliquer sa démarche à l'oral et à l'écrit</li>
+            </ul>
+        </div>
+
+        <!-- Slide 6: Évaluation -->
+        <div class="slide">
+            <h1>L'Évaluation</h1>
+            
+            <h2>📊 Valoriser les Progrès</h2>
+            
+            <div class="grid">
+                <div class="card">
+                    <h4>📝 Contrôles de Fin de Chapitre</h4>
+                    <p>Note sur 20 pour mesurer les acquis<br>
+                    Toujours précédés d'exercices de révision</p>
+                </div>
+                
+                <div class="card">
+                    <h4>🎯 Évaluation par Compétences</h4>
+                    <p>Suivi détaillé des 6 compétences<br>
+                    Permet de cibler les points à améliorer</p>
+                </div>
+                
+                <div class="card">
+                    <h4>🏠 Devoirs Maison</h4>
+                    <p>Approfondissement et recherche<br>
+                    Développement de l'autonomie</p>
+                </div>
+                
+                <div class="card">
+                    <h4>✅ Évaluations Formatives</h4>
+                    <p>Quiz et exercices non notés<br>
+                    Pour s'entraîner sans pression</p>
+                </div>
+            </div>
+            
+            <div class="success">
+                <p><strong>Ma philosophie :</strong> L'évaluation est un outil de progression, pas de sanction. Chaque erreur est une opportunité d'apprentissage.</p>
+            </div>
+            
+            <div class="highlight">
+                <p><strong>Coefficient des évaluations :</strong> Contrôles de chapitre (coef. 2), Interrogations (coef. 1), Devoirs maison (coef. 0.5)</p>
+            </div>
+        </div>
+
+        <!-- Slide 7: Travail à la maison -->
+        <div class="slide">
+            <h1>Le Travail à la Maison</h1>
+            
+            <h2>🏠 Pour Consolider les Acquis</h2>
+            
+            <h3>Organisation quotidienne recommandée</h3>
+            <ul>
+                <li><strong>Le soir même :</strong> Relire le cours de la journée (10 min)</li>
+                <li><strong>Exercices :</strong> Faire les exercices demandés après avoir relu le cours</li>
+                <li><strong>Anticipation :</strong> Préparer les questions sur les points non compris</li>
+                <li><strong>Révisions régulières :</strong> Reprendre les notions antérieures (15 min/semaine)</li>
+            </ul>
+            
+            <div class="highlight center">
+                <p><strong>Temps moyen de travail en maths : 20-30 minutes par jour</strong></p>
+            </div>
+            
+            <h3>Stratégies de réussite</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>Apprendre AVANT de faire</h4>
+                    <p>Toujours revoir le cours avant les exercices</p>
+                </div>
+                
+                <div class="card">
+                    <h4>Régularité > Quantité</h4>
+                    <p>Mieux vaut 20 min/jour que 2h le week-end</p>
+                </div>
+                
+                <div class="card">
+                    <h4>Erreurs = Progrès</h4>
+                    <p>Noter ses erreurs pour ne pas les reproduire</p>
+                </div>
+                
+                <div class="card">
+                    <h4>Auto-évaluation</h4>
+                    <p>Refaire les exercices corrigés en classe</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Accompagnement parental -->
+        <div class="slide">
+            <h1>Comment Accompagner Votre Enfant ?</h1>
+            
+            <h2>🤝 Votre Rôle Est Essentiel</h2>
+            
+            <h3>Ce que vous pouvez faire</h3>
+            <ul>
+                <li><strong>Vérifier l'agenda :</strong> S'assurer que les devoirs sont notés et faits</li>
+                <li><strong>Interroger sur les leçons :</strong> Demander d'expliquer ce qui a été vu en classe</li>
+                <li><strong>Créer un cadre propice :</strong> Espace calme, horaire régulier</li>
+                <li><strong>Encourager :</strong> Valoriser les efforts autant que les résultats</li>
+                <li><strong>Consulter École Directe :</strong> Suivre les notes, les observations et les appréciations</li>
+            </ul>
+            
+            <h3>Pièges à éviter</h3>
+            <div class="warning">
+                <ul style="margin: 0;">
+                    <li>Dire "j'étais nul en maths" - cela crée un blocage</li>
+                    <li>Faire les exercices à la place de l'enfant</li>
+                    <li>Attendre le bulletin pour réagir</li>
+                    <li>Comparer avec les autres élèves</li>
+                </ul>
+            </div>
+            
+            <div class="success">
+                <p><strong>Le plus important :</strong> Montrer de l'intérêt pour ce que votre enfant apprend, même si vous ne maîtrisez pas les mathématiques.</p>
+            </div>
+        </div>
+
+        <!-- Slide 9: Difficultés et solutions -->
+        <div class="slide">
+            <h1>Face aux Difficultés</h1>
+            
+            <h2>🔧 Solutions et Ressources</h2>
+            
+            <div class="grid">
+                <div class="card">
+                    <h4>🆘 En cas de difficultés</h4>
+                    <p>• Me contacter rapidement via École Directe<br>
+                    • Possibilité de rendez-vous individuel<br>
+                    • Mise en place d'un suivi personnalisé</p>
+                </div>
+                
+                <div class="card">
+                    <h4>📚 Ressources disponibles</h4>
+                    <p>• Fiches méthodes sur École Directe<br>
+                    • Exercices supplémentaires corrigés<br>
+                    • Vidéos explicatives recommandées</p>
+                </div>
+                
+                <div class="card">
+                    <h4>👥 Entraide</h4>
+                    <p>• Tutorat entre élèves encouragé<br>
+                    • Travail en groupe possible<br>
+                    • Questions en classe valorisées</p>
+                </div>
+                
+                <div class="card">
+                    <h4>🎯 Remédiation</h4>
+                    <p>• Exercices différenciés<br>
+                    • Reprises des bases si nécessaire<br>
+                    • Évaluations de rattrapage possibles</p>
+                </div>
+            </div>
+            
+            <div class="highlight">
+                <p><strong>Ma disponibilité :</strong> N'hésitez jamais à me contacter. Il vaut mieux intervenir tôt que laisser les difficultés s'accumuler.</p>
+            </div>
+        </div>
+
+        <!-- Slide 10: Communication et contact -->
+        <div class="slide">
+            <h1>Communication et Suivi</h1>
+            
+            <h2>💬 Restons en Contact</h2>
+            
+            <div class="highlight center">
+                <h3 style="background: none;">École Directe</h3>
+                <p>Plateforme privilégiée pour :</p>
+                <p>• Consulter les notes et appréciations<br>
+                • Accéder aux cours et ressources<br>
+                • Me contacter via la messagerie<br>
+                • Suivre les devoirs</p>
+            </div>
+            
+            <h3>Moments clés de l'année</h3>
+            <ul>
+                <li><strong>Conseils de classe :</strong> Fin de chaque trimestre - Bilan collectif et individuel</li>
+                <li><strong>Rencontres parents-professeurs :</strong> Décembre et sur demande</li>
+            </ul>
+            
+            <div class="success">
+                <p><strong>Ensemble pour leur réussite !</strong> La collaboration école-famille est la clé du succès. Je compte sur votre implication et reste à votre écoute.</p>
+            </div>
+            
+            <div class="center" style="margin-top: 40px;">
+                <h3 style="background: none;">Merci de votre attention !</h3>
+                <p style="font-size: 1.2em; color: #2a5298;">Des questions ?</p>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button id="prevBtn" onclick="changeSlide(-1)">← Précédent</button>
+            <div class="slide-counter">
+                <span id="slideNumber">1</span> / <span id="totalSlides">10</span>
+            </div>
+            <button id="nextBtn" onclick="changeSlide(1)">Suivant →</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        document.getElementById('totalSlides').textContent = totalSlides;
+        
+        function updateProgressBar() {
+            const progress = ((currentSlide + 1) / totalSlides) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+        
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            
+            if (n >= totalSlides) currentSlide = 0;
+            if (n < 0) currentSlide = totalSlides - 1;
+            
+            slides[currentSlide].classList.add('active');
+            document.getElementById('slideNumber').textContent = currentSlide + 1;
+            
+            // Update button states
+            document.getElementById('prevBtn').disabled = currentSlide === 0;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides - 1;
+            
+            // Update progress bar
+            updateProgressBar();
+        }
+        
+        function changeSlide(n) {
+            currentSlide += n;
+            showSlide(currentSlide);
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+        
+        // Initialize
+        showSlide(0);
+    </script>
+</body>
+</html>

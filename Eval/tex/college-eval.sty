@@ -1,6 +1,10 @@
 % tex/college-eval.sty
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{college-eval}[2025/09/17 v1.0 College evaluations kit]
+% Pré-définition des helpers de réponses pour éviter les erreurs de \renewcommand
+\providecommand{\ansblockcolor}{warning}
+\providecommand{\ans}[1]{\ifcorrige \rep{#1}\else \dotfill\fi}
+\providecommand{\anslines}[3][0.35cm]{\ifcorrige {\color{\ansblockcolor}#3}\else \zonereponseLignes[#1]{#2}\fi}
 
 % -------- Options ----------
 \newif\ifcorrige \corrigefalse
@@ -29,7 +33,6 @@
 \RequirePackage{array}
 \RequirePackage{fontawesome5}
 \RequirePackage{tabularx}
-\RequirePackage[normalem]{ulem}
 \RequirePackage[most]{tcolorbox}
 \tcbuselibrary{skins,breakable}
 
@@ -45,13 +48,6 @@
 \DeclareRobustCommand{\rep}[1]{%
 	\ifcorrige \begingroup\color{warning}\ifmmode #1\else \textbf{#1}\fi\endgroup \fi}
 \newcommand{\onlycorrige}[1]{\ifcorrige #1\fi}
-
-% -------- Ligne pointillée pour les réponses en mode corrigé ----------
-\newcommand{\replig}[1]{%
-	\ifcorrige%
-		\begingroup\color{warning}\uuline{\textbf{#1}}\endgroup%
-	\fi%
-}
 
 % -------- En-tête / pied ----------
 \pagestyle{fancy}
@@ -130,8 +126,8 @@
 \newcommand{\badge}[2]{\tikz[baseline=(char.base)]{\node[shape=rectangle,draw,thick,rounded corners=2mm,inner sep=2pt,fill=#1,text=white,font=\footnotesize\bfseries] (char) {#2};}}
 \newcommand{\dotline}[1]{\makebox[#1][s]{\dotfill}}
 \newcolumntype{L}[1]{>{\hsize=#1\hsize\arraybackslash}X}
-\newcommand{\zonereponse}[1]{\ifcorrige\vspace{0.2cm}\else\par\noindent\colorbox{light}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\vspace{#1}}}\par\fi}
-\newcommand{\zonereponseLignes}[2][0.9cm]{\ifcorrige\vspace{0.2cm}\else\par\noindent\colorbox{light}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\setlength{\parskip}{#1}\foreach \i in {1,...,#2}{\noindent\dotfill\par}}}\par\fi}
+\newcommand{\zonereponse}[1]{\par\noindent\colorbox{light}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\vspace{#1}}}\par}
+\newcommand{\zonereponseLignes}[2][0.9cm]{\par\noindent\colorbox{light}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\setlength{\parskip}{#1}\foreach \i in {1,...,#2}{\noindent\dotfill\par}}}\par}
 
 % -------- Cartouche élève (Nom/Prénom colonne gauche, Classe/Date colonne droite) ----------
 \newcommand{\StudentInfoBox}{%
@@ -154,5 +150,26 @@
 			\raggedleft
 			\fcolorbox{secondary}{white}{\textbf{NOTE : }\makebox[1cm]{\rule{0pt}{1.1em}}\textbf{ / 20}}
 		\end{minipage}
-	\end{tcolorbox}
+\end{tcolorbox}
 }
+
+% === Helpers de réponses (élève/corrigé) ===
+% \ans{...} : en élève -> pointillés ; en corrigé -> \rep{...}
+\providecommand{\ans}[1]{\ifcorrige \rep{#1}\else \dotfill\fi}
+% Couleur des blocs de correction (pour \anslines)
+\providecommand{\ansblockcolor}{warning}
+% \anslines[interligne]{nbLignes}{contenuCorrige}
+% en élève -> zone multilignes ; en corrigé -> contenu fourni en couleur
+\renewcommand{\anslines}[3][0.35cm]{\ifcorrige {\color{\ansblockcolor}#3}\else \zonereponseLignes[#1]{#2}\fi}
+
+% === Coloration automatique des étapes en mode corrigé ===
+% Met en rouge les environnements de maths les plus courants
+\RequirePackage{etoolbox}
+\ifcorrige
+  \AtBeginEnvironment{align}{\color{warning}}
+  \AtBeginEnvironment{align*}{\color{warning}}
+  \AtBeginEnvironment{equation}{\color{warning}}
+  \AtBeginEnvironment{equation*}{\color{warning}}
+  \AtBeginEnvironment{gather}{\color{warning}}
+  \AtBeginEnvironment{gather*}{\color{warning}}
+\fi

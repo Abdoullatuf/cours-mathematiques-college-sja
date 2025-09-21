@@ -1,0 +1,28 @@
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{article}
+
+% Definit le chemin vers les ressources LaTeX du projet
+\makeatletter
+\def\input@path{{../../../tex/}}
+\makeatother
+
+% Charger le style commun (chemin explicite conseillé depuis ce dossier)
+\usepackage{college-eval}
+
+% Sécurisation : on force le mode Élève (aucun corrigé n'apparaît)
+\corrigefalse
+
+% Métadonnées de l’épreuve
+\examsetup{5e}{Mathématiques}{Enchaînement d'opérations}{1}{55 minutes}{Calculatrice interdite}
+
+\begin{document}
+	% (Inactif en mode élève, tu peux le laisser)
+	\CorrigeWatermark
+	\ExamBanner
+	\StudentInfoBox
+	
+	% Corps du contrôle (nom de fichier correct avec 0)
+\input{controle_01_enchainement_operations_body.tex}
+	
+\end{document}
+

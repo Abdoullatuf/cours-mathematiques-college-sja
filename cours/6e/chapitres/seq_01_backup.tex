@@ -1,0 +1,349 @@
+% Séquence 1 : Les nombres entiers
+\setseqtitle{Les nombres entiers}
+\chapter{Les nombres entiers}
+
+\section{Rang des chiffres}
+
+\begin{definitionbox}
+	\textbf{Chiffres et valeur}
+	\begin{itemize}[label = \textbullet]
+		\item 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 sont les dix \textbf{chiffres} qui permettent d'écrire tous les nombres.
+		\item Chaque chiffre a une \textbf{valeur} en fonction de sa position dans le nombre.
+	\end{itemize}
+\end{definitionbox}
+
+On peut utiliser un tableau de numération pour visualiser le rang d'un chiffre.
+
+\begin{center}
+	\newcolumntype{C}{>{\centering\arraybackslash}p{0.8cm}}
+	\begin{tabular}{|C|C|C|C|C|C|C|C|C|C|C|C|}
+		\hline
+		\multicolumn{3}{|c|}{\textbf{Milliards}} & 
+		\multicolumn{3}{|c|}{\textbf{Millions}} & 
+		\multicolumn{3}{|c|}{\textbf{Milliers}} & 
+		\multicolumn{3}{|c|}{\textbf{Unités}} \\
+		\hline
+		\textbf{c} & \textbf{d} & \textbf{u} & 
+		\textbf{c} & \textbf{d} & \textbf{u} & 
+		\textbf{c} & \textbf{d} & \textbf{u} & 
+		\textbf{c} & \textbf{d} & \textbf{u} \\
+		\hline
+		& & & & & & & & & & & \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\textbf{Remarque :} Lorsqu'on écrit un nombre en chiffres, il faut laisser un espace entre les classes. Par exemple le nombre 25204879603 s'écrit : 25 204 879 603.
+
+\section{Décomposition décimale}
+
+On peut donner la décomposition décimale de 3 584 :
+
+\begin{examplebox}
+	3 584 = (3 × 1 000) + (5 × 100) + (8 × 10) + (4 × 1)
+\end{examplebox}
+
+\textbf{Attention !} Pour le nombre 3 584, le \textbf{chiffre} des centaines est 5 mais le \textbf{nombre} de centaines est 35 (il y a 35 centaines dans le nombre 3 584).
+
+En effet :
+\begin{align*}
+	3 584 &= 35 \times 100 + 84\\
+	3 584 &= 358 \times 10 + 4
+\end{align*}
+
+\begin{examplebox}
+	Dans le nombre 25 803,\\ 
+	le chiffre des dizaines est 0 ; le nombre de dizaines est 2 580\\
+	le chiffre des centaines est 8 ; le nombre de centaines est 258
+\end{examplebox}
+
+\section{Écriture en toutes lettres}
+
+\begin{examplebox}
+	\begin{itemize}[label = \textbullet]
+		\item 1 823 : mille-huit-cent-vingt-trois (pas de « s » à « cent », ni à « vingt » car ils sont suivis d'autres chiffres !)
+		\item 2 087 : deux-mille-quatre-vingt-sept (le mot « mille » est invariable, et toujours pas de « s » à « vingt »...)
+		\item 600 : six-cents (ici on met bien un « s » car il n'y a plus rien derrière !)
+		\item 680 : six-cent-quatre-vingts (pas de « s » à « cent », mais un « s » obligatoire à « vingt » car le nombre se termine par 80).
+	\end{itemize}
+\end{examplebox}
+
+\subsection{Règles d'orthographe des nombres}
+
+\begin{itemize}
+	\item Le mot « \textbf{mille} » est invariable ; les mots « \textbf{million} » et « \textbf{milliard} », cependant, s'accordent et prennent donc un « s » au pluriel.
+	\item Les mots « \textbf{cent} » et « \textbf{vingt} » prennent un « s » au pluriel uniquement lorsqu'ils sont à la fin du nombre.
+	\item Le mot « vingt » ne s'utilise au pluriel (avec un « s ») que si un nombre se finit par 80 (quatre-vingts).
+	\item Les tirets sont mis entre chaque mot d'un nombre qui se présente sous forme composée.
+\end{itemize}
+
+\section{Demi-droite graduée}
+
+\begin{definitionbox}
+	\textbf{Demi-droite graduée}
+	
+	On appelle \textbf{demi-droite graduée} une demi-droite sur laquelle on fixe :
+	\begin{itemize}[label = \textbullet]
+		\item Un point appelé \textbf{origine de la demi-droite}
+		\item \textbf{Un sens} représenté par une flèche
+		\item \textbf{Une unité de longueur} que l'on reporte régulièrement à partir de l'origine
+	\end{itemize}
+\end{definitionbox}
+
+\begin{proprietebox}
+	Sur une demi-droite graduée,
+	\begin{itemize}[label = \textbullet]
+		\item Chaque point est repéré par un nombre appelé \textbf{abscisse} de ce point.
+		\item À chaque nombre correspond un point unique.
+	\end{itemize}
+\end{proprietebox}
+
+\begin{examplebox}
+	% Schéma de droite graduée avec TikZ
+	\begin{center}
+		\begin{tikzpicture}[scale=0.8]
+			% Droite graduée
+			\draw[thick, ->] (0,0) -- (12,0);
+			
+			% Graduations
+			\foreach \x in {0,1,...,11} {
+				\draw (\x,-0.1) -- (\x,0.1);
+				\node[below] at (\x,-0.3) {\x};
+			}
+			
+			% Point A
+			\node[circle,fill=black,inner sep=2pt] at (3.5,0) {};
+			\node[above] at (3.5,0.2) {$A$};
+			
+			% Point B
+			\node[circle,fill=black,inner sep=2pt] at (7,0) {};
+			\node[above] at (7.2,0.2) {$B$};
+		\end{tikzpicture}
+	\end{center}
+	
+	Sur cette demi-droite graduée, le point $A$ a pour abscisse 3,5 et le point $B$ a pour abscisse 7.	
+\end{examplebox}
+
+\section{Addition, soustraction, multiplication}
+
+\subsection{Addition}
+
+\begin{definitionbox}
+	\textbf{Addition}
+	\begin{itemize}[label = \textbullet]
+		\item Les nombres que l'on additionne s'appellent les \textbf{termes}.
+		\item Le résultat d'une addition s'appelle la \textbf{somme}.
+	\end{itemize}
+\end{definitionbox}
+
+\begin{examplebox}
+	Dans l'addition $245 + 137 = 382$ :
+	\begin{itemize}[label = \textbullet]
+		\item 245 et 137 sont les \textbf{termes}
+		\item 382 est la \textbf{somme}
+	\end{itemize}
+\end{examplebox}
+
+\begin{methodebox}
+	\textbf{Poser une addition}
+	
+	Pour poser une addition, on aligne les chiffres de même rang (unités sous unités, dizaines sous dizaines, etc.) et on additionne colonne par colonne en commençant par la droite.
+	
+	\begin{center}
+		\begin{tabular}{ccccr}
+			& 3 & 5 & 4 & 6 \\
+			+ & 1 & 2 & 7 & 8 \\
+			\hline
+			& 4 & 8 & 2 & 4 \\
+		\end{tabular}
+	\end{center}
+	
+	Avec des retenues :
+	\begin{center}
+		\begin{tabular}{ccccr}
+			& $_1$3 & $_1$5 & 4 & 6 \\
+			+ &   2 &   7 & 8 & 5 \\
+			\hline
+			&   6 &   3 & 3 & 1 \\
+		\end{tabular}
+	\end{center}
+\end{methodebox}
+
+\subsection{Soustraction}
+
+\begin{definitionbox}
+	\textbf{Soustraction}
+	\begin{itemize}[label = \textbullet]
+		\item Les nombres que l'on soustrait s'appellent les \textbf{termes}.
+		\item Le résultat d'une soustraction s'appelle la \textbf{différence}.
+	\end{itemize}
+\end{definitionbox}
+
+\begin{examplebox}
+	Dans la soustraction $564 - 238 = 326$ :
+	\begin{itemize}[label = \textbullet]
+		\item 564 et 238 sont les \textbf{termes}
+		\item 326 est la \textbf{différence}
+	\end{itemize}
+\end{examplebox}
+
+\begin{methodebox}
+	\textbf{Poser une soustraction}
+	
+	Pour poser une soustraction, on aligne les chiffres de même rang et on soustrait colonne par colonne en commençant par la droite.\\[0.5cm]
+	
+	Sans retenue :
+	\begin{center}
+		\begin{tabular}{ccccr}
+			& 8 & 7 & 5 & 4 \\
+			- & 3 & 2 & 4 & 2 \\
+			\hline
+			& .. & .. & .. & .. \\
+		\end{tabular}
+	\end{center}
+	
+	Avec retenues :
+	\begin{center}
+		\begin{tabular}{ccccr}
+			& 6 & 4 & 2 & 3 \\
+			- & 2 & 8 & 7 & 6 \\
+			\hline
+			& .. & .. & .. & .. \\
+		\end{tabular}
+	\end{center}
+\end{methodebox}
+
+\textbf{Remarque :} On ne peut pas changer l'ordre des termes dans une soustraction (la soustraction n'est pas commutative).
+
+\subsection{Multiplication}
+
+\begin{definitionbox}
+	\textbf{Multiplication}
+	\begin{itemize}[label = \textbullet]
+		\item Les nombres que l'on multiplie s'appellent les \textbf{facteurs}.
+		\item Le résultat d'une multiplication s'appelle le \textbf{produit}.
+	\end{itemize}
+\end{definitionbox}
+
+\begin{examplebox}
+	Dans la multiplication $45 \times 23 = 1~035$ :
+	\begin{itemize}[label = \textbullet]
+		\item 45 et 23 sont les \textbf{facteurs}
+		\item 1 035 est le \textbf{produit}
+	\end{itemize}
+\end{examplebox}
+
+\begin{methodebox}
+	\textbf{Poser une multiplication}
+	
+	\begin{center}
+		\begin{tabular}{cccccr}
+			&   & 3 & 4 & 5 &   \\
+			× &   &   & 2 & 3 &   \\
+			\hline
+			& .. & .. & .. & .. & \small{(345 × 3)} \\
+			+ & .. & .. & .. & .. & \small{(345 × 20)} \\
+			\hline
+			& .. & .. & .. & .. &   \\
+		\end{tabular}
+	\end{center}
+\end{methodebox}
+
+\begin{proprietebox}
+	\textbf{Propriétés de la multiplication}
+	\begin{itemize}[label = \textbullet]
+		\item La multiplication est \textbf{commutative} : $a \times b = b \times a$
+		\item 0 est l'élément absorbant : $a \times 0 = 0$
+		\item 1 est l'élément neutre : $a \times 1 = a$
+	\end{itemize}
+\end{proprietebox}
+
+\section{Division euclidienne}
+
+\begin{definitionbox}
+	\textbf{Division euclidienne}
+	
+	Dans une division euclidienne, on a toujours :
+	\begin{center}
+		\fcolorbox{black}{yellow!20}{dividende = diviseur × quotient + reste}
+	\end{center}
+	avec reste < diviseur
+\end{definitionbox}
+
+\begin{examplebox}
+	Posons la division de 893 par 13 :
+	
+	\begin{center}		%\opdiv[displayintermediary=all]{893}{13}	opdiv c'est div décimale et opidiv euclidienne
+	\opidiv[displayintermediary=all]{893}{13}
+	\end{center}
+	
+	On a : $893 = 13 \times 68 + 9$
+	\begin{itemize}[label = \textbullet]
+		\item 893 est le \textbf{dividende}
+		\item 13 est le \textbf{diviseur}
+		\item 68 est le \textbf{quotient}
+		\item 9 est le \textbf{reste}
+	\end{itemize}
+\end{examplebox}
+
+\begin{methodebox}
+	\textbf{Vérification d'une division euclidienne}
+	
+	Pour vérifier une division euclidienne, on calcule :
+	\begin{center}
+		diviseur × quotient + reste
+	\end{center}
+	On doit retrouver le dividende.
+	
+	\textbf{Exemple :} Pour la division $893 \div 13$ :
+	\begin{align*}
+		13 \times 68 + 9 &= 884 + 9\\
+		&= 893 \checkmark
+	\end{align*}
+\end{methodebox}
+
+\subsection{Multiples et diviseurs d'un nombre entier}
+
+\begin{definitionbox}
+	\textbf{Multiple et diviseur}
+	\begin{itemize}[label = \textbullet]
+		\item Si le reste de la division euclidienne de $a$ par $b$ est 0, on dit que $a$ est un \textbf{multiple} de $b$.
+		\item On dit aussi que $b$ est un \textbf{diviseur} de $a$.
+		\item On dit que $a$ est \textbf{divisible} par $b$.
+	\end{itemize}
+\end{definitionbox}
+
+\begin{examplebox}
+	\begin{itemize}[label = \textbullet]
+		\item $48 = 6 \times 8$, donc 48 est un multiple de 6 et de 8
+		\item 6 et 8 sont des diviseurs de 48
+		\item 48 est divisible par 6 et par 8
+	\end{itemize}
+\end{examplebox}
+
+\subsection{Critères de divisibilité}
+
+\begin{criterebox}
+	\textbf{Critères de divisibilité usuels}
+	
+	Un nombre entier est divisible :
+	\begin{itemize}[label = \textbullet]
+		\item par \textbf{2} s'il se termine par 0, 2, 4, 6 ou 8 (nombre pair)
+		\item par \textbf{3} si la somme de ses chiffres est divisible par 3
+		\item par \textbf{4} si le nombre formé par ses deux derniers chiffres est divisible par 4
+		\item par \textbf{5} s'il se termine par 0 ou 5
+		\item par \textbf{9} si la somme de ses chiffres est divisible par 9
+		\item par \textbf{10} s'il se termine par 0
+	\end{itemize}
+\end{criterebox}
+
+\begin{examplebox}
+	Le nombre 23 928 :
+	\begin{itemize}[label = \textbullet]
+		\item est divisible par 2 (il se termine par 8)
+		\item est divisible par 3 car $2+3+9+2+8 = 24$ et $24 = 3 \times 8$
+		\item est divisible par 4 car $28 = 4 \times 7$
+		\item n'est pas divisible par 5 (ne se termine ni par 0 ni par 5)
+		\item n'est pas divisible par 9 car $24 = 9 \times 2 + 6$
+	\end{itemize}
+\end{examplebox}

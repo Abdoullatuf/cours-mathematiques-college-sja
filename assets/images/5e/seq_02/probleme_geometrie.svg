@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fond blanc -->
+  <rect width="400" height="300" fill="white"/>
+  
+  <!-- Grille de fond -->
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#f0f0f0" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="300" fill="url(#grid)"/>
+  
+  <!-- Centre de symétrie O -->
+  <circle cx="200" cy="150" r="6" fill="#0066cc" stroke="#000000" stroke-width="2"/>
+  <text x="205" y="155" font-family="Arial" font-size="14" font-weight="bold" fill="#ffffff">O</text>
+  
+  <!-- Point A -->
+  <circle cx="150" cy="100" r="4" fill="#ff0000" stroke="#000000" stroke-width="1"/>
+  <text x="155" y="105" font-family="Arial" font-size="12" fill="#000000">A</text>
+  
+  <!-- Point B -->
+  <circle cx="120" cy="180" r="4" fill="#00cc00" stroke="#000000" stroke-width="1"/>
+  <text x="125" y="185" font-family="Arial" font-size="12" fill="#000000">B</text>
+  
+  <!-- Point C -->
+  <circle cx="280" cy="140" r="4" fill="#cc00cc" stroke="#000000" stroke-width="1"/>
+  <text x="285" y="145" font-family="Arial" font-size="12" fill="#000000">C</text>
+  
+  <!-- Segment [BC] -->
+  <line x1="120" y1="180" x2="280" y2="140" stroke="#00cc00" stroke-width="2"/>
+  
+  <!-- Lignes reliant à O -->
+  <line x1="150" y1="100" x2="200" y2="150" stroke="#cccccc" stroke-width="1" stroke-dasharray="2,2"/>
+  <line x1="120" y1="180" x2="200" y2="150" stroke="#cccccc" stroke-width="1" stroke-dasharray="2,2"/>
+  <line x1="280" y1="140" x2="200" y2="150" stroke="#cccccc" stroke-width="1" stroke-dasharray="2,2"/>
+  
+  <!-- Légende -->
+  <text x="200" y="280" text-anchor="middle" font-family="Arial" font-size="14" fill="#000000">Construire les images par symétrie centrale</text>
+</svg>

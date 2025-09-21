@@ -1,0 +1,187 @@
+% !TeX root = eleve.tex
+
+% ======== Barème ========
+\begin{center}
+  \badge{primary}{Ex.1: 4pts} \quad
+  \badge{primary}{Ex.2: 4pts} \quad
+  \badge{primary}{Ex.3: 8pts} \quad
+  \badge{primary}{Ex.4: 4pts} \quad
+  \badge{accent}{Bonus: +2pts}
+\end{center}
+
+\vspace{0.3cm}
+
+% ======== Consignes ========
+\begin{consignebox}
+  \faIcon{info-circle} \textbf{CONSIGNES IMPORTANTES}
+  \begin{itemize}[leftmargin=*,noitemsep,topsep=5pt]
+    \item[\faIcon{check}] Rédigez clairement et justifiez tous vos calculs
+    \item[\faIcon{check}] Respectez les priorités opératoires
+    \item[\faIcon{check}] Les exercices peuvent être traités dans n'importe quel ordre
+    \item[\faIcon{times}] Calculatrice non autorisée
+  \end{itemize}
+\end{consignebox}
+
+\vspace{0.5cm}
+
+% ======== QCM ========
+\begin{exercisebox}{\faIcon{list-ul} QCM : Nombres relatifs \points{4}}
+  Pour chaque question, écris la lettre de la seule réponse correcte dans la colonne de droite :
+  \vspace{0.3cm}
+
+  % Colonnes: question large, choix centrés, colonne Corrigé masquée en élève
+  \newcolumntype{C}[1]{>{\centering\arraybackslash}L{#1}}
+  {\small\setlength{\tabcolsep}{4pt}\renewcommand{\arraystretch}{1.25}%
+  \begin{tabularx}{\linewidth}{|L{2.0}|C{0.7}|C{0.7}|C{0.7}|C{0.6}|}
+    \hline
+    \textbf{Question} & \textbf{Réponse A} & \textbf{Réponse B} & \textbf{Réponse C} & \textbf{Corrigé} \\
+    \hline
+    \textbf{1.} L'opposé de $-\dfrac{3}{4}$ est :
+      & $\dfrac{3}{-4}$ & $-\dfrac{-3}{-4}$ & $\dfrac{-3}{-4}$ & \ans{C} \\
+    \hline
+    \textbf{2.} La somme de deux nombres relatifs de signes différents...
+      & est toujours positive & est parfois positive, parfois négative & est toujours négative & \ans{B} \\
+    \hline
+    \textbf{3.} Le produit de 163 nombres non nuls dont 47 sont positifs est...
+      & parfois positif et parfois négatif & toujours positif & toujours négatif & \ans{B} \\
+    \hline
+    \textbf{4.} Soient $a>0$, $b<0$ et $c<0$. Alors :
+      & $\dfrac{a\times a}{b}>0$ & $\dfrac{b}{-c}>0$ & $\dfrac{-ab}{c}<0$ & \ans{C} \\
+    \hline
+  \end{tabularx}}
+\end{exercisebox}
+
+% ======== Exercice 1 ========
+\begin{exercisebox}{\faIcon{edit} Exercice 1 : Opérations de base \points{4}}
+  \vspace{0.2cm}
+  \textbf{Calculer les expressions suivantes :}
+  \begin{multicols}{2}
+    \begin{enumerate}[label=\textcolor{primary}{\textbf{\alph*)}},leftmargin=*]
+      \item $(-8) + (+5) = $ \ans{$-3$} \points{1}
+      \vspace{0.8cm}
+      \item $(-3) - (-7) = $ \ans{$4$} \points{1}
+      \vspace{0.8cm}
+      \item $(+6) \times (-4) = $ \ans{$-24$} \points{1}
+      \vspace{0.8cm}
+      \item $(-36) \div (+9) = $ \ans{$-4$} \points{1}
+    \end{enumerate}
+  \end{multicols}
+\end{exercisebox}
+
+% ======== Exercice 2 ========
+\begin{exercisebox}{\faIcon{layer-group} Exercice 2 : Priorités opératoires \points{8}}
+  \vspace{0.3cm}
+  \textbf{Calculer en détaillant toutes les étapes :}
+  \begin{enumerate}[label=\textcolor{primary}{\textbf{\alph*)}},leftmargin=*]
+    \item $A = -4 + 6 \times (-3)$ \points{1}\\
+    \anslines[0.50cm]{4}{\begin{align*}
+      A &= -4 + 6\times(-3) \\
+        &= -4 - 18 \\
+        &= -22
+    \end{align*}}
+
+    \item $B = 18 - 2 \times (5 - 9)$ \points{1}\\
+    \anslines[0.50cm]{4}{\begin{align*}
+      B &= 18 - 2\times(5-9) \\
+        &= 18 - 2\times(-4) \\
+        &= 18 - (-8) \\
+        &= 26
+    \end{align*}}
+
+    \item $C = \dfrac{-15 + 3}{-4} - 7$ \points{2}\\
+    \anslines[0.50cm]{4}{\begin{align*}
+      C &= \dfrac{-15 + 3}{-4} - 7 \\
+        &= \dfrac{-12}{-4} - 7 \\
+        &= 3 - 7 \\
+        &= -4
+    \end{align*}}
+
+    \item $D = 3 \times [(-4) + 7] - 2 \times (-6 + 3)$ \points{2}\\
+    \anslines[0.40cm]{7}{\begin{align*}
+      D &= 3\times[(-4)+7] - 2\times(-6+3) \\
+        &= 3\times 3 - 2\times(-3) \\
+        &= 9 - (-6) \\
+        &= 15
+    \end{align*}}
+
+    \item $E = \dfrac{(-2)^2 + 4 \times 3}{-5 + 2}$ \points{2}\\
+    \anslines[0.50cm]{4}{\begin{align*}
+      E &= \dfrac{(-2)^2 + 4\times 3}{-5 + 2} \\
+        &= \dfrac{4 + 12}{-3} \\
+        &= \dfrac{16}{-3} \\
+        &= -\dfrac{16}{3}
+    \end{align*}}
+  \end{enumerate}
+\end{exercisebox}
+
+% ======== Exercice 3 ========
+\begin{exercisebox}{\faIcon{lightbulb} Exercice 3 : Résolution de problème \points{4}}
+  \vspace{0.01cm}
+  \begin{tcolorbox}[colback=blue!5,colframe=primary!30,arc=2mm,boxrule=0.5pt]
+    \textbf{Contexte :} Un sous-marin se trouve à une profondeur de $-120$ mètres.
+    \begin{itemize}[noitemsep,topsep=5pt]
+      \item Il remonte d'abord de 45 mètres
+      \item Puis il descend de 30 mètres
+      \item Enfin, il remonte de 25 mètres
+    \end{itemize}
+  \end{tcolorbox}
+
+  \begin{enumerate}[leftmargin=*]
+    \item \textbf{Écrire l'expression mathématique} qui permet de calculer la profondeur finale : \points{1.5}\\
+    \anslines[0.40cm]{3}{$-120 + 45 - 30 + 25$}
+
+    \item \textbf{Calculer} cette profondeur finale : \points{1.5}\\
+    \anslines[0.40cm]{4}{\begin{align*}
+      -120 + 45 &= -75 \\
+      -75 - 30  &= -105 \\
+      -105 + 25 &= -80
+    \end{align*}}
+
+    \item \textbf{Question :} Le sous-marin veut atteindre $-50$ mètres. Doit-il monter ou descendre ? De combien de mètres ? \points{1}\\
+    \anslines[0.40cm]{3}{Pour passer de $-80$ m à $-50$ m, il faut monter de $30$ m.}
+  \end{enumerate}
+\end{exercisebox}
+
+\vspace{0.2cm}
+
+% ======== Bonus ========
+\begin{tcolorbox}[
+  colback=accent!10,
+  colframe=accent,
+  fonttitle=\bfseries,
+  title={\faIcon{star} BONUS : Défi \badge{accent}{+2pts}},
+  arc=3mm,
+  boxrule=1.5pt,
+  enhanced,
+  width=\linewidth,
+  grow to left by=3mm,
+  grow to right by=3mm
+]
+  Soit l'expression : $G = \dfrac{2a - b^2}{c + d}$\\
+  Avec : $a = -4$ ; $b = -3$ ; $c = -5$ ; $d = 2$\\
+  Calculer $G$ en remplaçant et en détaillant toutes les étapes.\\
+  \anslines[0.40cm]{7}{\begin{align*}
+    G &= \dfrac{2\times(-4) - (-3)^2}{-5 + 2} \\
+      &= \dfrac{-8 - 9}{-3} \\
+      &= \dfrac{-17}{-3} \\
+      &= \dfrac{17}{3}
+  \end{align*}}
+\end{tcolorbox}
+
+% ======== Pied de page ========
+\vspace{0.2cm}
+\begin{center}
+  \begin{tikzpicture}
+    \node[draw=secondary,rounded corners=3mm,inner sep=8pt,fill=light!30] {
+      \begin{tabular}{lccccc}
+        \textbf{Auto-évaluation :} &
+        \faIcon{frown} Difficile &
+        \faIcon{meh} Moyen &
+        \faIcon{smile} Facile &
+        \phantom{xx} &
+        \textbf{Temps utilisé :} \underline{\phantom{xxxxx}} min
+      \end{tabular}
+    };
+  \end{tikzpicture}
+\end{center}
+

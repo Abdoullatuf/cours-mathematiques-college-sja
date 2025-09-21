@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fond blanc -->
+  <rect width="400" height="300" fill="white"/>
+  
+  <!-- Grille de fond -->
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#f0f0f0" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="300" fill="url(#grid)"/>
+  
+  <!-- Axe de symétrie (vertical) -->
+  <line x1="200" y1="50" x2="200" y2="250" stroke="#0066cc" stroke-width="3" stroke-dasharray="5,5"/>
+  
+  <!-- Figure asymétrique à gauche -->
+  <polygon points="120,80 160,80 140,120 120,120" fill="#ff9999" stroke="#cc0000" stroke-width="2"/>
+  <circle cx="140" cy="100" r="3" fill="#cc0000"/>
+  
+  <!-- Figure symétrique à droite -->
+  <polygon points="240,80 280,80 260,120 240,120" fill="#99ff99" stroke="#00cc00" stroke-width="2"/>
+  <circle cx="260" cy="100" r="3" fill="#00cc00"/>
+  
+  <!-- Point A à gauche -->
+  <circle cx="130" cy="90" r="4" fill="#ff0000" stroke="#000000" stroke-width="1"/>
+  <text x="125" y="85" font-family="Arial" font-size="12" fill="#000000">A</text>
+  
+  <!-- Point A' à droite (symétrique) -->
+  <circle cx="270" cy="90" r="4" fill="#ff0000" stroke="#000000" stroke-width="1"/>
+  <text x="275" y="85" font-family="Arial" font-size="12" fill="#000000">A'</text>
+  
+  <!-- Légende -->
+  <text x="200" y="280" text-anchor="middle" font-family="Arial" font-size="14" fill="#000000">Axe de symétrie</text>
+  
+  <!-- Flèches pour montrer la symétrie -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666666"/>
+    </marker>
+  </defs>
+  <line x1="130" y1="90" x2="200" y2="90" stroke="#666666" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <line x1="270" y1="90" x2="200" y2="90" stroke="#666666" stroke-width="1" marker-end="url(#arrowhead)"/>
+</svg>

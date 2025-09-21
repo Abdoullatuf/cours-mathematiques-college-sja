@@ -1,0 +1,19 @@
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{article}
+
+% Style commun en mode corrigé
+\usepackage[corrige]{../../../tex/college-eval}
+\let\correction\rep
+
+% Métadonnées de l'épreuve
+\examsetup{5e}{Mathématiques}{Enchaînement d'opérations}{1}{50 minutes}{Calculatrice interdite}
+
+\begin{document}
+
+\CorrigeWatermark
+\ExamBanner
+
+% Même body pour sujet/corrigé grâce aux macros \ans/\anslines
+\input{controle_01_enchainement_operations_body.tex}
+
+\end{document}

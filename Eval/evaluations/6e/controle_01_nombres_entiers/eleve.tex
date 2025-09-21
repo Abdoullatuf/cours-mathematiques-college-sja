@@ -1,0 +1,23 @@
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{article}
+
+% Definit le chemin vers les ressources LaTeX du projet
+\makeatletter
+\def\input@path{{../../../tex/}}
+\makeatother
+
+\usepackage{college-eval} % chemin relatif vers le .sty
+
+% Métadonnées (tu peux ajuster à la volée)
+\examsetup{6e}{Mathématiques}{Nombres Entiers}{1}{50 minutes}{Calculatrice interdite}
+
+\begin{document}
+	\CorrigeWatermark     % n’affiche rien en élève
+	\ExamBanner
+	\StudentInfoBox
+	
+	% === Contenu du contrôle ===
+	\input{controle_01_nombres_entiers_body.tex}
+	
+\end{document}
+

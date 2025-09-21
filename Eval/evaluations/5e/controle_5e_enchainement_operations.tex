@@ -1,0 +1,422 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{fontawesome5}
+\usepackage{tabularx}
+\usepackage[most]{tcolorbox}
+\usepackage{eurosym}
+
+% Définition des couleurs modernes
+\definecolor{primary}{RGB}{41, 128, 185}      % Bleu moderne
+\definecolor{secondary}{RGB}{52, 73, 94}      % Gris foncé
+\definecolor{accent}{RGB}{46, 204, 113}       % Vert menthe
+\definecolor{warning}{RGB}{231, 76, 60}       % Rouge moderne
+\definecolor{light}{RGB}{236, 240, 241}       % Gris très clair
+\definecolor{bglight}{RGB}{247, 249, 250}     % Fond clair
+
+\DeclareRobustCommand{\rep}[1]{\begingroup\color{warning}\ifmmode #1\else \textbf{#1}\fi\endgroup}
+
+% Configuration de la page
+\geometry{
+	top=1.5cm,
+	bottom=2cm,
+	left=1.8cm,
+	right=1.8cm
+}
+
+% Configuration tcolorbox
+\tcbuselibrary{skins,breakable}
+
+% Boîte pour les exercices
+\newtcolorbox{exercisebox}[2][]{
+	colback=white,
+	colframe=primary,
+	fonttitle=\bfseries\large,
+	title={#2},
+	arc=2mm,
+	boxrule=1.5pt,
+	left=15pt,
+	right=15pt,
+	top=12pt,
+	bottom=12pt,
+	boxsep=0pt,
+	breakable,
+	enhanced,
+	width=\linewidth,
+	grow to left by=3mm,
+	grow to right by=3mm,
+	#1
+}
+
+% Boîte pour les consignes
+\newtcolorbox{consignebox}{
+	colback=light!30,
+	colframe=secondary,
+	arc=3mm,
+	boxrule=0pt,
+	leftrule=4pt,
+	left=15pt,
+	right=15pt,
+	top=12pt,
+	bottom=12pt,
+	enhanced,
+	width=\linewidth,
+	grow to left by=3mm,
+	grow to right by=3mm
+}
+
+% En-tête et pied de page personnalisés
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\color{secondary}\textbf{5\textsuperscript{e}} | Mathématiques}
+\fancyhead[R]{\color{secondary}\textbf{Enchaînement d'opérations}}
+\fancyfoot[C]{\color{secondary}\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Commandes personnalisées
+\newcommand{\points}[1]{\hfill \colorbox{primary}{\color{white}\textbf{\,#1 pts\,}}}
+\newcommand{\badge}[2]{\tikz[baseline=(char.base)]{\node[shape=rectangle,draw,thick,rounded corners=2mm,inner sep=2pt,fill=#1,text=white,font=\footnotesize\bfseries] (char) {#2};}}
+
+% Pointillés et zones de réponse
+\newcommand{\dotline}[1]{\makebox[#1][s]{\dotfill}}
+\newcolumntype{L}[1]{>{\hsize=#1\hsize\arraybackslash}X}
+
+\newcommand{\zonereponse}[1]{%
+	\par\noindent
+	\colorbox{light}{%
+		\parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+			\vspace{#1}%
+		}%
+	}%
+	\par
+}
+
+\newcommand{\zonereponseLignes}[2][0.9cm]{%
+	\par\noindent
+	\colorbox{light}{%
+		\parbox{\dimexpr\linewidth-2\fboxsep\relax}{%
+			\setlength{\parskip}{#1}%
+			\foreach \i in {1,...,#2}{\noindent\dotfill\par}%
+		}%
+	}\par
+}
+
+\begin{document}
+	
+	% En-tête moderne avec TikZ
+	\begin{tikzpicture}[remember picture,overlay]
+		\fill[primary] (current page.north west) rectangle ([yshift=-3.5cm]current page.north east);
+		\node[anchor=north west,text=white,font=\Huge\bfseries] at ([xshift=2cm,yshift=-1cm]current page.north west) {Contrôle \no 1};
+		\node[anchor=north west,text=white,font=\Large] at ([xshift=2cm,yshift=-2cm]current page.north west) {Enchaînement d'opérations};
+		\node[anchor=north east,text=white,font=\large] at ([xshift=-2cm,yshift=-1.5cm]current page.north east) {\faIcon{clock} 55 minutes};
+		\node[anchor=north east,text=white,font=\large] at ([xshift=-2cm,yshift=-2.3cm]current page.north east) {\faIcon{calculator} Calculatrice interdite};
+	\end{tikzpicture}
+	
+	\vspace{1.5cm}
+	
+	% Informations élève
+	\begin{tcolorbox}[
+		colback=bglight,colframe=secondary,arc=3mm,boxrule=1pt,
+		left=15pt,right=15pt,top=10pt,bottom=10pt,
+		enhanced,
+		width=\linewidth,
+		grow to left by=5mm,
+		grow to right by=5mm
+		]
+		\setlength{\tabcolsep}{4pt}
+		\begin{tabularx}{\linewidth}{@{}lX lX l@{}}
+			\multicolumn{2}{@{}l}{\faIcon{user} \textbf{NOM :} \dotline{6cm}} &
+			\multicolumn{2}{l@{}}{\textbf{Prénom :} \dotline{3cm}} &
+			\\[0.5cm]
+			\textbf{Classe :} & \dotfill &
+			\faIcon{calendar} \textbf{Date :} & \dotfill &
+			\fcolorbox{secondary}{white}{\textbf{NOTE : }\makebox[1.4cm]{\rule{0pt}{1.1em}}\textbf{ / 20}}
+		\end{tabularx}
+	\end{tcolorbox}
+	
+	\vspace{0.2cm}
+	
+	% Barème
+	\begin{center}
+		\badge{primary}{Ex.1: 4pts} \quad
+		\badge{primary}{Ex.2: 4pts} \quad
+		\badge{primary}{Ex.3: 5pts} \quad
+		\badge{primary}{Ex.4: 4pts} \quad
+		\badge{primary}{Ex.5: 3pts} \quad
+		\badge{accent}{Bonus: +2pts}
+	\end{center}
+	
+	\vspace{0.2cm}
+	
+	% Consignes
+	\begin{consignebox}
+		\faIcon{info-circle} \textbf{CONSIGNES IMPORTANTES}
+		\begin{itemize}[leftmargin=*,noitemsep,topsep=5pt]
+			\item[\faIcon{check}] Écrivez lisiblement et détaillez vos calculs
+			\item[\faIcon{check}] Respectez les priorités opératoires
+			\item[\faIcon{check}] Les exercices peuvent être traités dans n'importe quel ordre
+			\item[\faIcon{times}] Calculatrice non autorisée
+		\end{itemize}
+	\end{consignebox}
+	
+	\vspace{0.5cm}
+	
+	% Exercice 1
+	\begin{exercisebox}{\faIcon{calculator} Exercice 1 : Calculs sans parenthèses \points{4}}
+		
+		\textbf{Effectue les calculs suivants en détaillant les étapes :}
+		
+		\begin{enumerate}[label=\textcolor{primary}{\textbf{\alph*)}},leftmargin=*]
+			\item $A = 7 + 3 \times 5$ \points{1}
+			
+			\zonereponseLignes[0.5cm]{3}
+			
+			\item $B = 24 \div 4 - 2 \times 3$ \points{1}
+			
+			\zonereponseLignes[0.5cm]{4}
+			
+			\item $C = 15 - 8 + 4 \times 2$ \points{1}
+			
+			\zonereponseLignes[0.5cm]{3}
+			
+			\item $D = 36 \div 9 + 7 \times 2 - 3$ \points{1}
+			
+			\zonereponseLignes[0.5cm]{3}
+		\end{enumerate}
+	\end{exercisebox}
+	
+	% Exercice 2
+	\begin{exercisebox}{Exercice 2 : Calculs avec parenthèses \points{4}}
+		
+		\textbf{Effectue les calculs suivants en détaillant les étapes :}
+		
+		\begin{enumerate}[label=\textcolor{primary}{\textbf{\alph*)}},leftmargin=*]
+			\item $E = (7 + 3) \times 5$ \points{1}
+			
+			\zonereponseLignes[0.4cm]{3}
+			
+			\item $F = 24 \div (4 + 2) \times 3$ \points{1,5}
+			
+			\zonereponseLignes[0.4cm]{4}
+			
+			
+			\item $G = 5 \times (9 - 6) + (12 \div 3)$ \points{1,5}
+			
+			\zonereponseLignes[0.4cm]{5}
+			
+		\end{enumerate}
+	\end{exercisebox}
+	
+	% Exercice 3
+	\begin{exercisebox}{\faIcon{equals} Exercice 3 : Expressions à compléter \points{5}}
+		
+		\textbf{Complète les égalités suivantes :}
+		
+\setlength{\columnsep}{8mm}   % espace entre colonnes (optionnel)
+\begin{multicols}{2}
+	\raggedcolumns                 % évite les grands blancs en bas (optionnel)
+	\begin{enumerate}[label=\textcolor{primary}{\textbf{\alph*)}},leftmargin=*]
+		\item $6 + \ldots \times 4 = 22$ \points{1}
+		\item $(12 - \ldots) \times 3 = 21$ \points{1}
+		\item $20 \div \ldots + 7 = 12$ \points{1}
+		\item $5 \times (\ldots + 2) = 35$ \points{1}
+	\end{enumerate}
+\end{multicols}
+		\textbf{Détaille tes calculs ci-dessous :} \points{1}
+		
+		\zonereponseLignes[0.4cm]{5}
+	\end{exercisebox}
+	
+	% Exercice 4
+	\begin{exercisebox}{\faIcon{exchange-alt} Exercice 4 : Programmes de calcul \points{4}}
+		
+		\begin{tcolorbox}[colback=blue!5,colframe=primary!30,arc=2mm,boxrule=0.5pt]
+			\textbf{Programme A :}
+			\begin{itemize}[noitemsep,topsep=5pt]
+				\item Choisis un nombre
+				\item Multiplie-le par 3
+				\item Ajoute 7
+				\item Multiplie le résultat par 2
+			\end{itemize}
+		\end{tcolorbox}
+		
+		\begin{enumerate}[label=\textcolor{primary}{\textbf{\alph*)}},leftmargin=*]
+			\item \textbf{Applique} ce programme au nombre 5 : \points{2}
+			
+			\zonereponseLignes[0.4cm]{5}
+			
+			\item \textbf{Écris} l'expression correspondant à ce programme pour un nombre $x$ quelconque : \points{1}
+			
+			\zonereponseLignes[0.4cm]{3}
+			
+			\item \textbf{Calcule} le résultat de ce programme pour $x = 10$ : \points{1}
+			
+			\zonereponseLignes[0.4cm]{5}
+		\end{enumerate}
+	\end{exercisebox}
+	
+	\vspace{0.5cm}
+	% Exercice 5
+	\begin{exercisebox}{\faIcon{lightbulb} Exercice 5 : Problème \points{3}}
+		
+		\begin{tcolorbox}[colback=blue!5,colframe=primary!30,arc=2mm,boxrule=0.5pt]
+			\textbf{Situation :} Dans un magasin de sport, on trouve :
+			\begin{itemize}[noitemsep,topsep=5pt]
+				\item Des ballons à 8 \euro \ l'unité
+				\item Des raquettes à 25 \,\euro \ l'unité
+				\item Une réduction de 5 \,\euro \ sur le total pour tout achat de plus de 50 \,\euro
+			\end{itemize}
+		\end{tcolorbox}
+		
+		\begin{enumerate}[leftmargin=*]
+			\item \textbf{Écris} l'expression qui permet de calculer le prix à payer pour 3 ballons et 2 raquettes (avec réduction) : \points{1}
+			
+			\zonereponseLignes[0.4cm]{4}
+			
+			\item \textbf{Calcule} ce prix en détaillant : \points{2}
+			
+			\zonereponseLignes[0.4cm]{4}
+		\end{enumerate}
+	\end{exercisebox}
+	
+	\vspace{0.3cm}
+	
+	% Bonus
+	\begin{tcolorbox}[
+		colback=accent!10,
+		colframe=accent,
+		fonttitle=\bfseries,
+		title={\faIcon{star} BONUS : Défi \badge{accent}{+2pts}},
+		arc=3mm,
+		boxrule=1.5pt,
+		enhanced,
+		width=\linewidth,
+		grow to left by=3mm,
+		grow to right by=3mm
+		]
+		\textbf{Trouve le nombre mystère :}
+		
+		Ce nombre vérifie l'équation suivante :
+		$$2 \times (x + 3) - 4 = 16$$
+		
+		\textbf{Résous cette équation étape par étape :}
+		
+		\zonereponseLignes[0.4cm]{5}
+		
+		Le nombre mystère est : \dotfill
+	\end{tcolorbox}
+	
+	% Pied de page avec évaluation
+	\vspace{0.3cm}
+	\begin{center}
+		\begin{tikzpicture}
+			\node[draw=secondary,rounded corners=3mm,inner sep=8pt,fill=light!30] {
+				\begin{tabular}{lccccc}
+					\textbf{Auto-évaluation :} & 
+					\faIcon{frown} Difficile & 
+					\faIcon{meh} Moyen & 
+					\faIcon{smile} Facile & 
+					\phantom{xx} & 
+					\textbf{Temps utilisé :} \underline{\phantom{xxxxx}} min
+				\end{tabular}
+			};
+		\end{tikzpicture}
+	\end{center}
+	
+	\newpage
+	
+	% =======================
+	% CORRIGÉ
+	% =======================
+	
+	\begin{center}
+		\Large\textbf{CORRIGÉ}
+	\end{center}
+	
+	\begin{exercisebox}{\faIcon{calculator} Exercice 1 — Corrigé}
+		a) $A = 7 + 3 \times 5 = 7 + 15 = \rep{22}$
+		
+		b) $B = 24 \div 4 - 2 \times 3 = 6 - 6 = \rep{0}$
+		
+		c) $C = 15 - 8 + 4 \times 2 = 15 - 8 + 8 = 7 + 8 = \rep{15}$
+		
+		d) $D = 36 \div 9 + 7 \times 2 - 3 = 4 + 14 - 3 = 18 - 3 = \rep{15}$
+	\end{exercisebox}
+	
+	\begin{exercisebox}{\faIcon{square-root-alt} Exercice 2 — Corrigé}
+		a) $E = (7 + 3) \times 5 = 10 \times 5 = \rep{50}$
+		
+		b) $F = 24 \div (4 + 2) \times 3 = 24 \div 6 \times 3 = 4 \times 3 = \rep{12}$
+		
+		c) $G = (15 - 8) + 4 \times (2 + 1) = 7 + 4 \times 3 = 7 + 12 = \rep{19}$
+		
+		d) $H = 5 \times (9 - 6) + (12 \div 3) = 5 \times 3 + 4 = 15 + 4 = \rep{19}$
+		
+		e) $I = (8 + 4) \div (6 - 3) + 7 \times 2 = 12 \div 3 + 14 = 4 + 14 = \rep{18}$
+	\end{exercisebox}
+	
+	\begin{exercisebox}{\faIcon{equals} Exercice 3 — Corrigé}
+		a) $6 + \rep{4} \times 4 = 22$ car $6 + 16 = 22$
+		
+		b) $(12 - \rep{5}) \times 3 = 21$ car $7 \times 3 = 21$
+		
+		c) $20 \div \rep{4} + 7 = 12$ car $5 + 7 = 12$
+		
+		d) $5 \times (\rep{5} + 2) = 35$ car $5 \times 7 = 35$
+	\end{exercisebox}
+	
+	\begin{exercisebox}{\faIcon{exchange-alt} Exercice 4 — Corrigé}
+		a) Pour le nombre 5 :
+		• $5 \times 3 = 15$
+		• $15 + 7 = 22$
+		• $22 \times 2 = \rep{44}$
+		
+		b) Expression : $\rep{2 \times (3x + 7)}$ ou $\rep{6x + 14}$
+		
+		c) Pour $x = 10$ : $6 \times 10 + 14 = 60 + 14 = \rep{74}$
+	\end{exercisebox}
+	
+	\begin{exercisebox}{\faIcon{lightbulb} Exercice 5 — Corrigé}
+		a) Expression : $(3 \times 8 + 2 \times 25) - 5$
+		
+		b) Calcul :
+		• Prix des ballons : $3 \times 8 = 24$\,\,\euro
+		• Prix des raquettes : $2 \times 25 = 50$\,\,\euro
+		• Total avant réduction : $24 + 50 = 74$\,\,\euro
+		• Avec réduction : $74 - 5 = \rep{69}$\,\,\euro
+	\end{exercisebox}
+	
+	\begin{tcolorbox}[colback=accent!10,colframe=accent]
+		\textbf{BONUS — Corrigé}
+		
+		$2 \times (x + 3) - 4 = 16$
+		
+		$2 \times (x + 3) = 16 + 4$
+		
+		$2 \times (x + 3) = 20$
+		
+		$x + 3 = 20 \div 2$
+		
+		$x + 3 = 10$
+		
+		$x = 10 - 3$
+		
+		$x = \rep{7}$
+		
+		Vérification : $2 \times (7 + 3) - 4 = 2 \times 10 - 4 = 20 - 4 = 16$
+	\end{tcolorbox}
+	
+\end{document}

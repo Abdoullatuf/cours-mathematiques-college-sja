@@ -9,30 +9,61 @@ Ce théorème établit une relation fondamentale entre les côtés d'un triangle
 
 \textbf{Problématique du chapitre :} Comment calculer des longueurs dans un triangle rectangle ? Comment déterminer si un triangle est rectangle ?
 
-\section{Activité d'approche : découverte par manipulation}
+\section{Activité — Découvrir l’égalité de Pythagore (GeoGebra)}
 
-\textbf{Objectif :} Découvrir la relation entre les aires des carrés construits sur les côtés d'un triangle rectangle.
+\begin{objectifsbox} 
+	\begin{itemize}
+	\item[\textbullet] Conjecturer la relation entre AB\textsuperscript{2}, BC\textsuperscript{2} et AC\textsuperscript{2}.
+	\end{itemize}
+\end{objectifsbox}
 
-\textbf{Matériel :} Papier quadrillé, ciseaux, règle graduée
-
-\textbf{Consigne :}
 \begin{enumerate}
-    \item Construire plusieurs triangles rectangles sur papier quadrillé
-    \item Construire un carré sur chacun des trois côtés
-    \item Compter le nombre de carreaux (ou calculer l'aire) de chaque carré
-    \item Chercher une relation entre ces trois nombres
+	\item Construire un triangle quelconque $ABC$ et afficher les longueurs $AB$, $BC$, $AC$.
+	\item Ouvrir le tableur de GeoGebra.
+	\begin{itemize}
+		\item En A1, écrire <<\texttt{AB\string^2 =}>> et, en B1, calculer le carré de $AB$.
+		Par exemple : \texttt{=(Distance(A,B))\string^2}
+		\item En A2 : <<\texttt{BC\string^2 =}>> et en B2 : \texttt{=(Distance(B,C))\string^2}
+		\item En A3 : <<\texttt{AC\string^2 =}>> et en B3 : \texttt{=(Distance(A,C))\string^2}
+		\item En A4 : <<\texttt{AB\string^2 + BC\string^2 =}>> et en B4 : \texttt{=B1+B2}
+	\end{itemize}
+	\item Déplacer $A$, $B$ ou $C$ pour rendre le triangle rectangle en $B$ (aidez-vous du quadrillage) et relever les valeurs.
+	\item Refaire l’expérience pour plusieurs triangles rectangles en $B$ : que remarquez-vous ?\\
+	..........................................................................................................................................................\\
+	..........................................................................................................................................................\\
+	..........................................................................................................................................................\\
+	..........................................................................................................................................................
+	\item Tester des triangles qui ne sont pas rectangles en $B$ : que devient la relation ?\\
+		..........................................................................................................................................................\\
+	..........................................................................................................................................................\\
+	..........................................................................................................................................................
+	\item Rédiger une phrase de conclusion claire à partir des observations.\\
+		..........................................................................................................................................................\\
+	..........................................................................................................................................................\\
+	..........................................................................................................................................................
 \end{enumerate}
 
-\textbf{Constat :} Pour tout triangle rectangle, l'aire du carré construit sur l'hypoténuse est égale à la somme des aires des carrés construits sur les deux autres côtés.
+\smallskip
+\textit{Remarque :} de petits écarts numériques peuvent apparaître à cause des arrondis. Augmenter le nombre de décimales si nécessaire.
 
 \section{Définitions et vocabulaire}
 
 \begin{definitionbox}[Vocabulaire du triangle rectangle]
-Un triangle ayant un angle droit est un triangle rectangle. Les deux côtés perpendiculaires d’un triangle rectangle sont les \textbf{côtés de l’angle droit}. Le côté restant est l’\textbf{hypoténuse} du triangle rectangle. C’est le \textbf{côté opposé} à l’angle droit.
+	\begin{minipage}[t]{0.55\linewidth}\vspace{0pt}
+		Un triangle ayant un angle droit est un triangle rectangle.  
+		Les deux côtés perpendiculaires d’un triangle rectangle sont les \textbf{côtés de l’angle droit}.  
+		Le côté restant est l’\textbf{hypoténuse} du triangle \\
+		rectangle.  
+		C’est le \textbf{côté opposé} à l’angle droit.
+	\end{minipage}\hspace{8mm}
+	\begin{minipage}[t]{0.4\linewidth}\vspace{0pt}\centering
+		\includegraphics[width=\linewidth]{../../assets/images/4e/seq_02_pythagore/vocabulaire_triangle_rectangle}
+	\end{minipage}
 \end{definitionbox}
 
+
 \begin{proprietebox}[Hypoténuse]
-	Si un triangle est rectangle alors son plus grand côté est l’hypoténuse. \qquad (Admise)
+	Si un triangle est rectangle alors son plus grand côté est l’hypoténuse.
 \end{proprietebox}
 
 \section{Le théorème de Pythagore}
@@ -91,12 +122,17 @@ Considérons un carré de côté $(a + b)$ contenant quatre triangles rectangles
 \end{minipage}
 \end{figure}
 
-\textbf{Configuration 1 :} Aire 1 = $(a+b)^2 = 4 \times \frac{ab}{2} + c^2 = 2ab + c^2$
+%\textbf{Configuration 1 :} Aire 1 = $(a+b)^2 = 4 \times \frac{ab}{2} + c^2 = 2ab + c^2$
+\textbf{Configuration 1 :} Aire 1 = $(a+b)^2 = ...............................................$
+\\[0.5cm]
 
-\textbf{Configuration 2 :} Aire 2 = $(a+b)^2 = 4 \times \frac{ab}{2} + a^2 + b^2 = 2ab + a^2 + b^2$
+%\textbf{Configuration 2 :} Aire 2 = $(a+b)^2 = 4 \times \frac{ab}{2} + a^2 + b^2 = 2ab + a^2 + b^2$
+\textbf{Configuration 2 :} Aire 2 = $(a+b)^2 = ................................................$
+\\[0.2cm]
 
 Comme l'aire est la même dans les deux configurations (Aire 1 = Aire 2) :
-$$2ab + c^2 = 2ab + a^2 + b^2 \Leftrightarrow c^2 = a^2 + b^2$$ \\
+%$$2ab + c^2 = 2ab + a^2 + b^2 \Leftrightarrow c^2 = a^2 + b^2$$ \\
+$$ .............................. = ............................. \Leftrightarrow ................ = .........................$$ \\
 Ce qui démontre le théorème de Pythagore.
 
 \section{Applications du théorème de Pythagore}
@@ -349,101 +385,3 @@ Un bateau part d'un port et navigue 12 km vers l'est puis 5 km vers le nord. À 
 Pour vérifier qu'un mur est perpendiculaire au sol, un architecte place un point A sur le mur à 3 m du sol, un point B au pied du mur, et un point C sur le sol à 4 m de B. Si AC = 5 m, le mur est-il perpendiculaire au sol ?
 \end{exercisebox}
 
-\section{Activité TICE}
-
-\subsection{Utilisation d'un logiciel de géométrie dynamique}
-
-\textbf{Objectif :} Vérifier le théorème de Pythagore avec GeoGebra
-
-\textbf{Consignes :}
-\begin{enumerate}
-    \item Construire un triangle rectangle ABC
-    \item Construire les carrés sur chaque côté
-    \item Afficher les aires des trois carrés
-    \item Modifier la forme du triangle et observer
-    \item Conjecture sur la relation entre ces aires
-\end{enumerate}
-
-%\section{Liens avec d'autres notions mathématiques}
-%
-%\subsection{Distance entre deux points dans un repère}
-%
-%Le théorème de Pythagore permet de calculer la distance entre deux points dans un repère orthonormé.
-%
-%Si $A(x_A, y_A)$ et $B(x_B, y_B)$ sont deux points dans un repère orthonormé, alors la distance $AB$ est donnée par :
-%\[AB = \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}\]
-%
-%\begin{examplebox}
-%Calculons la distance entre les points $A(2, 3)$ et $B(6, 7)$ dans un repère orthonormé.
-%
-%En appliquant le théorème de Pythagore :
-%\[AB^2 = (6-2)^2 + (7-3)^2 = 4^2 + 4^2 = 16 + 16 = 32\]
-%\[AB = \sqrt{32} = \sqrt{16 \times 2} = 4\sqrt{2}\]
-%
-%La distance entre $A$ et $B$ est $4\sqrt{2}$ unités.
-%\end{examplebox}
-%
-%\subsection{Équations et théorème de Pythagore}
-%
-%Le théorème de Pythagore conduit souvent à des équations qu'il faut résoudre pour trouver des longueurs.
-%
-%\begin{examplebox}
-%Dans un triangle rectangle $ABC$ rectangle en $A$, on sait que $AB = x$ cm, $AC = (x+3)$ cm et $BC = 17$ cm. Déterminons la valeur de $x$.
-%
-%D'après le théorème de Pythagore :
-%\[BC^2 = AB^2 + AC^2\]
-%\[17^2 = x^2 + (x+3)^2\]
-%\[289 = x^2 + x^2 + 6x + 9\]
-%\[289 = 2x^2 + 6x + 9\]
-%\[2x^2 + 6x - 280 = 0\]
-%\[x^2 + 3x - 140 = 0\]
-%
-%En factorisant : $(x - 10)(x + 14) = 0$
-%
-%Les solutions sont $x = 10$ et $x = -14$.
-%
-%Comme une longueur ne peut pas être négative, nous avons $x = 10$ cm.
-%
-%Donc $AB = 10$ cm et $AC = 13$ cm.
-%\end{examplebox}
-%
-%\section{Pour aller plus loin}
-%
-%\subsection{Histoire des mathématiques}
-%\begin{itemize}
-%    \item Les tablettes babyloniennes (Plimpton 322)
-%    \item La démonstration par le président Garfield
-%    \item Les différentes démonstrations du théorème (plus de 300 connues)
-%\end{itemize}
-%
-%\subsection{Généralisation}
-%\begin{itemize}
-%    \item Théorème de Pythagore généralisé (loi des cosinus)
-%    \item Théorème de Pythagore dans l'espace à n dimensions
-%\end{itemize}
-%
-%\subsection{Applications modernes}
-%\begin{itemize}
-%    \item GPS et géolocalisation
-%    \item Graphisme 3D et jeux vidéo
-%    \item Architecture et ingénierie
-%\end{itemize}
-
-\section{Synthèse du chapitre}
-
-\textbf{Ce qu'il faut retenir :}
-
-\begin{enumerate}
-    \item \textbf{Théorème de Pythagore :} Dans un triangle rectangle, hypoténuse$^2$ = côté$_1^2$ + côté$_2^2$
-    \item \textbf{Réciproque :} Si dans un triangle, le carré du plus grand côté égale la somme des carrés des deux autres, alors le triangle est rectangle
-    \item \textbf{Applications :} Calcul de longueurs, vérification d'angles droits, résolution de problèmes concrets
-    \item \textbf{Méthodes :} Identification du triangle rectangle, application des formules, utilisation de la calculatrice
-\end{enumerate}
-
-\textbf{Liens avec d'autres chapitres :}
-\begin{itemize}
-    \item Racines carrées (chapitre précédent)
-    \item Trigonométrie (chapitre à venir)
-    \item Géométrie dans l'espace
-    \item Fonctions (distance entre deux points dans un repère)
-\end{itemize} 

@@ -1,0 +1,176 @@
+% !TeX root = eleve.tex
+% % !TeX root = corrige.tex
+
+% ========================
+% BARÈME (affiché élève & corrigé)
+% ========================
+
+\begin{center}
+  \badge{primary}{Ex.1: 4pts}\quad
+  \badge{primary}{Ex.2: 4pts}\quad
+  \badge{primary}{Ex.3: 5pts}\quad
+  \badge{primary}{Ex.4: 4pts}\quad
+  \badge{primary}{Ex.5: 3pts}
+\end{center}
+
+% ========================
+% CONSIGNES
+% ========================
+\vspace{0.2cm}
+\begin{consignebox}
+  \faIcon{info-circle} \textbf{CONSIGNES IMPORTANTES}
+  \begin{itemize}[leftmargin=*,noitemsep,topsep=5pt]
+    \item[\faIcon{check}] Écrivez lisiblement et justifiez vos réponses
+    \item[\faIcon{check}] Respectez l'orthographe des nombres en lettres
+    \item[\faIcon{check}] Les exercices peuvent être traités dans n'importe quel ordre
+    %\item[\faIcon{times}] Calculatrice non autorisée
+  \end{itemize}
+\end{consignebox}
+
+% ========================
+% EXERCICE 1
+% ========================
+\vspace{0.5cm}
+\begin{exercisebox}{\faIcon{sort-numeric-down} Exercice 1 : Rang des chiffres \points{4}}
+  Considérons le nombre : \textbf{\num{7256394}}
+
+  \begin{enumerate}[label=\textcolor{primary}{\textbf{\alph*)}},leftmargin=*]
+    \item Quel est le chiffre des centaines ? \ans{3} \points{1}
+    \item Quel est le chiffre des dizaines de milliers ? \ans{5} \points{1}
+    \item Quel est le \emph{nombre de milliers} dans ce nombre ? \ans{\num{7256}} \points{1}
+    \item Donne la décomposition décimale de ce nombre : \points{1}
+    \anslines[0.4cm]{2}{$7\times\num{1000000} + 2\times\num{100000} + 5\times\num{10000} + 6\times\num{1000} + 3\times\num{100} + 9\times\num{10} + 4$}
+  \end{enumerate}
+\end{exercisebox}
+
+% ========================
+% EXERCICE 2
+% ========================
+\begin{exercisebox}{\faIcon{spell-check} Exercice 2 : Écriture en lettres \points{4}}
+  \textbf{Écris les nombres suivants en toutes lettres :}
+
+  \begin{enumerate}[label=\textcolor{primary}{\textbf{\alph*)}},leftmargin=*]
+    \item \num{1200} : \anslines[0.35cm]{1}{mille-deux-cents} \points{1}
+    \item \num{5087} : \anslines[0.35cm]{2}{cinq-mille-quatre-vingt-sept} \points{1}
+    \item \num{14680} : \anslines[0.35cm]{2}{quatorze-mille-six-cent-quatre-vingts} \points{1}
+    \item \num{300092} : \anslines[0.35cm]{2}{trois-cent-mille-quatre-vingt-douze} \points{1}
+  \end{enumerate}
+\end{exercisebox}
+
+\clearpage
+% ========================
+% EXERCICE 3
+% ========================
+\begin{exercisebox}{\faIcon{ruler-horizontal} Exercice 3 : Demi-droite graduée \points{5}}
+  \vspace{0.3cm}
+  \textbf{Observe la demi-droite graduée ci-dessous :}
+
+  \begin{center}
+    \begin{tikzpicture}[scale=1.2]
+      % Axe (commence à 1200, va jusqu'à 2400)
+      \draw[thick,->] (0,0) -- (13,0);
+
+      % Graduations principales tous les 200
+      \foreach \x/\val in {0/1200, 2/1400, 4/1600, 6/1800, 8/2000, 10/2200, 12/2400} {
+        \draw[thick] (\x,0.15) -- (\x,-0.15);
+        \node[below] at (\x,-0.4) {\num{\val}};
+      }
+
+      % Graduations secondaires tous les 100
+      \foreach \x in {1,3,5,7,9,11} {
+        \draw (\x,0.08) -- (\x,-0.08);
+      }
+
+      % Graduations tertiaires tous les 50
+      \foreach \x in {0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5,11.5,12.5} {
+        \draw (\x,0.04) -- (\x,-0.04);
+      }
+
+      % Points à placer
+      \node[circle,fill=primary,inner sep=2.5pt,label=above:$A$] at (1.5,0) {};
+      \node[circle,fill=primary,inner sep=2.5pt,label=above:$B$] at (5.5,0) {};
+      \node[circle,fill=primary,inner sep=2.5pt,label=above:$C$] at (8.25,0) {};
+      \node[circle,fill=primary,inner sep=2.5pt,label=above:$D$] at (10.75,0) {};
+
+      % Point E pour le corrigé (à 2125)
+      \onlycorrige{\node[circle,fill=warning,inner sep=2.5pt,label=above:$E$] at (9.25,0) {};}
+    \end{tikzpicture}
+  \end{center}
+
+  \begin{enumerate}[label=\textcolor{primary}{\textbf{\alph*)}},leftmargin=*]
+    \item Détermine l'unité de longueur de cette demi-droite. \points{1}
+    \anslines[0.3cm]{1}{L'unité de longueur est de 200 (chaque graduation principale correspond à 200 unités et chaque petite graduation 50)}
+
+    \item Quelle est l'abscisse du point $A$ ? \ans{\num{1350}} \points{1}
+
+    \item Quelle est l'abscisse du point $B$ ? \ans{\num{1750}} \points{1}
+
+    \item Quelle est l'abscisse du point $C$ ? \ans{\num{2025}} \points{1}
+
+    \item Place le point $E$ d'abscisse \num{2125} sur la demi-droite ci-dessus. \anslines[0.3cm]{1}{Point $E$ placé entre 2000 et 2200, plus proche de 2200} \points{1}
+  \end{enumerate}
+\end{exercisebox}
+
+% ========================
+% EXERCICE 4
+% ========================
+\begin{exercisebox}{\faIcon{greater-than-equal} Exercice 4 : Comparaison et rangement \points{4}}
+  \begin{enumerate}[label=\textcolor{primary}{\textbf{\alph*)}},leftmargin=*]
+    \item Compare avec $<$, $>$ ou $=$ : \points{2}
+    \begin{multicols}{4}
+      \begin{itemize}[label=$\bullet$]
+        \item \num{3456} \ans{$<$} \num{3546}
+        \item \num{12089} \ans{$<$} \num{12098}
+        \item \num{7000} \ans{$>$} \num{6999}
+        \item \num{45230} \ans{$>$} \num{45203}
+      \end{itemize}
+    \end{multicols}
+    \item Range dans l'ordre croissant : \points{2}
+    \begin{center}
+      \num{8743}\,;\quad \num{8347}\,;\quad \num{8734}\,;\quad \num{8437}\,;\quad \num{8374}
+    \end{center}
+    \anslines[0.4cm]{2}{\num{8347} < \num{8374} < \num{8437} < \num{8734} < \num{8743}}
+  \end{enumerate}
+\end{exercisebox}
+
+% ========================
+% EXERCICE 5
+% ========================
+\begin{exercisebox}{\faIcon{lightbulb} Exercice 5 : Problème \points{3}}
+  \begin{tcolorbox}[colback=blue!5,colframe=primary!30,arc=2mm,boxrule=0.5pt]
+    \textbf{Contexte :} La bibliothèque du collège compte ses livres.
+    \begin{itemize}[noitemsep,topsep=5pt]
+      \item Il y a \textbf{3 milliers} de romans
+      \item Il y a \textbf{15 centaines} de livres documentaires
+      \item Il y a \textbf{85 dizaines} de bandes dessinées
+    \end{itemize}
+  \end{tcolorbox}
+
+  \begin{enumerate}[leftmargin=*]
+    \item \textbf{Calcule} le nombre total de livres : \points{2}
+    \anslines[0.4cm]{3}{Romans : \num{3000} ; Documentaires : \num{1500} ; BD : \num{850} \\
+      Total : \num{3000} + \num{1500} + \num{850} = \num{5350} livres}
+    \item \textbf{Écris} ce nombre total en toutes lettres : \points{1}
+    \anslines[0.4cm]{2}{cinq-mille-trois-cent-cinquante}
+  \end{enumerate}
+\end{exercisebox}
+
+% ========================
+% AUTO-ÉVALUATION
+% ========================
+\vspace{0.3cm}
+\begin{center}
+  \begin{tikzpicture}
+    \node[draw=secondary,rounded corners=3mm,inner sep=8pt,fill=light!30] {
+      \begin{tabular}{lccccc}
+        \textbf{Auto-évaluation :} &
+        \faIcon{frown} Difficile &
+        \faIcon{meh} Moyen &
+        \faIcon{smile} Facile &
+        \phantom{xx} &
+        \textbf{Temps utilisé :} \underline{\phantom{xxxxx}} min
+      \end{tabular}
+    };
+  \end{tikzpicture}
+\end{center}
+

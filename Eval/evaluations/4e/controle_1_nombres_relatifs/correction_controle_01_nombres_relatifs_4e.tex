@@ -1,0 +1,23 @@
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{article}
+
+% Style commun en mode corrigé
+\usepackage[corrige]{../../../tex/college-eval}
+\let\correction\rep
+\let\repqcm\rep
+\let\repcm\rep
+
+% Métadonnées
+\examsetup{4e}{Mathématiques}{Nombres relatifs}{1}{50 minutes}{Calculatrice interdite}
+
+\begin{document}
+
+\CorrigeWatermark
+\ExamBanner
+\StudentInfoBox
+
+% Même body pour sujet/corrigé grâce à \ans/\anslines
+\input{controle_1_nombres_relatifs_body.tex}
+
+\end{document}
+

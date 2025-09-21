@@ -1,0 +1,25 @@
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{article}
+
+% Charger le style commun (chemin explicite conseillé depuis ce dossier)
+\usepackage{../../../tex/college-eval} % adapte le chemin si besoin
+
+% Sécurisation : on force le mode Élève (aucun corrigé n'apparaît)
+\corrigefalse
+
+% Métadonnées de l’épreuve
+\examsetup{4e}{Mathématiques}{Nombres relatifs}{1}{50 minutes}{Calculatrice interdite}
+
+\begin{document}
+	% (Inactif en mode élève, tu peux le laisser)
+	\CorrigeWatermark
+	\ExamBanner
+	\StudentInfoBox
+	
+	% Corps du contrôle (nom de fichier correct avec 0)
+	\input{controle_1_nombres_relatifs_body.tex}
+	
+	% --- (Option diagnostic, à décommenter une fois si besoin)
+	% \typeout{*** MODE COLLEGE-EVAL : \ifcorrige CORRIGE\else ELEVE\fi ***}
+	
+\end{document}

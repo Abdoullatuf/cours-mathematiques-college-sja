@@ -1,0 +1,22 @@
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{article}
+
+% Charger le style commun (chemin explicite conseillé depuis ce dossier)
+\usepackage{college-eval}
+
+% Activer le mode corrigé
+\corrigetrue
+
+% Métadonnées de l’épreuve
+\examsetup{5e}{Mathématiques}{Enchaînement d'opérations}{1}{55 minutes}{Calculatrice interdite}
+
+\begin{document}
+	\CorrigeWatermark
+	\ExamBanner
+	\StudentInfoBox
+	
+	% Corps du contrôle
+	\input{corrige_enchainement_body.tex}
+	
+\end{document}
+

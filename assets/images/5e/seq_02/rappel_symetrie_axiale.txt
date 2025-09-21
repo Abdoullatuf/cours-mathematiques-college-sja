@@ -1,0 +1,22 @@
+IMAGE: Rappel symétrie axiale
+DIMENSIONS: 400x300 pixels
+CONTENU:
+- Axe de symétrie vertical en bleu pointillé (x=200)
+- Figure asymétrique à gauche (polygone rouge)
+- Figure symétrique à droite (polygone vert)
+- Points A et A' symétriques
+- Grille de fond pour faciliter la lecture
+- Légende "Axe de symétrie"
+
+COULEURS:
+- Axe: #0066cc (bleu)
+- Figure gauche: #ff9999 (rouge clair)
+- Figure droite: #99ff99 (vert clair)
+- Points: #ff0000 (rouge)
+- Grille: #f0f0f0 (gris clair)
+
+POSITIONNEMENT:
+- Axe: ligne verticale de y=50 à y=250, x=200
+- Point A: (130, 90)
+- Point A': (270, 90)
+- Polygones: positions symétriques par rapport à l'axe

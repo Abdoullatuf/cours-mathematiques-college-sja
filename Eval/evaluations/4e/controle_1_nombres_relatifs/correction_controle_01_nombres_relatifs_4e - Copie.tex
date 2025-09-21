@@ -1,0 +1,188 @@
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{article}
+
+% Charger le style commun (mode corrigé)
+\usepackage[corrige]{../../../tex/college-eval} % Adaptez le chemin si besoin
+% Unifier les macros de correction sur celles du style
+\let\correction\rep
+\let\repqcm\rep
+\let\repcm\rep
+% Compatibilité: s'assurer que \repcm est défini avant tout \renewcommand
+\providecommand{\repcm}[1]{\rep{#1}}
+
+% Packages supplémentaires pour la correction (optionnels si déjà dans le style)
+\usepackage[normalem]{ulem} % Pour le soulignement pointillé
+\usepackage{xcolor}
+\usepackage{tabularx} % Pour les tableaux ajustables
+\usepackage{amssymb} % Pour les symboles (croix)
+
+% Macros locales supprimées au profit des alias ci-dessus
+
+% Métadonnées de l’épreuve
+\examsetup{4e}{Mathématiques}{Nombres relatifs}{1}{50 minutes}{Calculatrice interdite}
+
+\begin{document}
+	
+	\ExamBanner
+	\StudentInfoBox
+	
+	% --- Identification des compétences ---
+	\begin{tcolorbox}[colback=blue!5,colframe=primary!30,arc=2mm,boxrule=0.5pt,title=\faIcon{bullseye} \textbf{Compétences dominantes}]
+		\begin{itemize}[leftmargin=*,noitemsep,topsep=5pt]
+			\item \textbf{Calculer :} Maîtriser les opérations sur les nombres relatifs et respecter les priorités opératoires.
+			\item \textbf{Modéliser :} Traduire une situation réelle en une expression mathématique.
+		\end{itemize}
+	\end{tcolorbox}
+	\vspace{0.5cm}
+	
+	% --- Début du contrôle corrigé ---
+	
+	% Exercice QCM
+	\begin{exercisebox}{\faIcon{list-ul} QCM : Nombres relatifs \points{4}}
+		Pour chaque question, la bonne réponse est indiquée en \repqcm{rouge}.
+		\vspace{0.3cm}
+		
+		\renewcommand{\arraystretch}{1.5} % Augmente l'espacement vertical des lignes
+		\begin{tabularx}{\linewidth}{|X|c|c|c|c|}
+			\hline
+			\textbf{Question} & \textbf{Réponse A} & \textbf{Réponse B} & \textbf{Réponse C} & \textbf{Corrigé} \\
+			\hline
+			\textbf{1.} L'opposé de $-\dfrac{3}{4}$ est : & $-\dfrac{3}{4}$ & $\dfrac{3}{4}$ & $\dfrac{-3}{-4}$ & \repqcm{B} \\
+			\hline
+			\textbf{2.} La somme de deux nombres relatifs de signes différents... & est toujours positive & est toujours négative & est parfois positive, parfois négative & \repqcm{C} \\
+			\hline
+			\textbf{3.} Le produit de 163 nombres non nuls dont 47 sont positifs est... & toujours positif & toujours négatif & on ne peut pas savoir & \repqcm{A} \\
+			\hline
+			\textbf{4.} Soient $a>0$, $b<0$ et $c<0$. Quelle expression est toujours négative ? & $\dfrac{ab}{c}$ & $a - b$ & $\dfrac{-ab}{c}$ & \repqcm{C} \\
+			\hline
+		\end{tabularx}
+		\vspace{0.4cm}
+		
+		\begin{tcolorbox}[colback=light!30,colframe=secondary,arc=2mm,boxrule=0.5pt,leftrule=3pt,title=\faIcon{info-circle} \textbf{Justifications}]
+			\begin{enumerate}[leftmargin=*,noitemsep]
+				\item L'opposé d'un nombre est ce même nombre avec le signe inverse. L'opposé de $-3/4$ est donc $+3/4$.
+				\item Le signe du résultat dépend du nombre qui a la plus grande distance à zéro (valeur absolue). Ex: $(-10)+2 = -8$ (négatif), mais $10+(-2) = 8$ (positif).
+				\item S'il y a 163 nombres et 47 positifs, il y a $163 - 47 = 116$ nombres négatifs. Un nombre \textbf{pair} (116) de facteurs négatifs donne un produit \textbf{positif}.
+				\item Analyse des signes : $a>0$, $b<0 \Rightarrow ab < 0 \Rightarrow -ab > 0$. Comme $c<0$, le quotient d'un positif ($-ab$) par un négatif ($c$) est \textbf{négatif}.
+			\end{enumerate}
+		\end{tcolorbox}
+	\end{exercisebox}
+	
+	
+	% Exercice 1
+	\begin{exercisebox}{\faIcon{edit} Exercice 1 : Opérations de base \points{4}}
+		
+		\vspace{0.2cm}
+		\textbf{Calculer les expressions suivantes :}
+		
+		\begin{multicols}{2}
+			\begin{enumerate}[label=\textcolor{primary}{\textbf{\alph*)}},leftmargin=*]
+				\item $(-8) + (+5) = $ \correction{-3} \points{1}
+				\vspace{0.8cm}
+				
+				\item $(-3) - (-7) = $ \correction{4} \points{1}
+				\vspace{0.8cm}
+				
+				\item $(+6) \times (-4) = $ \correction{-24} \points{1}
+				\vspace{0.8cm}
+				
+				\item $(-36) \div (+9) = $ \correction{-4} \points{1}
+			\end{enumerate}
+		\end{multicols}
+	\end{exercisebox}
+	
+	% Exercice 2
+	\begin{exercisebox}{\faIcon{layer-group} Exercice 2 : Priorités opératoires \points{8}}
+		
+		\vspace{0.3cm}
+		\textbf{Calculer en détaillant toutes les étapes :}
+		
+		\begin{enumerate}[label=\textcolor{primary}{\textbf{\alph*)}},leftmargin=*]
+			\item $A = -4 + 6 \times (-3)$ \points{1} \\
+			\correction{$A = -4 - 18$} \\
+			\correction{$A = -22$}
+			\vspace{0.5cm}
+			
+			\item $B = 18 - 2 \times (5 - 9)$ \points{1} \\
+			\correction{$B = 18 - 2 \times (-4)$} \\
+			\correction{$B = 18 - (-8) = 18 + 8$} \\
+			\correction{$B = 26$}
+			\vspace{0.5cm}
+			
+			\item $C = \dfrac{-15 + 3}{-4} - 7$ \points{2} \\
+			\correction{$C = \dfrac{-12}{-4} - 7$} \\
+			\correction{$C = 3 - 7$} \\
+			\correction{$C = -4$}
+			\vspace{0.5cm}
+			
+			\item $D = 3 \times [(-4) + 7] - 2 \times (-6 + 3)$ \points{2} \\
+			\correction{$D = 3 \times [3] - 2 \times (-3)$} \\
+			\correction{$D = 9 - (-6) = 9+6$} \\
+			\correction{$D = 15$}
+			\vspace{0.5cm}
+			
+			\item $E = \dfrac{(-2)^2 + 4 \times 3}{-5 + 2}$ \points{2} \\
+			\correction{$E = \dfrac{4 + 12}{-3}$} \\
+			\correction{$E = \dfrac{16}{-3} = -\dfrac{16}{3}$}
+		\end{enumerate}
+	\end{exercisebox}
+	
+	% Exercice 3
+	\begin{exercisebox}{\faIcon{lightbulb} Exercice 3 : Résolution de problème \points{4}}
+		
+		\begin{tcolorbox}[colback=blue!5,colframe=primary!30,arc=2mm,boxrule=0.5pt]
+			\textbf{Contexte :} Un sous-marin se trouve à une profondeur de $-120$ mètres. 
+			\begin{itemize}[noitemsep,topsep=5pt]
+				\item Il remonte d'abord de 45 mètres
+				\item Puis il descend de 30 mètres
+				\item Enfin, il remonte de 25 mètres
+			\end{itemize}
+		\end{tcolorbox}
+		
+		\begin{enumerate}[leftmargin=*]
+			\item \textbf{Écrire l'expression mathématique} qui permet de calculer la profondeur finale : \points{1.5} \\
+			\correction{Profondeur = $-120 + 45 - 30 + 25$}
+			\vspace{0.5cm}
+			
+			\item \textbf{Calculer} cette profondeur finale : \points{1.5} \\
+			\correction{$-120 + 45 = -75$} \\
+			\correction{$-75 - 30 = -105$} \\
+			\correction{$-105 + 25 = -80$} \\
+			\correction{La profondeur finale est de -80 mètres.}
+			\vspace{0.5cm}
+			
+			\item \textbf{Question :} Le sous-marin veut atteindre $-50$ mètres. Doit-il monter ou descendre ? De combien de mètres ? \points{1} \\
+			\correction{Pour passer de -80 m à -50 m, il doit monter.} \\
+			\correction{Calcul : $(-50) - (-80) = -50 + 80 = 30$.} \\
+			\correction{Il doit monter de 30 mètres.}
+		\end{enumerate}
+	\end{exercisebox}
+	
+	\vspace{0.2cm}
+	
+	% Bonus
+	\begin{tcolorbox}[
+		colback=accent!10,
+		colframe=accent,
+		fonttitle=\bfseries,
+		title={\faIcon{star} BONUS : Défi \badge{accent}{+2pts}},
+		arc=3mm,
+		boxrule=1.5pt,
+		enhanced,
+		width=\linewidth,
+		grow to left by=3mm,
+		grow to right by=3mm
+		]
+		Soit l'expression : $G = \dfrac{2a - b^2}{c + d}$
+		
+		Avec : $a = -4$ ; $b = -3$ ; $c = -5$ ; $d = 2$
+		
+		Calculer $G$ en remplaçant et en détaillant toutes les étapes. \\
+		
+		\correction{$G = \dfrac{2 \times (-4) - (-3)^2}{-5 + 2}$} \\
+		\correction{$G = \dfrac{-8 - 9}{-3}$} \\
+		\correction{$G = \dfrac{-17}{-3}$} \\
+		\correction{$G = \dfrac{17}{3}$}
+	\end{tcolorbox}
+	
+\end{document}
