@@ -1,6 +1,6 @@
-﻿% Séquence 2 : Points et droites
+% Séquence 2 : Points et droites
 \setseqtitle{Points et droites}
-\chapter{Points et droites}
+\chapter{Points, droites et programmes de construction}
 \label{chap:seq02}
 
 % ======= Petits outils locaux (utilisables dans tout le chapitre) =======
@@ -160,7 +160,30 @@ Il n'existe qu'\textbf{une seule droite} qui passe par le point \textbf{A} et qu
 \textit{Que le point A soit sur la droite (d) ou à l'extérieur, il n'y a toujours qu'une seule façon de tracer la perpendiculaire passant par A.}
 \end{proprietebox}
 
-\section*{6) Application : Lire attentivement une consigne}
+% --- Deux propriétés : perpendiculaire et parallèle
+\begin{proprietebox}[Deux propriétés]
+\begin{itemize}[label = \textbullet]
+    \item Si deux droites sont perpendiculaires à une même droite, alors elles sont parallèles.
+    \item Si deux droites sont parallèles et si une troisième droite est perpendiculaire à l'une, alors elle est perpendiculaire à l'autre.
+\end{itemize}
+
+\vspace{0.3cm}
+\begin{center}
+\begin{tikzpicture}[scale=1]
+    % Droite (d)
+    \draw[dro] (0,-1) -- (0,1) node[below left] {$(d)$};
+    % Deux droites parallèles perpendiculaires à (d)
+    \draw[para] (-2,0.5) -- (2,0.5) node[right] {$(d_1)$};
+    \draw[para] (-2,-0.5) -- (2,-0.5) node[right] {$(d_2)$};
+    % Marques d'angle droit
+    \draw[line width=0.6pt] (0,0.5) -- (0.3,0.5) -- (0.3,0.2);
+    \draw[line width=0.6pt] (0,-0.5) -- (0.3,-0.5) -- (0.3,-0.8);
+\end{tikzpicture}
+\end{center}
+\end{proprietebox}
+
+\clearpage
+\section{Application : Lire attentivement une consigne}
 
 \noindent
 La différence entre les articles \og un/une \fg{} et \og le/la \fg{} est cruciale en géométrie. 
@@ -179,13 +202,14 @@ Elle indique si le tracé est unique ou si vous avez le choix !
 % =========================
 \section{ Je m'entraîne}
 \begin{itemize}
-	\item Lecture : $[MN]$: \trous{9cm}\\
+	\item[\textbullet] Lecture : $[MN]$: \trous{9cm}\\
 	 $(RS)$: \trous{9cm}\\
 	 $[TU)$: \trous{9cm}\\
 	 $VU$: \trous{9cm}
-	\item Notations : << La droite passant par $P$ et $Q$ >>: \trous{9cm}\\
+	\item[\textbullet] Notations : << La droite passant par $P$ et $Q$ >>: \trous{9cm}\\
 	 << Le segment d'extrémités $K$ et $L$ >>: \trous{9cm} \\
 	 << La demi-droite d'origine $H$ passant par $J$ >>: \trous{9cm} \\
 	 << La longueur du segment d'extrémités A et B >>: \trous{9cm}
-	\item Complète : Si $A \in (BC)$ alors $A,B,C$ sont \trou{3cm}. Si $D \notin (EF)$ alors D, E et F ......................................
+	\item[\textbullet] Complète :\\
+	Si $A \in (BC)$ alors $A,B,C$ sont \trou{3cm}. Si $D \notin (EF)$ alors D, E et F \trou{5cm}
 \end{itemize}

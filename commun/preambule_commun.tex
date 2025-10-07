@@ -88,6 +88,10 @@
 				mark=at position 0.5 with {\draw[thick] (-2pt,2pt)--(2pt,2pt); \draw[thick] (-2pt,-2pt)--(2pt,-2pt);}}}
 	}
 }
+
+\usetikzlibrary{tikzmark, calc}
+\colorlet{mainRed}{red!80!black}
+\colorlet{mainBlue}{blue!80!black}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 
@@ -251,6 +255,12 @@
 \newtcolorbox{correctionbox}[1][]{
 	commonstyle=mainGreen,
 	title={\boxtitle{\textbf{Correction \faCheck}}{#1}}
+}
+
+% Boîte pour les solutions
+\newtcolorbox{solutionbox}[1][]{
+	commonstyle=mainGreen,
+	title={\boxtitle{\textbf{Solution \faCheckCircle}}{#1}}
 }
 
 % Boîte pour les rappels

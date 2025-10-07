@@ -3,19 +3,19 @@
 \chapter{Sym\'etrie centrale}
 
 \begin{objectifsbox}
-\textbf{Objectifs d'apprentissage.} A l'issue de la s\'equence, l'élève sera capable de :
+\textbf{Objectifs d'apprentissage.} À l'issue de la séquence, l'élève sera capable de :
 \begin{itemize}
-  \item Reconnaître et construire l'image d'une figure par sym\'etrie centrale (centre donn\'e)
-  \item Utiliser les propri\'et\'es de conservation de la sym\'etrie centrale
+  \item Reconnaître et construire l'image d'une figure par symétrie centrale (centre donné)
+  \item Utiliser les propriétés de conservation de la symétrie centrale
   \item Distinguer symétrie axiale et symétrie centrale
-  \item R\'esoudre des problèmes géométriques en mobilisant la symétrie centrale
+  \item Résoudre des problèmes géométriques en mobilisant la symétrie centrale
 \end{itemize}
 \end{objectifsbox}
 
 \section{Rappel : symétrie axiale}
 
-\begin{proprietebox}[Sym\'etrie axiale]
-La sym\'etrie axiale par rapport \`a une droite $d$ transforme tout point $M$ en un point $M'$ tel que $d$ est la m\'ediatrice du segment $[MM']$. Elle conserve les longueurs, les angles et les aires.
+\begin{proprietebox}[Symétrie axiale]
+La sym\'etrie axiale par rapport à une droite $d$ transforme tout point $M$ en un point $M'$ tel que $d$ est la médiatrice du segment $[MM']$. Elle conserve les longueurs, les angles et les aires.
 \end{proprietebox}
 
 \begin{examplebox}[Illustration]
@@ -53,13 +53,13 @@ La sym\'etrie axiale par rapport \`a une droite $d$ transforme tout point $M$ en
 		% Grille (mineure 0.5, majeure 1)
 		\draw[help lines, color=gray!25, step=0.5] (-4,-3.5) grid (4,3.5);
 		\draw[help lines, color=gray!45, line width=0.25pt, step=1] (-4,-3.5) grid (4,3.5);
-
+		
 		% Axes perpendiculaires
 		\coordinate (I) at (0,0);
 		\draw[very thick, blue!60] (-4,0) -- (4,0) node[right]{$d_1$};
 		\draw[very thick, blue!60] (0,-3.5) -- (0,3.5) node[above]{$d_2$};
 		\draw[fill=black] (I) circle (1.6pt) node[below right]{$I$};
-
+		
 		% Figure F0 : lettre L, sommets sur la grille (entiers)
 		\coordinate (P1) at (-3,2);
 		\coordinate (P2) at (-1,2);
@@ -99,7 +99,7 @@ La sym\'etrie axiale par rapport \`a une droite $d$ transforme tout point $M$ en
 	\end{center}
 \end{examplebox}
 
-\subsection{Figures symétriques par rapport à un point}
+\section{Figures symétriques par rapport à un point}
 \begin{definitionbox}
 Deux figures sont symétriques par rapport à un point $O$ lorsqu'elles \\
 se superposent en \trous{10cm}\\
@@ -111,10 +111,10 @@ On dit que $O$ est le centre de la symétrie.
 	\begin{center}
 		\includegraphics[width=0.6\linewidth]{../../assets/images/5e/seq_02/figures_symetriques}
 	\end{center}
+	
+\end{examplebox}	
 
-\end{examplebox}
-
-\subsection{Symétrique d'un point par rapport à un point}
+\section{Symétrique d'un point par rapport à un point}
 
 \begin{definitionbox}
 	Le symétrique d’un point $M$ par rapport à un point $O$ est le point $M'$ tel que le point $O$ est le milieu du segment $[MM']$.
@@ -125,9 +125,9 @@ On dit que $O$ est le centre de la symétrie.
 	\begin{center}
 		\includegraphics[width=0.7\linewidth]{../../assets/images/5e/seq_02/exemple_image_point_construction}
 	\end{center}
+	
 
-
-\end{examplebox}
+\end{examplebox}	
 
 \section{Constructions}
 
@@ -136,7 +136,7 @@ On dit que $O$ est le centre de la symétrie.
 Pour construire l'image $A'$ d'un point $A$ par la symétrie centrale de centre $O$ :
 \begin{enumerate}
   \item Tracer la demi-droite $[AO)$.
-  \item Reporter $OA$ de l'autre côté de $O$ pour obtenir le point A' avec $OA'=OA$ (au règle/compas).
+  \item Reporter $OA$ de l'autre côté de $O$ pour obtenir le point $A'$ avec $OA'=OA$ (à la règle et au compas).
   \item Vérifier que $O$ est le milieu de $[AA']$.
 \end{enumerate}
 
@@ -153,35 +153,34 @@ Pour construire l'image $A'$ d'un point $A$ par la symétrie centrale de centre 
 \begin{methodebox}[Segment, droite, triangle]
 \begin{itemize}
   \item \textbf{Segment $[AB]$} \;$\to$\; \textit{$[A'B']$ parall\`ele et de m\^eme longueur}.
-  \item \textbf{Droite $(d)$} \;$\to$\; \textit{droite $
-d'$ parall\`ele \`a $(d)$} (si $(d)$ passe par $O$, elle est invariante).
+  \item \textbf{Droite $(d)$} \;$\to$\; \textit{droite $d'$ parallèle à $(d)$} (si $(d)$ passe par $O$, elle est invariante).
   \item \textbf{Triangle $ABC$} \;$\to$\; \textit{triangle $A'B'C'$ superposable par demi-tour (aires et angles conserv\'es)}.
 \end{itemize}
 \end{methodebox}
 
 \begin{examplebox}[Construction par symétrie centrale]
 	Construire l’image du triangle $ABC$ par la symétrie centrale de centre $O$. Laisser visibles les traits de construction et nommer $A'$, $B'$, $C'$.
-
+	
 	\begin{center}
 		\begin{tikzpicture}[x=1cm,y=1cm]
 			% Zone de dessin
 			\useasboundingbox (0,0) rectangle (12,7);
-
+			
 			% Quadrillage (mineur 0.5, majeur 1)
 			\draw[help lines, color=gray!25, step=0.5] (0,0) grid (12,7);
 			\draw[help lines, color=gray!45, line width=0.25pt, step=1] (0,0) grid (12,7);
-
+			
 			% Centre O (au centre)
 			\coordinate (O) at (5,3.5);
 			\draw[fill=black] (O) circle (1.5pt);
 			\node[below right] at (O) {$O$};
-
+			
 			% Triangle ABC en bas à gauche (sommets sur la grille)
 			\coordinate (A) at (1,1);
 			\coordinate (B) at (2.5,2.5);
 			\coordinate (C) at (3,1);
 			\draw[thick, blue] (A)--(B)--(C)--cycle;
-
+			
 			% Étiquettes bien placées
 			\node[below right, xshift=0.4mm, yshift=-0.4mm, blue] at (A) {$A$};
 			\node[above left, xshift=-0.5mm, yshift=0.5mm, blue] at (B) {$B$};
@@ -245,10 +244,11 @@ Une figure $\mathcal F$ \textbf{admet un centre de symétrie} s'il existe un poi
 \end{itemize}
 \end{methodebox}
 
-\begin{proprietebox}[Unicité et cas particuliers]
-Pour une figure \textbf{bornée} (segment, polygone, disque, etc.), s'il existe, le centre de symétrie est en général \textbf{unique}. Une \textbf{droite} admet au contraire une infinité de centres : \textbf{tous ses points}.
-\end{proprietebox}
+%\begin{proprietebox}[Unicité et cas particuliers]
+%Pour une figure \textbf{bornée} (segment, polygone, disque, etc.), s'il existe, le centre de symétrie est en général \textbf{unique}. Une \textbf{droite} admet au contraire une infinité de centres : \textbf{tous ses points}.
+%\end{proprietebox}
 
+\clearpage
 \section{Comparaison : axiale vs centrale}
 
 \begin{methodebox}[Comment les distinguer ?]
@@ -284,7 +284,7 @@ Pour une figure \textbf{bornée} (segment, polygone, disque, etc.), s'il existe,
 \textbf{Exercice 4 (vrai/faux)}. Dire si les affirmations sont vraies ou fausses et justifier.
 \begin{enumerate}
   \item Par sym\'etrie centrale, un rectangle devient un parall\'elogramme.
-  \item L'image d'une droite par une sym\'etrie centrale est toujours la m\^eme droite.
+  \item L'image d'une droite par une sym\'etrie centrale est toujours la même droite.
   \item Si $ABCD$ est un parall\'elogramme, alors $O$, intersection des diagonales, est un centre de sym\'etrie.
 \end{enumerate}
 \end{exercisebox}
@@ -294,7 +294,230 @@ Pour une figure \textbf{bornée} (segment, polygone, disque, etc.), s'il existe,
 \begin{enumerate}[label=\arabic*)]
   \item Donner la d\'efinition de l'image d'un point par sym\'etrie centrale.
   \item Citer deux propri\'et\'es conserv\'ees par la sym\'etrie centrale.
-  \item Expliquer comment distinguer visuellement une sym\'etrie axiale d'une sym\'etrie centrale.
+  \item Expliquer comment distinguer visuellement une symétrie axiale d'une symétrie centrale.
 \end{enumerate}
 \end{quizbox}
+
+\clearpage
+\section*{Corrigés des exercices d'application}
+
+\begin{solutionbox}
+	\textbf{Exercice 1 — Correction}
+	\begin{enumerate}
+		\item Pour construire l'image de chaque point ($A$, $B$ ou $C$) :
+		\begin{itemize}
+			\item Tracer la droite passant par $O$ et le point (par exemple $A$).
+			\item Placer le point image $A'$ de l'autre côté de $O$, à la même distance : $OA' = OA$.
+			\item Ainsi, $O$ est le milieu du segment $[AA']$.
+			\item Faire de même pour $B$ et $C$.
+		\end{itemize}
+
+		\begin{center}
+		\begin{tikzpicture}[scale=1.2]
+			% Grille
+			\draw[help lines, color=gray!25, step=0.5] (-1,-1) grid (5,3);
+			\draw[help lines, color=gray!45, line width=0.25pt, step=1] (-1,-1) grid (5,3);
+
+			% Centre O
+			\coordinate (O) at (2,1);
+			\draw[fill=black] (O) circle (1.5pt) node[below right]{$O$};
+
+			% Points A, B, C
+			\coordinate (A) at (0.5,0.5);
+			\coordinate (B) at (1,2);
+			\coordinate (C) at (3,0.5);
+			\draw[fill=blue] (A) circle (1.5pt) node[below left]{$A$};
+			\draw[fill=blue] (B) circle (1.5pt) node[above left]{$B$};
+			\draw[fill=blue] (C) circle (1.5pt) node[below]{$C$};
+
+			% Images A', B', C'
+			\coordinate (A') at (3.5,1.5);
+			\coordinate (B') at (3,0);
+			\coordinate (C') at (1,1.5);
+			\draw[fill=red] (A') circle (1.5pt) node[above right]{$A'$};
+			\draw[fill=red] (B') circle (1.5pt) node[below right]{$B'$};
+			\draw[fill=red] (C') circle (1.5pt) node[above]{$C'$};
+
+			% Droites de construction
+			\draw[gray, dashed] (A) -- (A');
+			\draw[gray, dashed] (B) -- (B');
+			\draw[gray, dashed] (C) -- (C');
+		\end{tikzpicture}
+		\end{center}
+
+		\item Les segments $[AB]$ et $[A'B']$ ont la même longueur et sont parallèles. De même, les angles $\widehat{ABC}$ et $\widehat{A'B'C'}$ ont la même mesure (la symétrie centrale conserve les longueurs et les angles).
+	\end{enumerate}
+\end{solutionbox}
+
+\begin{solutionbox}
+	\textbf{Exercice 2 — Correction}
+
+	On construit l'image du triangle $ABC$ en trouvant les points $A'$, $B'$, $C'$ images de $A$, $B$, $C$ par la symétrie centrale de centre $O$.
+
+	\begin{center}
+	\begin{tikzpicture}[scale=1.2]
+		% Grille
+		\draw[help lines, color=gray!25, step=0.5] (-1,-1) grid (5,3.5);
+		\draw[help lines, color=gray!45, line width=0.25pt, step=1] (-1,-1) grid (5,3.5);
+
+		% Centre O
+		\coordinate (O) at (2,1.5);
+		\draw[fill=black] (O) circle (1.5pt) node[below right, xshift=2pt]{$O$};
+
+		% Triangle ABC
+		\coordinate (A) at (0.5,0.5);
+		\coordinate (B) at (1,2.5);
+		\coordinate (C) at (2.5,0.8);
+		\draw[thick, blue] (A) -- (B) -- (C) -- cycle;
+		\draw[fill=blue] (A) circle (1.5pt) node[below left]{$A$};
+		\draw[fill=blue] (B) circle (1.5pt) node[above left]{$B$};
+		\draw[fill=blue] (C) circle (1.5pt) node[below right]{$C$};
+
+		% Triangle A'B'C'
+		\coordinate (A') at (3.5,2.5);
+		\coordinate (B') at (3,0.5);
+		\coordinate (C') at (1.5,2.2);
+		\draw[thick, red] (A') -- (B') -- (C') -- cycle;
+		\draw[fill=red] (A') circle (1.5pt) node[above right]{$A'$};
+		\draw[fill=red] (B') circle (1.5pt) node[below right]{$B'$};
+		\draw[fill=red] (C') circle (1.5pt) node[above left]{$C'$};
+
+		% Droites passant par O
+		\draw[gray, dashed, <->] (A) -- (A');
+		\draw[gray, dashed, <->] (B) -- (B');
+		\draw[gray, dashed, <->] (C) -- (C');
+	\end{tikzpicture}
+	\end{center}
+
+	\textbf{Observation :} Les trois droites $(AA')$, $(BB')$ et $(CC')$ passent toutes par le point $O$. En effet, $O$ est le milieu de chaque segment $[AA']$, $[BB']$ et $[CC']$, donc toutes ces droites se coupent en $O$.
+\end{solutionbox}
+
+\begin{solutionbox}
+	\textbf{Exercice 3 — Correction}
+	\begin{enumerate}
+		\item Pour construire l'image $(d')$ de la droite $(d)$ :
+		\begin{itemize}
+			\item Choisir deux points sur $(d)$, par exemple $P$ et $Q$.
+			\item Construire leurs images $P'$ et $Q'$ par la symétrie de centre $O$.
+			\item La droite $(d')$ passe par $P'$ et $Q'$.
+			\item Puisque $(d)$ ne passe pas par $O$, la droite $(d')$ est parallèle à $(d)$.
+		\end{itemize}
+
+		\begin{center}
+		\begin{tikzpicture}[scale=1.1]
+			% Grille
+			\draw[help lines, color=gray!25, step=0.5] (-0.5,-0.5) grid (6,3.5);
+			\draw[help lines, color=gray!45, line width=0.25pt, step=1] (-0.5,-0.5) grid (6,3.5);
+
+			% Centre O
+			\coordinate (O) at (2.5,1.5);
+			\draw[fill=black] (O) circle (1.5pt) node[below right]{$O$};
+
+			% Droite (d) et points P, Q
+			\coordinate (P) at (0.5,0.8);
+			\coordinate (Q) at (2,0.3);
+			\draw[thick, blue] (0,1) -- (3,0) node[right]{$(d)$};
+			\draw[fill=blue] (P) circle (1.5pt) node[above left]{$P$};
+			\draw[fill=blue] (Q) circle (1.5pt) node[above right]{$Q$};
+
+			% Images P' et Q' par symétrie de centre O
+			\coordinate (P') at (4.5,2.2);
+			\coordinate (Q') at (3,2.7);
+			\draw[fill=red] (P') circle (1.5pt) node[below right]{$P'$};
+			\draw[fill=red] (Q') circle (1.5pt) node[below left]{$Q'$};
+
+			% Droite (d') passant par P' et Q'
+			\draw[thick, red] ($(P')!-0.3!(Q')$) -- ($(Q')!-0.3!(P')$) node[right]{$(d')$};
+
+			% Droites de construction
+			\draw[gray, dashed] (P) -- (P');
+			\draw[gray, dashed] (Q) -- (Q');
+		\end{tikzpicture}
+		\end{center}
+
+		\item Pour construire l'image $\mathcal C'$ du cercle $\mathcal C$ :
+		\begin{itemize}
+			\item Trouver l'image $A'$ du centre $A$ par la symétrie de centre $O$.
+			\item Le cercle $\mathcal C'$ a pour centre $A'$.
+			\item Son rayon est le même que celui de $\mathcal C$, c'est-à-dire $AB$ (ou $A'B' = AB$).
+		\end{itemize}
+
+		\begin{center}
+		\begin{tikzpicture}[scale=1.1]
+			% Grille
+			\draw[help lines, color=gray!25, step=0.5] (-0.5,-0.5) grid (6,3.5);
+			\draw[help lines, color=gray!45, line width=0.25pt, step=1] (-0.5,-0.5) grid (6,3.5);
+
+			% Centre O
+			\coordinate (O) at (3,1.5);
+			\draw[fill=black] (O) circle (1.5pt) node[below right]{$O$};
+
+			% Cercle C
+			\coordinate (A) at (1.5,1);
+			\draw[thick, blue] (A) circle (0.7cm);
+			\draw[fill=blue] (A) circle (1.5pt) node[below left]{$A$};
+			% B sur le cercle : angle 45 degrés, rayon 0.7cm
+			\coordinate (B) at ($(A) + (45:0.7cm)$);
+			\draw[fill=blue] (B) circle (1.5pt) node[above right]{$B$};
+			\node[blue] at (1.5,0) {$\mathcal C$};
+
+			% Cercle C' (image de C par symétrie de centre O)
+			\coordinate (A') at (4.5,2);
+			\draw[thick, red] (A') circle (0.7cm);
+			\draw[fill=red] (A') circle (1.5pt) node[above right]{$A'$};
+			% B' image de B par symétrie de centre O : B' = 2*O - B
+			\coordinate (B') at ($(2*3,2*1.5) - (B)$);
+			\draw[fill=red] (B') circle (1.5pt) node[below left]{$B'$};
+			\node[red] at (4.5,3) {$\mathcal C'$};
+
+			% Droites de construction
+			\draw[gray, dashed] (A) -- (A');
+			\draw[gray, dashed] (B) -- (B');
+		\end{tikzpicture}
+		\end{center}
+	\end{enumerate}
+\end{solutionbox}
+
+\begin{solutionbox}
+	\textbf{Exercice 4 — Correction}
+	\begin{enumerate}
+		\item \textbf{Vrai.} Un rectangle reste un rectangle par symétrie centrale (donc c'est aussi un parallélogramme).
+
+		\item \textbf{Faux.} L'image d'une droite par symétrie centrale est la même droite seulement si la droite passe par le centre $O$. Sinon, l'image est une droite parallèle mais différente.
+
+		\item \textbf{Vrai.} Dans un parallélogramme $ABCD$, le point $O$ (intersection des diagonales) est un centre de symétrie : il échange les sommets opposés ($A$ avec $C$, et $B$ avec $D$).
+
+		\begin{center}
+		\begin{tikzpicture}[scale=1.2]
+			% Parallélogramme ABCD
+			\coordinate (A) at (0,0);
+			\coordinate (B) at (3,0);
+			\coordinate (C) at (4,1.5);
+			\coordinate (D) at (1,1.5);
+			\draw[thick, blue] (A) -- (B) -- (C) -- (D) -- cycle;
+			\draw[fill=blue] (A) circle (1.5pt) node[below left]{$A$};
+			\draw[fill=blue] (B) circle (1.5pt) node[below right]{$B$};
+			\draw[fill=blue] (C) circle (1.5pt) node[above right]{$C$};
+			\draw[fill=blue] (D) circle (1.5pt) node[above left]{$D$};
+
+			% Diagonales
+			\draw[gray, dashed] (A) -- (C);
+			\draw[gray, dashed] (B) -- (D);
+
+			% Centre O
+			\coordinate (O) at (2,0.75);
+			\draw[fill=red] (O) circle (2pt) node[below right, xshift=2pt]{$O$};
+		\end{tikzpicture}
+		\end{center}
+	\end{enumerate}
+\end{solutionbox}
+
+\begin{solutionbox}
+	\textbf{Auto-évaluation rapide — Corrigé}
+	\begin{enumerate}[label=\arabic*)]
+		\item L'image d'un point $M$ par la symétrie centrale de centre $O$ est le point $M'$ tel que $O$ soit le milieu du segment $[MM']$.
+		\item Propriétés conservées : longueurs, mesures d'angles, alignement, parallélisme, aires.
+		\item \textbf{Symétrie axiale :} on plie la figure le long d'une droite (l'axe). \textbf{Symétrie centrale :} on fait tourner la figure d'un demi-tour autour d'un point (le centre).
+	\end{enumerate}
+\end{solutionbox}
 
