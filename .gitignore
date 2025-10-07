@@ -1,4 +1,4 @@
-# LaTeX temporary files
+﻿# LaTeX temporary files
 *.aux
 *.log
 *.out
@@ -42,3 +42,24 @@ Thumbs.db
 # Temporary directories
 temp/
 tmp/
+
+# Extra LaTeX temporary variants
+*.synctex(busy)*
+
+# Sensitive/private directories (ignored)
+Dossier_PP/
+copies_corrigées/
+copies_corrig?es/
+progression/
+Ressources_4e/
+cours/6e_corail/
+cours/4e/evaluations-iparcours-Cahier42022/
+
+# Office documents (ignored by default)
+*.xls
+*.xlsx
+*.xlsm
+*.ods
+*.doc
+*.docx
+*.odt

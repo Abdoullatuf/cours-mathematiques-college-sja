@@ -1,0 +1,256 @@
+% Exemple complet utilisant toutes les fonctionnalités du package
+
+% === Barème avec badges ===
+\bareme{
+	\exbadge{1}{4} \quad
+	\exbadge{2}{6} \quad
+	\exbadge{3}{5} \quad
+	\exbadge{4}{7} \quad
+	\bonusbadge{2}
+}
+
+% === Consignes ===
+\begin{consignebox}
+	\faIcon{info-circle} \textbf{CONSIGNES IMPORTANTES}
+	\begin{itemize}[leftmargin=*,noitemsep,topsep=5pt]
+		\item[\faIcon{check}] Répondez directement sur le sujet
+		\item[\faIcon{check}] Justifiez toutes vos réponses
+		\item[\faIcon{pencil-alt}] Soignez la présentation
+		\item[\faIcon{times}] Calculatrice non autorisée
+	\end{itemize}
+\end{consignebox}
+
+\exspace
+
+% === Grille de compétences (optionnel) ===
+\CompetencesGrid{
+	\item[\faIcon{check}] Chercher : Extraire les informations utiles d'un énoncé
+	\item[\faIcon{check}] Modéliser : Traduire une situation en langage mathématique
+	\item[\faIcon{check}] Calculer : Effectuer des calculs et vérifier les résultats
+	\item[\faIcon{check}] Communiquer : Rédiger une solution claire et organisée
+}
+
+\exspace
+
+% ============================================
+% EXEMPLE 1 : QCM avec la nouvelle boîte
+% ============================================
+\begin{qcmbox}{\faIcon{list-ul} QCM : Nombres entiers \points{4}}
+	Pour chaque question, écris la lettre de la seule réponse correcte dans la colonne de droite :
+	
+	\vspace{0.3cm}
+	
+	\begin{qcmtable}
+		\textbf{1.} Combien vaut $5 + 7$ ? & 11 & 12 & 13 & \ans{B} \\
+		\hline
+		\textbf{2.} Quel est le double de 15 ? & 25 & 30 & 35 & \ans{B} \\
+		\hline
+		\textbf{3.} $100 - 47 = $ ? & 43 & 53 & 63 & \ans{B} \\
+		\hline
+		\textbf{4.} Combien de dizaines dans 235 ? & 2 & 3 & 23 & \ans{C} \\
+		\hline
+	\end{qcmtable}
+\end{qcmbox}
+
+\exspace
+
+% ============================================
+% EXEMPLE 2 : Exercice avec template rapide
+% ============================================
+\ExTemplate{2}{Opérations posées}{6}{calculator}{
+
+\textbf{Effectue les opérations suivantes en les posant :}
+
+\smallspace
+
+\textbf{1.} $345 + 278$ \points{1.5}
+
+\begin{center}
+	\AddPose{345}{278}
+\end{center}
+
+\exspace
+
+\textbf{2.} $534 - 187$ \points{1.5}
+
+\begin{center}
+	\SubPose{534}{187}
+\end{center}
+
+\exspace
+
+\textbf{3.} $48 \times 23$ \points{1.5}
+
+\begin{center}
+	\MulPose{48}{23}
+\end{center}
+
+\exspace
+
+\textbf{4.} $156 \div 12$ (division euclidienne) \points{1.5}
+
+\begin{center}
+	\DivEuc{156}{12}
+\end{center}
+
+Donc : $156 = 12 \times$ \ans{13} $+$ \ans{0}
+
+}
+
+% ============================================
+% EXEMPLE 3 : Construction géométrique
+% ============================================
+\begin{constructionbox}{\faIcon{drafting-compass} Exercice 3 : Construction \points{5}}
+
+\textbf{Construis la figure suivante avec tes instruments de géométrie :}
+
+\begin{itemize}[leftmargin=*]
+	\item Un segment $[AB]$ de longueur 6 cm
+	\item Un point $C$ tel que $AC = 4$ cm et $BC = 5$ cm
+	\item La perpendiculaire à $(AB)$ passant par $C$
+	\item Le cercle de centre $A$ et de rayon 3 cm
+\end{itemize}
+
+\figureespace{8cm}
+
+\onlycorrige{
+	\textcolor{warning}{\textbf{Points de notation :}}
+	\begin{itemize}[leftmargin=*]
+		\item Segment [AB] correctement tracé : 1 pt
+		\item Point C bien placé : 1.5 pts
+		\item Perpendiculaire tracée et codée : 1.5 pts
+		\item Cercle tracé : 1 pt
+	\end{itemize}
+}
+
+\end{constructionbox}
+
+\exspace
+
+% ============================================
+% EXEMPLE 4 : Problème avec zones de réponse
+% ============================================
+\begin{problembox}{\faIcon{search} Exercice 4 : Problème de vitesse \points{7}}
+
+\begin{tcolorbox}[colback=blue!5,colframe=primary!30,arc=2mm,boxrule=0.5pt]
+	\textbf{Situation :} Un train parcourt 180 km en 2 heures.
+\end{tcolorbox}
+
+\exspace
+
+\textbf{1.} Quelle est la vitesse moyenne du train en km/h ? \points{2}
+
+\anslines[0.5cm]{3}{
+Vitesse = Distance $\div$ Temps
+
+Vitesse = $180 \div 2 = 90$ km/h
+
+La vitesse moyenne du train est de 90 km/h.
+}
+
+\exspace
+
+\textbf{2.} Quelle distance parcourt-il en 3 heures à cette vitesse ? \points{2}
+
+\anslines[0.5cm]{3}{
+Distance = Vitesse $\times$ Temps
+
+Distance = $90 \times 3 = 270$ km
+
+Le train parcourt 270 km en 3 heures.
+}
+
+\exspace
+
+\textbf{3.} Combien de temps met-il pour parcourir 450 km ? \points{3}
+
+\anslines[0.5cm]{4}{
+Temps = Distance $\div$ Vitesse
+
+Temps = $450 \div 90 = 5$ heures
+
+Le train met 5 heures pour parcourir 450 km.
+}
+
+\end{problembox}
+
+\exspace
+
+% ============================================
+% BONUS : Avec opération posée et raisonnement
+% ============================================
+\begin{tcolorbox}[
+	colback=accent!10,
+	colframe=accent,
+	fonttitle=\bfseries,
+	title={\faIcon{star} BONUS : Défi mathématique \bonusbadge{2}},
+	arc=3mm,
+	boxrule=1.5pt,
+	enhanced,
+	width=\linewidth,
+	grow to left by=5mm,
+	grow to right by=5mm
+]
+
+Un nombre mystérieux vérifie les propriétés suivantes :
+\begin{itemize}[leftmargin=*]
+	\item Il est compris entre 100 et 200
+	\item La somme de ses chiffres vaut 15
+	\item Il est divisible par 3 et par 5
+\end{itemize}
+
+\textbf{Quel est ce nombre ? Justifie ta réponse.}
+
+\anslines[0.5cm]{8}{
+Le nombre doit être divisible par 3 ET par 5, donc divisible par 15.
+
+Multiples de 15 entre 100 et 200 : 105, 120, 135, 150, 165, 180, 195
+
+Vérification de la somme des chiffres = 15 :
+
+• 105 : $1+0+5 = 6$ ✗ \quad • 120 : $1+2+0 = 3$ ✗ \quad • 135 : $1+3+5 = 9$ ✗
+
+• 150 : $1+5+0 = 6$ ✗ \quad • 165 : $1+6+5 = 12$ ✗ \quad • 180 : $1+8+0 = 9$ ✗
+
+• 195 : $1+9+5 = 15$ ✓
+
+Le nombre mystérieux est \textbf{195}.
+}
+
+\end{tcolorbox}
+
+\exspace
+
+% ============================================
+% DÉMONSTRATION : Utilisation des helpers
+% ============================================
+\onlycorrige{
+\begin{tcolorbox}[colback=warning!10,colframe=warning,
+	title={\faIcon{lightbulb} Notes pour le professeur},
+	arc=2mm]
+	
+	\textbf{Barème total : 24 points}
+	
+	\begin{itemize}[leftmargin=*]
+		\item QCM : 4 pts (1 pt par question)
+		\item Opérations : 6 pts (1.5 pt par opération)
+		\item Construction : 5 pts (voir détail dans l'exercice)
+		\item Problème : 7 pts (2+2+3)
+		\item Bonus : 2 pts
+	\end{itemize}
+	
+	\textbf{Note finale sur 20 :} $(points \times 20) \div 24$
+	
+	\textbf{Temps indicatif :}
+	\begin{itemize}
+		\item QCM : 8 min
+		\item Opérations : 15 min
+		\item Construction : 12 min
+		\item Problème : 15 min
+		\item Bonus : 5 min
+	\end{itemize}
+\end{tcolorbox}
+}
+
+% Auto-évaluation
+\AutoEval

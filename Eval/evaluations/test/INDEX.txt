@@ -1,0 +1,223 @@
+═══════════════════════════════════════════════════════════════════════════════
+                    PACKAGE COLLEGE-EVAL v2.0 - INDEX
+═══════════════════════════════════════════════════════════════════════════════
+
+🎯 VOUS ÊTES NOUVEAU ? COMMENCEZ ICI !
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1️⃣  Lisez d'abord       → DEMARRAGE_RAPIDE.md
+2️⃣  Puis consultez      → README.md
+3️⃣  Testez l'exemple    → exemple_complet_eleve.tex (compilez-le !)
+4️⃣  Guide complet       → GUIDE_UTILISATION.tex
+
+═══════════════════════════════════════════════════════════════════════════════
+                         📦 FICHIERS DU PACKAGE
+═══════════════════════════════════════════════════════════════════════════════
+
+┌─ PACKAGE PRINCIPAL ────────────────────────────────────────────────────────┐
+│                                                                             │
+│  college-eval.sty              Le package LaTeX (LuaLaTeX)                 │
+│                                À placer dans votre dossier de travail      │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─ DOCUMENTATION ────────────────────────────────────────────────────────────┐
+│                                                                             │
+│  📘 DEMARRAGE_RAPIDE.md        5 minutes pour créer votre 1er contrôle     │
+│  📗 README.md                  Documentation complète                      │
+│  📙 GUIDE_UTILISATION.tex      Guide détaillé avec tous les exemples       │
+│  📋 LISTE_FICHIERS.txt         Liste de tous les fichiers (ce que c'est)  │
+│  📑 INDEX.txt                  Ce fichier !                                │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════════
+                       📝 CONTRÔLES FOURNIS (EXEMPLES)
+═══════════════════════════════════════════════════════════════════════════════
+
+┌─ CONTRÔLE 1 : GÉOMÉTRIE ET DIVISION (6e) ──────────────────────────────────┐
+│                                                                             │
+│  controle_6e_geometrie_division_eleve.tex      Version ÉLÈVE               │
+│  controle_6e_geometrie_division_corrige.tex    Version CORRIGÉ             │
+│  controle_6e_geometrie_division_body.tex       Contenu (partagé)           │
+│                                                                             │
+│  📊 Contenu du contrôle :                                                  │
+│     • 7 exercices (40 points)                                              │
+│     • Vocabulaire géométrique                                              │
+│     • Constructions                                                        │
+│     • Division euclidienne                                                 │
+│     • Critères de divisibilité                                             │
+│                                                                             │
+│  💡 Usage : Exemple réel de contrôle complet                               │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌─ EXEMPLE COMPLET : DÉMONSTRATION DE TOUTES LES FONCTIONNALITÉS ───────────┐
+│                                                                             │
+│  exemple_complet_eleve.tex      Version ÉLÈVE                              │
+│  exemple_complet_corrige.tex    Version CORRIGÉ                            │
+│  exemple_complet_body.tex       Contenu (partagé)                          │
+│                                                                             │
+│  ✨ Fonctionnalités démontrées :                                           │
+│     ✓ QCM avec boîte spéciale (qcmbox)                                     │
+│     ✓ Opérations posées (xlop)                                             │
+│     ✓ Construction géométrique (constructionbox)                           │
+│     ✓ Problème (problembox)                                                │
+│     ✓ Bonus personnalisé                                                   │
+│     ✓ Grille de compétences                                                │
+│     ✓ Tous les helpers et templates                                        │
+│                                                                             │
+│  💡 Usage : Modèle pour apprendre toutes les commandes                     │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════════
+                      🎨 NOUVELLES FONCTIONNALITÉS v2.0
+═══════════════════════════════════════════════════════════════════════════════
+
+✨ Boîtes élargies (5mm de marge au lieu de 3mm)
+✨ 3 nouvelles boîtes thématiques colorées :
+   • qcmbox (bleu clair) - pour les questionnaires
+   • constructionbox (verte) - pour la géométrie
+   • problembox (rouge clair) - pour les problèmes
+
+✨ Templates rapides :
+   • \ExTemplate{num}{titre}{pts}{icone}{contenu}
+   • \QCMTemplate{titre}{pts}{contenu}
+
+✨ Helpers de barème :
+   • \exbadge{1}{6} → Badge "Ex.1: 6pts"
+   • \bonusbadge{2} → Badge "Bonus: +2pts"
+
+✨ Nouvelles commandes utiles :
+   • \AutoEval → Auto-évaluation en pied de page
+   • \exspace → Espacement entre exercices
+   • \smallspace → Petit espacement
+   • \onlyeleve{texte} → Visible uniquement en version élève
+   • \onlycorrige{texte} → Visible uniquement en corrigé
+   • \blanks{largeur} → Trait de réponse
+
+✨ Support amélioré xlop :
+   • \AddPose{a}{b} → Addition posée
+   • \SubPose{a}{b} → Soustraction posée
+   • \MulPose{a}{b} → Multiplication posée
+   • \DivEuc{a}{b} → Division euclidienne posée
+
+✨ Grille de compétences optionnelle :
+   • \CompetencesGrid{items}
+
+═══════════════════════════════════════════════════════════════════════════════
+                           🚀 DÉMARRAGE RAPIDE
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Placez college-eval.sty dans votre dossier de travail
+
+2. Créez 3 fichiers :
+
+   ┌─ mon_controle_eleve.tex ─────────────────────────────────────────────┐
+   │ % !TeX program = lualatex                                             │
+   │ \documentclass[11pt,a4paper]{article}                                 │
+   │ \usepackage{college-eval}                                             │
+   │ \examsetup{6e}{Maths}{Mon contrôle}{1}{55 min}{Calc. autorisée}      │
+   │ \begin{document}                                                      │
+   │     \CorrigeWatermark                                                 │
+   │     \ExamBanner                                                       │
+   │     \StudentInfoBox                                                   │
+   │     \input{mon_controle_body.tex}                                     │
+   │ \end{document}                                                        │
+   └───────────────────────────────────────────────────────────────────────┘
+
+   ┌─ mon_controle_corrige.tex ───────────────────────────────────────────┐
+   │ % !TeX program = lualatex                                             │
+   │ \documentclass[11pt,a4paper]{article}                                 │
+   │ \usepackage[corrige]{college-eval}  ← Ajouter [corrige]              │
+   │ \examsetup{6e}{Maths}{Mon contrôle}{1}{55 min}{Calc. autorisée}      │
+   │ \begin{document}                                                      │
+   │     \CorrigeWatermark                                                 │
+   │     \ExamBanner                                                       │
+   │     \StudentInfoBox                                                   │
+   │     \input{mon_controle_body.tex}                                     │
+   │ \end{document}                                                        │
+   └───────────────────────────────────────────────────────────────────────┘
+
+   ┌─ mon_controle_body.tex ──────────────────────────────────────────────┐
+   │ \bareme{\exbadge{1}{10}}                                              │
+   │ \begin{consignebox}                                                   │
+   │     \faIcon{info-circle} \textbf{CONSIGNES}                           │
+   │     \begin{itemize}[leftmargin=*,noitemsep]                           │
+   │         \item[\faIcon{check}] Justifiez vos réponses                  │
+   │     \end{itemize}                                                     │
+   │ \end{consignebox}                                                     │
+   │ \exspace                                                              │
+   │ \begin{exercisebox}{\faIcon{calculator} Exercice \points{10}}         │
+   │     Calcule : $7+5=$ \ans{12}                                         │
+   │ \end{exercisebox}                                                     │
+   │ \AutoEval                                                             │
+   └───────────────────────────────────────────────────────────────────────┘
+
+3. Compilez avec LuaLaTeX :
+   lualatex mon_controle_eleve.tex
+   lualatex mon_controle_corrige.tex
+
+═══════════════════════════════════════════════════════════════════════════════
+                         📚 POUR ALLER PLUS LOIN
+═══════════════════════════════════════════════════════════════════════════════
+
+📖 Exemples de code complets      → GUIDE_UTILISATION.tex
+📖 Toutes les commandes           → README.md
+📖 Résolution de problèmes        → README.md (section "🐛")
+📖 Installation des packages      → README.md (section "Installation")
+
+═══════════════════════════════════════════════════════════════════════════════
+                            🎓 NIVEAUX DISPONIBLES
+═══════════════════════════════════════════════════════════════════════════════
+
+Le package fonctionne pour tous les niveaux de collège :
+
+\examsetup{6\textsuperscript{e}}{...}     → 6e
+\examsetup{5\textsuperscript{e}}{...}     → 5e
+\examsetup{4\textsuperscript{e}}{...}     → 4e
+\examsetup{3\textsuperscript{e}}{...}     → 3e
+
+Matières : Mathématiques, Physique, SVT, etc. (personnalisable)
+
+═══════════════════════════════════════════════════════════════════════════════
+                           💡 CONSEILS & ASTUCES
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ Créez toujours 3 fichiers (*_eleve, *_corrige, *_body)
+✅ Utilisez \ans{} pour les réponses courtes
+✅ Utilisez \anslines{}{} pour les réponses détaillées
+✅ Adaptez les boîtes au type d'exercice (qcmbox, constructionbox, etc.)
+✅ Mettez \AutoEval à la fin de chaque contrôle
+✅ Testez d'abord avec exemple_complet_eleve.tex
+
+═══════════════════════════════════════════════════════════════════════════════
+                              🆘 BESOIN D'AIDE ?
+═══════════════════════════════════════════════════════════════════════════════
+
+1. Problème de compilation ?
+   → Vérifiez que LuaLaTeX est installé : lualatex --version
+   → Installez les packages manquants : tlmgr install <package>
+
+2. Les réponses ne s'affichent pas en rouge ?
+   → Vérifiez : \usepackage[corrige]{college-eval}
+
+3. Erreur "fontawesome5 not found" ?
+   → sudo tlmgr install fontawesome5
+
+4. Besoin d'exemples ?
+   → Ouvrez exemple_complet_body.tex
+   → Consultez GUIDE_UTILISATION.tex
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Version : 2.0
+Date    : 2025-10-04
+Licence : LaTeX Project Public License (LPPL) v1.3c
+
+═══════════════════════════════════════════════════════════════════════════════
+
+                    Bon courage pour vos contrôles ! 📝✨
+
+═══════════════════════════════════════════════════════════════════════════════

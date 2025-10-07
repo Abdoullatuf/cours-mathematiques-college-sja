@@ -1,0 +1,206 @@
+\setseqtitle{Nombres en écriture fractionnaire}
+\chapter{Nombres en écriture fractionnaire}
+
+\begin{objectifsbox}
+\textbf{Objectifs d'apprentissage.} À l'issue de la séquence, l'élève sera capable de :
+\begin{itemize}
+  \item Comprendre les différentes définitions d'une fraction (partage, quotient, opérateur).
+  \item Identifier et produire des fractions égales.
+  \item Simplifier une fraction pour la rendre irréductible.
+  \item Décomposer une fraction en somme d'un entier et d'une fraction inférieure à 1.
+  \item Comparer et ranger des fractions.
+  \item Repérer et placer des fractions sur une droite graduée.
+\end{itemize}
+\end{objectifsbox}
+
+\section{Qu'est-ce qu'une fraction ?}
+
+\begin{definitionbox}[Définition d'une fraction]
+  Une \textbf{fraction} est un nombre qui s'écrit sous la forme $\frac{a}{b}$, où $a$ est le \textbf{numérateur} et $b$ est le \textbf{dénominateur}. Le dénominateur $b$ doit être un nombre entier non nul.
+  Une fraction représente le \textbf{quotient} de $a$ par $b$.
+\end{definitionbox}
+
+\subsection{La fraction comme partage}
+\begin{examplebox}[Partage d'une unité]
+  Si l'on partage une unité (par exemple, un gâteau ou une tablette de chocolat) en $b$ parts égales et que l'on en prend $a$ parts, cela représente la fraction $\frac{a}{b}$.
+  \begin{center}
+    % Exemple visuel de fraction (à ajouter plus tard si nécessaire avec TikZ ou image)
+    % \includegraphics[width=0.4\linewidth]{../../assets/images/5e/seq_03/fraction_partage}
+  \end{center}
+\end{examplebox}
+
+\subsection{La fraction comme quotient}
+\begin{proprietebox}[Quotient de deux nombres]
+  La fraction $\frac{a}{b}$ est le nombre qui, multiplié par $b$, donne $a$. Autrement dit, $\frac{a}{b} \times b = a$.
+  C'est le résultat de la division de $a$ par $b$.
+\end{proprietebox}
+
+\subsection{La fraction comme opérateur}
+\begin{definitionbox}[Opérateur]
+  Prendre une fraction d'une quantité, c'est multiplier cette quantité par la fraction. Par exemple, prendre $\frac{2}{3}$ de 12, c'est calculer $\frac{2}{3} \times 12 = \frac{2 \times 12}{3} = \frac{24}{3} = 8$.
+\end{definitionbox}
+
+\section{Fractions égales}
+
+\begin{proprietebox}[Règle fondamentale des fractions]
+  On ne change pas la valeur d'une fraction en multipliant (ou en divisant) son numérateur et son dénominateur par un même nombre non nul.
+  $\frac{a}{b} = \frac{a \times k}{b \times k}$ et $\frac{a}{b} = \frac{a \div k}{b \div k}$ (avec $k \neq 0$).
+\end{proprietebox}
+
+\begin{examplebox}[Exemples de fractions égales]
+  $\frac{1}{2} = \frac{1 \times 3}{2 \times 3} = \frac{3}{6}$
+  $\frac{10}{15} = \frac{10 \div 5}{15 \div 5} = \frac{2}{3}$
+\end{examplebox}
+
+\section{Simplifier une fraction}
+
+\begin{definitionbox}[Fraction irréductible]
+  Une fraction est dite \textbf{irréductible} lorsque son numérateur et son dénominateur n'ont pas d'autre diviseur commun que 1.
+\end{definitionbox}
+
+\begin{methodebox}[Comment simplifier une fraction ?]
+  Pour simplifier une fraction, on divise son numérateur et son dénominateur par un même diviseur commun jusqu'à obtenir une fraction irréductible.
+  Il est souvent utile d'utiliser les critères de divisibilité (par 2, 3, 5, etc.).
+\end{methodebox}
+
+\begin{examplebox}[Simplification]
+  Simplifions la fraction $\frac{24}{36}$ :
+  $\frac{24}{36} = \frac{24 \div 2}{36 \div 2} = \frac{12}{18} = \frac{12 \div 6}{18 \div 6} = \frac{2}{3}$.
+  La fraction $\frac{2}{3}$ est irréductible car 2 et 3 n'ont pas de diviseur commun autre que 1.
+\end{examplebox}
+
+\section{Décomposer et encadrer des fractions}
+
+\begin{proprietebox}[Décomposition d'une fraction]
+  Toute fraction $\frac{a}{b}$ (avec $a > b$) peut être décomposée en la somme d'un entier et d'une fraction inférieure à 1. Pour cela, on effectue la division euclidienne de $a$ par $b$.
+  Si $a = q \times b + r$ (où $q$ est le quotient et $r$ le reste, avec $0 \le r < b$), alors $\frac{a}{b} = q + \frac{r}{b}$.
+\end{proprietebox}
+
+\begin{examplebox}[Décomposition]
+  Décomposons la fraction $\frac{17}{5}$ :
+  La division euclidienne de 17 par 5 donne $17 = 3 \times 5 + 2$.
+  Donc, $\frac{17}{5} = 3 + \frac{2}{5}$.
+  On peut aussi encadrer cette fraction : $3 < \frac{17}{5} < 4$.
+\end{examplebox}
+
+\section{Comparer des fractions}
+
+\subsection{Fractions ayant le même dénominateur}
+\begin{proprietebox}
+  Pour comparer des fractions qui ont le même dénominateur, on compare leurs numérateurs. La fraction ayant le plus grand numérateur est la plus grande.
+  Exemple : $\frac{5}{7} > \frac{3}{7}$ car $5 > 3$.
+\end{proprietebox}
+
+\subsection{Fractions ayant le même numérateur}
+\begin{proprietebox}
+  Pour comparer des fractions qui ont le même numérateur, on compare leurs dénominateurs. La fraction ayant le plus petit dénominateur est la plus grande.
+  Exemple : $\frac{3}{4} > \frac{3}{5}$ car $4 < 5$.
+\end{proprietebox}
+
+\subsection{Fractions n'ayant ni le même numérateur, ni le même dénominateur}
+\begin{methodebox}[Réduction au même dénominateur]
+  Pour comparer des fractions n'ayant ni le même numérateur, ni le même dénominateur, on les réduit au même dénominateur. On cherche un multiple commun aux deux dénominateurs (le plus petit commun multiple est préférable).
+\end{methodebox}
+
+\begin{examplebox}[Comparaison]
+  Comparons $\frac{2}{3}$ et $\frac{3}{4}$ :
+  Un dénominateur commun est 12.
+  $\frac{2}{3} = \frac{2 \times 4}{3 \times 4} = \frac{8}{12}$
+  $\frac{3}{4} = \frac{3 \times 3}{4 \times 3} = \frac{9}{12}$
+  Comme $\frac{8}{12} < \frac{9}{12}$, alors $\frac{2}{3} < \frac{3}{4}$.
+\end{examplebox}
+
+\subsection{Comparaison à 1}
+\begin{remarkbox}
+  \begin{itemize}
+    \item Si le numérateur est inférieur au dénominateur, la fraction est inférieure à 1 (ex: $\frac{2}{5} < 1$).
+    \item Si le numérateur est égal au dénominateur, la fraction est égale à 1 (ex: $\frac{5}{5} = 1$).
+    \item Si le numérateur est supérieur au dénominateur, la fraction est supérieure à 1 (ex: $\frac{7}{5} > 1$).
+  \end{itemize}
+\end{remarkbox}
+
+\section{Repérage sur une droite graduée}
+
+\begin{methodebox}[Placer une fraction sur une droite graduée]
+  Pour placer une fraction $\frac{a}{b}$ sur une droite graduée, on divise l'unité en $b$ parts égales, puis on compte $a$ de ces parts à partir de 0.
+\end{methodebox}
+
+\begin{examplebox}[Droite graduée]
+  Placer $\frac{1}{2}$, $\frac{3}{4}$ et $\frac{5}{4}$ sur une droite graduée.
+  \begin{center}
+    \begin{tikzpicture}[scale=2]
+      \draw[->] (0,0) -- (3.5,0) node[right] {$x$};
+      \foreach \x in {0,1,2,3}
+        \draw (\x,0.1) -- (\x,-0.1) node[below] {$\x$};
+      \foreach \x in {0.25,0.5,...,3.75}
+        \draw (\x,0.05) -- (\x,-0.05);
+      \node[above] at (0.5,0) {$\frac{1}{2}$};
+      \node[above] at (0.75,0) {$\frac{3}{4}$};
+      \node[above] at (1.25,0) {$\frac{5}{4}$};
+    \end{tikzpicture}
+  \end{center}
+\end{examplebox}
+
+\section{Exercices d'application}
+
+\begin{exercisebox}
+\textbf{Exercice 1 (Définitions et représentations).}
+\begin{enumerate}
+  \item Représenter graphiquement la fraction $\frac{3}{4}$.
+  \item Écrire la fraction correspondant à la partie coloriée d'un disque partagé en 8 parts égales dont 5 sont coloriées.
+  \item Quel est le quotient de 18 par 3 sous forme de fraction ?
+\end{enumerate}
+\end{exercisebox}
+
+\begin{exercisebox}
+\textbf{Exercice 2 (Fractions égales et simplification).}
+\begin{enumerate}
+  \item Compléter les égalités suivantes :
+    a) $\frac{2}{5} = \frac{\trous{0.5cm}}{15}$
+    b) $\frac{21}{28} = \frac{3}{\trous{0.5cm}}$
+  \item Simplifier au maximum les fractions suivantes :
+    a) $\frac{12}{18}$
+    b) $\frac{30}{45}$
+    c) $\frac{75}{100}$
+\end{enumerate}
+\end{exercisebox}
+
+\begin{exercisebox}
+\textbf{Exercice 3 (Décomposition et encadrement).}
+\begin{enumerate}
+  \item Décomposer les fractions suivantes en somme d'un entier et d'une fraction inférieure à 1 :
+    a) $\frac{13}{4}$
+    b) $\frac{25}{7}$
+  \item Encadrer les fractions précédentes par deux entiers consécutifs.
+\end{enumerate}
+\end{exercisebox}
+
+\begin{exercisebox}
+\textbf{Exercice 4 (Comparaison).}
+\begin{enumerate}
+  \item Comparer les fractions suivantes :
+    a) $\frac{7}{9}$ et $\frac{5}{9}$
+    b) $\frac{4}{5}$ et $\frac{4}{7}$
+    c) $\frac{2}{3}$ et $\frac{5}{6}$
+    d) $\frac{3}{2}$ et $\frac{7}{5}$
+  \item Ranger les fractions suivantes dans l'ordre croissant : $\frac{1}{2}$, $\frac{3}{4}$, $\frac{2}{3}$.
+\end{enumerate}
+\end{exercisebox}
+
+\begin{exercisebox}
+\textbf{Exercice 5 (Droite graduée).}
+\begin{enumerate}
+  \item Tracer une droite graduée et y placer les points A($\frac{1}{3}$), B($\frac{5}{3}$), C($\frac{7}{3}$). 
+  \item Placer sur une autre droite graduée les fractions $\frac{1}{2}$, $\frac{3}{2}$, $\frac{5}{2}$.
+\end{enumerate}
+\end{exercisebox}
+
+\begin{quizbox}
+\textbf{Auto-évaluation rapide}
+\begin{enumerate}[label=\arabic*)]
+  \item Donner trois définitions différentes d'une fraction.
+  \item Expliquer comment simplifier une fraction.
+  \item Comment compare-t-on deux fractions qui n'ont pas le même dénominateur ?
+\end{enumerate}
+\end{quizbox}
+

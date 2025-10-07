@@ -1,0 +1,271 @@
+% GUIDE D'UTILISATION - college-eval.sty v2.0
+% ==============================================
+
+% ========================================
+% 1. STRUCTURE DE BASE D'UN CONTRÔLE
+% ========================================
+
+% Fichier principal (élève ou corrigé) :
+% --------------------------------------
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{article}
+
+% Pour la version élève :
+\usepackage{college-eval}
+
+% Pour la version corrigé :
+% \usepackage[corrige]{college-eval}
+
+% Configuration du contrôle
+\examsetup{6\textsuperscript{e}}{Mathématiques}{Titre du contrôle}{1}{55 minutes}{Calculatrice autorisée}
+%          └─ Niveau         └─ Matière       └─ Titre           └─N° └─ Durée    └─ Calculatrice
+
+\begin{document}
+	\CorrigeWatermark  % Filigrane "CORRIGÉ" (visible uniquement en mode corrigé)
+	\ExamBanner        % Bandeau bleu en haut
+	\StudentInfoBox    % Cartouche nom/prénom/classe/date/note
+	
+	\smallspace
+	
+	% Contenu du contrôle (fichier séparé recommandé)
+	\input{nom_du_fichier_body.tex}
+	
+\end{document}
+
+% ========================================
+% 2. NOUVELLES FONCTIONS DISPONIBLES
+% ========================================
+
+% --- Barème automatique ---
+\bareme{
+	\exbadge{1}{6} \quad      % Exercice 1 : 6 points
+	\exbadge{2}{4} \quad      % Exercice 2 : 4 points
+	\exbadge{3}{8} \quad      % Exercice 3 : 8 points
+	\bonusbadge{2}            % Bonus : +2 points
+}
+
+% --- Template pour exercice rapide ---
+\ExTemplate{1}{Titre de l'exercice}{6}{book}{
+	% Contenu de l'exercice ici
+	% Icônes disponibles : book, drafting-compass, calculator, lightbulb, 
+	%                      divide, percentage, map-marker-alt, arrows-alt, etc.
+}
+
+% --- Auto-évaluation (en fin de contrôle) ---
+\AutoEval
+
+% --- Espacement adaptatif ---
+\exspace     % Espacement entre exercices (0.3cm)
+\smallspace  % Petit espacement (0.2cm)
+
+% ========================================
+% 3. BOÎTES DISPONIBLES
+% ========================================
+
+% --- Boîte exercice standard (bleue) ---
+\begin{exercisebox}{\faIcon{book} Exercice 1 : Titre \points{6}}
+	Contenu de l'exercice
+\end{exercisebox}
+
+% --- Boîte QCM (bleu clair) ---
+\begin{qcmbox}{\faIcon{list-ul} QCM \points{4}}
+	Pour chaque question, écris la lettre de la réponse correcte :
+	
+	\begin{qcmtable}
+		\textbf{1.} Question ici ? & Réponse A & Réponse B & Réponse C & \ans{B} \\
+		\hline
+		\textbf{2.} Autre question ? & Réponse A & Réponse B & Réponse C & \ans{A} \\
+		\hline
+	\end{qcmtable}
+\end{qcmbox}
+
+% --- Boîte construction (verte) ---
+\begin{constructionbox}{\faIcon{drafting-compass} Construction \points{7}}
+	Construis un triangle ABC tel que...
+\end{constructionbox}
+
+% --- Boîte problème (rouge clair) ---
+\begin{problembox}{\faIcon{search} Problème \points{8}}
+	Un cycliste parcourt...
+\end{problembox}
+
+% --- Boîte consignes (grise) ---
+\begin{consignebox}
+	\faIcon{info-circle} \textbf{CONSIGNES IMPORTANTES}
+	\begin{itemize}[leftmargin=*,noitemsep]
+		\item[\faIcon{check}] Justifiez vos réponses
+		\item[\faIcon{times}] Calculatrice interdite
+	\end{itemize}
+\end{consignebox}
+
+% ========================================
+% 4. GESTION DES RÉPONSES (ÉLÈVE/CORRIGÉ)
+% ========================================
+
+% --- Réponse simple (pointillés → texte en rouge) ---
+La capitale de la France est \ans{Paris}.
+
+% --- Réponse avec espace blanc personnalisé ---
+Réponse : \blanks{3cm}
+
+% --- Zone de réponse multiligne ---
+\anslines[0.5cm]{4}{
+	% Ce contenu apparaît en ROUGE dans le corrigé
+	% En mode élève : 4 lignes de pointillés avec interligne de 0.5cm
+	Voici la réponse complète avec plusieurs lignes...
+	On peut y mettre des équations :
+	\begin{align*}
+		x + 5 &= 12 \\
+		x &= 7
+	\end{align*}
+}
+
+% --- Contenu visible uniquement en corrigé ---
+\onlycorrige{
+	Ce texte n'apparaît que dans le corrigé !
+}
+
+% --- Contenu visible uniquement pour l'élève ---
+\onlyeleve{
+	Ce texte n'apparaît que dans la version élève !
+}
+
+% ========================================
+% 5. OPÉRATIONS POSÉES (avec xlop)
+% ========================================
+
+% Ces commandes affichent l'opération avec :
+% - Version élève : résultat en blanc (invisible)
+% - Version corrigé : résultat en noir (visible)
+
+\begin{center}
+	\AddPose{345}{78}     % Addition posée
+\end{center}
+
+\begin{center}
+	\SubPose{543}{287}    % Soustraction posée
+\end{center}
+
+\begin{center}
+	\MulPose{123}{45}     % Multiplication posée
+\end{center}
+
+\begin{center}
+	\DivEuc{547}{12}      % Division euclidienne posée
+\end{center}
+
+% ========================================
+% 6. ZONES DE RÉPONSE PERSONNALISÉES
+% ========================================
+
+% --- Zone de réponse avec hauteur fixe ---
+\zonereponse{4cm}  % Crée une zone grise de 4cm de hauteur
+
+% --- Zone de réponse avec lignes ---
+\zonereponseLignes[0.8cm]{5}  % 5 lignes avec interligne de 0.8cm
+
+% ========================================
+% 7. ICÔNES FONTAWESOME DISPONIBLES
+% ========================================
+
+\faIcon{book}              % Livre
+\faIcon{calculator}        % Calculatrice
+\faIcon{drafting-compass}  % Compas
+\faIcon{lightbulb}         % Ampoule
+\faIcon{divide}            % Division
+\faIcon{percentage}        % Pourcentage
+\faIcon{search}            % Recherche
+\faIcon{list-ul}           % Liste
+\faIcon{check}             % Coche
+\faIcon{times}             % Croix
+\faIcon{info-circle}       % Info
+\faIcon{clock}             % Horloge
+\faIcon{user}              % Utilisateur
+\faIcon{calendar}          % Calendrier
+\faIcon{star}              % Étoile
+\faIcon{arrow-right}       % Flèche droite
+\faIcon{map-marker-alt}    % Marqueur
+\faIcon{arrows-alt}        % Flèches
+
+% Pour voir plus d'icônes : http://mirrors.ctan.org/fonts/fontawesome5/doc/fontawesome5.pdf
+
+% ========================================
+% 8. GRILLE DE COMPÉTENCES (optionnel)
+% ========================================
+
+\CompetencesGrid{
+	\item[\faIcon{check}] Chercher : Extraire les informations utiles
+	\item[\faIcon{check}] Modéliser : Traduire en langage mathématique
+	\item[\faIcon{check}] Raisonner : Justifier une démarche
+	\item[\faIcon{check}] Calculer : Effectuer des calculs
+	\item[\faIcon{check}] Communiquer : Rédiger une solution
+}
+
+% ========================================
+% 9. EXEMPLE COMPLET D'EXERCICE
+% ========================================
+
+\begin{exercisebox}{\faIcon{calculator} Exercice 3 : Calculs \points{8}}
+
+\textbf{1.} Calcule $25 + 37$ : \ans{62} \points{1}
+
+\exspace
+
+\textbf{2.} Effectue la division posée de 156 par 12. \points{3}
+
+\begin{center}
+	\DivEuc{156}{12}
+\end{center}
+
+\exspace
+
+\textbf{3.} Résous l'équation $2x + 5 = 17$. \points{4}
+
+\anslines[0.5cm]{4}{
+	\begin{align*}
+		2x + 5 &= 17 \\
+		2x &= 17 - 5 \\
+		2x &= 12 \\
+		x &= 6
+	\end{align*}
+	La solution est $x = 6$.
+}
+
+\end{exercisebox}
+
+% ========================================
+% 10. BONNES PRATIQUES
+% ========================================
+
+% 1. Créer 3 fichiers pour chaque contrôle :
+%    - controle_XX_eleve.tex (version élève)
+%    - controle_XX_corrige.tex (version corrigé)  
+%    - controle_XX_body.tex (contenu partagé)
+
+% 2. Utiliser \ans{} pour les réponses courtes
+%    et \anslines{}{} pour les réponses longues
+
+% 3. Grouper les exercices par type avec les bonnes boîtes :
+%    - exercisebox : exercices standard
+%    - qcmbox : questionnaires
+%    - constructionbox : géométrie
+%    - problembox : problèmes complexes
+
+% 4. Toujours mettre \AutoEval à la fin
+
+% 5. Compiler avec LuaLaTeX (support UTF-8 natif + fontawesome5)
+
+% ========================================
+% 11. COMPILATION
+% ========================================
+
+% Dans le terminal :
+% lualatex controle_XX_eleve.tex
+% lualatex controle_XX_corrige.tex
+
+% Ou dans votre éditeur LaTeX, configurer :
+% !TeX program = lualatex
+
+% ========================================
+% FIN DU GUIDE
+% ========================================

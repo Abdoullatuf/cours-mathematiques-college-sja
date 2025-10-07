@@ -1,0 +1,24 @@
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{article}
+
+% Definit le chemin vers les ressources LaTeX du projet
+\makeatletter
+\def\input@path{{../../../tex/}}
+\makeatother
+
+\usepackage{college-eval-v2}
+
+% Métadonnées du contrôle
+\examsetup{6\textsuperscript{e}}{Mathématiques}{Géométrie et Division euclidienne}{1}{55 minutes}{Calculatrice autorisée}
+
+\begin{document}
+	\CorrigeWatermark
+	\ExamBanner
+	\StudentInfoBox
+	
+	\smallspace
+	
+	% === Contenu du contrôle ===
+	\input{controle_6e_geometrie_division_body.tex}
+	
+\end{document}

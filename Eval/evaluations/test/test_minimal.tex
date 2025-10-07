@@ -1,0 +1,26 @@
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{article}
+
+\makeatletter
+\def\input@path{{../../tex/}}
+\makeatother
+
+\usepackage{college-eval-v2}
+
+\examsetup{6\textsuperscript{e}}{Mathématiques}{Test minimal}{Demo}{55 minutes}{Calculatrice interdite}
+
+\begin{document}
+	\ExamBanner
+	\StudentInfoBox
+
+	\smallspace
+
+	\begin{qcmbox}{\faIcon{list-ul} QCM Test \points{4}}
+		Test
+		\begin{qcmtable}
+			\textbf{1.} Question ? & A & B & C & \ans{B} \\
+			\hline
+		\end{qcmtable}
+	\end{qcmbox}
+
+\end{document}

@@ -1,0 +1,243 @@
+% Corps du contrôle - Géométrie et Division euclidienne
+
+% === Barème avec nouvelle fonction ===
+\bareme{
+	\exbadge{1}{5} \quad
+	\exbadge{2}{4} \quad
+	\exbadge{3}{3} \quad
+	\exbadge{4}{4} \quad
+	\exbadge{5}{4}
+}
+
+% === Consignes ===
+\begin{consignebox}
+	\faIcon{info-circle} \textbf{CONSIGNES IMPORTANTES}
+	\begin{itemize}[leftmargin=*,noitemsep,topsep=5pt]
+		\item[\faIcon{check}] Répondez directement sur le sujet
+		\item[\faIcon{check}] Les constructions géométriques doivent être soignées et précises
+		\item[\faIcon{check}] Justifiez vos réponses quand c'est demandé
+		\item[\faIcon{pencil-alt}] Écrivez lisiblement
+	\end{itemize}
+\end{consignebox}
+
+\exspace
+
+% ============================================
+% EXERCICE 1 : Vocabulaire et notations (5 points)
+% ============================================
+\ExTemplate{1}{Vocabulaire et notations}{5}{book}{
+\textbf{1.} Donne la signification (lecture) de chaque notation : \points{2,5}
+
+\smallspace
+
+\begin{itemize}[label=$\bullet$,leftmargin=*]
+	\item $[EF]$ se lit : \ans{Le segment d'extrémités E et F}
+
+	\item $(MN)$ se lit : \ans{La droite passant par M et N}
+
+	\item $[RS)$ se lit : \ans{La demi-droite d'origine R passant par S}
+\end{itemize}
+
+\vspace{0.4cm}
+
+\textbf{2.} Écris avec les notations mathématiques : \points{2,5}
+
+\smallspace
+
+\begin{itemize}[label=$\bullet$,leftmargin=*]
+	\item La droite passant par $A$ et $B$ : \ans{$(AB)$ ou $(BA)$}
+
+	\item Le segment d'extrémités $C$ et $D$ : \ans{$[CD]$ ou $[DC]$}
+
+	\item La demi-droite d'origine $P$ passant par $Q$ : \ans{$[PQ)$}
+
+	\item La longueur du segment d'extrémités $T$ et $U$ : \ans{$TU$ ou $UT$}
+
+	\item Les points $X$, $Y$ et $Z$ sont alignés : \ans{$X \in (YZ)$ ou $Y \in (XZ)$ ou $Z \in (XY)$}
+\end{itemize}
+}
+
+% ============================================
+% EXERCICE 2 : Appartenance et positions relatives (4 points)
+% ============================================
+\begin{exercisebox}{\faIcon{map-marker-alt} Exercice 2 : Appartenance et positions relatives \points{4}}
+\textbf{Observe la figure ci-dessous et complète :}
+
+\exspace
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+	% Droite horizontale (d1)
+	\draw[thick] (-3,0) -- (5,0);
+	\node[right] at (5,0) {$(d_1)$};
+
+	% Droite oblique (d2)
+	\draw[thick] (-1,3) -- (3,-1);
+	\node[right] at (3,-1) {$(d_2)$};
+
+	% Points sur (d1)
+	\node[circle,fill=black,inner sep=1.5pt,label=below:$A$] (A) at (1,0) {};
+	\node[circle,fill=black,inner sep=1.5pt,label=below:$B$] (B) at (3,0) {};
+
+	% Points sur (d2) - alignés sur la droite oblique (équation: y = -x + 2)
+	\node[circle,fill=black,inner sep=1.5pt,label={[xshift=3mm, yshift=-2mm]$C$}] (C) at (2,0) {};
+	\node[circle,fill=black,inner sep=1.5pt,label={[xshift=-3mm, yshift=3mm]$D$}] (D) at (0,2) {};
+	\node[circle,fill=black,inner sep=1.5pt,label={[xshift=3mm, yshift=-2mm]$E$}] (E) at (1,1) {};
+\end{tikzpicture}
+\end{center}
+
+\exspace
+
+\textbf{1.} Complète avec le symbole $\in$ ou $\notin$ : \points{2}
+
+\smallspace
+
+$A$ \ans{$\in$} $(d_1)$ \quad ; \quad $C$ \ans{$\in$} $(d_2)$ \quad ; \quad $B$ \ans{$\notin$} $(d_2)$ \quad ; \quad $D$ \ans{$\notin$} $(d_1)$
+
+\exspace
+
+\textbf{2.} Que peut-on dire des droites $(d_1)$ et $(d_2)$ ? \points{1}
+
+\ans{Les droites $(d_1)$ et $(d_2)$ sont sécantes (elles se coupent en un point).}
+
+\exspace
+
+\textbf{3.} Les points $C$, $D$ et $E$ sont-ils alignés ? Justifie ta réponse. \points{1}
+
+\anslines{2}{Oui, les points $C$, $D$ et $E$ sont alignés car ils appartiennent tous les trois à la même droite $(d_2)$.}
+
+\end{exercisebox}
+
+\smallspace
+
+% ============================================
+% EXERCICE 3 : Lecture de notations (3 points)
+% ============================================
+\begin{exercisebox}{\faIcon{eye} Exercice 3 : Lecture de notations \points{3}}
+\textbf{Donne la lecture de chaque notation :}
+
+\smallspace
+
+\begin{itemize}[label=$\bullet$,leftmargin=*]
+	\item $(AB) \parallel (CD)$ se lit : \ans{La droite $(AB)$ est parallèle à la droite $(CD)$.}
+
+	\vspace{0.3cm}
+
+	\item $(d) \perp (\Delta)$ se lit : \ans{La droite $(d)$ est perpendiculaire à la droite $(\Delta)$.}
+
+	\vspace{0.3cm}
+
+	\item Deux droites \textbf{perpendiculaires} sont deux droites qui : \ans{se coupent en formant un angle droit.}
+\end{itemize}
+\end{exercisebox}
+
+\smallspace
+
+% ============================================
+% EXERCICE 4 : Constructions géométriques (4 points)
+% ============================================
+\begin{constructionbox}{\faIcon{drafting-compass} Exercice 4 : Constructions géométriques \points{4}}
+\textbf{À l'aide de ta règle et de ton équerre, réalise les constructions suivantes sur la figure ci-dessous.\\
+Code soigneusement ta figure.}
+
+\figureespace{0.5cm}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+	% Droite (d)
+	\draw[thick] (0,0) -- (8,0);
+	\node[right] at (8,0) {$(d)$};
+
+	% Points
+	\node[circle,fill=black,inner sep=1.5pt,label=above:$M$] (M) at (2,0) {};
+	\node[circle,fill=black,inner sep=1.5pt,label=above:$N$] (N) at (5,2) {};
+	\node[circle,fill=black,inner sep=1.5pt,label=above:$P$] (P) at (6.5,1.5) {};
+
+	% Tracés pour le corrigé
+	\onlycorrige{
+		% Perpendiculaire en M
+		\draw[thick,red] (2,-2) -- (2,3);
+		\draw[red] (2,0.3) -- (2.3,0.3) -- (2.3,0);
+
+		% Perpendiculaire par N
+		\draw[thick,red] (5,0) -- (5,3);
+		\draw[red] (5,0.3) -- (5.3,0.3) -- (5.3,0);
+
+		% Parallèle par P
+		\draw[thick,red] (4,1.5) -- (9,1.5);
+		\draw[red,->] (6.5,1.3) -- (6.7,1.1);
+		\draw[red,->] (7.5,-0.2) -- (7.7,-0.4);
+	}
+\end{tikzpicture}
+\end{center}
+
+\exspace
+
+\textbf{1.} Trace la perpendiculaire à $(d)$ passant par le point $M$. \points{1}
+
+\exspace
+
+\textbf{2.} Trace la perpendiculaire à $(d)$ passant par le point $N$. \points{1}
+
+\exspace
+
+\textbf{3.} Trace la parallèle à $(d)$ passant par le point $P$. \points{1}
+
+\exspace
+
+\textbf{4.} Code ta figure pour indiquer les angles droits et les droites parallèles. \points{1}
+\end{constructionbox}
+
+\clearpage
+
+% ============================================
+% EXERCICE 5 : Division euclidienne (4 points)
+% ============================================
+\begin{exercisebox}{\faIcon{divide} Exercice 5 : Division euclidienne \points{4}}
+
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{1.} Pose et effectue la division euclidienne de 423 par 15. \points{2}
+
+\vspace{0.3cm}
+
+\onlycorrige{
+	\DivEuc{423}{15}
+}
+\onlyeleve{
+	\zonereponse{5cm}
+}
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{2.} Dans cette division euclidienne, indique : \points{1}
+
+\vspace{0.2cm}
+
+\begin{itemize}[label=$\bullet$,leftmargin=*,noitemsep]
+	\item Le dividende : \ans{423}
+
+	\item Le diviseur : \ans{15}
+
+	\item Le quotient : \ans{28}
+
+	\item Le reste : \ans{3}
+\end{itemize}
+\end{minipage}
+
+\smallspace
+
+\textbf{3.} Vérifie ton résultat en utilisant l'égalité de la division euclidienne. \points{1}
+
+\anslines[0.5cm]{3}{
+\begin{align*}
+	15 \times 28 + 3 &= 420 + 3\\
+	&= 423 \checkmark
+\end{align*}
+On retrouve bien le dividende, donc la division est correcte.
+}
+
+\end{exercisebox}
+
+% Auto-évaluation
+\AutoEval
