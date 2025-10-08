@@ -1,0 +1,20 @@
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{article}
+
+% Accès aux ressources LaTeX du dépôt
+\makeatletter
+\def\input@path{{../../../tex/}}
+\makeatother
+\usepackage{college-eval-v2}
+
+% Métadonnées de l'épreuve
+\examsetup{4\textsuperscript{e}}{Mathématiques}{Théorème de Pythagore (IParcours G2)}{3}{55 minutes}{Calculatrice autorisée}
+
+\begin{document}
+  \ExamBanner
+  \StudentInfoBox
+
+  % Contenu commun
+  \input{controle_4e_pythagore_iparcours_body.tex}
+\end{document}
+
