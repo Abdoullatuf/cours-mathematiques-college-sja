@@ -3,15 +3,16 @@
 
 % Barème indicatif (ajustez si besoin)
 \bareme{
-  \exbadge{1}{8} \quad
-  \exbadge{2}{4}
+  \exbadge{1}{5} \quad
+  \exbadge{2}{4} \quad
+  \exbadge{3}{3}
 }
 
 % =============================
 % EXERCICE 1 — Cours et propriétés (8 pts)
 % =============================
-\begin{exercisebox}{\faIcon{book} Exercice 1 : Cours et propriétés \points{8}}
-  \textbf{1.} Énonce le \textbf{théorème de Pythagore}. \points{2}
+\begin{exercisebox}{\faIcon{book} Exercice 1 : Cours et propriétés \points{5}}
+  \textbf{1.} Énonce le \textbf{théorème de Pythagore}. \points{1}
 
   \anslines[0.7cm]{3}{\begin{minipage}{\linewidth}
     Dans un triangle rectangle, le carré de la longueur de l'hypoténuse est égal à la somme des carrés des longueurs des deux autres côtés.
@@ -19,7 +20,7 @@
 
   \smallspace
 
-  \textbf{2.} Complète chaque propriété avec l’égalité de Pythagore correspondante. \points{3}
+  \textbf{2.} Complète chaque propriété avec l’égalité de Pythagore correspondante. \points{2}
   \begin{enumerate}[label=\alph*)]
     \item Si un triangle $FQZ$ est rectangle en $Q$ alors\;\onlyeleve{\underline{\hspace{2.2cm}} + \underline{\hspace{2.2cm}} = \underline{\hspace{2.2cm}}} \onlycorrige{$\;FZ^2 = FQ^2 + QZ^2$}.
     \item Si un triangle $JMX$ est rectangle en $X$ alors\;\onlyeleve{\underline{\hspace{2.2cm}} + \underline{\hspace{2.2cm}} = \underline{\hspace{2.2cm}}} \onlycorrige{$\;JM^2 = JX^2 + XM^2$}.
@@ -29,7 +30,7 @@
 
   \smallspace
 
-  \textbf{3.} Énonce la \textbf{réciproque du théorème de Pythagore}. \points{2}
+  \textbf{3.} Énonce la \textbf{réciproque du théorème de Pythagore}. \points{1}
 
   \anslines[0.7cm]{3}{\begin{minipage}{\linewidth}
     Si, dans un triangle, le carré de la longueur du plus grand côté est égal à la somme des carrés des longueurs des deux autres côtés, alors ce triangle est rectangle (l’angle droit est à l’extrémité commune aux deux petits côtés).
@@ -70,3 +71,64 @@
   \end{minipage}}
 \end{exercisebox}
 
+\exspace
+
+% =============================
+% EXERCICE 3 — Problème (vie courante) : Table de chevet (3 pts)
+% =============================
+\begin{problembox}{\faIcon{cubes} Exercice 3 : La table de chevet \points{3}}
+  Un designer a imaginé une table de chevet en marbre (plateau) et métal (structure). On modélise la structure ci-dessous. Les segments \([JL]\) et \([KI]\) sont \textbf{perpendiculaires} en \(M\).
+
+  \begin{center}
+    \begin{tikzpicture}[scale=0.12]
+      % Coins du cadre
+      \coordinate (J) at (0,40);
+      \coordinate (I) at (64,40);
+      \coordinate (L) at (64,0);
+      \coordinate (K) at (0,0);
+      % Intersection des renforts (choisi comme (12.8,12.8) transformé ?
+      % On place M pour respecter les demi-longueurs sur les renforts :
+      % JK et IL ne sont volontairement pas utilisées pour fixer M ;
+      % on règle M pour avoir JM=38.4 sur JL et IM=51.2 sur KI, etc.
+      % Configuration géométrique : M = (28.8, 1*?) mais on annote sans exiger l'échelle.
+      % On trace seulement une figure illustrative (non à l'échelle exacte).
+
+      % Cadre
+      \draw[very thick,secondary!80] (J) -- (I) -- (L) -- (K) -- cycle;
+      % Renforts
+      \path (J) -- (L) coordinate[pos=0.64] (M1); % pour annoter 38,4 et 21,6
+      \path (K) -- (I) coordinate[pos=0.36] (M2); % pour annoter 28,8 et 51,2
+      % On force un seul point M visuel (proche de l’intersection)
+      \coordinate (M) at ($(M1)!0.5!(M2)$);
+      \draw[thick] (J) -- (L);
+      \draw[thick] (K) -- (I);
+      % Annotation longueurs le long des renforts
+      \draw (J) -- (M) node[midway,sloped,above] {\small \SI{38,4}{cm}};
+      \draw (M) -- (L) node[midway,sloped,below] {\small \SI{21,6}{cm}};
+      \draw (K) -- (M) node[midway,sloped,above] {\small \SI{28,8}{cm}};
+      \draw (M) -- (I) node[midway,sloped,above] {\small \SI{51,2}{cm}};
+      % Angles droits au centre
+      \draw ($(M)+(-2,0)$) -- ($(M)+(-2,2)$) -- ($(M)+(0,2)$);
+      % Légendes
+      \node[above left]  at (J) {\small J};
+      \node[above right] at (I) {\small I};
+      \node[below right] at (L) {\small L};
+      \node[below left]  at (K) {\small K};
+      \node[below]       at (M) {\small M};
+      % Plateau
+      \node[above] at ($(J)!0.5!(I)$) {\footnotesize Plateau en marbre};
+    \end{tikzpicture}
+  \end{center}
+
+  \textbf{Questions.}
+  \begin{enumerate}[label=\arabic*.]
+    \item Calcule les longueurs \(JK\) et \(JI\). \points{2}
+      \anslines[0.6cm]{4}{\onlycorrige{\(JK = \sqrt{JM^2+MK^2} = \sqrt{38{,}4^2+28{,}8^2} = \sqrt{2304} = \SI{48}{cm}.\\
+      JI = \sqrt{JM^2+MI^2} = \sqrt{38{,}4^2+51{,}2^2} = \sqrt{4096} = \SI{64}{cm}.\)}}
+
+    \item En déduire si le montant \([JK]\) est vertical et si le plateau \([JI]\) est parallèle au sol. \points{1}
+      \anslines[0.6cm]{4}{\onlycorrige{On a \(KI = KM + MI = 28{,}8 + 51{,}2 = \SI{80}{cm}.\)
+      Dans le triangle \(JKI\), \(JK^2 + JI^2 = 48^2 + 64^2 = 2304 + 4096 = 6400 = 80^2 = KI^2\). \\
+      Donc l’angle \(\widehat{KJI}\) est droit: \(JK \perp JI\). Ainsi, \(JK\) est vertical et \(JI\) est horizontal (donc parallèle au sol).}}
+  \end{enumerate}
+\end{problembox}
