@@ -53,6 +53,7 @@
 % Tableaux
 \usepackage{longtable}
 \usepackage{array}
+\usepackage{tabularx}
 \usepackage{booktabs}
 \usepackage{multirow} % Pour les tableaux complexes
 \usepackage{multicol} % Pour les colonnes multiples
@@ -266,7 +267,7 @@
 % Boîte pour les rappels
 \newtcolorbox{rappelbox}[1][]{
 	commonstyle=mainCyan,
-	title={\boxtitle{\textbf{Rappel \faRedoAlt}}{#1}}
+	title={\boxtitle{\textbf{Rappel \faHistory}}{#1}}
 }
 
 % === COMMANDES UTILITAIRES ===
@@ -407,6 +408,48 @@
 	\opdiv[displayintermediary=none,resultstyle=\color{white}]{#1}{#2}%
 }
 
+% ==========================================================
+% GESTION DU COURS À TROUS (ÉLÈVE / CORRIGÉ)
+% ==========================================================
+% Le préambule définit déjà \newif\ifcorrige et \VersionCorrige
+
+% --- COMMANDE POUR LES RÉPONSES COURTES (un mot, un nombre) ---
+% Largeur par défaut configurable globalement
+\newlength{\solutionspace}
+\setlength{\solutionspace}{2cm}
+
+% Syntaxe : \solution{réponse} ou \solution[3cm]{réponse}
+\newcommand{\solution}[2][\solutionspace]{%
+    \ifcorrige
+        {\color{mainBlue}#2}%
+    \else
+        \makebox[#1]{\rule{0pt}{1.2ex}\dotfill}%
+    \fi
+}
+
+% Variante auto-ajustée à la largeur naturelle du contenu (avec marge optionnelle)
+% Syntaxe : \solutionauto{réponse} ou \solutionauto[5mm]{réponse}
+\newsavebox{\solbox}
+\newcommand{\solutionauto}[2][0pt]{%
+    \ifcorrige
+        {\color{mainBlue}#2}%
+    \else
+        \sbox{\solbox}{#2}%
+        \makebox[\dimexpr\wd\solbox + #1\relax]{\rule{0pt}{1.2ex}\dotfill}%
+    \fi
+}
+
+% --- ENVIRONNEMENT POUR LES BLOCS DE SOLUTION (listes, paragraphes) ---
+% Syntaxe : \begin{blocsolution} ... \end{blocsolution}
+% Le package 'comment' est nécessaire pour cette partie.
+\usepackage{comment}
+\ifcorrige
+% En mode corrigé, on ne fait rien de spécial (le bloc s'affiche normalement)
+\newenvironment{blocsolution}{}{}
+\else
+% En mode élève, on transforme "blocsolution" en un environnement qui masque tout son contenu.
+\excludecomment{blocsolution}
+\fi
 
 % Utilisation :
 %  - Par défaut : version Élève (trous)
