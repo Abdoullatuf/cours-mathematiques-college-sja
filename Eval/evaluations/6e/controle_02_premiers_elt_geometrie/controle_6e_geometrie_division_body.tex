@@ -3,8 +3,8 @@
 % === Barème avec nouvelle fonction ===
 \bareme{
 	\exbadge{1}{5} \quad
-	\exbadge{2}{4} \quad
-	\exbadge{3}{3} \quad
+	\exbadge{2}{3} \quad
+	\exbadge{3}{4} \quad
 	\exbadge{4}{4} \quad
 	\exbadge{5}{4}
 }
@@ -20,7 +20,7 @@
 	\end{itemize}
 \end{consignebox}
 
-\exspace
+\smallspace
 
 % ============================================
 % EXERCICE 1 : Vocabulaire et notations (5 points)
@@ -58,80 +58,130 @@
 }
 
 % ============================================
-% EXERCICE 2 : Appartenance et positions relatives (4 points)
+% EXERCICE 2 : Raisonner avec les propriétés (3 points)
 % ============================================
-\begin{exercisebox}{\faIcon{map-marker-alt} Exercice 2 : Appartenance et positions relatives \points{4}}
-\textbf{Observe la figure ci-dessous et complète :}
-
-\exspace
-
-\begin{center}
-\begin{tikzpicture}[scale=0.8]
-	% Droite horizontale (d1)
-	\draw[thick] (-3,0) -- (5,0);
-	\node[right] at (5,0) {$(d_1)$};
-
-	% Droite oblique (d2)
-	\draw[thick] (-1,3) -- (3,-1);
-	\node[right] at (3,-1) {$(d_2)$};
-
-	% Points sur (d1)
-	\node[circle,fill=black,inner sep=1.5pt,label=below:$A$] (A) at (1,0) {};
-	\node[circle,fill=black,inner sep=1.5pt,label=below:$B$] (B) at (3,0) {};
-
-	% Points sur (d2) - alignés sur la droite oblique (équation: y = -x + 2)
-	\node[circle,fill=black,inner sep=1.5pt,label={[xshift=3mm, yshift=-2mm]$C$}] (C) at (2,0) {};
-	\node[circle,fill=black,inner sep=1.5pt,label={[xshift=-3mm, yshift=3mm]$D$}] (D) at (0,2) {};
-	\node[circle,fill=black,inner sep=1.5pt,label={[xshift=3mm, yshift=-2mm]$E$}] (E) at (1,1) {};
-\end{tikzpicture}
-\end{center}
-
-\exspace
-
-\textbf{1.} Complète avec le symbole $\in$ ou $\notin$ : \points{2}
-
-\smallspace
-
-$A$ \ans{$\in$} $(d_1)$ \quad ; \quad $C$ \ans{$\in$} $(d_2)$ \quad ; \quad $B$ \ans{$\notin$} $(d_2)$ \quad ; \quad $D$ \ans{$\notin$} $(d_1)$
-
-\exspace
-
-\textbf{2.} Que peut-on dire des droites $(d_1)$ et $(d_2)$ ? \points{1}
-
-\ans{Les droites $(d_1)$ et $(d_2)$ sont sécantes (elles se coupent en un point).}
-
-\exspace
-
-\textbf{3.} Les points $C$, $D$ et $E$ sont-ils alignés ? Justifie ta réponse. \points{1}
-
-\anslines{2}{Oui, les points $C$, $D$ et $E$ sont alignés car ils appartiennent tous les trois à la même droite $(d_2)$.}
-
+\begin{exercisebox}{\faIcon{cogs} Exercice 2 : Raisonner avec les propriétés \points{3}}
+	\textbf{Observe la figure et complète le raisonnement ci-dessous.}
+	
+	\vspace{0.2cm}
+	
+	\begin{minipage}[c]{0.5\textwidth}
+		\textbf{Informations données :}
+		\begin{itemize}[leftmargin=*,noitemsep,topsep=5pt]
+			\item Les droites $(d_1)$ et $(d_2)$ sont parallèles.
+			\item La droite $(\Delta)$ est perpendiculaire à la droite $(d_1)$.
+		\end{itemize}
+		
+		\vspace{0.3cm}
+		
+		\textit{La figure n'est pas en vraie grandeur, seules les informations écrites et codées comptent.}
+		
+	\end{minipage}
+	\hfill
+	\begin{minipage}[c]{0.45\textwidth}
+		\begin{center}
+			% === CODE SIMPLIFIÉ ET FIABLE ===
+			\begin{tikzpicture}[scale=0.8]
+				% Droites parallèles (d1) et (d2)
+				\draw[thick] (-2,2) -- (4,2);
+				\node[right] at (4,2) {$(d_1)$};
+				\draw[thick] (-2,0) -- (4,0);
+				\node[right] at (4,0) {$(d_2)$};
+				
+				% Droite sécante (Delta) verticale
+				\draw[thick] (1,-1) -- (1,3);
+				\node[above] at (1,3) {$(\Delta)$};
+				
+				% Codage angle droit - CORRIGÉ SANS BIBLIOTHÈQUE EXTERNE
+				\draw[gray, thick] (1.25, 2) -- (1.25, 1.75) -- (1, 1.75);
+				
+%				% Flèches pour parallélisme
+%				\node[blue, thick] at (2.5,2.1) {$>$};
+%				\node[blue, thick] at (2.5,0.1) {$>$};
+			\end{tikzpicture}
+			% === FIN DU CODE ===
+		\end{center}
+	\end{minipage}
+	
+	\exspace
+	
+	\textbf{1.} Que peut-on dire des droites $(d_2)$ et $(\Delta)$ ? Justifie avec une propriété. \points{1,5}
+	
+	\anslines{4}{
+		On sait que $(d_1) \parallel (d_2)$ et que $(\Delta) \perp (d_1)$. \\
+		\textbf{Or, si deux droites sont parallèles, toute droite perpendiculaire à l'une est perpendiculaire à l'autre.} \\
+		Donc, les droites $(d_2)$ et $(\Delta)$ sont \textbf{perpendiculaires}.
+	}
+	
+	\exspace
+	
+	\textbf{2.} On ajoute une droite $(d_3)$ qui est perpendiculaire à la droite $(\Delta)$. \\
+	Que peux-tu en déduire pour les droites $(d_1)$ et $(d_3)$ ? Justifie avec une propriété. \points{1,5}
+	
+	\anslines{4}{
+		On sait que $(d_1) \perp (\Delta)$ et que $(d_3) \perp (\Delta)$. \\
+		\textbf{Or, si deux droites sont perpendiculaires à une même droite, alors elles sont parallèles entre elles.} \\
+		Donc, les droites $(d_1)$ et $(d_3)$ sont \textbf{parallèles}.
+	}
+	
 \end{exercisebox}
 
-\smallspace
 
-% ============================================
-% EXERCICE 3 : Lecture de notations (3 points)
-% ============================================
-\begin{exercisebox}{\faIcon{eye} Exercice 3 : Lecture de notations \points{3}}
-\textbf{Donne la lecture de chaque notation :}
 
 \smallspace
 
-\begin{itemize}[label=$\bullet$,leftmargin=*]
-	\item $(AB) \parallel (CD)$ se lit : \ans{La droite $(AB)$ est parallèle à la droite $(CD)$.}
-
-	\vspace{0.3cm}
-
-	\item $(d) \perp (\Delta)$ se lit : \ans{La droite $(d)$ est perpendiculaire à la droite $(\Delta)$.}
-
-	\vspace{0.3cm}
-
-	\item Deux droites \textbf{perpendiculaires} sont deux droites qui : \ans{se coupent en formant un angle droit.}
-\end{itemize}
+% ============================================
+% EXERCICE 3 : Appartenance et positions relatives (4 points)
+% ============================================
+\begin{exercisebox}{\faIcon{map-marker-alt} Exercice 3 : Appartenance et positions relatives \points{4}}
+	\textbf{Observe la figure ci-dessous et complète :}
+	
+	\exspace
+	
+	\begin{center}
+		\begin{tikzpicture}[scale=0.8]
+			% Droite horizontale (d1)
+			\draw[thick] (-3,0) -- (5,0);
+			\node[right] at (5,0) {$(d_1)$};
+			
+			% Droite oblique (d2)
+			\draw[thick] (-1,3) -- (3,-1);
+			\node[right] at (3,-1) {$(d_2)$};
+			
+			% Points sur (d1)
+			\node[circle,fill=black,inner sep=1.5pt,label=below:$A$] (A) at (1,0) {};
+			\node[circle,fill=black,inner sep=1.5pt,label=below:$B$] (B) at (3,0) {};
+			
+			% Points sur (d2) - alignés sur la droite oblique (équation: y = -x + 2)
+			\node[circle,fill=black,inner sep=1.5pt,label={[xshift=3mm, yshift=-2mm]$C$}] (C) at (2,0) {};
+			\node[circle,fill=black,inner sep=1.5pt,label={[xshift=-3mm, yshift=3mm]$D$}] (D) at (0,2) {};
+			\node[circle,fill=black,inner sep=1.5pt,label={[xshift=3mm, yshift=-2mm]$E$}] (E) at (1,1) {};
+		\end{tikzpicture}
+	\end{center}
+	
+	\exspace
+	
+	\textbf{1.} Complète avec le symbole $\in$ ou $\notin$ : \points{2}
+	
+	\smallspace
+	
+	$A$ \ans{$\in$} $(d_1)$ \quad ; \quad $C$ \ans{$\in$} $(d_2)$ \quad ; \quad $B$ \ans{$\notin$} $(d_2)$ \quad ; \quad $D$ \ans{$\notin$} $(d_1)$
+	
+	\exspace
+	
+	\textbf{2.} Que peut-on dire des droites $(d_1)$ et $(d_2)$ ? \points{1}
+	
+	\ans{Les droites $(d_1)$ et $(d_2)$ sont sécantes (elles se coupent en un point).}
+	
+	\exspace
+	
+	\textbf{3.} Les points $C$, $D$ et $E$ sont-ils alignés ? Justifie ta réponse. \points{1}
+	
+	\anslines{2}{Oui, les points $C$, $D$ et $E$ sont alignés car ils appartiennent tous les trois à la même droite $(d_2)$.}
+	
 \end{exercisebox}
 
-\smallspace
+\clearpage
 
 % ============================================
 % EXERCICE 4 : Constructions géométriques (4 points)
@@ -188,8 +238,7 @@ Code soigneusement ta figure.}
 \textbf{4.} Code ta figure pour indiquer les angles droits et les droites parallèles. \points{1}
 \end{constructionbox}
 
-\clearpage
-
+\smallspace
 % ============================================
 % EXERCICE 5 : Division euclidienne (4 points)
 % ============================================
