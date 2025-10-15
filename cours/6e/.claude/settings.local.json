@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pdflatex:*)",
+      "Bash(xargs rm -f)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -416,21 +416,34 @@ Considérons un carré de côté $(a + b)$ contenant quatre triangles rectangles
 \end{exercisebox}
 
 \begin{exercisebox}[Vérification d'un angle droit - À compléter]
-	\fbox{\parbox{0.15\textwidth}{
-			\begin{tikzpicture}[scale=0.3]
-				\draw[thick] (0,0) -- (4,0) -- (0,3) -- cycle;
-				\draw (0,0) node[below left] {Mur 1};
-				\draw (4,0) node[below right] {Mur 2};
-				\draw (0,3) node[above left] {Diagonale};
-				\draw (2,-0.3) node {20 cm};
-				\draw (-0.3,1.5) node {21 cm};
-				\draw (2,1.5) node[above right] {29 cm};
+	\fbox{\parbox{0.25\textwidth}{
+			\begin{tikzpicture}[scale=0.5]
+				% Triangle rectangle avec les bonnes proportions
+				\coordinate (A) at (0,0);
+				\coordinate (B) at (4,0);
+				\coordinate (C) at (0,4.2);
+
+				% Triangle
+				\draw[thick] (A)--(B)--(C)--cycle;
+
+				% Angle droit potentiel
+				\draw[thick] (A) -- ++(0.4,0) -- ++(0,0.4) -- ++(-0.4,0);
+
+				% Étiquettes des côtés
+				\node[below] at ($(A)!0.5!(B)$) {20 cm};
+				\node[left] at ($(A)!0.5!(C)$) {21 cm};
+				\node[sloped,above] at ($(B)!0.5!(C)$) {29 cm};
+
+				% Labels des points
+				\node[below left] at (A) {A};
+				\node[below right] at (B) {B};
+				\node[above left] at (C) {C};
 			\end{tikzpicture}
 	}}
 	\hfill
-	\parbox{0.8\textwidth}{
+	\parbox{0.7\textwidth}{
 		Un charpentier veut vérifier qu'un angle est bien droit. Il mesure les côtés d'un triangle : 20 cm, 21 cm et 29 cm.
-		
+
 		\textbf{Peut-il affirmer que l'angle est droit ?}
 	}
 	
