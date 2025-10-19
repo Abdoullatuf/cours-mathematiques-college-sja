@@ -203,6 +203,20 @@
 % Nouvelle commande pour réponse simple
 \newcommand{\blanks}[1]{\ifcorrige \rep{#1}\else \underline{\hspace{#1}}\fi}
 
+% Commande solution avec largeur configurable (inspirée du preambule_commun)
+% Largeur par défaut configurable globalement
+\newlength{\solutionspace}
+\setlength{\solutionspace}{2cm}
+
+% Syntaxe : \solution{réponse} ou \solution[3cm]{réponse}
+\newcommand{\solution}[2][\solutionspace]{%
+    \ifcorrige
+        \rep{#2}%
+    \else
+        \makebox[#1]{\rule{0pt}{1.2ex}\dotfill}%
+    \fi
+}
+
 % -------- Fonction pour créer un barème automatiquement ----------
 \newcommand{\bareme}[1]{%
 	\begin{center}
