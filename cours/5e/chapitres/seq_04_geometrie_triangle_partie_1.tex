@@ -1,0 +1,1004 @@
+% Séquence 4 : Géométrie du triangle (partie 1) - 5e
+\setseqtitle{Géométrie du triangle (partie 1)}
+\chapter{Géométrie du triangle (partie 1)}
+
+\begin{objectifsbox}
+	\textbf{Objectifs d'apprentissage.} À l'issue de la séquence, l'élève sera capable de :
+	\begin{itemize}
+		\item Construire un triangle à partir de données suffisantes
+		\item Déterminer si trois longueurs peuvent former un triangle
+		\item Appliquer l'inégalité triangulaire
+		\item Reconnaître et construire les hauteurs d'un triangle
+		\item Reconnaître et construire les médianes d'un triangle
+		\item Reconnaître et construire les médiatrices des côtés d'un triangle
+		\item Connaître les points remarquables du triangle (orthocentre, centre de gravité, centre du cercle circonscrit)
+	\end{itemize}
+\end{objectifsbox}
+
+\section{Rappels : Construction de triangles}
+
+\subsection{Les instruments de géométrie}
+
+\begin{remarkbox}
+	Pour construire un triangle, on utilise principalement :
+	\begin{itemize}
+		\item \textbf{La règle graduée} : pour mesurer et tracer des segments
+		\item \textbf{Le compas} : pour tracer des cercles et reporter des longueurs
+		\item \textbf{Le rapporteur} : pour mesurer et tracer des angles
+		\item \textbf{L'équerre} : pour tracer des angles droits et des perpendiculaires
+	\end{itemize}
+\end{remarkbox}
+
+\subsection{Construction avec trois longueurs}
+
+\begin{methodebox}[Construire un triangle connaissant trois longueurs]
+	Pour construire le triangle $ABC$ tel que $AB = c$, $AC = b$ et $BC = a$ :
+	\begin{enumerate}
+		\item Tracer le segment $[AB]$ de longueur \solution[1.5cm]{$c$}.
+		\item Tracer un arc de cercle de centre \solution[1cm]{$A$} et de rayon \solution[1.5cm]{$b$}.
+		\item Tracer un arc de cercle de centre \solution[1cm]{$B$} et de rayon \solution[1.5cm]{$a$}.
+		\item Les deux arcs se coupent en un point \solution[1cm]{$C$}.
+		\item Tracer les segments $[AC]$ et $[BC]$.
+	\end{enumerate}
+
+	\medskip
+
+	\textbf{Illustration des étapes :}
+
+	\begin{center}
+		\begin{tikzpicture}[scale=0.45]
+			% Étape 1 : Segment AB
+			\begin{scope}[xshift=0cm]
+				\coordinate (A) at (0,0);
+				\coordinate (B) at (5,0);
+				\draw[thick, mainBlue] (A) -- (B);
+				\fill (A) circle (2.5pt) node[below] {$A$};
+				\fill (B) circle (2.5pt) node[below] {$B$};
+				\node at (2.5,-1.2) {\small \textbf{Étape 1}};
+				\node[mainBlue] at (2.5,0.4) {\small $c$};
+			\end{scope}
+
+			% Étape 2 : Arc de centre A
+			\begin{scope}[xshift=7cm]
+				\coordinate (A) at (0,0);
+				\coordinate (B) at (5,0);
+				\draw[thick] (A) -- (B);
+				\draw[thick, mainRed] (A) ++(20:3.5) arc (20:140:3.5);
+				\draw[mainRed, ->] (A) -- ++(80:3.5) node[midway, above left] {\small $b$};
+				\fill (A) circle (2.5pt) node[below] {$A$};
+				\fill (B) circle (2.5pt) node[below] {$B$};
+				\node at (2.5,-1.2) {\small \textbf{Étape 2}};
+			\end{scope}
+
+			% Étape 3 : Arc de centre B
+			\begin{scope}[xshift=14cm]
+				\coordinate (A) at (0,0);
+				\coordinate (B) at (5,0);
+				\draw[thick] (A) -- (B);
+				\draw[thick, mainRed] (A) ++(20:3.5) arc (20:140:3.5);
+				\draw[thick, mainGreen] (B) ++(60:3) arc (60:160:3);
+				\draw[mainGreen, ->] (B) -- ++(110:3) node[midway, above right] {\small $a$};
+				\fill (A) circle (2.5pt) node[below] {$A$};
+				\fill (B) circle (2.5pt) node[below] {$B$};
+				\node at (2.5,-1.2) {\small \textbf{Étape 3}};
+			\end{scope}
+
+			% Étape 4 : Point C
+			\begin{scope}[xshift=21cm]
+				\coordinate (A) at (0,0);
+				\coordinate (B) at (5,0);
+				\coordinate (C) at (2.825,2.07);
+				\draw[thick] (A) -- (B);
+				\draw[dashed, mainRed!50] (A) ++(20:3.5) arc (20:140:3.5);
+				\draw[dashed, mainGreen!50] (B) ++(60:3) arc (60:160:3);
+				\fill (A) circle (2.5pt) node[below] {$A$};
+				\fill (B) circle (2.5pt) node[below] {$B$};
+				\fill[mainBlue] (C) circle (3pt) node[above] {$C$};
+				\node at (2.5,-1.2) {\small \textbf{Étape 4}};
+			\end{scope}
+
+			% Étape 5 : Triangle complet
+			\begin{scope}[xshift=28cm]
+				\coordinate (A) at (0,0);
+				\coordinate (B) at (5,0);
+				\coordinate (C) at (2.825,2.07);
+				\draw[thick, mainBlue] (A) -- (B) -- (C) -- cycle;
+				\fill (A) circle (2.5pt) node[below] {$A$};
+				\fill (B) circle (2.5pt) node[below] {$B$};
+				\fill (C) circle (2.5pt) node[above] {$C$};
+				\node at (2.5,-1.2) {\small \textbf{Étape 5}};
+			\end{scope}
+		\end{tikzpicture}
+	\end{center}
+\end{methodebox}
+
+\begin{examplebox}
+	\textbf{Construire le triangle $DEF$ tel que $DE = 6$ cm, $EF = 5$ cm et $DF = 4$ cm.}
+
+	\medskip
+
+	\ifcorrige
+	\begin{center}
+		\begin{tikzpicture}[scale=0.8]
+			% Construction
+			\coordinate (D) at (0,0);
+			\coordinate (E) at (6,0);
+			\coordinate (F) at (2.5,3.3);
+
+			% Arcs de construction (en pointillés)
+			\draw[dashed, mainBlue!50] (D) circle (4);
+			\draw[dashed, mainRed!50] (E) circle (5);
+
+			% Triangle
+			\draw[thick] (D) -- (E) -- (F) -- cycle;
+
+			% Points
+			\fill (D) circle (2pt) node[below left] {$D$};
+			\fill (E) circle (2pt) node[below right] {$E$};
+			\fill (F) circle (2pt) node[above] {$F$};
+
+			% Mesures
+			\draw[<->, mainGreen] (D) -- node[below, fill=white] {6 cm} (E);
+		\end{tikzpicture}
+	\end{center}
+	\fi
+\end{examplebox}
+
+\subsection{Construction avec deux longueurs et un angle}
+
+\begin{methodebox}[Construire un triangle connaissant deux longueurs et l'angle compris]
+	Pour construire le triangle $ABC$ tel que $AB = c$, $AC = b$ et $\widehat{BAC} = \alpha$ :
+	\begin{enumerate}
+		\item Tracer le segment $[AB]$ de longueur \solution[1.5cm]{$c$}.
+		\item Placer l'angle $\widehat{BAC} = \alpha$ avec le \solution[3cm]{rapporteur}.
+		\item Sur la demi-droite $[Ax)$, placer le point $C$ tel que $AC = \solution[1.5cm]{$b$}$.
+		\item Tracer le segment $[BC]$.
+	\end{enumerate}
+
+	\medskip
+
+	\textbf{Illustration des étapes :}
+
+	\begin{center}
+		\begin{tikzpicture}[scale=0.5]
+			% Étape 1 : Segment AB
+			\begin{scope}[xshift=0cm]
+				\coordinate (A) at (0,0);
+				\coordinate (B) at (5,0);
+				\draw[thick, mainBlue] (A) -- (B);
+				\fill (A) circle (2.5pt) node[below] {$A$};
+				\fill (B) circle (2.5pt) node[below] {$B$};
+				\node at (2.5,-1) {\small \textbf{Étape 1}};
+				\node[mainBlue] at (2.5,0.4) {\small $c$};
+			\end{scope}
+
+			% Étape 2 : Angle alpha
+			\begin{scope}[xshift=8cm]
+				\coordinate (A) at (0,0);
+				\coordinate (B) at (5,0);
+				\coordinate (X) at (2.5,4.33);
+				\draw[thick] (A) -- (B);
+				\draw[thick, mainRed, ->] (A) -- (X);
+				\draw[mainRed] (1,0) arc (0:60:1);
+				\node[mainRed] at (1.3,0.5) {\small $\alpha$};
+				\fill (A) circle (2.5pt) node[below] {$A$};
+				\fill (B) circle (2.5pt) node[below] {$B$};
+				\node at (2.5,-1) {\small \textbf{Étape 2}};
+			\end{scope}
+
+			% Étape 3 : Point C sur la demi-droite
+			\begin{scope}[xshift=16cm]
+				\coordinate (A) at (0,0);
+				\coordinate (B) at (5,0);
+				\coordinate (C) at (2,3.46);
+				\draw[thick] (A) -- (B);
+				\draw[thick, mainRed] (A) -- (C);
+				\draw[dashed, mainRed!50] (C) -- (2.5,4.33);
+				\draw[mainRed] (1,0) arc (0:60:1);
+				\fill (A) circle (2.5pt) node[below] {$A$};
+				\fill (B) circle (2.5pt) node[below] {$B$};
+				\fill[mainBlue] (C) circle (3pt) node[above left] {$C$};
+				\node[mainRed] at (1,2) {\small $b$};
+				\node at (2.5,-1) {\small \textbf{Étape 3}};
+			\end{scope}
+
+			% Étape 4 : Triangle complet
+			\begin{scope}[xshift=24cm]
+				\coordinate (A) at (0,0);
+				\coordinate (B) at (5,0);
+				\coordinate (C) at (2,3.46);
+				\draw[thick, mainBlue] (A) -- (B) -- (C) -- cycle;
+				\fill (A) circle (2.5pt) node[below] {$A$};
+				\fill (B) circle (2.5pt) node[below] {$B$};
+				\fill (C) circle (2.5pt) node[above] {$C$};
+				\node at (2.5,-1) {\small \textbf{Étape 4}};
+			\end{scope}
+		\end{tikzpicture}
+	\end{center}
+\end{methodebox}
+
+\begin{examplebox}
+	\textbf{Construire le triangle $ABC$ tel que $AB = 5$ cm, $AC = 4$ cm et $\widehat{BAC} = 60^\circ$.}
+
+	\medskip
+
+	\ifcorrige
+	\begin{center}
+		\begin{tikzpicture}[scale=0.9]
+			% Triangle
+			\coordinate (A) at (0,0);
+			\coordinate (B) at (5,0);
+			\coordinate (C) at (2,3.46);
+
+			% Arc d'angle
+			\draw[mainRed] (0.8,0) arc (0:60:0.8);
+			\node[mainRed] at (1.2,0.4) {$60^\circ$};
+
+			% Triangle
+			\draw[thick] (A) -- (B) -- (C) -- cycle;
+
+			% Points
+			\fill (A) circle (2pt) node[below left] {$A$};
+			\fill (B) circle (2pt) node[below right] {$B$};
+			\fill (C) circle (2pt) node[above] {$C$};
+
+			% Mesures
+			\draw[<->, mainGreen] (A) -- node[below, fill=white] {5 cm} (B);
+			\draw[<->, mainBlue] (A) -- node[left, fill=white] {4 cm} (C);
+		\end{tikzpicture}
+	\end{center}
+	\fi
+\end{examplebox}
+
+\subsection{Construction avec une longueur et deux angles}
+
+\begin{methodebox}[Construire un triangle connaissant un côté et deux angles]
+	Pour construire le triangle $ABC$ tel que $AB = c$, $\widehat{CAB} = \alpha$ et $\widehat{ABC} = \beta$ :
+	\begin{enumerate}
+		\item Tracer le segment $[AB]$ de longueur $\solution[1.5cm]{c}$.
+		\item En $A$, construire l'angle $\widehat{CAB} = \solution[1.5cm]{\alpha}$ avec le rapporteur.
+		\item En $B$, construire l'angle $\widehat{ABC} = \solution[1.5cm]{\beta}$ avec le rapporteur.
+		\item Les deux demi-droites se coupent en un point $\solution[1cm]{C}$.
+	\end{enumerate}
+
+	\medskip
+
+	\textbf{Illustration des étapes :}
+
+	\begin{center}
+		\begin{tikzpicture}[scale=0.5]
+			% Étape 1 : Segment AB
+			\begin{scope}[xshift=0cm]
+				\coordinate (A) at (0,0);
+				\coordinate (B) at (5,0);
+				\draw[thick, mainBlue] (A) -- (B);
+				\fill (A) circle (2.5pt) node[below] {$A$};
+				\fill (B) circle (2.5pt) node[below] {$B$};
+				\node at (2.5,-1) {\small \textbf{Étape 1}};
+				\node[mainBlue] at (2.5,0.4) {\small $c$};
+			\end{scope}
+
+			% Étape 2 : Angle en A
+			\begin{scope}[xshift=8cm]
+				\coordinate (A) at (0,0);
+				\coordinate (B) at (5,0);
+				\coordinate (X) at ($(A)+(50:5)$);
+				\draw[thick] (A) -- (B);
+				\draw[thick, mainRed, ->] (A) -- (X);
+				\draw[mainRed] (1,0) arc (0:50:1);
+				\node[mainRed] at (1.3,0.4) {\small $\alpha$};
+				\fill (A) circle (2.5pt) node[below] {$A$};
+				\fill (B) circle (2.5pt) node[below] {$B$};
+				\node at (2.5,-1) {\small \textbf{Étape 2}};
+			\end{scope}
+
+			% Étape 3 : Angle en B
+			\begin{scope}[xshift=16cm]
+				\coordinate (A) at (0,0);
+				\coordinate (B) at (5,0);
+				\coordinate (X1) at ($(A)+(50:5)$);
+				\coordinate (X2) at ($(B)+(110:5)$);
+				\draw[thick] (A) -- (B);
+				\draw[thick, mainRed, ->] (A) -- (X1);
+				\draw[thick, mainGreen, ->] (B) -- (X2);
+				\draw[mainRed] (1,0) arc (0:50:1);
+				\draw[mainGreen] (4,0) arc (180:110:1);
+				\node[mainRed] at (1.3,0.4) {\small $\alpha$};
+				\node[mainGreen] at (3.7,0.5) {\small $\beta$};
+				\fill (A) circle (2.5pt) node[below] {$A$};
+				\fill (B) circle (2.5pt) node[below] {$B$};
+				\node at (2.5,-1) {\small \textbf{Étape 3}};
+			\end{scope}
+
+			% Étape 4 : Point C et triangle
+			\begin{scope}[xshift=24cm]
+				\coordinate (A) at (0,0);
+				\coordinate (B) at (5,0);
+				\coordinate (C) at (3.49,4.15);
+				\draw[thick, mainBlue] (A) -- (B) -- (C) -- cycle;
+				\fill (A) circle (2.5pt) node[below] {$A$};
+				\fill (B) circle (2.5pt) node[below] {$B$};
+				\fill (C) circle (2.5pt) node[above] {$C$};
+				\node at (2.5,-1) {\small \textbf{Étape 4}};
+			\end{scope}
+		\end{tikzpicture}
+	\end{center}
+\end{methodebox}
+
+\begin{remarkbox}
+	\textbf{Rappel :} La somme des angles d'un triangle est toujours égale à \solution[2cm]{$180^\circ$}.
+
+	Donc, si on connaît deux angles, on peut calculer le troisième : $\widehat{ACB} = 180^\circ - \alpha - \beta$
+\end{remarkbox}
+
+\section{Inégalité triangulaire}
+
+\subsection{Découverte}
+
+\begin{activitybox}[Activité : Peut-on toujours construire un triangle ?]
+	\textbf{Matériel :} règle, compas
+
+	\medskip
+
+	\textbf{Partie 1 : Essais de construction}
+
+	Essayer de construire les triangles suivants en utilisant la méthode des trois longueurs :
+
+	\begin{enumerate}[label=\alph*)]
+		\item Triangle $ABC$ avec $AB = 6$ cm, $AC = 4$ cm et $BC = 5$ cm
+		\item Triangle $DEF$ avec $DE = 7$ cm, $EF = 3$ cm et $DF = 2$ cm
+		\item Triangle $GHI$ avec $GH = 5$ cm, $HI = 3$ cm et $GI = 8$ cm
+	\end{enumerate}
+
+	\medskip
+
+	\textbf{Question 1 :} Quelles constructions ont réussi ? Lesquelles ont échoué ?
+
+	\solution[8cm]{Les constructions a) réussit. Les constructions b) et c) échouent car les arcs de cercle ne se coupent pas.}
+
+	\medskip
+
+	\textbf{Partie 2 : Analyse}
+
+	Compléter le tableau suivant pour chaque triangle :
+
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			\textbf{Triangle} & \textbf{Côté 1} & \textbf{Côté 2} & \textbf{Côté 3} & \textbf{Construction possible ?} \\
+			\hline
+			$ABC$ & 6 cm & 4 cm & 5 cm & \solution[2.5cm]{Oui} \\
+			\hline
+			$DEF$ & 7 cm & 3 cm & 2 cm & \solution[2.5cm]{Non} \\
+			\hline
+			$GHI$ & 5 cm & 3 cm & 8 cm & \solution[2.5cm]{Non} \\
+			\hline
+		\end{tabular}
+	\end{center}
+
+	\medskip
+
+	\textbf{Question 2 :} Pour chaque triangle, calculer la somme des deux plus petits côtés et comparer avec le troisième côté.
+
+	\solution[10cm]{
+		\begin{itemize}
+			\item Triangle $ABC$ : $4 + 5 = 9 > 6$ donc construction possible
+			\item Triangle $DEF$ : $3 + 2 = 5 < 7$ donc construction impossible
+			\item Triangle $GHI$ : $3 + 5 = 8 = 8$ donc construction impossible (cas limite)
+		\end{itemize}
+	}
+
+	\medskip
+
+	\textbf{Question 3 :} Quelle condition doit vérifier les longueurs des côtés pour qu'un triangle puisse être construit ?
+
+	\solution[10cm]{La somme des longueurs de deux côtés doit être strictement supérieure à la longueur du troisième côté.}
+\end{activitybox}
+
+\subsection{L'inégalité triangulaire}
+
+\begin{proprietebox}[Inégalité triangulaire]
+	Dans tout triangle $ABC$, la longueur d'un côté est toujours \textbf{\solution[4cm]{strictement inférieure}} à la somme des longueurs des deux autres côtés.
+
+	On peut écrire :
+	\begin{align*}
+		AB &< \solution[1.5cm]{AC} + \solution[1.5cm]{BC}\\
+		AC &< \solution[1.5cm]{AB} + \solution[1.5cm]{BC}\\
+		BC &< \solution[1.5cm]{AB} + \solution[1.5cm]{AC}
+	\end{align*}
+\end{proprietebox}
+
+\begin{remarkbox}
+	\textbf{Interprétation :}
+
+	L'inégalité triangulaire exprime que le chemin direct entre deux points est toujours plus court que le chemin qui passe par un troisième point.
+
+	« Le plus court chemin entre deux points est la ligne droite. »
+\end{remarkbox}
+
+\begin{proprietebox}[Condition d'existence d'un triangle]
+	Trois longueurs $a$, $b$ et $c$ peuvent former un triangle si et seulement si :
+	$$a < b + c \quad \text{et} \quad b < a + c \quad \text{et} \quad c < a + b$$
+
+	\textbf{En pratique :} Il suffit de vérifier que la \solution[4cm]{plus grande} longueur est strictement inférieure à la somme des deux autres.
+\end{proprietebox}
+
+\begin{examplebox}
+	\textbf{Exemple 1 :} Les longueurs 5 cm, 7 cm et 10 cm peuvent-elles former un triangle ?
+
+	\textbf{Solution :}
+
+	La plus grande longueur est \solution[1.5cm]{10} cm.
+
+	On vérifie : $5 + 7 = \solution[1.5cm]{12} \;\solution[0.8cm]{>} 10$
+
+	Donc ces trois longueurs \solution[2cm]{peuvent} former un triangle.
+
+	\medskip
+
+	\textbf{Exemple 2 :} Les longueurs 3 cm, 4 cm et 8 cm peuvent-elles former un triangle ?
+
+	\textbf{Solution :}
+
+	La plus grande longueur est \solution[1.5cm]{8} cm.
+
+	On vérifie : $3 + 4 = \solution[1.5cm]{7} \;\solution[0.8cm]{<} 8$
+
+	Donc ces trois longueurs \solution[3.5cm]{ne peuvent pas} former un triangle.
+
+	\medskip
+
+	\textbf{Exemple 3 :} Les longueurs 4 cm, 5 cm et 9 cm peuvent-elles former un triangle ?
+
+	\textbf{Solution :}
+
+	La plus grande longueur est \solution[1.5cm]{9} cm.
+
+	On vérifie : $4 + 5 = \solution[1.5cm]{9} \;\solution[0.8cm]{=} 9$
+
+	Comme $4 + 5 = 9$ (et non $4 + 5 > 9$), ces trois longueurs \solution[3.5cm]{ne peuvent pas} former un triangle. Les trois points seraient alignés.
+\end{examplebox}
+
+\begin{methodebox}[Vérifier l'inégalité triangulaire]
+	Pour vérifier si trois longueurs $a$, $b$, $c$ peuvent former un triangle :
+	\begin{enumerate}
+		\item Identifier la \solution[4cm]{plus grande} longueur.
+		\item Calculer la \solution[2.5cm]{somme} des deux autres longueurs.
+		\item Comparer : si la somme est \solution[5cm]{strictement supérieure} à la plus grande longueur, alors le triangle existe.
+	\end{enumerate}
+\end{methodebox}
+
+\begin{applicationbox}[Problème]
+	Un triangle $ABC$ a pour côtés $AB = 7$ cm et $BC = 5$ cm.
+
+	\begin{enumerate}[label=\alph*)]
+		\item Quelles sont les valeurs possibles (en cm) pour la longueur $AC$ ?
+
+		\solution[10cm]{D'après l'inégalité triangulaire : $7 - 5 < AC < 7 + 5$, donc $2 < AC < 12$ cm.}
+
+		\item Le troisième côté peut-il mesurer 2 cm ? 3 cm ? 12 cm ? 11 cm ?
+
+		\solution[10cm]{
+			\begin{itemize}
+				\item 2 cm : Non (on doit avoir $AC > 2$)
+				\item 3 cm : Oui ($2 < 3 < 12$)
+				\item 12 cm : Non (on doit avoir $AC < 12$)
+				\item 11 cm : Oui ($2 < 11 < 12$)
+			\end{itemize}
+		}
+	\end{enumerate}
+\end{applicationbox}
+
+\section{Les droites remarquables du triangle}
+
+\subsection{Les hauteurs}
+
+\begin{definitionbox}[Hauteur d'un triangle]
+	Dans un triangle, une \textbf{hauteur} est une droite qui passe par un \solution[3cm]{sommet} et qui est \solution[4cm]{perpendiculaire} au côté opposé (ou à son prolongement).
+
+	Un triangle possède \solution[1.5cm]{trois} hauteurs.
+\end{definitionbox}
+
+\begin{examplebox}
+	\textbf{Les trois hauteurs du triangle $ABC$}
+
+	\ifcorrige
+	\begin{center}
+		\begin{tikzpicture}[scale=0.9]
+			% Triangle
+			\coordinate (A) at (0,0);
+			\coordinate (B) at (6,0);
+			\coordinate (C) at (2,4);
+
+			% Pieds des hauteurs
+			\coordinate (HA) at ($(B)!(A)!(C)$);
+			\coordinate (HB) at ($(A)!(B)!(C)$);
+			\coordinate (HC) at (2,0);
+
+			% Triangle
+			\draw[thick] (A) -- (B) -- (C) -- cycle;
+
+			% Hauteurs
+			\draw[mainRed, thick] (A) -- (HA);
+			\draw[mainRed, thick] (B) -- (HB);
+			\draw[mainRed, thick] (C) -- (HC);
+
+			% Marques d'angles droits
+			\draw (HC) ++(0,0.3) -- ++(0.3,0) -- ++(0,-0.3);
+			\draw (HA) ++(-0.15,0.15) -- ++(0.21,0.21) -- ++(-0.21,-0.21);
+			\draw (HB) ++(0.15,0.15) -- ++(-0.21,0.21) -- ++(0.21,-0.21);
+
+			% Points
+			\fill (A) circle (2pt) node[below left] {$A$};
+			\fill (B) circle (2pt) node[below right] {$B$};
+			\fill (C) circle (2pt) node[above] {$C$};
+
+			% Légendes
+			\node[mainRed] at (-0.8,2) {hauteur issue de $A$};
+			\node[mainRed] at (6.8,2) {hauteur issue de $B$};
+			\node[mainRed] at (2.5,1.5) {hauteur issue de $C$};
+		\end{tikzpicture}
+	\end{center}
+	\fi
+
+	\begin{itemize}
+		\item La hauteur issue de $A$ est perpendiculaire à \solution[2cm]{$(BC)$}
+		\item La hauteur issue de $B$ est perpendiculaire à \solution[2cm]{$(AC)$}
+		\item La hauteur issue de $C$ est perpendiculaire à \solution[2cm]{$(AB)$}
+	\end{itemize}
+\end{examplebox}
+
+\begin{remarkbox}
+	\textbf{Cas particuliers :}
+	\begin{itemize}
+		\item Dans un triangle rectangle, deux hauteurs sont les côtés de l'angle droit.
+		\item Dans un triangle obtusangle, deux hauteurs tombent à l'extérieur du triangle (sur le prolongement des côtés).
+	\end{itemize}
+\end{remarkbox}
+
+\begin{proprietebox}[Orthocentre]
+	Les trois hauteurs d'un triangle sont \solution[4cm]{concourantes}.
+
+	Le point de concours des trois hauteurs s'appelle l'\textbf{\solution[4cm]{orthocentre}} du triangle.
+\end{proprietebox}
+
+\begin{methodebox}[Construire une hauteur]
+	Pour construire la hauteur issue de $A$ dans le triangle $ABC$ :
+	\begin{enumerate}
+		\item Tracer la droite $(BC)$ (ou son prolongement si nécessaire).
+		\item Avec l'\solution[2.5cm]{équerre} ou le compas, tracer la perpendiculaire à $(BC)$ passant par \solution[1.5cm]{$A$}.
+		\item Cette droite est la hauteur issue de \solution[1.5cm]{$A$}.
+	\end{enumerate}
+\end{methodebox}
+
+\subsection{Les médianes}
+
+\begin{definitionbox}[Médiane d'un triangle]
+	Dans un triangle, une \textbf{médiane} est un segment qui relie un \solution[3cm]{sommet} au \solution[2.5cm]{milieu} du côté opposé.
+
+	Un triangle possède \solution[1.5cm]{trois} médianes.
+\end{definitionbox}
+
+\begin{examplebox}
+	\textbf{Les trois médianes du triangle $ABC$}
+
+	\ifcorrige
+	\begin{center}
+		\begin{tikzpicture}[scale=0.9]
+			% Triangle
+			\coordinate (A) at (0,0);
+			\coordinate (B) at (6,0);
+			\coordinate (C) at (2,4);
+
+			% Milieux
+			\coordinate (I) at ($(B)!0.5!(C)$);
+			\coordinate (J) at ($(A)!0.5!(C)$);
+			\coordinate (K) at (3,0);
+
+			% Triangle
+			\draw[thick] (A) -- (B) -- (C) -- cycle;
+
+			% Médianes
+			\draw[mainBlue, thick] (A) -- (I);
+			\draw[mainBlue, thick] (B) -- (J);
+			\draw[mainBlue, thick] (C) -- (K);
+
+			% Centre de gravité
+			\coordinate (G) at (barycentric cs:A=1,B=1,C=1);
+			\fill[mainGreen] (G) circle (3pt) node[below right] {$G$};
+
+			% Points
+			\fill (A) circle (2pt) node[below left] {$A$};
+			\fill (B) circle (2pt) node[below right] {$B$};
+			\fill (C) circle (2pt) node[above] {$C$};
+			\fill (I) circle (2pt) node[right] {$I$};
+			\fill (J) circle (2pt) node[left] {$J$};
+			\fill (K) circle (2pt) node[below] {$K$};
+
+			% Légendes
+			\node[mainBlue] at (4.5,2.5) {médiane $[AI]$};
+			\node[mainBlue] at (-0.5,2.5) {médiane $[BJ]$};
+			\node[mainBlue] at (2.5,1.5) {médiane $[CK]$};
+		\end{tikzpicture}
+	\end{center}
+	\fi
+
+	\begin{itemize}
+		\item $I$ est le milieu de \solution[2cm]{$[BC]$}, donc $[AI]$ est une médiane
+		\item $J$ est le milieu de \solution[2cm]{$[AC]$}, donc $[BJ]$ est une médiane
+		\item $K$ est le milieu de \solution[2cm]{$[AB]$}, donc $[CK]$ est une médiane
+	\end{itemize}
+\end{examplebox}
+
+\begin{proprietebox}[Centre de gravité]
+	Les trois médianes d'un triangle sont \solution[4cm]{concourantes}.
+
+	Le point de concours des trois médianes s'appelle le \textbf{\solution[5cm]{centre de gravité}} (ou \textbf{barycentre}) du triangle. On le note souvent $G$.
+\end{proprietebox}
+
+\begin{proprietebox}[Propriété du centre de gravité]
+	Le centre de gravité $G$ se situe aux \solution[3cm]{deux tiers} de chaque médiane en partant du sommet.
+
+	Par exemple, si $I$ est le milieu de $[BC]$, alors :
+	$$AG = \solution[2cm]{\frac{2}{3}} \times AI \quad \text{et} \quad GI = \solution[2cm]{\frac{1}{3}} \times AI$$
+\end{proprietebox}
+
+\begin{remarkbox}
+	\textbf{Propriété physique :}
+
+	Si on découpe un triangle dans du carton, le centre de gravité est le point d'équilibre du triangle. En plaçant un doigt sous le centre de gravité, le triangle reste en équilibre.
+\end{remarkbox}
+
+\begin{methodebox}[Construire une médiane]
+	Pour construire la médiane issue de $A$ dans le triangle $ABC$ :
+	\begin{enumerate}
+		\item Avec le \solution[2.5cm]{compas}, trouver le milieu $I$ du segment $[BC]$.
+		\item Tracer le segment \solution[2cm]{$[AI]$}.
+		\item Ce segment est la médiane issue de \solution[1.5cm]{$A$}.
+	\end{enumerate}
+\end{methodebox}
+
+\subsection{Les médiatrices}
+
+\begin{definitionbox}[Médiatrice d'un segment]
+	La \textbf{médiatrice} d'un segment est la droite qui passe par le \solution[2.5cm]{milieu} du segment et qui est \solution[4cm]{perpendiculaire} à ce segment.
+\end{definitionbox}
+
+\begin{proprietebox}[Propriété caractéristique de la médiatrice]
+	Un point $M$ appartient à la médiatrice du segment $[AB]$ si et seulement si :
+	$$MA = \solution[1.5cm]{MB}$$
+
+	\textbf{Autrement dit :} La médiatrice d'un segment est l'ensemble des points \solution[5cm]{équidistants} des extrémités du segment.
+\end{proprietebox}
+
+\begin{definitionbox}[Médiatrices d'un triangle]
+	Dans un triangle $ABC$, on peut tracer les \textbf{médiatrices} des trois côtés :
+	\begin{itemize}
+		\item La médiatrice du côté $[AB]$
+		\item La médiatrice du côté $[BC]$
+		\item La médiatrice du côté $[AC]$
+	\end{itemize}
+\end{definitionbox}
+
+\begin{examplebox}
+	\textbf{Les trois médiatrices du triangle $ABC$}
+
+	\ifcorrige
+	\begin{center}
+		\begin{tikzpicture}[scale=0.9]
+			% Triangle
+			\coordinate (A) at (0,0);
+			\coordinate (B) at (6,0);
+			\coordinate (C) at (2,4);
+
+			% Milieux
+			\coordinate (I) at ($(B)!0.5!(C)$);
+			\coordinate (J) at ($(A)!0.5!(C)$);
+			\coordinate (K) at (3,0);
+
+			% Centre du cercle circonscrit
+			\coordinate (O) at (3,1.5);
+
+			% Triangle
+			\draw[thick] (A) -- (B) -- (C) -- cycle;
+
+			% Médiatrices
+			\draw[mainRed, thick] (K) -- ++(0,4.5);
+			\draw[mainRed, thick] (I) -- ++(-1.5,1) -- ++(3,-2);
+			\draw[mainRed, thick] (J) -- ++(1.5,1) -- ++(-3,2);
+
+			% Cercle circonscrit
+			\draw[mainGreen, dashed] (O) circle (2.5);
+
+			% Centre du cercle circonscrit
+			\fill[mainBlue] (O) circle (3pt) node[above right] {$O$};
+
+			% Marques de milieux
+			\fill (I) circle (2pt);
+			\fill (J) circle (2pt);
+			\fill (K) circle (2pt);
+
+			% Marques d'angles droits
+			\draw (K) ++(0,0.3) -- ++(0.3,0) -- ++(0,-0.3);
+
+			% Points
+			\fill (A) circle (2pt) node[below left] {$A$};
+			\fill (B) circle (2pt) node[below right] {$B$};
+			\fill (C) circle (2pt) node[above] {$C$};
+		\end{tikzpicture}
+	\end{center}
+	\fi
+\end{examplebox}
+
+\begin{proprietebox}[Centre du cercle circonscrit]
+	Les trois médiatrices d'un triangle sont \solution[4cm]{concourantes}.
+
+	Le point de concours des trois médiatrices s'appelle le \textbf{\solution[7cm]{centre du cercle circonscrit}} au triangle. On le note souvent $O$.
+\end{proprietebox}
+
+\begin{proprietebox}[Cercle circonscrit]
+	Le centre $O$ du cercle circonscrit est \solution[5cm]{équidistant} des trois sommets du triangle :
+	$$OA = OB = OC$$
+
+	Le cercle de centre $O$ et de rayon $OA$ passe par les \solution[2cm]{trois} sommets du triangle. On l'appelle le \textbf{cercle circonscrit} au triangle.
+\end{proprietebox}
+
+\begin{remarkbox}
+	\textbf{Cas particuliers :}
+	\begin{itemize}
+		\item Dans un triangle rectangle, le centre du cercle circonscrit est le milieu de l'hypoténuse.
+		\item Dans un triangle obtusangle, le centre du cercle circonscrit est à l'extérieur du triangle.
+	\end{itemize}
+\end{remarkbox}
+
+\begin{methodebox}[Construire une médiatrice]
+	Pour construire la médiatrice du segment $[AB]$ :
+
+	\textbf{Méthode 1 : Avec le compas}
+	\begin{enumerate}
+		\item Tracer un arc de cercle de centre $A$ et de rayon supérieur à la moitié de $AB$.
+		\item Tracer un arc de cercle de centre $B$ et de même rayon.
+		\item Les deux arcs se coupent en deux points. La droite passant par ces deux points est la médiatrice.
+	\end{enumerate}
+
+	\textbf{Méthode 2 : Avec la règle et l'équerre}
+	\begin{enumerate}
+		\item Trouver le milieu $I$ du segment $[AB]$ avec le compas.
+		\item Tracer la perpendiculaire à $(AB)$ passant par $I$ avec l'équerre.
+	\end{enumerate}
+\end{methodebox}
+
+\subsection{Tableau récapitulatif}
+
+\begin{center}
+	\begin{tabular}{|p{3cm}|p{4.5cm}|p{4.5cm}|p{3cm}|}
+		\hline
+		\textbf{Droite remarquable} & \textbf{Définition} & \textbf{Construction} & \textbf{Point remarquable} \\
+		\hline
+		\textbf{Hauteur} & Droite passant par un sommet et perpendiculaire au côté opposé & Perpendiculaire avec équerre ou compas & Orthocentre (point de concours des hauteurs) \\
+		\hline
+		\textbf{Médiane} & Segment joignant un sommet au milieu du côté opposé & Trouver le milieu puis tracer & Centre de gravité (point de concours des médianes) \\
+		\hline
+		\textbf{Médiatrice} & Droite perpendiculaire à un côté passant par son milieu & Arcs de cercle de même rayon & Centre du cercle circonscrit (point de concours des médiatrices) \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\begin{astucebox}
+	\textbf{Pour ne pas confondre :}
+	\begin{itemize}
+		\item \textbf{Hauteur} : passe par un \textbf{sommet}, perpendiculaire au côté opposé
+		\item \textbf{Médiane} : passe par un \textbf{sommet} et le \textbf{milieu} du côté opposé
+		\item \textbf{Médiatrice} : passe par le \textbf{milieu} d'un côté, perpendiculaire à ce côté (ne passe pas nécessairement par un sommet)
+	\end{itemize}
+\end{astucebox}
+
+\begin{quizbox}
+	\textbf{Auto-évaluation}
+	\begin{enumerate}[label=\arabic*)]
+		\item Énoncer l'inégalité triangulaire.
+		\item Trois longueurs 4 cm, 7 cm et 12 cm peuvent-elles former un triangle ?
+		\item Qu'est-ce qu'une hauteur d'un triangle ?
+		\item Comment s'appelle le point de concours des médianes ?
+		\item Quelle propriété caractérise la médiatrice d'un segment ?
+	\end{enumerate}
+\end{quizbox}
+
+\begin{summarybox}
+	\textbf{L'essentiel à retenir}
+	\begin{itemize}
+		\item \textbf{Inégalité triangulaire :} Dans un triangle, la longueur d'un côté est toujours strictement inférieure à la somme des deux autres.
+		\item Pour qu'un triangle existe, il faut que la plus grande longueur soit strictement inférieure à la somme des deux autres.
+		\item Un triangle possède 3 hauteurs qui se coupent en l'orthocentre.
+		\item Un triangle possède 3 médianes qui se coupent au centre de gravité (à 2/3 de chaque médiane depuis le sommet).
+		\item Un triangle possède 3 médiatrices qui se coupent au centre du cercle circonscrit.
+		\item Le cercle circonscrit passe par les trois sommets du triangle.
+	\end{itemize}
+\end{summarybox}
+
+\section{Exercices d'application}
+
+\begin{exercisebox}
+	\textbf{Exercice 1 : Inégalité triangulaire} ($\star$ Exercice de base)
+
+	Pour chacune des propositions suivantes, dire si on peut construire un triangle avec les longueurs données. Justifier.
+
+	\begin{multicols}{2}
+		\begin{enumerate}[label=\alph*)]
+			\item 5 cm, 7 cm et 9 cm
+			\item 3 cm, 8 cm et 12 cm
+			\item 6 cm, 6 cm et 6 cm
+			\item 2 cm, 5 cm et 7 cm
+			\item 10 cm, 4 cm et 5 cm
+			\item 8 cm, 15 cm et 20 cm
+		\end{enumerate}
+	\end{multicols}
+
+	\medskip
+
+	\textbf{Exercice 2 : Trouver des longueurs possibles}
+
+	Un triangle $ABC$ a pour côtés $AB = 8$ cm et $BC = 5$ cm.
+
+	\begin{enumerate}[label=\alph*)]
+		\item Donner un encadrement de la longueur $AC$.
+		\item Le côté $[AC]$ peut-il mesurer 3 cm ? 4 cm ? 13 cm ? 10 cm ?
+		\item Donner trois valeurs possibles pour la longueur $AC$.
+	\end{enumerate}
+
+	\medskip
+
+	\textbf{Exercice 3 : Constructions}
+
+	\begin{enumerate}[label=\alph*)]
+		\item Construire le triangle $DEF$ tel que $DE = 7$ cm, $EF = 5$ cm et $DF = 6$ cm.
+		\item Construire le triangle $GHI$ tel que $GH = 6$ cm, $GI = 5$ cm et $\widehat{IGH} = 50^\circ$.
+		\item Construire le triangle $JKL$ tel que $JK = 7$ cm, $\widehat{KJL} = 40^\circ$ et $\widehat{JKL} = 60^\circ$.
+	\end{enumerate}
+\end{exercisebox}
+
+\begin{exercisebox}
+	\textbf{Exercice 4 : Hauteurs} ($\star$ Exercice de base)
+
+	\begin{enumerate}[label=\alph*)]
+		\item Construire un triangle $ABC$ quelconque.
+		\item Tracer la hauteur issue de $A$.
+		\item Tracer la hauteur issue de $B$.
+		\item Tracer la hauteur issue de $C$.
+		\item Marquer le point $H$, orthocentre du triangle.
+		\item Vérifier que les trois hauteurs passent bien par le point $H$.
+	\end{enumerate}
+
+	\medskip
+
+	\textbf{Exercice 5 : Médianes}
+
+	\begin{enumerate}[label=\alph*)]
+		\item Construire un triangle $DEF$ avec $DE = 8$ cm, $EF = 6$ cm et $DF = 7$ cm.
+		\item Placer les milieux $I$, $J$ et $K$ des côtés $[EF]$, $[DF]$ et $[DE]$.
+		\item Tracer les trois médianes $[DI]$, $[EJ]$ et $[FK]$.
+		\item Marquer le point $G$, centre de gravité du triangle.
+		\item Mesurer les longueurs $DG$ et $GI$. Vérifier que $DG = 2 \times GI$.
+	\end{enumerate}
+
+	\medskip
+
+	\textbf{Exercice 6 : Médiatrices}
+
+	\begin{enumerate}[label=\alph*)]
+		\item Construire un triangle $RST$ quelconque.
+		\item Construire la médiatrice du côté $[RS]$.
+		\item Construire la médiatrice du côté $[ST]$.
+		\item Construire la médiatrice du côté $[RT]$.
+		\item Marquer le point $O$, centre du cercle circonscrit.
+		\item Tracer le cercle de centre $O$ passant par le point $R$. Vérifier qu'il passe aussi par $S$ et $T$.
+	\end{enumerate}
+\end{exercisebox}
+
+\begin{exercisebox}
+	\textbf{Exercice 7 : Triangle rectangle} ($\star\star$ Approfondissement)
+
+	Construire un triangle $ABC$ rectangle en $A$ tel que $AB = 6$ cm et $AC = 4$ cm.
+
+	\begin{enumerate}[label=\alph*)]
+		\item Tracer les trois hauteurs. Que remarque-t-on ?
+		\item Où se situe l'orthocentre ?
+		\item Tracer les trois médiatrices. Où se situe le centre du cercle circonscrit ?
+		\item Quelle est la particularité du cercle circonscrit à un triangle rectangle ?
+	\end{enumerate}
+
+	\medskip
+
+	\textbf{Exercice 8 : Problèmes}
+
+	\begin{enumerate}[label=\alph*)]
+		\item Le centre de gravité $G$ d'un triangle $ABC$ se situe sur la médiane issue de $A$ à 6 cm du sommet $A$. Quelle est la longueur totale de cette médiane ?
+
+		\item Un triangle $ABC$ a un côté $[AB]$ de longueur 12 cm. Le point $M$ est le milieu de $[AB]$. Le centre du cercle circonscrit $O$ se trouve sur la médiatrice de $[AB]$. Si $OA = 10$ cm, calculer $OM$.
+
+		\item Dans un triangle isocèle $ABC$ avec $AB = AC$, montrer que la médiane, la hauteur et la médiatrice issues de $A$ sont confondues.
+	\end{enumerate}
+\end{exercisebox}
+
+\begin{exercisebox}[Remédiation] ($\star$ Pour les élèves en difficulté)
+	\textbf{Exercice R1 :} Vocabulaire
+
+	Compléter les phrases suivantes :
+	\begin{enumerate}[label=\alph*)]
+		\item Une hauteur est une droite passant par un \solution[3cm]{sommet} et \solution[5cm]{perpendiculaire} au côté opposé.
+		\item Une médiane relie un sommet au \solution[2.5cm]{milieu} du côté opposé.
+		\item Une médiatrice est perpendiculaire à un côté et passe par son \solution[2.5cm]{milieu}.
+	\end{enumerate}
+
+	\medskip
+
+	\textbf{Exercice R2 :} Inégalité triangulaire simple
+
+	On donne deux côtés d'un triangle : 5 cm et 7 cm. Le troisième côté peut-il mesurer :
+	\begin{enumerate}[label=\alph*)]
+		\item 1 cm ? \solution[2cm]{Non}
+		\item 3 cm ? \solution[2cm]{Oui}
+		\item 12 cm ? \solution[2cm]{Oui}
+		\item 13 cm ? \solution[2cm]{Non}
+	\end{enumerate}
+
+	\medskip
+
+	\textbf{Exercice R3 :} Construction guidée
+
+	\begin{enumerate}[label=\alph*)]
+		\item Construire un triangle $ABC$ avec $AB = 6$ cm, $AC = 5$ cm et $BC = 4$ cm.
+		\item Placer le milieu $I$ du segment $[BC]$.
+		\item Tracer la médiane $[AI]$.
+	\end{enumerate}
+\end{exercisebox}
+
+\begin{exercisebox}[Approfondissement] ($\star\star\star$ Pour aller plus loin)
+	\textbf{Exercice A1 :} Droite d'Euler
+
+	Dans un triangle quelconque (non équilatéral), construire :
+	\begin{enumerate}[label=\alph*)]
+		\item L'orthocentre $H$
+		\item Le centre de gravité $G$
+		\item Le centre du cercle circonscrit $O$
+	\end{enumerate}
+
+	Que remarque-t-on concernant l'alignement de ces trois points ?
+
+	\solution[8cm]{Ces trois points sont alignés sur une droite appelée « droite d'Euler ». De plus, $G$ est situé aux 2/3 du segment $[OH]$ en partant de $O$.}
+
+	\medskip
+
+	\textbf{Exercice A2 :} Cercle d'Euler (cercle des neuf points)
+
+	Dans un triangle $ABC$, on considère les neuf points suivants :
+	\begin{itemize}
+		\item Les trois milieux des côtés
+		\item Les trois pieds des hauteurs
+		\item Les trois milieux des segments joignant les sommets à l'orthocentre
+	\end{itemize}
+
+	Construire ces neuf points. Que remarque-t-on ?
+
+	\solution[8cm]{Ces neuf points sont situés sur un même cercle, appelé « cercle d'Euler » ou « cercle des neuf points ».}
+
+	\medskip
+
+	\textbf{Exercice A3 :} Triangle équilatéral
+
+	Dans un triangle équilatéral, montrer que :
+	\begin{enumerate}[label=\alph*)]
+		\item Les hauteurs, les médianes et les médiatrices sont confondues
+		\item L'orthocentre, le centre de gravité et le centre du cercle circonscrit sont confondus
+	\end{enumerate}
+
+	\medskip
+
+	\textbf{Exercice A4 :} Optimisation
+
+	On veut construire un pont reliant trois villages $A$, $B$ et $C$ formant un triangle. On souhaite placer un point $P$ tel que la somme des distances $PA + PB + PC$ soit minimale.
+
+	Quel point remarquable du triangle doit-on choisir pour $P$ ?
+
+	\solution[8cm]{On doit choisir le point de Fermat (point de Torricelli), qui minimise la somme des distances aux trois sommets. Dans un triangle dont tous les angles sont inférieurs à 120°, ce point est tel que les angles $\widehat{APB}$, $\widehat{BPC}$ et $\widehat{CPA}$ valent chacun 120°.}
+\end{exercisebox}
