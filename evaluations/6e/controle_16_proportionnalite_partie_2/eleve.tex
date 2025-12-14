@@ -1,0 +1,22 @@
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{article}
+
+% Definit le chemin vers les ressources LaTeX du projet
+\makeatletter
+\def\input@path{{../../tex/}}
+\makeatother
+
+\usepackage{college-eval-v2}
+
+\examsetup{6e}{Mathématiques}{Proportionnalité — Partie 2 (pourcentages)}{16}{55 minutes}{Calculatrice interdite}
+
+\begin{document}
+	\CorrigeWatermark     % n’affiche rien en élève
+	\ExamBanner
+	\StudentInfoBox
+
+	\smallspace
+
+	% === Contenu du contrôle ===
+	\input{controle_16_proportionnalite_partie_2_body.tex}
+\end{document}
