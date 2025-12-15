@@ -1,0 +1,20 @@
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{article}
+
+% Definit le chemin vers les ressources LaTeX du projet
+\makeatletter
+\def\input@path{{../../../commun/}}
+\makeatother
+
+\usepackage[corrige]{college-eval} % utilise commun/college-eval.sty
+
+\examsetup{6e}{Mathématiques}{Proportionnalité — Partie 2 (pourcentages)}{16}{55 minutes}{Calculatrice interdite}
+
+\begin{document}
+	\CorrigeWatermark     % filigrane "CORRIGÉ"
+	\ExamBanner
+	\StudentInfoBox
+	
+	% === Contenu du contrôle ===
+	\input{controle_16_proportionnalite_partie_2_body.tex}
+\end{document}
