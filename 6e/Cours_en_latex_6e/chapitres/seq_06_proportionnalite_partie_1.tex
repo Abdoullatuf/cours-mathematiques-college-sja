@@ -1,0 +1,472 @@
+% Séquence 6 : Proportionnalité (Partie 1)
+% Durée estimée : 4 séances
+\setseqtitle{Proportionnalité (Partie 1)}
+\chapter{Proportionnalité — Partie 1}
+\label{chap:seq06-proportionnalite-1}
+
+% ============================================================
+% SÉANCE 1 : Découverte de la proportionnalité
+% ============================================================
+\seance
+
+\begin{objectifsbox}
+	\textbf{Notions :} situation de proportionnalité, tableau de proportionnalité, coefficient de proportionnalité\\
+	\textbf{Compétences :} reconnaître une situation de proportionnalité, compléter un tableau de proportionnalité\\
+	\textbf{Applications :} prix, recettes, situations de la vie courante\\
+	\textbf{Contrôle (prévisionnel) :} vendredi 9 janvier 2026
+\end{objectifsbox}
+
+\section{Introduction : qu'est-ce que la proportionnalité ?}
+
+Dans la vie quotidienne, on rencontre souvent des situations où deux grandeurs sont liées de manière particulière : quand l'une double, l'autre double aussi ; quand l'une triple, l'autre triple aussi.
+
+\vspace{0.5cm}
+\begin{activitybox}[Situation 1 : Au marché]
+	Chez le marchand de fruits, les pommes coûtent 2~€ le kilogramme.
+
+	\begin{enumerate}
+		\item Complète le tableau suivant :
+		\begin{center}
+			\renewcommand{\arraystretch}{1.5}
+			\begin{tabular}{|c|c|c|c|c|c|}
+				\hline
+				\textbf{Masse de pommes (kg)} & 1 & 2 & 3 & 5 & 10 \\
+				\hline
+				\textbf{Prix (€)} & \solution{2} & \solution{4} & \solution{6} & \solution{10} & \solution{20} \\
+				\hline
+			\end{tabular}
+		\end{center}
+
+		\solution{
+			\textbf{Solution :} Les pommes coûtent 2~€ le kg, donc :
+			\begin{itemize}
+				\item 1 kg coûte $1 \times 2 = 2$~€
+				\item 2 kg coûtent $2 \times 2 = 4$~€
+				\item 3 kg coûtent $3 \times 2 = 6$~€
+				\item 5 kg coûtent $5 \times 2 = 10$~€
+				\item 10 kg coûtent $10 \times 2 = 20$~€
+			\end{itemize}
+		}
+
+		\item Que remarques-tu entre la masse et le prix ?
+
+		\solution[8cm]{Le prix est toujours égal à 2 fois la masse. Pour trouver le prix, on multiplie toujours la masse par 2.}
+
+		\item Si on achète 2 fois plus de pommes, que se passe-t-il pour le prix ?
+
+		\solution[6cm]{Le prix est aussi 2 fois plus grand. Par exemple, si on passe de 5 kg (10~€) à 10 kg, le prix passe de 10~€ à 20~€.}
+	\end{enumerate}
+\end{activitybox}
+
+\begin{activitybox}[Situation 2 : L'âge et la taille]
+	Voici un tableau donnant l'âge et la taille de Paul :
+
+	\begin{center}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			\textbf{Âge (années)} & 2 & 4 & 8 & 12 \\
+			\hline
+			\textbf{Taille (cm)} & 85 & 102 & 128 & 152 \\
+			\hline
+		\end{tabular}
+	\end{center}
+
+	\begin{enumerate}
+		\item Quand l'âge double (de 2 à 4 ans), la taille double-t-elle ?
+
+		\solution[4cm]{
+			Non. Vérifions : quand Paul a 2 ans, il mesure 85 cm. Si la taille doublait, à 4 ans il devrait mesurer $85 \times 2 = 170$ cm. Or, le tableau indique qu'à 4 ans, il mesure 102 cm. Donc $170 \neq 102$, la taille ne double pas.
+		}
+
+		\item Cette situation est-elle similaire à celle des pommes ?
+
+		\solution[4cm]{
+			Non, ce n'est pas similaire. Dans la situation des pommes, quand la masse double, le prix double aussi. Ici, quand l'âge double, la taille ne double pas. Il n'y a pas de nombre fixe permettant de passer de l'âge à la taille : ce n'est pas proportionnel.
+		}
+	\end{enumerate}
+\end{activitybox}
+
+\section{Définition de la proportionnalité}
+
+\begin{definitionbox}[Situation de proportionnalité]
+	Deux grandeurs sont \textbf{proportionnelles} si on peut passer de l'une à l'autre en multipliant toujours par le \solution[3cm]{même nombre non nul}.
+
+	Ce nombre s'appelle le \textbf{coefficient de proportionnalité}.
+\end{definitionbox}
+
+\begin{examplebox}
+	\textbf{Situation de proportionnalité :} Le prix des pommes est proportionnel à la masse.
+	\begin{itemize}
+		\item Pour passer de la masse au prix, on multiplie toujours par \solution{2}.
+		\item Le coefficient de proportionnalité est \solution{2}.
+	\end{itemize}
+
+	\textbf{Situation de non proportionnalité :} L'âge et la taille de Paul ne sont pas proportionnels.
+	\begin{itemize}
+		\item Il n'existe pas de nombre fixe permettant de passer de l'âge à la taille.
+	\end{itemize}
+\end{examplebox}
+
+\begin{remarkbox}[Attention aux pièges !]
+	Il existe des situations qui \textbf{ressemblent} à de la proportionnalité mais qui n'en sont pas :
+
+	\textbf{1. Les situations avec une valeur fixe (\og point de départ\fg)}:\\
+	Si on paye un abonnement ou une prise en charge fixe, ce n'est pas proportionnel.
+	\begin{itemize}
+		\item \textit{Exemple :} Un taxi demande 5~€ de prise en charge puis 2~€ par km.
+		\item Pour 10 km : $\solution[2cm]{5 + (2 \times 10)} = \solution{25}$~€.
+		\item Pour 20 km : $\solution[2cm]{5 + (2 \times 20)} = \solution{45}$~€.
+		\item Quand la distance double, \solution[7cm]{le prix ne double pas} (25~€ $\times 2 = 50 \neq 45$).
+	\end{itemize}
+
+	\textbf{2. L'intuition de l'addition (\og+2 donc +2\fg)}:\\
+	Ce n'est pas parce qu'on ajoute 2 à la première grandeur qu'on ajoute 2 à la deuxième !
+	\begin{itemize}
+		\item \textit{Exemple :} Un stylo coûte 2~€.
+		\item Si j'achète 3 stylos (c'est $1 + 2$ stylos), je ne paye pas $2 + 2 = 4$~€.
+		\item Je paye $3 \times 2 = \solution{6}$~€.
+		\item On ne peut pas juste additionner \og 2 \fg au prix parce qu'on a ajouté \og 2 \fg{} à la quantité.
+	\end{itemize}
+\end{remarkbox}
+
+\clearpage
+% ============================================================
+% SÉANCE 2 : Reconnaître une situation de proportionnalité
+% ============================================================
+\seance
+
+\section{Comment reconnaître une situation de proportionnalité ?}
+
+\begin{methodebox}[Méthode 1 : Vérifier les quotients]
+	Pour vérifier si un tableau représente une situation de proportionnalité :
+	\begin{enumerate}
+		\item Calculer le quotient $\dfrac{\text{2ème ligne}}{\text{1ère ligne}}$ pour chaque colonne
+		\item Si tous les quotients sont \solution[2cm]{égaux}, c'est proportionnel
+		\item Ce quotient commun est le \solution[4cm]{coefficient de proportionnalité}
+	\end{enumerate}
+\end{methodebox}
+
+\begin{examplebox}[Application de la méthode]
+	Ce tableau est-il un tableau de proportionnalité ?
+
+	\begin{center}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			\textbf{Nombre de cahiers} & 2 & 5 & 8 & 10 \\
+			\hline
+			\textbf{Prix (€)} & 3 & 7,5 & 12 & 15 \\
+			\hline
+		\end{tabular}
+	\end{center}
+
+	\textbf{Calcul des quotients :}
+	\begin{itemize}
+		\item $\dfrac{3}{2} = \solution{1,5}$
+		\item $\dfrac{7,5}{5} = \solution{1,5}$
+		\item $\dfrac{12}{8} = \solution{1,5}$
+		\item $\dfrac{15}{10} = \solution{1,5}$
+	\end{itemize}
+
+	\textbf{Conclusion :} Tous les quotients sont égaux à 1,5, donc c'est un tableau de \solution[4cm]{proportionnalité}.
+
+	Le coefficient de proportionnalité est \solution{1,5}. Cela signifie qu'un cahier coûte \solution{1,50}~€.
+\end{examplebox}
+
+\begin{methodebox}[Méthode 2 : Vérifier les propriétés de linéarité]
+	Dans un tableau de proportionnalité :
+	\begin{itemize}
+		\item Si on \textbf{multiplie} une valeur de la 1ère ligne par un nombre, la valeur correspondante de la 2ème ligne est aussi \solution[3cm]{multipliée} par ce nombre.
+		\item Si on \textbf{additionne} deux colonnes, on obtient une nouvelle colonne \solution[2cm]{valide}.
+	\end{itemize}
+\end{methodebox}
+
+\begin{exercisebox}[Exercices d'entraînement]
+	\textbf{Exercice 1 :} Ces tableaux sont-ils des tableaux de proportionnalité ? Justifie.
+
+	\textbf{Tableau A :}
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			4 & 8 & 10 & 14 \\
+			\hline
+			10 & 20 & 25 & 35 \\
+			\hline
+		\end{tabular}
+	\end{center}
+
+	\solution[10cm]{
+		\textbf{Réponse : Oui}, c'est un tableau de proportionnalité.
+
+		\textbf{Justification :} Calculons les quotients :
+		\begin{itemize}
+			\item $\dfrac{10}{4} = 2,5$
+			\item $\dfrac{20}{8} = 2,5$
+			\item $\dfrac{25}{10} = 2,5$
+			\item $\dfrac{35}{14} = 2,5$
+		\end{itemize}
+		Tous les quotients sont égaux à 2,5. C'est donc un tableau de proportionnalité de coefficient 2,5.
+	}
+
+	\textbf{Tableau B :}
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			2 & 4 & 6 & 8 \\
+			\hline
+			5 & 9 & 13 & 17 \\
+			\hline
+		\end{tabular}
+	\end{center}
+
+	\solution[10cm]{
+		\textbf{Réponse : Non}, ce n'est pas un tableau de proportionnalité.
+
+		\textbf{Justification :} Calculons les quotients :
+		\begin{itemize}
+			\item $\dfrac{5}{2} = 2,5$
+			\item $\dfrac{9}{4} = 2,25$
+		\end{itemize}
+		Les quotients ne sont pas égaux ($2,5 \neq 2,25$). Ce n'est donc pas un tableau de proportionnalité.
+	}
+\end{exercisebox}
+
+\clearpage
+% ============================================================
+% SÉANCE 3 : Le coefficient de proportionnalité
+% ============================================================
+\seance
+
+\section{Le coefficient de proportionnalité}
+
+\begin{definitionbox}[Coefficient de proportionnalité]
+	Dans une situation de proportionnalité, le \textbf{coefficient de proportionnalité} est le nombre par lequel on \solution[3cm]{multiplie} les valeurs de la première grandeur pour obtenir les valeurs de la deuxième grandeur.
+
+	\textbf{Formule :} Si $a$ et $b$ sont deux valeurs correspondantes :
+	$$\text{Coefficient} = \dfrac{b}{a}$$
+\end{definitionbox}
+
+\begin{remarkbox}[Sens du coefficient]
+	Le coefficient de proportionnalité dépend du sens dans lequel on lit le tableau :
+	\begin{itemize}
+		\item De la 1ère ligne vers la 2ème ligne : coefficient $k$
+		\item De la 2ème ligne vers la 1ère ligne : coefficient $\dfrac{1}{k}$ (l'inverse)
+	\end{itemize}
+\end{remarkbox}
+
+\begin{examplebox}
+	\begin{center}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\textbf{Distance (km)} & 50 & 100 & 150 \\
+			\hline
+			\textbf{Temps (h)} & 1 & 2 & 3 \\
+			\hline
+		\end{tabular}
+	\end{center}
+
+	\begin{itemize}
+		\item Pour passer de la distance au temps : coefficient = $\dfrac{1}{50} = \solution{0,02}$
+		\item Pour passer du temps à la distance : coefficient = $\dfrac{50}{1} = \solution{50}$
+	\end{itemize}
+
+	\textbf{Interprétation :} La vitesse est de \solution{50} km/h.
+\end{examplebox}
+
+\section{Compléter un tableau de proportionnalité}
+
+\begin{methodebox}[Compléter un tableau]
+	Pour compléter un tableau de proportionnalité :
+	\begin{enumerate}
+		\item Trouver le coefficient de proportionnalité à partir d'une colonne complète
+		\item Multiplier chaque valeur connue par ce coefficient pour trouver la valeur manquante
+	\end{enumerate}
+
+	\textbf{Ou utiliser les propriétés de linéarité :}
+	\begin{itemize}
+		\item Multiplier une colonne par un nombre
+		\item Additionner deux colonnes
+	\end{itemize}
+\end{methodebox}
+
+\begin{examplebox}[Compléter avec le coefficient]
+	Complète ce tableau de proportionnalité :
+
+	\begin{center}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			\textbf{Nombre de croissants} & 4 & 7 & 10 & 15 \\
+			\hline
+			\textbf{Prix (€)} & 3,60 & \solution{6,30} & \solution{9} & \solution{13,50} \\
+			\hline
+		\end{tabular}
+	\end{center}
+
+	\textbf{Solution :}
+	\begin{enumerate}
+		\item Coefficient = $\dfrac{3,60}{4} = \solution{0,90}$~€ par croissant
+		\item $7 \times 0,90 = \solution{6,30}$~€
+		\item $10 \times 0,90 = \solution{9}$~€
+		\item $15 \times 0,90 = \solution{13,50}$~€
+	\end{enumerate}
+\end{examplebox}
+
+\clearpage
+% ============================================================
+% SÉANCE 4 : Propriétés de linéarité
+% ============================================================
+\seance
+
+\section{Propriétés de linéarité}
+
+\begin{proprietebox}[Propriétés fondamentales]
+	Dans un tableau de proportionnalité :
+
+	\textbf{Propriété 1 (multiplicative) :} Si on multiplie une colonne par un nombre, on obtient une nouvelle colonne du tableau.
+
+	\textbf{Propriété 2 (additive) :} Si on additionne deux colonnes, on obtient une nouvelle colonne du tableau.
+\end{proprietebox}
+
+\begin{examplebox}[Utilisation de la propriété multiplicative]
+	\begin{center}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\textbf{Quantité de farine (g)} & 200 & ? & 500 \\
+			\hline
+			\textbf{Quantité de sucre (g)} & 80 & 120 & ? \\
+			\hline
+		\end{tabular}
+	\end{center}
+
+	\textbf{Pour trouver la quantité de farine correspondant à 120 g de sucre :}
+	\begin{itemize}
+		\item On sait que 200 g de farine $\rightarrow$ 80 g de sucre
+		\item $120 = 80 \times 1,5$, donc on multiplie aussi 200 par \solution{1,5}
+		\item $200 \times 1,5 = \solution{300}$ g de farine
+	\end{itemize}
+
+	\textbf{Pour trouver la quantité de sucre correspondant à 500 g de farine :}
+	\begin{itemize}
+		\item Coefficient = $\dfrac{80}{200} = \solution{0,4}$
+		\item $500 \times 0,4 = \solution{200}$ g de sucre
+	\end{itemize}
+\end{examplebox}
+
+\begin{examplebox}[Utilisation de la propriété additive]
+	\begin{center}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			\textbf{Nombre de personnes} & 4 & 6 & 10 \\
+			\hline
+			\textbf{Quantité de riz (g)} & 300 & 450 & ? \\
+			\hline
+		\end{tabular}
+	\end{center}
+
+	\textbf{Méthode :} $10 = 4 + 6$, donc :
+	$$\text{Quantité pour 10 personnes} = 300 + 450 = \solution{750} \text{ g}$$
+\end{examplebox}
+
+\section{Applications concrètes}
+
+\subsection{Les recettes de cuisine}
+
+\begin{applicationbox}[Adapter une recette]
+	Une recette de gâteau pour 4 personnes nécessite :
+	\begin{itemize}
+		\item 200 g de farine
+		\item 120 g de sucre
+		\item 2 œufs
+		\item 100 g de beurre
+	\end{itemize}
+
+	\textbf{Question :} Quelles quantités faut-il pour 6 personnes ?
+
+	\textbf{Solution :}
+
+	\textit{Coefficient : $\dfrac{6}{4} = 1,5$. Pour 6 personnes, il faut multiplier toutes les quantités par 1,5.}
+
+	\begin{center}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{Ingrédient} & \textbf{Pour 4 personnes} & \textbf{Pour 6 personnes} \\
+			\hline
+			Farine (g) & 200 & \solution{$200 \times 1,5 = 300$} \\
+			\hline
+			Sucre (g) & 120 & \solution{$120 \times 1,5 = 180$} \\
+			\hline
+			Œufs & 2 & \solution{$2 \times 1,5 = 3$} \\
+			\hline
+			Beurre (g) & 100 & \solution{$100 \times 1,5 = 150$} \\
+			\hline
+		\end{tabular}
+	\end{center}
+\end{applicationbox}
+
+\begin{remarkbox}[Pour s'entra\^{i}ner]
+	\textbf{Cahier Transmath 6e - Chapitre 16 (La proportionnalit\'e) :}
+	\begin{itemize}
+		\item Fiche 114 (p.125) \og Proportionnalit\'e et lin\'earit\'e\fg{} : ex. 20 \`a 25
+		\item Fiche 115 (p.126) \og Retour \`a l'unit\'e\fg{} : ex. 26 \`a 32
+		\item Fiche 116 (p.127) \og Repr\'esentations de la proportionnalit\'e\fg{} : ex. 33 \`a 41
+	\end{itemize}
+\end{remarkbox}
+
+\begin{remarkbox}[Pour aller plus loin]
+	La proportionnalité a de nombreuses applications concrètes que nous étudierons dans la Partie 2 :
+	\begin{itemize}
+		\item Les \textbf{pourcentages} : soldes, réductions, statistiques
+		\item Les \textbf{échelles} : cartes géographiques, plans de bâtiments, maquettes
+	\end{itemize}
+	Ces applications utilisent directement les notions de coefficient de proportionnalité et de tableaux de proportionnalité vues dans cette séquence.
+\end{remarkbox}
+
+\section{Bilan de la séquence}
+
+\begin{bilanbox}
+	\textbf{Ce que je dois savoir :}
+	\begin{itemize}
+		\item[$\checkmark$] Définir ce qu'est une situation de proportionnalité
+		\item[$\checkmark$] Connaître la définition du coefficient de proportionnalité
+		\item[$\checkmark$] Connaître les propriétés de linéarité (additive et multiplicative)
+	\end{itemize}
+
+	\textbf{Ce que je dois savoir faire :}
+	\begin{itemize}
+		\item[$\checkmark$] Reconnaître si un tableau est un tableau de proportionnalité
+		\item[$\checkmark$] Calculer un coefficient de proportionnalité
+		\item[$\checkmark$] Compléter un tableau de proportionnalité
+		\item[$\checkmark$] Utiliser la proportionnalité dans des situations concrètes
+	\end{itemize}
+\end{bilanbox}
+
+\begin{summarybox}[Formules et méthodes à retenir]
+	\begin{center}
+		\fbox{\parbox{14cm}{
+			\textbf{PROPORTIONNALITÉ}
+
+			\vspace{0.3cm}
+			\textbf{Définition :} Deux grandeurs sont proportionnelles si on multiplie toujours par le même nombre pour passer de l'une à l'autre.
+
+			\vspace{0.3cm}
+			\textbf{Coefficient de proportionnalité :}
+			$$k = \dfrac{\text{valeur de la 2ème grandeur}}{\text{valeur de la 1ère grandeur}}$$
+
+			\vspace{0.3cm}
+			\textbf{Vérification :} Calculer tous les quotients $\dfrac{\text{2ème ligne}}{\text{1ère ligne}}$. S'ils sont tous égaux, c'est proportionnel.
+
+			\vspace{0.3cm}
+			\textbf{Propriétés de linéarité :}
+			\begin{itemize}
+				\item On peut multiplier une colonne par un nombre
+				\item On peut additionner deux colonnes
+			\end{itemize}
+		}}
+	\end{center}
+\end{summarybox}

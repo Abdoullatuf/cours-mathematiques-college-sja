@@ -1,0 +1,457 @@
+% ================================
+% PRÉAMBULE – Mathématiques (6e,5e,4e)
+% ================================
+
+% Encodage, langue, polices
+% Encodage explicite pour compatibilité (notamment TeX Live anciens)
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+% Charger amssymb avant newtxmath pour éviter un conflit sur \Bbbk
+\usepackage{amssymb}
+\usepackage{newtxtext,newtxmath}
+
+
+% Mise en page
+\usepackage{geometry}
+\geometry{hmargin=1.5cm, vmargin=1.5cm}
+\usepackage{microtype}
+\raggedbottom
+
+% Titres
+\usepackage{titlesec}
+\titleformat{\chapter}[hang]{\huge\bfseries}{\thechapter.}{0.6em}{}
+\titleformat{\section}[hang]{\Large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}[hang]{\large\bfseries}{\thesubsection}{0.6em}{}
+\titlespacing{\chapter}{0pt}{-10pt}{20pt}
+\titlespacing{\section}{0pt}{12pt}{8pt}
+\titlespacing{\subsection}{0pt}{4pt}{2pt}
+
+% En-têtes/pieds
+\usepackage{fancyhdr}
+\setlength{\headheight}{16pt}
+\pagestyle{fancy}
+\fancyhf{}
+% \niveau{} peut être défini ailleurs dans votre projet
+\lhead{Mathématiques \niveau{} -- 2025--2026}
+\rhead{Seq.\thechapter--~\seqtitle}
+\cfoot{\thepage}
+
+% Math
+\usepackage{amsmath,mathtools}
+\usepackage{amsfonts}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage{xlop} % Pour les opérations posées
+
+% Listes
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=1.2em}
+\setlist[enumerate]{leftmargin=1.5em}
+\SetEnumitemKey{a}{label=\alph*)}
+\SetEnumitemKey{1}{label=\arabic*)}
+
+% Tableaux
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{multirow} % Pour les tableaux complexes
+\usepackage{multicol} % Pour les colonnes multiples
+
+% Pour barrer du texte (retenues, simplifications)
+\usepackage{cancel}
+\usepackage{ulem}
+\normalem % Pour que \emph reste en italique
+
+% Graphiques
+\usepackage{graphicx}
+\graphicspath{{../../assets/images/6e/}{../../assets/images/5e/}{../../assets/images/4e/}{../../assets/images/}}
+
+% Pour les figures flottantes
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{environ}
+
+% TikZ/PGF
+\usepackage{tikz}
+\usetikzlibrary{
+	angles,quotes,calc,arrows.meta,shapes.geometric,
+	decorations.markings,decorations.pathreplacing,
+	patterns,positioning,backgrounds
+}
+% Marque d'égalité de longueur au milieu d'un segment
+\tikzset{
+	code1/.style={
+		postaction={decorate,decoration={markings,
+				mark=at position 0.5 with {\draw[thick] (0,2pt)--(0,-2pt);}}}
+	},
+	code2/.style={
+		postaction={decorate,decoration={markings,
+				mark=at position 0.5 with {\draw[thick] (-2pt,2pt)--(2pt,2pt); \draw[thick] (-2pt,-2pt)--(2pt,-2pt);}}}
+	}
+}
+
+\usetikzlibrary{tikzmark, calc}
+\colorlet{mainRed}{red!80!black}
+\colorlet{mainBlue}{blue!80!black}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% Icônes
+\usepackage{fontawesome5}
+
+% Couleurs
+\definecolor{mainOrange}{HTML}{F57C00} % Définition
+\definecolor{mainGreen}{HTML}{009688} % Exemple, Démo
+\definecolor{mainPurple}{HTML}{8E44AD} % Exercice
+\definecolor{mainTeal}{HTML}{00796B} % Objectifs
+\definecolor{mainRed}{HTML}{D32F2F} % Propriété, Théorème
+\definecolor{mainBlue}{HTML}{0077B6} % Activité
+\definecolor{mainYellow}{HTML}{FFA000} % Remarque
+\definecolor{mainCyan}{HTML}{00ACC1} % Quiz
+\definecolor{mainGray}{HTML}{546E7A} % Méthode
+\definecolor{mainIndigo}{HTML}{3F51B5} % Critères
+\definecolor{mainPink}{HTML}{E91E63} % Formule importante
+\definecolor{mainBrown}{HTML}{795548} % Vocabulaire
+\definecolor{mainLime}{HTML}{689F38} % Conseils
+\definecolor{mainDeepOrange}{HTML}{FF5722} % Attention/Erreurs
+
+% Boîtes tcolorbox
+\usepackage[most]{tcolorbox}
+\tcbset{
+	boxrule=1pt,
+	rounded corners,
+	boxsep=2ex, top=1.5ex, bottom=1.5ex, left=1.5ex, right=1.5ex,
+	before skip=0pt, after skip=1.5ex,
+	width=\textwidth,
+	fonttitle=\bfseries,
+	coltitle=white
+}
+% Style commun paramétrable par couleur principale
+\tcbset{
+	commonstyle/.style={
+		boxrule=1pt,
+		rounded corners,
+		boxsep=2ex, top=1.5ex, bottom=1.5ex, left=1.5ex, right=1.5ex,
+		before skip=0pt, after skip=1.5ex,
+		width=\textwidth,
+		fonttitle=\bfseries,
+		coltitle=white,
+		colbacktitle=#1,
+		colframe=#1!75!black,
+		colback=#1!5!white
+	}
+}
+
+% Boîtes numérotées automatiquement par chapitre (débutent à 1)
+\usepackage{ifthen}
+\newcommand{\boxtitle}[2]{#1\ifthenelse{\equal{#2}{}}{}{ : #2}}
+
+% === BOÎTES PRINCIPALES ===
+
+\newtcolorbox[auto counter, number within=chapter]{definitionbox}[1][]{
+	commonstyle=mainOrange,
+	title={\boxtitle{\textbf{Définition \faHighlighter\ \thetcbcounter}}{#1}}
+}
+
+\newtcolorbox[auto counter, number within=chapter]{examplebox}[1][]{
+	commonstyle=mainGreen,
+	title={\boxtitle{\textbf{Exemple \faLightbulb\ \thetcbcounter}}{#1}}
+}
+
+\newtcolorbox{exercisebox}[1][]{
+	commonstyle=mainPurple,
+	title={\boxtitle{\textbf{Exercices \faPenFancy}}{#1}}
+}
+
+\newtcolorbox{objectifsbox}[1][]{
+	commonstyle=mainTeal,
+	title={\boxtitle{\textbf{Objectifs \faBullseye}}{#1}}
+}
+
+\newtcolorbox[auto counter, number within=chapter]{proprietebox}[1][]{
+	commonstyle=mainRed,
+	title={\boxtitle{\textbf{Propriété \faStar\ \thetcbcounter}}{#1}}
+}
+
+\newtcolorbox[auto counter, number within=chapter]{theoremebox}[1][]{
+	commonstyle=mainRed,
+	title={\boxtitle{\textbf{Théorème \faCrown\ \thetcbcounter}}{#1}}
+}
+
+\newtcolorbox{activitybox}[1][]{
+	commonstyle=mainBlue,
+	title={\boxtitle{\textbf{Activité \faHandsHelping}}{#1}}
+}
+
+\newtcolorbox[auto counter, number within=chapter]{remarkbox}[1][]{
+	commonstyle=mainYellow,
+	title={\boxtitle{\textbf{Remarque \faExclamationTriangle\ \thetcbcounter}}{#1}}
+}
+
+\newtcolorbox{quizbox}[1][]{
+	commonstyle=mainCyan,
+	title={\boxtitle{\textbf{Quiz \faQuestionCircle}}{#1}}
+}
+
+\newtcolorbox{summarybox}[1][]{
+	commonstyle=mainYellow,
+	title={\boxtitle{\textbf{Récapitulatif \faList}}{#1}}
+}
+
+\newtcolorbox[auto counter, number within=chapter]{methodebox}[1][]{
+	commonstyle=mainGray,
+	title={\boxtitle{\textbf{Méthode \faRoute\ \thetcbcounter}}{#1}}
+}
+
+\newtcolorbox[auto counter, number within=chapter]{demobox}[1][]{
+	commonstyle=mainGreen,
+	title={\boxtitle{\textbf{Démonstration \faCalculator\ \thetcbcounter}}{#1}}
+}
+
+% === BOÎTES SUPPLÉMENTAIRES ===
+
+% Boîte pour les critères (divisibilité, etc.)
+\newtcolorbox[auto counter, number within=chapter]{criterebox}[1][]{
+	commonstyle=mainIndigo,
+	title={\boxtitle{\textbf{Critères \faClipboardCheck\ \thetcbcounter}}{#1}}
+}
+
+% Boîte pour les formules importantes
+\newtcolorbox{formulebox}[1][]{
+	commonstyle=mainPink,
+	title={\boxtitle{\textbf{Formule \faSquareRootAlt}}{#1}}
+}
+
+% Boîte pour le vocabulaire
+\newtcolorbox{vocabulairebox}[1][]{
+	commonstyle=mainBrown,
+	title={\boxtitle{\textbf{Vocabulaire \faBook}}{#1}}
+}
+
+% Boîte pour les astuces
+\newtcolorbox{astucebox}[1][]{
+	commonstyle=mainLime,
+	title={\boxtitle{\textbf{Astuce \faMagic}}{#1}}
+}
+
+% Boîte pour les erreurs à éviter
+\newtcolorbox{attentionbox}[1][]{
+	commonstyle=mainDeepOrange,
+	title={\boxtitle{\textbf{Attention \faExclamationCircle}}{#1}}
+}
+
+% Boîte pour les applications
+\newtcolorbox{applicationbox}[1][]{
+	commonstyle=mainBlue,
+	title={\boxtitle{\textbf{Application \faTools}}{#1}}
+}
+
+% Boîte pour les bilans/synthèses
+\newtcolorbox{bilanbox}[1][]{
+	commonstyle=mainTeal,
+	title={\boxtitle{\textbf{Bilan \faClipboardList}}{#1}}
+}
+
+% Boîte pour les corrections
+\newtcolorbox{correctionbox}[1][]{
+	commonstyle=mainGreen,
+	title={\boxtitle{\textbf{Correction \faCheck}}{#1}}
+}
+
+% Boîte pour les solutions
+\newtcolorbox{solutionbox}[1][]{
+	commonstyle=mainGreen,
+	title={\boxtitle{\textbf{Solution \faCheckCircle}}{#1}}
+}
+
+% Boîte pour les rappels
+\newtcolorbox{rappelbox}[1][]{
+	commonstyle=mainCyan,
+	title={\boxtitle{\textbf{Rappel \faHistory}}{#1}}
+}
+
+% === COMMANDES UTILITAIRES ===
+
+% Pour les trous à compléter (texte)
+\newcommand{\trous}[1]{\makebox[#1]{\rule{0pt}{1.2ex}\dotfill}}
+
+% Pour les fractions avec barres de division
+\newcommand{\divfrac}[2]{\left.\raisebox{.2ex}{$#1$}\middle/\raisebox{-.2ex}{$#2$}\right.}
+
+% Commandes pour les symboles mathématiques fréquents
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\norme}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\coord}[2]{\begin{pmatrix} #1 \\ #2 \end{pmatrix}}
+
+% Pour les angles
+\newcommand{\arc}[1]{\widehat{#1}}
+% \angle est déjà un symbole (amssymb) et siunitx fournit \ang{}.
+% Macro sûre pour l'écriture d'un angle large :
+\newcommand{\angw}[1]{\widehat{#1}}
+
+% Commande pour les unités
+\newcommand{\unite}[1]{\,\text{#1}}
+
+% === GESTION DES FLOATS ===
+% Pour éviter les avertissements sur le placement des figures
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.95}
+\renewcommand{\floatpagefraction}{0.95}
+
+% === TITRE DE SÉQUENCE ===
+\newcommand{\seqtitle}{}
+\newcommand{\setseqtitle}[1]{\renewcommand{\seqtitle}{#1}}
+
+% === HYPHENATION ET CÉSURE ===
+% Mots français difficiles à couper
+\hyphenation{ma-thé-ma-ti-ques pro-por-tion-na-li-té}
+
+% === LIENS (à charger en dernier) ===
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue!60!black,
+	urlcolor=blue!60!black,
+	citecolor=blue!60!black,
+	pdftitle={Cours de Mathématiques - \niveau},
+	pdfauthor={Abdoullatuf Maoulida},
+	pdfsubject={Mathématiques},
+	bookmarks=true,
+	bookmarksnumbered=true,
+	bookmarksopen=true,
+	bookmarksopenlevel=1
+}
+
+% ==========================================================
+% xlop — corrections : mode Élève/Corrigé + styles centrés
+% ==========================================================
+\newif\ifcorrige
+\corrigefalse
+\newcommand{\VersionEleve}{\corrigefalse}
+\newcommand{\VersionCorrige}{\corrigetrue}
+
+% "Trous" centrés dans la case xlop (et qui avalent le chiffre)
+\newcommand{\opblanklinewidth}{0.5pt}   % épaisseur du trait
+\newcommand{\opblankfrac}{0.80}         % longueur relative (0–1) du trait
+\newcommand{\opblank}[1]{%
+	\makebox[\opcolumnwidth]{\rule{\opblankfrac\opcolumnwidth}{\opblanklinewidth}}%
+}
+
+% ---------- Raccourcis (affichent les intermédiaires) ----------
+\newcommand{\AddPose}[2]{%
+	\ifcorrige
+	\opadd[displayintermediary=all]{#1}{#2}%
+	\else
+	\opadd[displayintermediary=all,resultstyle=\opblank]{#1}{#2}%
+	\fi
+}
+
+\newcommand{\SubPose}[2]{%
+	\ifcorrige
+	\opsub[displayintermediary=all]{#1}{#2}%
+	\else
+	\opsub[displayintermediary=all,resultstyle=\opblank,intermediarystyle=\opblank]{#1}{#2}%
+	\fi
+}
+
+\newcommand{\MulPose}[2]{%
+	\ifcorrige
+	\opmul[displayintermediary=all]{#1}{#2}%
+	\else
+	\opmul[displayintermediary=all,resultstyle=\opblank,intermediarystyle=\opblank]{#1}{#2}%
+	\fi
+}
+
+% Division décimale (le quotient est le "result")
+\newcommand{\DivDec}[2]{%
+	\ifcorrige
+	\opdiv[displayintermediary=all]{#1}{#2}%
+	\else
+	\opdiv[displayintermediary=all,resultstyle=\opblank,intermediarystyle=\opblank]{#1}{#2}%
+	\fi
+}
+
+% Division euclidienne : quotient = result ; reste = remainder
+\newcommand{\DivEuc}[2]{%
+	\ifcorrige
+	\opidiv[displayintermediary=all]{#1}{#2}%
+	\else
+	\opidiv[displayintermediary=all,resultstyle=\opblank,remainderstyle=\opblank,intermediarystyle=\opblank]{#1}{#2}%
+	\fi
+}
+
+% ---------- Opérandes seuls (euclidienne) ----------
+% 1) Quotient & reste en trous
+\newcommand{\DivEucOperandesTrousQR}[2]{%
+	\opidiv[displayintermediary=none,resultstyle=\opblank,remainderstyle=\opblank]{#1}{#2}%
+}
+% 2) Quotient & reste invisibles (blanc)
+\newcommand{\DivEucOperandesBlancQR}[2]{%
+	\opidiv[displayintermediary=none,resultstyle=\color{white},remainderstyle=\color{white}]{#1}{#2}%
+}
+% 3) Seulement le quotient en trous
+\newcommand{\DivEucOperandesTrousQ}[2]{%
+	\opidiv[displayintermediary=none,resultstyle=\opblank]{#1}{#2}%
+}
+% 4) Seulement le reste en trous
+\newcommand{\DivEucOperandesTrousR}[2]{%
+	\opidiv[displayintermediary=none,remainderstyle=\opblank]{#1}{#2}%
+}
+
+% ---------- Opérandes seuls (décimale) ----------
+\newcommand{\DivDecOperandesTrous}[2]{%
+	\opdiv[displayintermediary=none,resultstyle=\opblank]{#1}{#2}%
+}
+\newcommand{\DivDecOperandesBlanc}[2]{%
+	\opdiv[displayintermediary=none,resultstyle=\color{white}]{#1}{#2}%
+}
+
+% ==========================================================
+% GESTION DU COURS À TROUS (ÉLÈVE / CORRIGÉ)
+% ==========================================================
+% Le préambule définit déjà \newif\ifcorrige et \VersionCorrige
+
+% --- COMMANDE POUR LES RÉPONSES COURTES (un mot, un nombre) ---
+% Largeur par défaut configurable globalement
+\newlength{\solutionspace}
+\setlength{\solutionspace}{2cm}
+
+% Syntaxe : \solution{réponse} ou \solution[3cm]{réponse}
+\newcommand{\solution}[2][\solutionspace]{%
+    \ifcorrige
+        {\color{mainBlue}#2}%
+    \else
+        \makebox[#1]{\rule{0pt}{1.2ex}\dotfill}%
+    \fi
+}
+
+% Variante auto-ajustée à la largeur naturelle du contenu (avec marge optionnelle)
+% Syntaxe : \solutionauto{réponse} ou \solutionauto[5mm]{réponse}
+\newsavebox{\solbox}
+\newcommand{\solutionauto}[2][0pt]{%
+    \ifcorrige
+        {\color{mainBlue}#2}%
+    \else
+        \sbox{\solbox}{#2}%
+        \makebox[\dimexpr\wd\solbox + #1\relax]{\rule{0pt}{1.2ex}\dotfill}%
+    \fi
+}
+
+% --- ENVIRONNEMENT POUR LES BLOCS DE SOLUTION (listes, paragraphes) ---
+% Syntaxe : \begin{blocsolution} ... \end{blocsolution}
+\NewEnviron{blocsolution}{%
+	\ifcorrige
+		\BODY
+	\fi
+}
+
+% Utilisation :
+%  - Par défaut : version Élève (trous)
+%  - Pour le corrigé global : appeler \VersionCorrige
+% Exemples :
+%   \DivEuc{73}{5} \quad \DivDec{893}{13} \quad \AddPose{345}{78}
+%   \DivEucOperandesTrousQR{73}{5} \quad \DivDecOperandesTrous{893}{13}
